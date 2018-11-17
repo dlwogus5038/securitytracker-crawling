@@ -1,0 +1,43 @@
+{
+    "source": "1-2",
+    "Title": "Sharp Zaurus PDA Includes an FTP Server That Does Not Require Authentication for Write Access With Root Privileges",
+    "SecurityTracker Alert ID": "1004750",
+    "SecurityTracker URL": "http://securitytracker.com/id/1004750",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jul 12 2002",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Modification of system information",
+        "Modification of user information",
+        "Root access via network"
+    ],
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "SL-5000D, SL-5500",
+    "Description": "Several vulnerabilities were reported in Sharp's Zaurus PDA device.  A remote user can obtain full control of the file system.  A remote user can determine the passcode needed to lock the device.\nResearchers from Syracuse University reported that Sharp Zaurus models SL-5000D and SL-5500 use a built in FTP server on port 4242. On certain versions, the FTP daemon binds to all network interfaces, including wireless network interfaces.  A remote user can gain access via the FTP service to write files on the system with root privileges. The FTP service reportedly does not authenticate the user and the Zaurus has no root password by default.\n\nIt is also reported that a user with access to the '/home/root/Settings/Security.conf' file can determine the appropriate passcode to lock the device.  The passcode can be supplied to lock the Zaurus so that no data can be input via the keypad or touch screen.\n\nThe vendor has reportedly been notified.",
+    "Impact'": "A remote user can write to the file system with root privileges.  A remote user can also determine the passcode needed to lock the PDA.",
+    "Solution": "No solution was available at the time of this entry.\n\nA user reports that the latest version of the ROM firmware binds the FTP server to only the USB network interface.",
+    "Vendor URL": "www.sharp-usa.com/products/TypeLanding/0,1056,112,00.html",
+    "Cause": "Authentication error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Handspring Visor PDA Can Be Crashed By a Remote User Conducting a Port Scan",
+    "SecurityTracker Alert ID": "1003186",
+    "SecurityTracker URL": "http://securitytracker.com/id/1003186",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jan 10 2002",
+    "Impact": "Denial of service via network",
+    "Exploit Included": "Yes",
+    "Description": "A denial of service vulnerability has been reported with Handspring's Visor portable digital assistant (PDA) with a wireless Ethernet adapter.  A remote user can cause the device to crash.\nA remote user can conduct a port scan against the Handspring Visor to cause it to crash.  For example, a simple nmap scan will reportedly cause a Fatal Exception on the PDA.\n\nThis has been reported on the Visor configured with a Xircom wireless Ethernet adapter card.",
+    "Impact'": "A remote user can cause the device to crash.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.handspring.com/",
+    "Cause": [
+        "Exception handling error",
+        "State error"
+    ],
+    "Underlying OS": "PalmOS",
+    "Underlying OS Comments": "PALM OS 3.5h",
+    "Message History": "None."
+}

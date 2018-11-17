@@ -1,0 +1,1868 @@
+{
+    "source": "1-2",
+    "Title": "HPE StorageWorks XP7 Automation Director Flaw Lets Remote Users Obtain Passwords on the Target System",
+    "SecurityTracker Alert ID": "1041696",
+    "SecurityTracker URL": "http://securitytracker.com/id/1041696",
+    "CVE Reference": "CVE-2018-7108",
+    "Date": "Sep 21 2018",
+    "Impact": "Disclosure of authentication information",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "AutoDir 8.5.2-02 to prior to 8.6.1-00",
+    "Description": "A vulnerability was reported in HPE StorageWorks XP7 Automation Director. A remote user can obtain passwords on the target system.\nA remote user can send a specially crafted request to view passwords on the target system.\n\nThis condition may occur when running a service template.\n\n[Editor's note: The vendor assigned CVSS metrics show no impact.]",
+    "Impact'": "A remote user can obtain passwords on the target system.",
+    "Solution": "The vendor has issued a fix (AutoDir version 8.6.1-00).\n\nThe vendor advisory is available at:\n\nhttps://support.hpe.com/hpsc/doc/public/display?docId=hpesbst03879en_us",
+    "Vendor URL": "support.hpe.com/hpsc/doc/public/display?docId=hpesbst03879en_us",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "QNAP Storage Devices PHP Buffer Error Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1041607",
+    "SecurityTracker URL": "http://securitytracker.com/id/1041607",
+    "CVE Reference": "CVE-2018-7584",
+    "Date": "Sep  6 2018",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "QTS 4.3.3, 4.3.4",
+    "Description": "A vulnerability was reported in QNAP Storage Devices. A remote user can cause denial of service conditions on the target system.",
+    "Impact'": "A remote user can cause denial of service conditions.",
+    "Solution": "The vendor has issued a fix (QTS 4.3.3 build 20180716, 4.3.4 build 20180710).\n\nThe vendor advisory is available at:\n\nhttps://www.qnap.com/en/security-advisory/nas-201809-06",
+    "Vendor URL": "www.qnap.com/en/security-advisory/nas-201809-06",
+    "Cause": "Boundary error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "QNAP QTS LDAP Server Command Injection Flaw Lets Remote Users Execute Arbitrary Commands on the Target System",
+    "SecurityTracker Alert ID": "1041141",
+    "SecurityTracker URL": "http://securitytracker.com/id/1041141",
+    "CVE Reference": "CVE-2018-0712",
+    "Date": "Jun 20 2018",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "QTS 4.2.6, 4.3.3, 4.3.4",
+    "Description": "A vulnerability was reported in QNAP Storage Devices. A remote user can execute arbitrary commands on the target system.\nA remote user can send specially crafted data to exploit a command inject flaw in the LDAP Server and execute arbitrary commands on the target system.\n\nFile Station is affected.",
+    "Impact'": "A remote user can execute arbitrary commands on the target system.",
+    "Solution": "The vendor has issued a fix (4.2.6 build 20180504, 4.3.3 build 20180504, 4.3.4 build 20180501).\n\nThe vendor advisory is available at:\n\nhttps://www.qnap.com/en/security-advisory/nas-201806-19",
+    "Vendor URL": "www.qnap.com/en/security-advisory/nas-201806-19",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "QNAP Proxy Server Multiple Bugs Let Remote Users Conductg Cross-Site Scripting and Cross-Site Request Forgery Attacks, Modify the Configuration, and Execute Arbitrary Commands",
+    "SecurityTracker Alert ID": "1041025",
+    "SecurityTracker URL": "http://securitytracker.com/id/1041025",
+    "CVE Reference": [
+        "CVE-2017-7635",
+        "CVE-2017-7636",
+        "CVE-2017-7637",
+        "CVE-2017-7639"
+    ],
+    "Date": "Jun  1 2018",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of system information",
+        "Modification of user information",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Proxy Server 1.2.0 and before",
+    "Description": "Several vulnerabilities were reported in QNAP Proxy Server. A remote user can modify the configuration. A remote user can conduct cross-site request forgery and cross-site scripting attacks. A remote user can execute arbitrary commands on the target system.\nA remote user can create a specially crafted HTML page or URL that, when loaded by the target authenticated user, will take actions on the target interface acting as the target user [CVE-2017-7635].\n\nA remote user can send specially crafted data to execute arbitrary operating system commands on the target system [CVE-2017-7637].\n\nThe interface does not properly filter HTML code from user-supplied input before displaying the input [CVE-2017-7636]. A remote user can cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the QNAP Storage Devices interface and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nA remote user can exploit an authentication flaw to modify the Proxy Server settings [CVE-2017-7639].\n\nTony Martin reported these vulnerabilities.",
+    "Impact'": "A remote user can modify the configuration.\n\nA remote user can take actions on the target system acting as the target authenticated user.\n\nA remote user can execute arbitrary commands on the target system.\n\nA remote user can access the target user's cookies (including authentication cookies), if any, associated with the QNAP Storage Devices interface, access data recently submitted by the target user via web form to the interface, or take actions on the interface acting as the target user.",
+    "Solution": "The vendor has issued a fix (Proxy Server 1.2.1 [for x31 and x31U models], 1.3.0).\n\nThe vendor advisory is available at:\n\nhttps://www.qnap.com/en/security-advisory/nas-201806-01",
+    "Vendor URL": "www.qnap.com/en/security-advisory/nas-201806-01",
+    "Cause": [
+        "Access control error",
+        "Authentication error",
+        "Input validation error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "QNAP Storage Devices Input Validation Flaw Lets Remote Users Conduct Cross-Site Scripting Attacks",
+    "SecurityTracker Alert ID": "1040779",
+    "SecurityTracker URL": "http://securitytracker.com/id/1040779",
+    "CVE Reference": "CVE-2018-0711",
+    "Date": "Apr 28 2018",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "4.3.3 build 20180126 and prior; 4.3.4 build 20180315 and prior",
+    "Description": "A vulnerability was reported in QNAP Storage Devices. A remote user can conduct cross-site scripting attacks.\nThe interface does not properly filter HTML code from user-supplied input before displaying the input. A remote user can cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the QNAP Storage Devices interface and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nXie Wei and Li Yanlong reported this vulnerability.",
+    "Impact'": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the QNAP Storage Devices interface, access data recently submitted by the target user via web form to the interface, or take actions on the interface acting as the target user.",
+    "Solution": "The vendor has issued a fix (4.3.3 build 20180402, 4.3.4 build 20180413).\n\nThe vendor advisory is available at:\n\nhttps://www.qnap.com/en/security-advisory/nas-201804-27",
+    "Vendor URL": "www.qnap.com/en/security-advisory/nas-201804-27",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "EMC Data Domain SMB1 Memory Overflow Lets Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1040027",
+    "SecurityTracker URL": "http://securitytracker.com/id/1040027",
+    "CVE Reference": "CVE-2017-14385",
+    "Date": "Dec 19 2017",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "5.7.x prior to 5.7.5.6; 6.0.x prior to 6.0.2.9, 6.1.x prior to 6.1.0.21; Virtual Edition 2.0.x, 3.0.x prior to 3.0 SP2 Update 1, 3.1.x prior to 3.1 Update 2",
+    "Description": "A vulnerability was reported in EMC Data Domain. A remote user can execute arbitrary code on the target system.\nA remote user can send specially crafted SMB1 data to trigger a memory overflow in the SMB1 handler and execute arbitrary code on the target system.",
+    "Impact'": "A remote user can execute arbitrary code on the target system.",
+    "Solution": "The vendor has issued a fix (5.7.5.6; 6.0.2.9, 6.1.0.21; Virtual Edition 3.0 SP2 Update 1, 3.1 Update 2; Advisory ESA-2017-157).",
+    "Vendor URL": "www.emc.com/",
+    "Cause": "Boundary error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "QNAP Storage Devices Buffer Overflow Lets Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1040018",
+    "SecurityTracker URL": "http://securitytracker.com/id/1040018",
+    "CVE Reference": [
+        "CVE-2017-17027",
+        "CVE-2017-17028",
+        "CVE-2017-17029",
+        "CVE-2017-17030",
+        "CVE-2017-17031",
+        "CVE-2017-17032",
+        "CVE-2017-17033"
+    ],
+    "Date": "Dec 16 2017",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "QTS 4.2.6 build 20171026, 4.3.3.0378 build 20171117, 4.3.4.0387 (Beta 2) build 20171116",
+    "Description": "Multiple vulnerabilities were reported in QNAP Storage Devices. A remote user can execute arbitrary code on the target system.\nA remote user can send specially crafted data to trigger a buffer overflow and execute arbitrary code on the target system.\n\nA security researcher from TRUEL IT (via Beyond Security's SecuriTeam Secure Disclosure program) and security researcher @nervoir (via Trend Micro Zero-Day Initiative) reported these vulnerabilities.",
+    "Impact'": "A remote user can execute arbitrary code on the target system.",
+    "Solution": "The vendor has issued a fix (4.2.6 build 20171208, 4.3.3.0396 build 20171205, 4.3.4.0411 (Beta 3) build 20171208).\n\nThe vendor advisory is available at:\n\nhttps://www.qnap.com/en/security-advisory/nas-201712-15",
+    "Vendor URL": "www.qnap.com/en/security-advisory/nas-201712-15",
+    "Cause": "Boundary error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "IBM Storwize Unspecified Flaw in Service Assistant GUI  Lets Remote Users Gain Elevated Privileges",
+    "SecurityTracker Alert ID": "1039776",
+    "SecurityTracker URL": "http://securitytracker.com/id/1039776",
+    "CVE Reference": "CVE-2017-1710",
+    "Date": "Nov 14 2017",
+    "Impact": "User access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "V5000, V5000; 8.1.0.0 only",
+    "Description": "A vulnerability was reported in IBM Storwize. A remote user can gain elevated privileges.\nA remote user can exploit a flaw in the Service Assistant graphical user interface (GUI) to gain elevated privileges on the target system.\n\nThe Service Assistant command line interface (CLI) is not affected.",
+    "Impact'": "A remote user can gain elevated privileges on the target system.",
+    "Solution": "IBM has issued a fix (8.1.0.1).\n\nThe IBM advisory is available at:\n\nhttp://www-01.ibm.com/support/docview.wss?uid=ssg1S1010788",
+    "Vendor URL": "www-01.ibm.com/support/docview.wss?uid=ssg1S1010788",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(QNAP Systems Issues Fix for QNAP Storage Devices) wpa_supplicant WPA/WPA2 Protocol Key Reinstallation Attack Lets Remote Users Access and Modify Data on the Target Wireless Network",
+    "SecurityTracker Alert ID": "1039738",
+    "SecurityTracker URL": "http://securitytracker.com/id/1039738",
+    "CVE Reference": [
+        "CVE-2017-13077",
+        "CVE-2017-13078",
+        "CVE-2017-13079",
+        "CVE-2017-13080",
+        "CVE-2017-13081",
+        "CVE-2017-13082",
+        "CVE-2017-13086",
+        "CVE-2017-13087",
+        "CVE-2017-13088"
+    ],
+    "Date": "Nov  6 2017",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "Modification of system information",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Description": "Multiple vulnerabilities were reported in wpa_supplicant. A remote user on the wireless network can access and modify data on the wireless network. QNAP Storage Devices is affected.\nA remote user within range of the wireless network can record and replay retransmissions of part of the 802.11i 4-way handshake of the WPA and WPA2 protocols to force a reinstallation of the pairwise transient key, a group key, or an integrity key and force a reset of the incremental transmit packet number nonce and the receive replay counter. As a result, the remote user can replay encrypted packets, decrypt packets, and forge packets.\n\nBoth client systems and access points are affected.\n\nA remote user on the wireless network can reinstall the pairwise encryption key (PTK-TK) [CVE-2017-13077].\n\nA remote user on the wireless network can reinstall the group key (GTK) [CVE-2017-13078, CVE-2017-13080].\n\nA remote user on the wireless network can reinstall the integrity group key (IGTK) [CVE-2017-13079, CVE-2017-13081].\n\nA remote user on the wireless network can retransmit the Fast BSS Transition (FT) Reassociation Request and reinstall the pairwise encryption key (PTK-TK) [CVE-2017-13082].\n\nA remote user on the wireless network can reinstall the Tunneled Direct-Link Setup (TDLS) PeerKey (TPK) key in the TDLS handshake [CVE-2017-13086].\n\nA remote user on the wireless network can reinstall the group key (GTK) when processing a Wireless Network Management (WNM) Sleep Mode Response frame [CVE-2017-13087].\n\nA remote user on the wireless network can reinstall the integrity group key (IGTK) when processing a Wireless Network Management (WNM) Sleep Mode Response frame [CVE-2017-13088].\n\nThis set of vulnerabilities is referred to as KRACK (Key Reinstallation AttaCK).\n\nThe original advisory is available at:\n\nhttps://papers.mathyvanhoef.com/ccs2017.pdf\n\nAdditional information is available at:\n\nhttps://www.krackattacks.com/\n\nMathy Vanhoef and Frank Piessens from Katholieke Universiteit Leuven reported these vulnerabilities. John Van Boxtel from Cypress reported one vulnerability.\n\n[Editor's note: The vulnerabilities reside in the WPA and WPA2 protocol specification and are not due to incorrect vendor implementation of the standards.]",
+    "Impact'": "A remote user on the wireless network can access and modify data on the wireless network.",
+    "Solution": "QNAP Systems has issued a fix for CVE-2017-13077, CVE-2017-13078, CVE-2017-13079, CVE-2017-13080, CVE-2017-13081, CVE-2017-13082, CVE-2017-13086, CVE-2017-13087, and CVE-2017-13088 for QNAP Storage Devices (QTS 4.2.6 build 20171026, 4.3.3.0361 build 20171101).\n\nQNAP storage devices using QNAP WirelessAP Station and QNAP storage devices connecting to the network using wireless USB dongles are affected.\n\nThe QNAP Systems advisory is available at:\n\nhttps://www.qnap.com/en/security-advisory/nas-201710-20",
+    "Vendor URL": "www.qnap.com/en/security-advisory/nas-201710-20",
+    "Cause": [
+        "Access control error",
+        "State error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1039573"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Storwize V7000 Unified) Mozilla Firefox Multiple Bugs Let Remote Users Bypass Security Restrictions, Spoof URLs, Obtain Potentially Sensitive Information, Deny Service, and Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1039524",
+    "SecurityTracker URL": "http://securitytracker.com/id/1039524",
+    "CVE Reference": [
+        "CVE-2017-5429",
+        "CVE-2017-5432",
+        "CVE-2017-5433",
+        "CVE-2017-5434",
+        "CVE-2017-5435",
+        "CVE-2017-5436",
+        "CVE-2017-5438",
+        "CVE-2017-5439",
+        "CVE-2017-5440",
+        "CVE-2017-5441",
+        "CVE-2017-5442",
+        "CVE-2017-5443",
+        "CVE-2017-5444",
+        "CVE-2017-5445",
+        "CVE-2017-5446",
+        "CVE-2017-5447",
+        "CVE-2017-5448",
+        "CVE-2017-5449",
+        "CVE-2017-5459",
+        "CVE-2017-5460",
+        "CVE-2017-5461",
+        "CVE-2017-5464",
+        "CVE-2017-5465",
+        "CVE-2017-5469"
+    ],
+    "Date": "Oct 10 2017",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of system information",
+        "Modification of user information",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "1.5",
+    "Description": "Multiple vulnerabilities were reported in Mozilla Firefox. A remote user can cause arbitrary code to be executed on the target user's system. A remote user can obtain files on the target system. A remote user can spoof URLs. A remote user can conduct cross-site scripting attacks. IBM Storwize V7000 Unified is affected.\nA remote user can create specially crafted content that, when loaded by the target user, will execute arbitrary code on the target user's system.\n\nA use-after-free memory error may occur in SMIL animation [CVE-2017-5433].\n\nA use-after-free memory error may occur in transaction processing in the editor during design mode interactions [CVE-2017-5435].\n\nAn out-of-bounds memory write error may occur in the Graphite 2 library [CVE-2017-5436].\n\nAn out-of-bounds memory write error may occur in Base64 encoding in NSS [CVE-2017-5461].\n\nA buffer overflow may occur in WebGL [CVE-2017-5459].\n\nA use-after-free memory error may occur when redirecting focus handling [CVE-2017-5434].\n\nA use-after-free memory error may occur during certain text input selection [CVE-2017-5432].\n\nA use-after-free memory error may occur in frame selection [CVE-2017-5460].\n\nA use-after-free memory error may occur in nsAutoPtr during XSLT processing [CVE-2017-5438].\n\nA use-after-free memory error may occur in nsTArray Length() during XSLT processingn [CVE-2017-5439].\n\nA use-after-free memory error may occur in txExecutionState destructor during XSLT processing [CVE-2017-5440].\n\nA use-after-free memory error may occur with selection during scroll events [CVE-2017-5441].\n\nA use-after-free memory error may occur in during style changes when manipulating DOM elements [CVE-2017-5442].\n\nA memory corruption error may occur with accessibility and DOM manipulation [CVE-2017-5464].\n\nAn out-of-bounds memory write error may occur during BinHex decoding [CVE-2017-5443].\n\nA buffer overflow may occur when parsing application/http-index-format content [CVE-2017-5444].\n\nAn out-of-bounds memory read error may occur in processing HTTP/2 DATA frames [CVE-2017-5446].\n\nAn out-of-bounds memory read error may occur in glyph processing [CVE-2017-5447].\n\nAn out-of-bounds memory read error may occur in ConvolvePixel [CVE-2017-5465].\n\nAn out-of-bounds memory write error may occur in ClearKeyDecryptor [CVE-2017-5448].\n\nA remote user can escape the sandbox and read files on the target system via file picker [CVE-2017-5454].\n\nA remote user can escape the sandbox via internal feed reader APIs and gain elevated privileges [CVE-2017-5455].\n\nA remote user can escape the sandbox and read files on the target system via an IPC message [CVE-2017-5456].\n\nA buffer overflow may occur in flex-generated code [CVE-2017-5469].\n\nA remote user can read uninitialized values when parsing application/http-index-format content [CVE-2017-5445].\n\nA crash during bidirectional unicode manipulation with CSS animations may allow code execution [CVE-2017-5449].\n\nA memory corruption error may occur when drawing Skia content [CVE-2017-5467].\n\nOther memory corruption errors may occur [CVE-2017-5429, CVE-2017-5430].\n\nSome errors may occur in Libevent [CVE-2016-10195, CVE-2016-10196, CVE-2016-10197].\n\nA remote user can inject static HTML into the RSS reader preview page [CVE-2017-5453].\n\nA remote user can conduct cross-site scripting attacks when a user drags and drops a 'javascript:' URL into the addressbar [CVE-2017-5458].\n\nAn origin confusion error may occur when reloading isolated data:text/html URLs, allowing cross-site scripting attacks [CVE-2017-5466].\n\nAn incorrect ownership model of privateBrowsing information may occur via developer tools during debugging [CVE-2017-5468].\n\nA remote user can spoof the address bar via Android intents [CVE-2017-5463]. Firefox for Android is affected.\n\nA remote user can spoof the address bar during scrolling with editable content [CVE-2017-5452]. Firefox for Android is affected.\n\nA remote user can spoof the address bar using javascript: URIs [CVE-2017-5450].\n\nA remote user can spoof the address bar using the onblur event [CVE-2017-5451].\n\nThe Network Security Services (NSS) library may not properly generate Deterministic Random Bit Generator (DRBG) numbers [CVE-2017-5462].\n\nAnonymous, Anonymous (via Trend Micro's Zero Day Initiative), Atte Kettunen, Bob Clary, Chamal De Silva, Chris Peterson, Christian Holler, Chun Han Hsiao, Daniel Veditz, David Baron, Haik Aftandilian, Haosheng Wang, Heather Miller of Google Skia team, Holger Fuhrmannek, Huzaifa Sidhpurwala, Ivan Fratric of Google Project Zero, Jon Coppeard, \nJordi Chancel, Jose Maria Acuna, Julian Hector, Kan-Ru Chen, Marcia Knous, Mats Palmgren, Milan Sreckovic, Muneaki Nishimura, Nicolas Gregoire, Nils, Paul Theriault, Petr Cerny, Philipp, Randell Jesup, Ronald Crane, Takeshi Terada, Tooru Fujisawa, Tyson Smith, Vladimir Klebanov, and Franziskus Kiefer reported these vulnerabilities.",
+    "Impact'": "A remote user can create content that, when loaded by the target user, will execute arbitrary code on the target user's system.\n\nA remote user can obtain files on the target system.\n\nA remote user can spoof a URL.\n\nA remote user can access the target user's cookies (including authentication cookies), if any, associated with an arbitrary site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+    "Solution": "IBM has issued a fix for CVE-2017-5429, CVE-2017-5432, CVE-2017-5433, CVE-2017-5434, CVE-2017-5435, CVE-2017-5436, CVE-2017-5438, CVE-2017-5439, CVE-2017-5440, CVE-2017-5441, CVE-2017-5442, CVE-2017-5443, CVE-2017-5444, CVE-2017-5445, CVE-2017-5446, CVE-2017-5447, CVE-2017-5448, CVE-2017-5449, CVE-2017-5459, CVE-2017-5460, CVE-2017-5461, CVE-2017-5464, CVE-2017-5465, and CVE-2017-5469 for IBM Storwize V7000 Unified (1.6.0.0).\n\nThe IBM advisory is available at:\n\nhttp://www-01.ibm.com/support/docview.wss?uid=ssg1S1010640",
+    "Vendor URL": "www-01.ibm.com/support/docview.wss?uid=ssg1S1010640",
+    "Cause": [
+        "Access control error",
+        "Boundary error",
+        "Input validation error",
+        "Randomization error",
+        "State error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1038320"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Storwize V7000 Unified) Mozilla Firefox Multiple Bugs Let Remote Users Bypass Security Restrictions, Spoof URLs, Obtain Potentially Sensitive Information, Deny Service, and Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1038742",
+    "SecurityTracker URL": "http://securitytracker.com/id/1038742",
+    "CVE Reference": [
+        "CVE-2017-5398",
+        "CVE-2017-5400",
+        "CVE-2017-5401",
+        "CVE-2017-5402",
+        "CVE-2017-5404",
+        "CVE-2017-5405",
+        "CVE-2017-5407",
+        "CVE-2017-5408",
+        "CVE-2017-5410"
+    ],
+    "Date": "Jun 21 2017",
+    "Impact": [
+        "Denial of service via network",
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of system information",
+        "Modification of user information",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "V7000 Unified; 1.5",
+    "Description": "Multiple vulnerabilities were reported in Mozilla Firefox. A remote user can cause arbitrary code to be executed on the target user's system. A remote user can cause denial of service conditions on the target system. A remote user can delete files on the target system. A remote user can bypass security controls on the target system. A remote user can obtain potentially sensitive information on the target system. A remote user can spoof URLs. IBM Storwize is affected.\nA remote user can exploit a flaw in 'asm.js' to bypass ASLR and DEP security features on the target system [CVE-2017-5400].\n\nA remote user can create specially crafted content that, when loaded by the target user, will execute arbitrary code on the target user's system.\n\nA memory corruption error may occur in handling ErrorResult [CVE-2017-5401].\n\nA use-after-free memory error may occur in processing events in FontFace objects [CVE-2017-5402].\n\nA use-after-free memory error may occur when using addRange [CVE-2017-5403].\n\nA use-after-free memory error may occur when using ranges in selections [CVE-2017-5404].\n\nA memory corruption error may occur during JavaScript garbage collection incremental sweeping [CVE-2017-5410].\n\nA use-after-free memory error may occur in libGLES [CVE-2017-5411]. Windows-based systems are affected.\n\nOther memory corruption errors may occur [CVE-2017-5398, CVE-2017-5399].\n\nA remote user can delete files on the target system via a callback parameter in Mozilla Windows Updater and Maintenance Service [CVE-2017-5409]. Windows-based systems are affected.\n\nA remote user can cause denial of service conditions.\n\nA remote user can trigger a segmentation fault in Skia during some canvas operations [CVE-2017-5406].\n\nA remote user can invoke the 'view-source:' protocol repeatedly in a single hyperlink to cause the browser to crash [CVE-2017-5422].\n\nA remote user can trigger a segmentation fault during some bidirectional layout operations [CVE-2017-5413].\n\nA remote user can trigger a null pointer dereference in HttpChannel to cause the browser to crash [CVE-2017-5416].\n\nA remote server can repeatedly trigger a modal authentication prompt to cause the target connected user's browser to become non-responsive [CVE-2017-5419].\n\nA remote user can obtain potentially sensitive information on the target system.\n\nA remote user can conduct floating-point timing side channel attacks using SVG filters to access pixel values and obtain history and text information from other domains [CVE-2017-5407].\n\nA remote user can load video captions from other domains [CVE-2017-5408].\n\nA remote user can trigger a buffer read error in SVG filter color value operations to obtain potentially sensitive data [CVE-2017-5412].\n\nA remote user can send specially crafted HTTP digest authorization responses to trigger an out-of-bounds memory read error and leak potentially sensitive information [CVE-2017-5418].\n\nThe file picker dialog may choose and display the wrong local default directory, allowing a remote user to obtain potentially sensitive information, such as the operating system or the local account name [CVE-2017-5414].\n\nA remote user can spoof URLs via a 'blob:' protocol [CVE-2017-5415].\n\nA remote user can spoof address bar data via drag and drop URLs [CVE-2017-5417].\n\nA remote user can use a 'javascript:' url to obfuscate the addressbar location [CVE-2017-5420].\n\nA remote user can spoof the contents of the print preview window [CVE-2017-5421].\n\nA remote user can exploit overly permissive Gecko Media Plugin sandbox regular expression access controls to obtain data in subdirectories of '/private/var' [CVE-2017-5425]. OS X is affected.\n\nA remote user can bypass Gecko Media Plugin sandbox restrictions when the seccomp-bpf filter is running [CVE-2017-5426]. Linux is affected.\n\nA local user can create a specially crafted 'chrome.manifest' file to cause arbitrary software to added [CVE-2017-5427].\n\nA remote user can supply specially crafted FTP response codes to cause the target connected user's browser to use of uninitialized values for ports in FTP operations [CVE-2017-5405].\n\nAbdulrahman Alqabandi, Alex Bolton, Andrew McCreight, Andre Bargull, Anonymous, Anton Eliasson, Atte Kettunen, Ben Kelly, Bob Owen, Boris Zbarsky, Calixte Denizet, Carsten Book, Chris Hamono, Christian Holler, David Bolter, David Keeler, David Kohlbrenner, Eric Lawrence of Chrome Security, Haik Aftandilian, Holger Fuhrmannek, Honza Bambas, Ivan Fratric of Google Project Zero, Jed Davis, Jerri Rice, Jon Coppeard, Julian Hector, Julian Seward, Kan-Ru Chen, Looben Yang, Markus Stange, Michal Zalewski, Mike Kaply, Nathan Froyd, Nils, Philipp, Radek 'sysKin' Czyz, Randell Jesup, Rh0, Ronald Crane, Tooru Fujisawa, and Tyson Smith reported these vulnerabilities.",
+    "Impact'": "A remote user can create content that, when loaded by the target user, will execute arbitrary code on the target user's system.\n\nA remote user can cause denial of service conditions.\n\nA remote user can delete files on the target system.\n\nA remote user can bypass security controls on the target system.\n\nA remote user can obtain potentially sensitive information on the target system.\n\nA remote user can spoof a URL.",
+    "Solution": "IBM has issued a fix for CVE-2017-5398, CVE-2017-5400, CVE-2017-5401, CVE-2017-5402, CVE-2017-5404, CVE-2017-5405, CVE-2017-5407, CVE-2017-5408, and CVE-2017-5410 for IBM Storwize V7000 Unified.\n\nThe IBM advisory is available at:\n\nhttp://www-01.ibm.com/support/docview.wss?uid=ssg1S1010301",
+    "Vendor URL": "www-01.ibm.com/support/docview.wss?uid=ssg1S1010301",
+    "Cause": [
+        "Access control error",
+        "Boundary error",
+        "Input validation error",
+        "State error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1037966"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(QNAP Systems Issues Fix for QNAP Storage Devices) Samba smbd Named Pipe Validation Flaw Lets Remote Authenticated Users Execute Arbitrary Code on the Target System",
+    "SecurityTracker Alert ID": "1038577",
+    "SecurityTracker URL": "http://securitytracker.com/id/1038577",
+    "CVE Reference": "CVE-2017-7494",
+    "Updated": "Jun  1 2017",
+    "Original Entry Date": "May 29 2017",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "Root access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "4.2.x, 4.3.x",
+    "Description": "A vulnerability was reported in Samba. A remote authenticated user can execute arbitrary code on the target system. QNAP Storage Devices is affected.\nA remote authenticated user can upload a shared library to a writable share and then open a specially named pipe endpoint (containing a '/' character) cause the target system to execute the library with root privileges.\n\nsteelo reported this vulnerability.",
+    "Impact'": "A remote authenticated user with write privileges on the target share can execute arbitrary code with root privileges on the target system.",
+    "Solution": "QNAP Systems has issued a Qfix for CVE-2017-7494 for QNAP Storage Devices.\n\nThe vendor has also provided mitigation instructions, available at:\n\nhttps://forum.qnap.com/viewtopic.php?f=5&t=132991&p=617561\n\nThe QNAP Systems advisory is available at:\n\nhttps://www.qnap.com/en/support/con_show.php?cid=119",
+    "Vendor URL": "www.qnap.com/en/support/con_show.php?cid=119",
+    "Cause": "Input validation error",
+    "Message History": [
+        "https://securitytracker.com/id/1038552"
+    ]
+}{
+    "source": "1-2",
+    "Title": "QNAP QTS Unspecified Flaw Lets Remote Users Execute Arbitrary Code on the Target System",
+    "SecurityTracker Alert ID": "1038405",
+    "SecurityTracker URL": "http://securitytracker.com/id/1038405",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "May  4 2017",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in QNAP Storage Devices running QTS. A remote user can execute arbitrary code on the target system.\n[Editor's note: The vendor indicates that an unknown vulnerability, or vulnerabilities, is being actively exploited to install and execute XMR mining programs from mineXMR.com.]",
+    "Impact'": "A remote user can execute arbitrary code on the target system.",
+    "Solution": "No solution was available at the time of this entry.\n\nThe vendor has issued a Malware Remover application to detect and remove known XMR mining programs from the target system.\n\nThe vendor advisory is available at:\n\nhttps://www.qnap.com/en/support/con_show.php?cid=116",
+    "Vendor URL": "www.qnap.com/en/support/con_show.php?cid=116",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "EMC Data Domain Security Office Public Key Access Control Flaw Lets Local Administrative Users Gain Elevated Privileges",
+    "SecurityTracker Alert ID": "1038404",
+    "SecurityTracker URL": "http://securitytracker.com/id/1038404",
+    "CVE Reference": "CVE-2017-4983",
+    "Date": "May  4 2017",
+    "Impact": "User access via local system",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "5.2, 5.4, 5.5, 5.6, 5.7.x prior to 5.7.3.0, 6.0.x prior to 6.0.1.0",
+    "Description": "A vulnerability was reported in EMC Data Domain. A local user can obtain elevated privileges on the target system.\nA local administrative user can obtain the Security Office (SO) user's public key from the target system and use the key to login with SO privileges.\n\nGeoffrey Janjua from Northrop Grumman reported this vulnerability.",
+    "Impact'": "A local administrative user can obtain Security Office (SO) privileges on the target system.",
+    "Solution": "The vendor has issued a fix (5.7.3.0, 6.0.1.0; Advisory ESA-2017-036).",
+    "Vendor URL": "www.emc.com/",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "QNAP Storage Devices Multiple Flaws Let Remote Users Inject SQL Commands, Steal Cookies, Conduct Cross-Site Scripting and Clickjacking Attacks, Obtain Potentially Sensitive Informaiton, and Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1038091",
+    "SecurityTracker URL": "http://securitytracker.com/id/1038091",
+    "CVE Reference": [
+        "CVE-2017-5227",
+        "CVE-2017-6359",
+        "CVE-2017-6360",
+        "CVE-2017-6361"
+    ],
+    "Date": "Mar 22 2017",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of user information",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to 4.2.4 Build 20170313",
+    "Description": "Multiple vulnerabilities were reported in QNAP Storage Devices. A remote user can execute arbitrary code on the target system. A remote user can conduct click-jacking attacks. A user can obtain passwords on the target system. A remote user can obtain potentially sensitive information on the target system. A remote user can inject SQL commands. A remote user can gain access to the target system. A remote user can conduct cross-site scripting attacks.\nA remote user can send specially crafted data to trigger a buffer overflow and execute arbitrary code on the target system.\n\nA remote user can hijack a target user's mouse clicks to take actions on the site acting as the target user.\n\nThe software does not properly validate user-supplied input. A remote user can supply a specially crafted parameter value to execute SQL commands on the underlying database.\n\nThe interface does not properly filter HTML code from user-supplied input before displaying the input. A remote user can cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the QNAP Storage Devices interface and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nA configuration file vulnerability has unspecified impact [CVE-2017-5227].\n\nA remote user can send specially crafted data to inject commands on the target system [CVE-2017-6359, CVE-2017-6360, CVE-2017-6361].\n\nThe system may incorrectly control a remote authenticated user's access to resources on the target system.\n\nThe system does not set the HttpOnly flag in cookies. As a result, a remote user may be able to steal session cookies.\n\nThe system uses a default SNMP community name. A remote user can use these credentials to gain access to the target system.\n\nA remote user can gain anonymous LDAP access view potentially sensitive information on the target system.\n\nA user can access clear text NMP credentials.\n\nPasquale Fiorillo of ISGroup, and Guido Oricchio of PCego, Peter Kostiuk of Salesforce.com, Oliver Gruskovnjak of Salesforce.com, and Harry Sintonen of F-Secure reported these vulnerabilities.",
+    "Impact'": "A remote user can execute arbitrary code on the target system.\n\nA remote user can conduct clickjacking attacks.\n\nA remote user can execute arbitrary commands on the target system.\n\nA user can obtain passwords on the target system.\n\nA remote user can obtain potentially sensitive information on the target system.\n\nA remote user can execute SQL commands on the underlying database.\n\nA remote user can gain access to the target system.\n\nA remote user can access the target user's cookies (including authentication cookies), if any, associated with the QNAP Storage Devices interface, access data recently submitted by the target user via web form to the interface, or take actions on the interface acting as the target user.",
+    "Solution": "The vendor has issued a fix (QTS 4.2.4 Build 20170313).\n\nThe vendor advisory is available at:\n\nhttps://www.qnap.com/en/support/con_show.php?cid=113",
+    "Vendor URL": "www.qnap.com/en/support/con_show.php?cid=113",
+    "Cause": [
+        "Access control error",
+        "Boundary error",
+        "Input validation error",
+        "Not specified"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HPE StoreVirtual Storage Unspecified Flaw Lets Remote Authenticated Users Execute Arbitrary Commands on the Target System",
+    "SecurityTracker Alert ID": "1037762",
+    "SecurityTracker URL": "http://securitytracker.com/id/1037762",
+    "CVE Reference": "CVE-2016-8529",
+    "Date": "Feb  1 2017",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "4000 Series; LeftHand OS 12.5 and prior",
+    "Description": "A vulnerability was reported in HPE StoreVirtual Storage. A remote authenticated user can execute arbitrary commands on the target system.\nA remote authenticated user on the local network can send specially crafted data to execute arbitrary commands on the target system.\n\nHPE StoreVirtual 4000 series and StoreVirtual VSA software running LeftHand OS are affected.\n\nCalum Hutton reported this vulnerability.",
+    "Impact'": "A remote authenticated user on the local network can execute arbitrary commands on the target system.",
+    "Solution": "HPE has issued a fix (LeftHand OS 12.5 patch 55018, LeftHand OS 12.6).\n\nThe HPE advisory is available at:\n\nhttps://h20564.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05382958",
+    "Vendor URL": "h20564.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05382958",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "EMC Data Domain OS Command Injection Flaw Lets Local Users Obtain Root Privileges",
+    "SecurityTracker Alert ID": "1037728",
+    "SecurityTracker URL": "http://securitytracker.com/id/1037728",
+    "CVE Reference": "CVE-2016-8216",
+    "Date": "Jan 27 2017",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "Root access via local system"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "5.4.x, 5.5.x prior to 5.5.5.0, 5.6.x prior to 5.6.2.0, 5.7.x.prior to 5.7.2.10",
+    "Description": "A vulnerability was reported in EMC Data Domain OS. A local user can obtain root privileges on the target system.\nA local administrator user can bypass the Data Domain restricted shell (ddsh) to execute arbitrary commands on the target system with root privileges.\n\nGeoffrey Janjua from Northrop Grumman reported this vulnerability.",
+    "Impact'": "A local user can obtain root privileges on the target system.",
+    "Solution": "The vendor has issued a fix (5.5.5.0, 5.6.2.0, 5.7.2.10; Advisory ESA-2016-160).",
+    "Vendor URL": "www.emc.com/",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "QNAP Storage Devices Firmware Update Flaw Lets Remote Users Access the Target System",
+    "SecurityTracker Alert ID": "1037663",
+    "SecurityTracker URL": "http://securitytracker.com/id/1037663",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jan 21 2017",
+    "Impact": "User access via network",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in QNAP Storage Devices. A remote user can gain access to the target system.\nA remote user can exploit an unspecified flaw in the firmware upgrade process to gain administrative access to the target system.\n\nF-Secure reported this vulnerabilities.",
+    "Impact'": "A remote user can gain administrative access to the target system.",
+    "Solution": "No solution was available at the time of this entry.\n\nThe vendor is working on a fix. As a workaround, the vendor recommends that users \"disable automatic updates and avoid clicking the 'Check for Update' button on the Live Update tab.\" [quoted]\n\nThe vendor advisory is available at:\n\nhttps://www.qnap.com/en/support/con_show.php?cid=109",
+    "Vendor URL": "www.qnap.com/en/support/con_show.php?cid=109",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "QNAP Storage Devices Heap Overflow in 'cgi.cgi' Lets Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1037542",
+    "SecurityTracker URL": "http://securitytracker.com/id/1037542",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Updated": "Jan  6 2017",
+    "Original Entry Date": "Jan  2 2017",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "All QNAP NAS",
+    "Description": "A vulnerability was reported in QNAP Storage Devices. A remote user can execute arbitrary code on the target system.\nA remote user can send a specially crafted password value to trigger a heap overflow in 'cgi.cgi' and execute arbitrary code on the target system. The code will run with the privileges of the target service.\n\nbashis reported this vulnerability.",
+    "Impact'": "A remote user can execute arbitrary code on the target system.",
+    "Solution": "No solution was available at the time of this entry.\n\n[Editor's note: The vendor is investigating this vulnerability and plans to issue a fix.]\n\nThe vendor advisory is available at:\n\nhttps://www.qnap.com/en/support/con_show.php?cid=108",
+    "Vendor URL": "www.qnap.com/en/support/con_show.php?cid=108",
+    "Cause": "Boundary error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(QNAP Systems Issues Fix for QTS) Linux Kernel Copy-on-Write Memory Management Race Condition Lets Local Users Obtain Elevated Privileges",
+    "SecurityTracker Alert ID": "1037263",
+    "SecurityTracker URL": "http://securitytracker.com/id/1037263",
+    "CVE Reference": "CVE-2016-5195",
+    "Date": "Nov 11 2016",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "Root access via local system"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to 4.2.2 Build 20161102",
+    "Description": "A vulnerability was reported in the Linux kernel. A local user can obtain root privileges on the target system. QNAP Storage Devices are affected.\nA local user can a race condition in the kernel memory subsystem in the management of copy-on-write operations on read-only memory mappings to overwrite kernel memory and gain kernel-level privileges.\n\nThis vulnerability is being actively exploited.\n\nSome demonstration exploit code is listed at:\n\nhttps://github.com/dirtycow/dirtycow.github.io/wiki/PoCs",
+    "Impact'": "A local user can obtain root privileges on the target system.",
+    "Solution": "QNAP Systems has issued a fix for CVE-2016-5195 for QTS (4.2.2 Build 20161102).\n\nThe QNAP Systems advisory is available at:\n\nhttps://www.qnap.com/en/support/con_show.php?cid=106",
+    "Vendor URL": "www.qnap.com/en/support/con_show.php?cid=106",
+    "Cause": [
+        "Access control error",
+        "State error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1037078"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(QNAP Systems Issues Fix for QNAP Storage Devices) Linux Kernel Copy-on-Write Memory Management Race Condition Lets Local Users Obtain Elevated Privileges",
+    "SecurityTracker Alert ID": "1037158",
+    "SecurityTracker URL": "http://securitytracker.com/id/1037158",
+    "CVE Reference": "CVE-2016-5195",
+    "Date": "Nov  1 2016",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "Root access via local system"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to 4.2.2 Build 20161028",
+    "Description": "A vulnerability was reported in the Linux kernel. A local user can obtain root privileges on the target system. QNAP Storage Devices is affected.\nA local user can a race condition in the kernel memory subsystem in the management of copy-on-write operations on read-only memory mappings to overwrite kernel memory and gain kernel-level privileges.\n\nThis vulnerability is being actively exploited.\n\nSome demonstration exploit code is listed at:\n\nhttps://github.com/dirtycow/dirtycow.github.io/wiki/PoCs",
+    "Impact'": "A local user can obtain root privileges on the target system.",
+    "Solution": "QNAP Systems has issued a fix for CVE-2016-5195 for QNAP Storage Devices (4.2.2 Build 20161028).\n\nThe QNAP Systems advisory is available at:\n\nhttps://www.qnap.com/en/support/con_show.php?cid=103",
+    "Vendor URL": "www.qnap.com/en/support/con_show.php?cid=103",
+    "Cause": [
+        "Access control error",
+        "State error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1037078"
+    ]
+}{
+    "source": "1-2",
+    "Title": "EMC Celerra Weak NTLM Nonce Lets Remote Users Access the Target SMB Share",
+    "SecurityTracker Alert ID": "1036843",
+    "SecurityTracker URL": "http://securitytracker.com/id/1036843",
+    "CVE Reference": "CVE-2016-0917",
+    "Date": "Sep 20 2016",
+    "Impact": "User access via network",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "All versions",
+    "Description": "A vulnerability was reported in EMC Celerra. A remote user can gain access to the target SMB share.\nThe NTLM authentication implementation does not have sufficient entropy for generating nonces. A remote user can cause the server to generate duplicate nonce responses and reuse the information to spoof a valid authentication token and gain access to the target SMB share.\n\nEMC VNX1, VNX2, and VNXe are also affected.\n\nEMC Unity is not affected.",
+    "Impact'": "A remote user can gain access to the target SMB share.",
+    "Solution": "No solution is planned for EMC Celerra.\n\nThe vendor has issued an advisory (Advisory ESA-2016-096).",
+    "Vendor URL": "www.emc.com/",
+    "Cause": "Randomization error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "QNAP QTS Bugs Let Remote Users Conduct Cross-Site Scripting Attacks, Overwrite Arbitrary Files, and Inject Commands",
+    "SecurityTracker Alert ID": "1036699",
+    "SecurityTracker URL": "http://securitytracker.com/id/1036699",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Updated": "Sep  8 2016",
+    "Original Entry Date": "Aug 26 2016",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of system information",
+        "Modification of user information",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "QTS 4.2.0, 4.2.1, 4.2.2",
+    "Description": "Several vulnerabilities were reported in QNAP Storage Devices. A remote user can overwrite files on the target system. A remote user can execute arbitrary commands on the target system. A remote user can conduct cross-site scripting attacks.\nA remote user can overwrite arbitrary files on the target system.\n\nA remote user can inject commands on the target system.\n\nThe interface does not properly filter HTML code from user-supplied input before displaying the input. A remote user can cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the QNAP Storage Device interface and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nThese vulnerabilities can be exploited to gain administrator access on the target device.\n\nSySS GmbH reported these vulnerabilities.",
+    "Impact'": "A remote user can overwrite arbitrary files on the target system.\n\nA remote user can inject commands on the target system.\n\nA remote user can access the target user's cookies (including authentication cookies), if any, associated with the QNAP Storage Device interface, access data recently submitted by the target user via web form to the interface, or take actions on the interface acting as the target user.",
+    "Solution": "The vendor has issued a fix (4.2.2 Build 20160901).\n\nThe vendor advisory is available at:\n\nhttps://www.qnap.com/en/support/con_show.php?cid=96",
+    "Vendor URL": "www.qnap.com/en/support/con_show.php?cid=96",
+    "Cause": [
+        "Access control error",
+        "Input validation error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(HPE Issues Fix for HPE StoreVirtual Storage) Glibc getaddrinfo() Stack Overflow Lets Remote or Local Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1036451",
+    "SecurityTracker URL": "http://securitytracker.com/id/1036451",
+    "CVE Reference": "CVE-2015-7547",
+    "Date": "Jul 27 2016",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in Glibc. A remote or local user can execute arbitrary code on the target system. HPE StoreVirtual Storage products running LeftHand OS are affected.\nA remote or local user can send specially crafted data to trigger a stack overflow in the getaddrinfo() function in the glibc DNS client resolver code ('resolv/nss_dns') and execute arbitrary code on the target system. The code will run with the privileges of the target application using the glibc library.\n\nVarious applications may be affected, including ssh, sudo, and curl.\n\nAdditional information is available at:\n\nhttps://googleonlinesecurity.blogspot.com/2016/02/cve-2015-7547-glibc-getaddrinfo-stack.html",
+    "Impact'": "A remote or local user can execute arbitrary code on the target system.",
+    "Solution": "HPE has issued a fix for HPE StoreVirtual Storage (LeftHand OS 12.5 - patch 55015, LeftHand OS 12.6 - patch 56001).\n\nThe HP advisory is available at:\n\nhttp://h20564.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05212266",
+    "Vendor URL": "h20564.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c05212266",
+    "Cause": "Boundary error",
+    "Message History": [
+        "https://securitytracker.com/id/1035020"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Storwize V7000 Unified) Samba Multiple Flaws Let Remote Users Hijack Connections, Obtain Potentially Sensitive Information, and Deny Service",
+    "SecurityTracker Alert ID": "1036253",
+    "SecurityTracker URL": "http://securitytracker.com/id/1036253",
+    "CVE Reference": [
+        "CVE-2015-5370",
+        "CVE-2016-2110",
+        "CVE-2016-2111",
+        "CVE-2016-2112",
+        "CVE-2016-2113",
+        "CVE-2016-2114",
+        "CVE-2016-2115"
+    ],
+    "Date": "Jul  8 2016",
+    "Impact": [
+        "Denial of service via network",
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "Modification of user information",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "1.5, 1.6",
+    "Description": "Multiple vulnerabilities were reported in Samba. A remote user can cause denial of service conditions on the target system. A remote user can hijack connection. A remote user can obtain potentially sensitive information on the target system. IBM Storwize V7000 Unified is affected.\nA remote authenticated user can exploit a missing error check in dcesrv_auth_bind_ack() in the DCE/RPC protocol implementation to cause excessive CPU consumption on the target system or cause the target service to crash or execute arbitrary code [CVE-2015-5370]. Versions 3.6.0 to 4.4.0 are affected.\n\nThe NTLMSSP implementation is not protected against downgrading. A remote user that can conduct a man-in-the-middle attack can hijack the target connection [CVE-2016-2110].\n\nThe NTLMSSP implementation is not protected against downgrading. A remote user that can conduct a man-in-the-middle attack can spoof a system name to a Domain Controller and obtain session-related information about the spoofed system [CVE-2016-2111].\n\nThe LDAP implementation does not enforce integrity protection for LDAP connections. A remote user that can conduct a man-in-the-middle attack can downgrade the target LDAP connection to use no integrity protection and gain access to the connection [CVE-2016-2112].\n\nA remote user that can conduct a man-in-the-middle attack can gain access to LDAP connection [CVE-2016-2113]. Versions 4.0.0 to 4.4.0 are affected.\n\nThe system does not enforce the mandatory server signing configuration setting. As a result, a remote user can conduct a man-in-the-middle attack to hijack SMB1 connections [CVE-2016-2114]. Versions 4.0.0 to 4.4.0 are affected.\n\nThe IPC implementation does not enforce integrity protection by default. A remote user that can conduct a man-in-the-middle attacker can view and modify data sent via the IPC connection [CVE-2016-2115].\n\nA remote user that can conduct a man-in-the-middle attack against DCE/RPE connections can impersonate the target user against the Security Account Manager Remote Protocol (MS-SAMR) and the Local Security Authority (Domain Policy) Remote Protocol (MS-LSAD) implementations to obtain read/write access to the target Security Account Manager database [CVE-2016-2118]. This can be exploited to obtain passwords in the database. Versions 3.6.0 to 4.4.0 are affected.\n\n[Editor's note: Microsoft Windows is also affected by this vulnerability, as described in CVE-2016-0128 (Alert ID 1035534). This vulnerability is known as \"Badlock\".]\n\nJouni Knuutinen of Synopsys reported the dcesrv_auth_bind_ack() vulnerability. Stefan Metzmacher of SerNet (https://samba.plus) reported the other vulnerabilities.",
+    "Impact'": "A remote user can cause denial of service conditions.\n\nA remote user can obtain potentially sensitive information on the target system.\n\nA remote user can hijack connections.",
+    "Solution": "IBM has issued a fix for CVE-2015-5370, CVE-2016-2110, CVE-2016-2111, CVE-2016-2112, CVE-2016-2113, CVE-2016-2114, and CVE-2016-2115 for IBM Storwize V7000 Unified.\n\nThe IBM advisory is available at:\n\nhttp://www-01.ibm.com/support/docview.wss?uid=ssg1S1005814",
+    "Vendor URL": "www-01.ibm.com/support/docview.wss?uid=ssg1S1005814",
+    "Cause": [
+        "Access control error",
+        "Authentication error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1035533"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Storwize V7000 Unified) Samba SMB1 UNIX Extensions Symlink Flaw Lets Remote Authenticated Users Overwrite Access Control Lists",
+    "SecurityTracker Alert ID": "1036252",
+    "SecurityTracker URL": "http://securitytracker.com/id/1036252",
+    "CVE Reference": "CVE-2015-7560",
+    "Date": "Jul  8 2016",
+    "Impact": "Modification of system information",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "V7000 Unified; 1.5, 1.6",
+    "Description": "A vulnerability was reported in Samba. A remote authenticated user can overwrite access control lists. IBM Storwize V7000 Unified is affected.\nA remote authenticated user can invoke SMB1 UNIX extensions to create a symbolic link (symlink) and then issue a non-UNIX SMB1 call to overwrite the owner and group access control list (ACL) on the target file or directory.\n\nJeremy Allison of Google, Inc. reported this vulnerability.",
+    "Impact'": "A remote authenticated user can overwrite the access control list (ACL) on the target file or directory.",
+    "Solution": "IBM has issued a fix for IBM Storwize V7000 Unified.\n\nThe IBM advisory is available at:\n\nhttp://www-01.ibm.com/support/docview.wss?uid=ssg1S1005805",
+    "Vendor URL": "www-01.ibm.com/support/docview.wss?uid=ssg1S1005805",
+    "Cause": "Access control error",
+    "Message History": [
+        "https://securitytracker.com/id/1035220"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Storwize V7000 Unified) Samba Multiple Flaws Let Remote Users Access Data and Files, Obtain Potentially Sensitive Information, and Deny Service",
+    "SecurityTracker Alert ID": "1036251",
+    "SecurityTracker URL": "http://securitytracker.com/id/1036251",
+    "CVE Reference": "CVE-2015-5252",
+    "Date": "Jul  8 2016",
+    "Impact": [
+        "Denial of service via network",
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "V7000 Unified; 1.5, 1.6",
+    "Description": "Multiple vulnerabilities were reported in Samba. A remote user can access data on the target system. A remote user can consume excessive CPU resources on the target system. A remote user can cause the target system to crash. A remote user can obtain files on the target system. A remote user can obtain potentially sensitive information on the target system. IBM Storwize V7000 Unified is affected.\nA remote user can send a specially crafted request to the target Samba LDAP server to consume excessive CPU resources on the target system and cause the LDAP server to become unresponsive [CVE-2015-3223]. Versions 4.0.0 through 4.3.2 are affected.\n\nThilo Uttendorfer of Linux Information Systems AG reported this vulnerability.\n\nThe smbd server does not properly verify symbolic links (symlinks). In certain situations, a remote user can access files located outside of the exported share path [CVE-2015-5252]. Versions 3.0.0 through 4.3.2 are affected.\n\nJan 'Yenya' Kasprzak and the Computer Systems Unit team at Faculty of Informatics, Masaryk University reported this vulnerability.\n\nThe system does not properly negotiate signing when establishing an encrypted connection. A remote user that can conduct a man-in-the-middle attack can downgrade the connection and then connect via an unsigned, unencrypted connection [CVE-2015-5296]. Versions 3.2.0 through 4.3.2 are affected.\n\nStefan Metzmacher of SerNet (www.sernet.com) and the Samba Team reported this vulnerability.\n\nThe vfs_shadow_copy2 module does not properly enforce access controls. A remote user without the DIRECTORY_LIST access rights can view the current snapshots [CVE-2015-5299]. Versions 3.2.0 through 4.3.2 are affected.\n\nA remote user can send specially crafted packets to cause the LDAP server in the target samba daemon process to return portions of heap memory [CVE-2015-5330]. Versions 4.0.0 through 4.3.2 are affected.\n\nDouglas Bagnall of Catalyst (www.catalyst.net.nz) reported this vulnerability.\n\nA remote authenticated non-administrative user can bypass the quota limit and create excessive accounts on the target system [CVE-2015-8467]. Versions 4.0.0 through 4.3.2 are affected.\n\nA domain environment with Samba and Windows Active Directory Domain Controllers is affected.",
+    "Impact'": "A remote user can obtain snapshot data on the target system.\n\nA remote user can consume excessive CPU resources on the target system and cause the target LDAP service to become unresponsive.\n\nA remote user can cause the target system to crash.\n\nA remote user can obtain files on the target system that are located outside of the share path.\n\nA remote user can obtain potentially sensitive information on the target system.",
+    "Solution": "IBM has issued a fix for CVE-2015-5252 for IBM Storwize V7000 Unified.\n\nThe IBM advisory is available at:\n\nhttp://www-01.ibm.com/support/docview.wss?uid=ssg1S1005810",
+    "Vendor URL": "www-01.ibm.com/support/docview.wss?uid=ssg1S1005810",
+    "Cause": [
+        "Access control error",
+        "Resource error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1034493"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Storwize V7000 Unified) Apache Tomcat Flaw Lets Remote Users Determine Valid Directories",
+    "SecurityTracker Alert ID": "1036250",
+    "SecurityTracker URL": "http://securitytracker.com/id/1036250",
+    "CVE Reference": "CVE-2015-5345",
+    "Date": "Jul  8 2016",
+    "Impact": "Disclosure of system information",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "V7000 Unified; 1.5.2.1, 1.6",
+    "Description": "A vulnerability was reported in Apache Tomcat. A remote user can determine valid directories on the target system. IBM Storwize V7000 Unified is affected.\nA remote user can supply a specially crafted URL without a trailing slash for a directory protected by a security constraint to cause Tomcat to redirect the URL, indicating that the directory exists.\n\nMark Koek of QCSec reported this vulnerability.",
+    "Impact'": "A remote user can determine valid directories on the target system.",
+    "Solution": "IBM has issued a fix for IBM Storwize V7000 Unified.\n\nThe IBM advisory is available at:\n\nhttp://www-01.ibm.com/support/docview.wss?uid=ssg1S1005713",
+    "Vendor URL": "www-01.ibm.com/support/docview.wss?uid=ssg1S1005713",
+    "Cause": "Access control error",
+    "Message History": [
+        "https://securitytracker.com/id/1035071"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Storwize V7000 Unified) Glibc getaddrinfo() Stack Overflow Lets Remote or Local Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1036247",
+    "SecurityTracker URL": "http://securitytracker.com/id/1036247",
+    "CVE Reference": "CVE-2015-7547",
+    "Date": "Jul  8 2016",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "V7000 Unified; 1.5.2.1, 1.6",
+    "Description": "A vulnerability was reported in Glibc. A remote or local user can execute arbitrary code on the target system. IBM Storwize V7000 Unified is affected.\nA remote or local user can send specially crafted data to trigger a stack overflow in the getaddrinfo() function in the glibc DNS client resolver code ('resolv/nss_dns') and execute arbitrary code on the target system. The code will run with the privileges of the target application using the glibc library.\n\nVarious applications may be affected, including ssh, sudo, and curl.\n\nAdditional information is available at:\n\nhttps://googleonlinesecurity.blogspot.com/2016/02/cve-2015-7547-glibc-getaddrinfo-stack.html",
+    "Impact'": "A remote or local user can execute arbitrary code on the target system.",
+    "Solution": "IBM has issued a fix for IBM Storwize V7000 Unified.\n\nThe IBM advisory is available at:\n\nhttp://www-01.ibm.com/support/docview.wss?uid=ssg1S1005682",
+    "Vendor URL": "www-01.ibm.com/support/docview.wss?uid=ssg1S1005682",
+    "Cause": "Boundary error",
+    "Message History": [
+        "https://securitytracker.com/id/1035020"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(QNAP Systems Issues Fix for QNAP Storage Devices) Glibc getaddrinfo() Stack Overflow Lets Remote or Local Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1036125",
+    "SecurityTracker URL": "http://securitytracker.com/id/1036125",
+    "CVE Reference": "CVE-2015-7547",
+    "Date": "Jun 17 2016",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in Glibc. A remote or local user can execute arbitrary code on the target system. QNAP Storage Devices is affected.\nA remote or local user can send specially crafted data to trigger a stack overflow in the getaddrinfo() function in the glibc DNS client resolver code ('resolv/nss_dns') and execute arbitrary code on the target system. The code will run with the privileges of the target application using the glibc library.\n\nVarious applications may be affected, including ssh, sudo, and curl.\n\nAdditional information is available at:\n\nhttps://googleonlinesecurity.blogspot.com/2016/02/cve-2015-7547-glibc-getaddrinfo-stack.html",
+    "Impact'": "A remote or local user can execute arbitrary code on the target system.",
+    "Solution": "QNAP Systems has issued a fix for CVE-2015-7547 for QNAP Storage Devices (4.2.1 Build 20160601).\n\nThe QNAP Systems advisory is available at:\n\nhttps://www.qnap.com/i/en/support/con_show.php?cid=93",
+    "Vendor URL": "www.qnap.com/i/en/support/con_show.php?cid=93",
+    "Cause": "Boundary error",
+    "Message History": [
+        "https://securitytracker.com/id/1035020"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(QNAP Systems Issues Fix for QNAP Storage Devices) OpenSSL Multiple Bugs Let Remote Users Decrypt Data, Deny Service, Obtain Potentially Sensitive Information, and Potentially Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1036124",
+    "SecurityTracker URL": "http://securitytracker.com/id/1036124",
+    "CVE Reference": [
+        "CVE-2016-2105",
+        "CVE-2016-2106",
+        "CVE-2016-2107",
+        "CVE-2016-2108",
+        "CVE-2016-2109",
+        "CVE-2016-2176"
+    ],
+    "Date": "Jun 17 2016",
+    "Impact": [
+        "Denial of service via local system",
+        "Denial of service via network",
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via local system",
+        "Execution of arbitrary code via network",
+        "User access via local system",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "Multiple vulnerabilities were reported in OpenSSL. A remote user can decrypt data in certain cases. A remote or local user can cause denial of service conditions. A remote user can obtain potentially sensitive information on the target system. A remote or local user may be able to execute arbitrary code on the target application using OpenSSL. QNAP Storage Devices is affected.\nA remote user that can conduct a man-in-the-middle attack can conduct a padding oracle attack against data encrypted with an AES CBC cipher when the target server supports AES-NI to decrypt the data [CVE-2016-2107].\n\n[Editor's note: This vulnerability was introduced in fix for a previous vulnerability known as the Lucky 13 padding attack (CVE-2013-0169).]\n\nJuraj Somorovsky reported this vulnerability.\n\nA remote or local user can supply specially crafted data to trigger an overflow in the EVP_EncodeUpdate() function and cause a heap corruption and cause the target application to crash or potentially execute arbitrary code [CVE-2016-2105]. Applications that call the affected PEM_write_bio* functions may be affected.\n\nGuido Vranken reported this vulnerability.\n\nA remote or local user can supply specially crafted data to trigger an overflow in the EVP_EncryptUpdate() function and cause a heap corruption and cause the target application to crash or potentially execute arbitrary code [CVE-2016-2106]. Applications that call the affected function may be affected.\n\nGuido Vranken reported this vulnerability.\n\nA remote or local user can supply specially crafted ASN.1 data to an application that reads data from a BIO using functions such as d2i_CMS_bio() to trigger a memory allocation error and consume excessive memory on the target system [CVE-2016-2109]. TLS applications are not affected.\n\nBrian Carpenter reported this vulnerability.\n\nAn application can supply a specially crafted ASN.1 string longer than 1024 bytes to the X509_NAME_oneline() function on EBCDIC systems to trigger a memory over-read and return arbitrary stack data containing potentially sensitive information [CVE-2016-2176].\n\nGuido Vranken reported this vulnerability.",
+    "Impact'": "A remote user can decrypt traffic in certain cases.\n\nA remote or local user may be able to execute arbitrary code on the target application that uses OpenSSL.\n\nA remote or local user can cause denial of service conditions on the target system.\n\nA remote user can obtain potentially sensitive information on the target system.",
+    "Solution": "QNAP Systems has issued a fix for CVE-2016-2105, CVE-2016-2106, CVE-2016-2107, CVE-2016-2108, CVE-2016-2109, and CVE-2016-2176 for QNAP Storage Devices (4.2.1 Build 20160601).\n\nThe QNAP Systems advisory is available at:\n\nhttps://www.qnap.com/i/en/support/con_show.php?cid=93",
+    "Vendor URL": "www.qnap.com/i/en/support/con_show.php?cid=93",
+    "Cause": [
+        "Access control error",
+        "Boundary error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1035721"
+    ]
+}{
+    "source": "1-2",
+    "Title": "QNAP Storage Devices Input Validation Flaws Let Remote Conduct Cross-Site Scripting Attacks",
+    "SecurityTracker Alert ID": "1036123",
+    "SecurityTracker URL": "http://securitytracker.com/id/1036123",
+    "CVE Reference": "CVE-2015-5664",
+    "Date": "Jun 17 2016",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to 4.2.0",
+    "Description": "Two vulnerabilities were reported in QNAP Storage Devices. A remote user can conduct cross-site scripting attacks.\nThe interface does not properly filter HTML code from user-supplied input before displaying the input. A remote user can cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the QNAP Storage Devices interface and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nOne of the two vulnerabilities affects the File Station [CVE-2015-5664].\n\nDavide 'Peru' Peruzzi [GoSecure!] reported one vulnerability. Keigo Yamazaki (LAC Co., Ltd.) (via JPCERT/CC) reported one vulnerability.",
+    "Impact'": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the QNAP Storage Devices interface, access data recently submitted by the target user via web form to the interface, or take actions on the interface acting as the target user.",
+    "Solution": "The vendor has issued a fix (4.2.1 Build 20160601).\n\nThe vendor's advisory is available at:\n\nhttps://www.qnap.com/i/en/support/con_show.php?cid=93",
+    "Vendor URL": "www.qnap.com/i/en/support/con_show.php?cid=93",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "EMC Data Domain Bugs Let Local Users Modify Passwords and Gain Elevated Privileges",
+    "SecurityTracker Alert ID": "1036079",
+    "SecurityTracker URL": "http://securitytracker.com/id/1036079",
+    "CVE Reference": [
+        "CVE-2016-0911",
+        "CVE-2016-0912"
+    ],
+    "Date": "Jun 10 2016",
+    "Impact": [
+        "Modification of system information",
+        "Modification of user information",
+        "User access via local system"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "5.4.x, 5.5.x, 5.6.x, 5.7.x - 5.7.1.0",
+    "Description": "Two vulnerabilities were reported in EMC Data Domain. A local user can obtain elevated privileges on the target system. A local user can modify passwords on the target system.\nA local NFS client user can mount an NFS export as root [CVE-2016-0911].\n\nA physically local user can modify their password without providing the current password. A physically local user with certain roles can modify the passwords of other users with the same role on the target system [CVE-2016-0912].",
+    "Impact'": "A local user can obtain elevated privileges on the target system.\n\nA local user can modify passwords on the target system.",
+    "Solution": "The vendor has issued a fix (5.7.2.0; Advisory ESA-2016-062).",
+    "Vendor URL": "www.emc.com/",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "EMC Data Domain Session Identifier Disclosure Bug Lets Local Users Gain Elevated Privileges",
+    "SecurityTracker Alert ID": "1036074",
+    "SecurityTracker URL": "http://securitytracker.com/id/1036074",
+    "CVE Reference": "CVE-2016-0910",
+    "Date": "Jun  9 2016",
+    "Impact": [
+        "Disclosure of system information",
+        "User access via local system"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "5.5.3.3 and prior 5.5.x, 5.6.1.0 and prior 5.6.x, 5.7.1.0 and prior 5.7 versions",
+    "Description": "A vulnerability was reported in EMC Data Domain. A local user can obtain elevated privileges on the target system.\nA local user can access a file on the target system that contains session identifiers for users logged in via the graphical user interface (GUI). A local user can exploit this to gain elevated privileges on the target system.",
+    "Impact'": "A local user can obtain elevated privileges on the target system.",
+    "Solution": "The vendor has issued a fix (5.5.4.0, 5.6.1.004, 5.7.2.0; Advisory ESA-2016-064).",
+    "Vendor URL": "www.emc.com/",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Storwize) Apache Struts Input Validation Flaw in I18NInterceptor Lets Remote Conduct Cross-Site Scripting Attacks",
+    "SecurityTracker Alert ID": "1035975",
+    "SecurityTracker URL": "http://securitytracker.com/id/1035975",
+    "CVE Reference": "CVE-2016-2162",
+    "Date": "May 27 2016",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "V3500, V3700, V5000, V7000; 6.1, 6.2, 6.3, 6.4, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.6.1",
+    "Description": "A vulnerability was reported in Apache Struts. A remote user can conduct cross-site scripting attacks. IBM Storwize is affected.\nThe I18NInterceptor does not properly filter HTML code from user-supplied input in the Locale object before displaying the input. A remote user can cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the Apache Struts software and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nApplications that pass unfiltered user-supplied data to I18NInterceptor may be affected.\n\nPaolo Perliti of Miliaris reported this vulnerability.",
+    "Impact'": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the Apache Struts software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+    "Solution": "IBM has issued a fix for IBM Storwize (7.5.0.8, 7.6.1.3).\n\nThe IBM advisory is available at:\n\nhttp://www-01.ibm.com/support/docview.wss?uid=ssg1S1005849",
+    "Vendor URL": "www-01.ibm.com/support/docview.wss?uid=ssg1S1005849",
+    "Cause": "Input validation error",
+    "Message History": [
+        "https://securitytracker.com/id/1035272"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Storwize) Apache Struts Double OGNL Evaluation Lets Remote Users Execute Arbitrary Code on the Target System",
+    "SecurityTracker Alert ID": "1035974",
+    "SecurityTracker URL": "http://securitytracker.com/id/1035974",
+    "CVE Reference": "CVE-2016-0785",
+    "Date": "May 27 2016",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "V3500, V3700, V5000, V7000; 6.1, 6.2, 6.3, 6.4, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.6.1",
+    "Description": "A vulnerability was reported in Apache Struts. A remote user can execute arbitrary code on the target system. IBM Storwize is affected.\nThe software performs double OGNL evaluation of attribute values assigned to certain tags. A remote user can send specially crafted attribute data to execute arbitrary code on the target system. The code will run with the privileges of the target service.\n\nRomain Gaucher of Coverity reported this vulnerability.",
+    "Impact'": "A remote user can execute arbitrary code on the target system.",
+    "Solution": "IBM has issued a fix for IBM Storwize (7.5.0.8, 7.6.1.3).\n\nThe IBM advisory is available at:\n\nhttp://www-01.ibm.com/support/docview.wss?uid=ssg1S1005849",
+    "Vendor URL": "www-01.ibm.com/support/docview.wss?uid=ssg1S1005849",
+    "Cause": "State error",
+    "Message History": [
+        "https://securitytracker.com/id/1035271"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(QNAP Systems Issues Fix for QNAP Storage Devices) Samba Multiple Flaws Let Remote Users Hijack Connections, Obtain Potentially Sensitive Information, and Deny Service",
+    "SecurityTracker Alert ID": "1035630",
+    "SecurityTracker URL": "http://securitytracker.com/id/1035630",
+    "CVE Reference": [
+        "CVE-2015-5370",
+        "CVE-2016-2110",
+        "CVE-2016-2111",
+        "CVE-2016-2112",
+        "CVE-2016-2114",
+        "CVE-2016-2115",
+        "CVE-2016-2118"
+    ],
+    "Date": "Apr 20 2016",
+    "Impact": [
+        "Denial of service via network",
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "Modification of user information",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "QTS 4.2.0 and prior",
+    "Description": "Multiple vulnerabilities were reported in Samba. A remote user can cause denial of service conditions on the target system. A remote user can hijack connection. A remote user can obtain potentially sensitive information on the target system. QNAP Storage Devices are affected.\nA remote authenticated user can exploit a missing error check in dcesrv_auth_bind_ack() in the DCE/RPC protocol implementation to cause excessive CPU consumption on the target system or cause the target service to crash or execute arbitrary code [CVE-2015-5370]. Versions 3.6.0 to 4.4.0 are affected.\n\nThe NTLMSSP implementation is not protected against downgrading. A remote user that can conduct a man-in-the-middle attack can hijack the target connection [CVE-2016-2110].\n\nThe NTLMSSP implementation is not protected against downgrading. A remote user that can conduct a man-in-the-middle attack can spoof a system name to a Domain Controller and obtain session-related information about the spoofed system [CVE-2016-2111].\n\nThe LDAP implementation does not enforce integrity protection for LDAP connections. A remote user that can conduct a man-in-the-middle attack can downgrade the target LDAP connection to use no integrity protection and gain access to the connection [CVE-2016-2112].\n\nA remote user that can conduct a man-in-the-middle attack can gain access to LDAP connection [CVE-2016-2113]. Versions 4.0.0 to 4.4.0 are affected.\n\nThe system does not enforce the mandatory server signing configuration setting. As a result, a remote user can conduct a man-in-the-middle attack to hijack SMB1 connections [CVE-2016-2114]. Versions 4.0.0 to 4.4.0 are affected.\n\nThe IPC implementation does not enforce integrity protection by default. A remote user that can conduct a man-in-the-middle attacker can view and modify data sent via the IPC connection [CVE-2016-2115].\n\nA remote user that can conduct a man-in-the-middle attack against DCE/RPE connections can impersonate the target user against the Security Account Manager Remote Protocol (MS-SAMR) and the Local Security Authority (Domain Policy) Remote Protocol (MS-LSAD) implementations to obtain read/write access to the target Security Account Manager database [CVE-2016-2118]. This can be exploited to obtain passwords in the database. Versions 3.6.0 to 4.4.0 are affected.\n\n[Editor's note: Microsoft Windows is also affected by this vulnerability, as described in CVE-2016-0128 (Alert ID 1035534). This vulnerability is known as \"Badlock\".]\n\nJouni Knuutinen of Synopsys reported the dcesrv_auth_bind_ack() vulnerability. Stefan Metzmacher of SerNet (https://samba.plus) reported the other vulnerabilities.",
+    "Impact'": "A remote user can cause denial of service conditions.\n\nA remote user can obtain potentially sensitive information on the target system.\n\nA remote user can hijack connections.",
+    "Solution": "QNAP Systems has issued a fix for CVE-2015-5370, CVE-2016-2110, CVE-2016-2111, CVE-2016-2112, CVE-2016-2114, CVE-2016-2115, and CVE-2016-2118 for QNAP Storage Devices (Update to QTS 4.2.0 and then apply Qfix (BadlockFix_4.2.0.1)).\n\nThe QNAP Systems advisory is available at:\n\nhttps://www.qnap.com/i/en/support/con_show.php?cid=89",
+    "Vendor URL": "www.qnap.com/i/en/support/con_show.php?cid=89",
+    "Cause": [
+        "Access control error",
+        "Authentication error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1035533"
+    ]
+}{
+    "source": "1-2",
+    "Title": "HP StoreOnce Backup System Bugs Let Remote Users Conduct Cross-Site Request Forgery and Cross-Site Scripting Attacks and Gain Elevated Privileges",
+    "SecurityTracker Alert ID": "1034605",
+    "SecurityTracker URL": "http://securitytracker.com/id/1034605",
+    "CVE Reference": [
+        "CVE-2015-5445",
+        "CVE-2015-5446",
+        "CVE-2015-5447"
+    ],
+    "Date": "Jan  7 2016",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of user information",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to 3.13.1",
+    "Description": "Several vulnerabilities were reported in HP StoreOnce Backup System. A remote user can conduct cross-site request forgery attacks. A remote user can gain elevated privileges. A remote user can conduct cross-site scripting attacks.\nA remote user can create a specially crafted HTML page or URL that, when loaded by the target authenticated user, will take actions on the target interface acting as the target user [CVE-2015-5445].\n\nTim MalcomVetter and David Odell of Optiv Security reported this vulnerability.\n\nA remote user can execute arbitrary code to gain elevated privileges on the target system [CVE-2015-5446].\n\nThe interface does not properly filter HTML code from user-supplied input before displaying the input [CVE-2015-5447]. A remote user can cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the HP StoreOnce Backup interface and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nCraig Young, Security Researcher, Tripwire VERT reported this vulnerability.",
+    "Impact'": "A remote user can take actions on the target system acting as the target authenticated user.\n\nA remote user can gain elevated privileges on the target system.\n\nA remote user can access the target user's cookies (including authentication cookies), if any, associated with the HP StoreOnce D2D Backup System interface, access data recently submitted by the target user via web form to the interface, or take actions on the interface acting as the target user.",
+    "Solution": "The vendor has issued a fix (3.13.1).\n\nThe vendor's advisory is available at:\n\nhttps://h20564.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c04858589",
+    "Vendor URL": "h20564.www2.hpe.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c04858589",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(QNAP Systems Issues Fix for QNAP QTS) OpenSSH TTY Permissions Let Local Users Cause Denial of Service Conditions",
+    "SecurityTracker Alert ID": "1034136",
+    "SecurityTracker URL": "http://securitytracker.com/id/1034136",
+    "CVE Reference": "CVE-2015-6565",
+    "Date": "Nov 12 2015",
+    "Impact": [
+        "Denial of service via local system",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in OpenSSH. A local user can cause denial of service conditions on the target system. QNAP QTS is affected.\nThe system sets TTYs with world-writable permissions. A local user may be able to write arbitrary messages, including escape sequences, to other users on the target system.\n\nNikolay Edigaryev reported this vulnerability.",
+    "Impact'": "A local user can write arbitrary messages, including escape sequences, to other users on the target system, which may cause denial of service conditions.",
+    "Solution": "QNAP Systems has issued a fix for CVE-2015-6565 for QNAP QTS (4.2.0 RC2 (Build 0910)) [in September 2015].\n\nThe QNAP Systems advisory is available at:\n\nhttps://www.qnap.com/i/en/support/con_show.php?cid=85",
+    "Vendor URL": "www.qnap.com/i/en/support/con_show.php?cid=85",
+    "Cause": "Access control error",
+    "Message History": [
+        "https://securitytracker.com/id/1033917"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(QNAP Systems Issues Fix for QNAP QTS) OpenSSH PAM Privilege Separation Bugs Lets Remote Users Gain Elevated Privileges in Certain Cases",
+    "SecurityTracker Alert ID": "1034135",
+    "SecurityTracker URL": "http://securitytracker.com/id/1034135",
+    "CVE Reference": [
+        "CVE-2015-6563",
+        "CVE-2015-6564"
+    ],
+    "Date": "Nov 12 2015",
+    "Impact": "User access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "Two vulnerabilities were reported in OpenSSH. A remote user can gain elevated privileges in certain cases. QNAP QTS is affected.\nA remote user that can exploit a separate vulnerability in the unprivileged pre-authentication process to execute arbitrary code can then exploit two separate flaws in sshd(8) to bypass privilege separation controls [CVE-2015-6563, CVE-2015-6564].\n\nMoritz Jodeit of Blue Frost Security GmbH reported these vulnerabilities.",
+    "Impact'": "A remote user that can exploit an independent vulnerability in the pre-authentication process can bypass the privilege separation controls.",
+    "Solution": "QNAP Systems has issued a fix for CVE-2015-6563 and CVE-2015-6564 for QNAP QTS (4.2.0 RC2 (Build 0910)) [in September 2015].\n\nThe QNAP Systems advisory is available at:\n\nhttps://www.qnap.com/i/en/support/con_show.php?cid=85",
+    "Vendor URL": "www.qnap.com/i/en/support/con_show.php?cid=85",
+    "Cause": "Access control error",
+    "Message History": [
+        "https://securitytracker.com/id/1033278"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(QNAP Systems Issues Fix for QNAP QTS) OpenSSH 'KbdInteractiveDevices' Lets Remote Users Bypass Security Restrictions on the Target System",
+    "SecurityTracker Alert ID": "1034134",
+    "SecurityTracker URL": "http://securitytracker.com/id/1034134",
+    "CVE Reference": "CVE-2015-5600",
+    "Date": "Nov 12 2015",
+    "Impact": "Host/resource access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Description": "A vulnerability was reported in OpenSSH. A remote user can bypass authentication attempt limits on the target system. QNAP QTS is affected.\nA remote user can request the keyboard-interactive authentication option ('KbdInteractiveDevices') to open a large number of keyboard-interactive devices on the target server and perform a brute-force password guessing attack against the target sshd service. The number of password attempts can effectively exceed the 'MaxAuthTries' limit and are permitted to occur until the 'LoginGraceTime' limit is reached or the number of keyboard-interactive devices are used.\n\nServers that have keyboard-interactive authentication enabled (e.g., FreeBSD in the default configuration) are affected.\n\nA demonstration exploit command is provided:\n\nssh -l[username] -oKbdInteractiveDevices=`perl -e 'print \"pam,\" x 10000'` [target]\n\nThe original advisory is available at:\n\nhttps://kingcope.wordpress.com/2015/07/16/openssh-keyboard-interactive-authentication-brute-force-vulnerability-maxauthtries-bypass/\n\nkingcope reported this vulnerability.",
+    "Impact'": "A remote user can bypass authentication attempt limits on the target system.",
+    "Solution": "QNAP Systems has issued a fix for CVE-2015-5600 for QNAP QTS (4.2.0 RC2 (Build 0910)) [in September 2015].\n\nThe QNAP Systems advisory is available at:\n\nhttps://www.qnap.com/i/en/support/con_show.php?cid=85",
+    "Vendor URL": "www.qnap.com/i/en/support/con_show.php?cid=85",
+    "Cause": [
+        "Access control error",
+        "State error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1032988"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(QNAP Systems Issues Fix for QNAP QTS) Apache Bugs Let Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1034133",
+    "SecurityTracker URL": "http://securitytracker.com/id/1034133",
+    "CVE Reference": "CVE-2015-3183",
+    "Date": "Nov 12 2015",
+    "Impact": [
+        "Denial of service via network",
+        "Not specified"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "Several vulnerabilities were reported in Apache. A remote user can cause denial of service conditions on the target system. The impact of some vulnerabilities was not specified. QNAP QTS is affected.\nA remote user can trigger a crash with ErrorDocument 400 pointing to a local URL-path with the INCLUDES filter active [CVE-2015-0253]. Versions 2.4.11 and after are affected. The vendor has assigned PR 57531 to this vulnerability.\n\nA remote user can send a specially crafted websockets ping to trigger a flaw in mod_lua and cause the target child process to crash [CVE-2015-0228]. The vulnerability occurs when the ping is received and then a script calls the r:wsupgrade() function.\n\nA remote user can trigger a chunk header parsing flaw in apr_brigade_flatten() [CVE-2015-3183]. The impact was not specified.\n\nA remote user can trigger an unspecified flaw in ap_some_auth_required() [CVE-2015-3185]. The impact was not specified.",
+    "Impact'": "A remote user can cause denial of service conditions.",
+    "Solution": "QNAP Systems has issued a fix for CVE-2015-3183 for QNAP QTS (4.2.0 RC2 (Build 0910)) [in September 2015].\n\nThe QNAP Systems advisory is available at:\n\nhttps://www.qnap.com/i/en/support/con_show.php?cid=85",
+    "Vendor URL": "www.qnap.com/i/en/support/con_show.php?cid=85",
+    "Cause": [
+        "Access control error",
+        "Input validation error",
+        "Not specified",
+        "State error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1032967"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Storwize V7000 Unified) Libuser Bugs Let Local Users Deny Service and Gain Elevated Privileges",
+    "SecurityTracker Alert ID": "1033998",
+    "SecurityTracker URL": "http://securitytracker.com/id/1033998",
+    "CVE Reference": [
+        "CVE-2015-3245",
+        "CVE-2015-3246"
+    ],
+    "Date": "Oct 28 2015",
+    "Impact": [
+        "Denial of service via local system",
+        "Modification of system information",
+        "Root access via local system"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "V7000 Unified; 1.5",
+    "Description": "Two vulnerabilities were reported in Libuser. A local user can cause denial of service conditions on the target system. A local user can obtain elevated privileges on the target system. IBM Storwize V7000 Unified is affected.\nA local user can exploit a flaw in the userhelper program to add linefeed characters in the middle of '/etc/password' records, causing the file to become corrupt [CVE-2015-3245].\n\nA local user can exploit a flaw in the way libuser updates the '/etc/passwd' file to gain root privileges on the target system [CVE-2015-3246].\n\nQualys reported these vulnerabilities.",
+    "Impact'": "A local user can corrupt the '/etc/password' file to cause denial of service conditions on the target system.\n\nA local user can obtain root privileges on the target system.",
+    "Solution": "IBM has issued a fix for IBM Storwize V7000 Unified (1.5.2.2).\n\nThe IBM advisory is available at:\n\nhttps://www-304.ibm.com/support/docview.wss?uid=ssg1S1005336",
+    "Vendor URL": "www-304.ibm.com/support/docview.wss?uid=ssg1S1005336",
+    "Cause": [
+        "Access control error",
+        "Input validation error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1033040"
+    ]
+}{
+    "source": "1-2",
+    "Title": "QNAP QTS Path Traversal Flaw Lets Local Users View and Modify Files on the Target System",
+    "SecurityTracker Alert ID": "1033794",
+    "SecurityTracker URL": "http://securitytracker.com/id/1033794",
+    "CVE Reference": "CVE-2015-6003",
+    "Date": "Oct 13 2015",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "Modification of system information",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to 4.1.4 Build 0910 and 4.2.0 RC2 (Build 0910)",
+    "Description": "A vulnerability was reported in QNAP QTS. A local user can view and modify files on the target system.\nA local user on an OS X system with Apple Filing Protocol (AFP) enabled can exploit a path traversal flaw to view and modify arbitrary files on the target system.\n\nThe original advisory is available at:\n\nhttps://www.kb.cert.org/vuls/id/751328\n\nMarcin Ochab reported this vulnerability.",
+    "Impact'": "A local user can view and modify arbitrary files on the target system.",
+    "Solution": "The vendor has issued a fix (4.1.4 Build 0910, 4.2.0 Build 0910(RC2)).\n\nThe vendor's advisory is available at:\n\nhttps://www.qnap.com/i/en/support/con_show.php?cid=85",
+    "Vendor URL": "www.qnap.com/i/en/support/con_show.php?cid=85",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Storwize) Apache Struts Incorrect Default 'excludeParams' Configuration Lets Remote Users Bypass Security Restrictions",
+    "SecurityTracker Alert ID": "1033739",
+    "SecurityTracker URL": "http://securitytracker.com/id/1033739",
+    "CVE Reference": "CVE-2015-1831",
+    "Date": "Oct  5 2015",
+    "Impact": "Not specified",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "6.1, 6.2, 6.3, 6.4, 7.1, 7.2, 7.3, 7.4, 7.5",
+    "Description": "A vulnerability was reported in Apache Struts. A remote user can bypass security controls on the target system. IBM Storwize is affected.\nThe system includes incorrect 'excludeParams' settings that override the settings defined in 'DefaultExcludedPatternsChecker'. A remote user can bypass these parameter restrictions to \"compromise internal state of an application.\"\n\nJasper Rosenberg at Cargurus reported this vulnerability.",
+    "Impact'": "A remote user can bypass security controls on the target system.",
+    "Solution": "IBM has issued a fix for IBM Storwize (IBM Storwize V7000, V5000, V3700, and V3500; 7.3.0.12, 7.4.0.5, 7.5.0.2).\n\nThe IBM advisory is available at:\n\nhttps://www-304.ibm.com/support/docview.wss?uid=ssg1S1005335",
+    "Vendor URL": "www-304.ibm.com/support/docview.wss?uid=ssg1S1005335",
+    "Cause": "Configuration error",
+    "Message History": [
+        "https://securitytracker.com/id/1032985"
+    ]
+}{
+    "source": "1-2",
+    "Title": "QNAP Turbo NAS Series Devices Multiple Flaws Let Remote Users Conduct Cross-Site Scripting Attacks, Traverse the Directory, Execute Arbitrary Code, and Gain Elevated Privileges",
+    "SecurityTracker Alert ID": "1033224",
+    "SecurityTracker URL": "http://securitytracker.com/id/1033224",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Aug 10 2015",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of user information",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "Several vulnerabilities were reported in QNAP Turbo NAS Series Devices. A remote user can view files on the target system. A remote authenticated user can gain elevated privileges. A remote user can execute arbitrary code on the target system. A remote user can conduct cross-site scripting attacks.\nA remote authenticated user can exploit a flaw in the 'Change Password' function to gain elevated privileges.\n\nTony Martin reported this vulnerability.\n\nThe interface does not properly filter HTML code from user-supplied input before displaying the input. A remote user can cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the QNAP Storage Devices interface and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nThe 'Edit Account Profile page, File Station, Syslog Viewer, and System Connection Logs are affected.\n\nTony Martin reported this vulnerability.\n\nThe file sharing feature of the File Station is also affected.\n\nPeter Kostiuk of Salesforce.com reported this vulnerability.\n\nA remote user can exploit a CGI vulnerability to execute arbitrary code on the target system.\n\nLuca Carettoni (via Beyond Security's SecuriTeam Secure Disclosure program) reported this vulnerability.\n\nA remote user can exploit a flaw in the Music Station component to traverse the directory and view files on the target system.\n\nPeter Kostiuk of Salesforce.com reported this vulnerability.\n\nA remote authenticated user can exploit a flaw in the File Station component to traverse the directory and view files on the target system.\n\nPeter Kostiuk of Salesforce.com reported this vulnerability.",
+    "Impact'": "A remote user can view files on the target system.\n\nA remote authenticated user can gain elevated privileges on the target system.\n\nA remote user can execute arbitrary code on the target system.\n\nA remote user can access the target user's cookies (including authentication cookies), if any, associated with the QNAP Storage Devices interface, access data recently submitted by the target user via web form to the interface, or take actions on the interface acting as the target user.",
+    "Solution": "The vendor has issued a fix (QTS 4.1.4 build 0804).\n\nThe vendor's advisory is available at:\n\nhttps://www.qnap.com/i/en/support/con_show.php?cid=83",
+    "Vendor URL": "www.qnap.com/i/en/support/con_show.php?cid=83",
+    "Cause": [
+        "Access control error",
+        "Input validation error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "QNAP Logging Error Lets Local Users Obtain Disk Encryption Keys",
+    "SecurityTracker Alert ID": "1033223",
+    "SecurityTracker URL": "http://securitytracker.com/id/1033223",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Aug 10 2015",
+    "Impact": "Disclosure of authentication information",
+    "Version(s)": "prior to 4.1.4 Build 0804",
+    "Description": "A vulnerability was reported in QNAP Storage Devices. A local user can obtain disk encryption keys.\nWhen an encrypted device is unlocked, the system logs disk encryption keys to a world readable log file on an unencrypted hard disk partition. The system also rotates the log files.\n\nA local user can invoke dmsetup to gain access to the encrypted device.\n\nThe vendor was notified on July 12, 2015.\n\nAndreas Steinmetz reported this vulnerability.",
+    "Impact'": "A local user can obtain disk encryption keys.",
+    "Solution": "No solution was available at the time of this entry.\n\nThe report indicates that version QTS 4.1.4 build 0804 may include a fix.\n\n[Editor's note: The vendor's advisory for QTS 4.1.4 build 0804 (https://www.qnap.com/i/en/support/con_show.php?cid=83) does not reference this vulnerability.]",
+    "Vendor URL": "www.qnap.com/",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "DRAM \"Rowhammer\" Memory Bit Flipping Flaw Lets Local Users Gain Elevated Privileges",
+    "SecurityTracker Alert ID": "1031863",
+    "SecurityTracker URL": "http://securitytracker.com/id/1031863",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Mar 10 2015",
+    "Impact": [
+        "Root access via local system",
+        "User access via local system"
+    ],
+    "Exploit Included": "Yes",
+    "Description": "A vulnerability was reported in some dynamic random-access memory (DRAM) devices. A local user can obtain elevated privileges on the target system.\nA local user can run a program that repeatedly accesses a row of memory to cause bits in adjacent rows to flip. This can be exploited to execute arbitrary code on the target system with kernel-level privileges.\n\nDouble data rate type 3 (DDR3) DRAM components from multiple vendors are affected.\n\n[Editor's note: No publicly available list of affected vendor products was available at the time of this entry.]\n\nThis vulnerability is known as the DRAM \"Rowhammer\" vulnerability.\n\nThe original advisory, including demonstration exploit code, is available at:\n\nhttp://googleprojectzero.blogspot.com/2015/03/exploiting-dram-rowhammer-bug-to-gain.html\n\nMark Seaborn and Thomas Dullien reported this vulnerability via Google Project Zero.",
+    "Impact'": "A local user can obtain kernel level privileges on the target system.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Cause": "State error",
+    "Message History": [
+        "https://securitytracker.com/id/1033234"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(HP Issues Fix for HP StoreOnce Backup Systems are) GNU bash Environment Variable Processing Flaws Let Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1031075",
+    "SecurityTracker URL": "http://securitytracker.com/id/1031075",
+    "CVE Reference": [
+        "CVE-2014-7169",
+        "CVE-2014-6271",
+        "CVE-2014-7187",
+        "CVE-2014-7186"
+    ],
+    "Date": "Oct 20 2014",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "Execution of arbitrary code via network",
+        "User access via local system",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Description": "Several vulnerabilities were reported in GNU bash. A user can execute arbitrary code on the target system. HP StoreOnce Backup Systems are affected.\nThe software does not properly process environment variables.\n\nA user can supply a specially crafted value that includes a bash function followed by additional code that, when processed by bash, will execute the additional code [CVE-2014-6271]. This vulnerability is known as \"Shellshock\".\n\nStephane Chazelas reported this vulnerability.\n\nAn initial fix for CVE-2014-6271 did not properly fix this flaw [CVE-2014-7169].\n\nA user can supply a specially crafted value to trigger an out-of-bounds memory access in redir_stack() and potentially execute arbitrary code [CVE-2014-7186].\n\nFlorian Weimer of Red Hat Product Security reported this vulnerability.\n\nA user can supply specially crafted, deeply nested flow control constructs to trigger an off-by-one error and potentially execute arbitrary code [CVE-2014-7187].\n\nFlorian Weimer of Red Hat Product Security reported this vulnerability.\n\nA user can supply specially crafted data to access uninitialized memory and overwrite a pointer to potentially execute arbitrary code [CVE-2014-6277].\n\nA user can supply specially crafted data to execute arbitrary code [CVE-2014-6278].\n\nMichal Zalewski reported these vulnerabilities.\n\nOn a system with an application that passes data from a remote or remote authenticated user to bash, a remote or remote authenticated user may be able to exploit these vulnerabilities to execute arbitrary code.\n\nSome common system application configurations are affected.\n\nDemonstration exploit code is available.\n\nThis vulnerability is being actively exploited.",
+    "Impact'": "A user can execute arbitrary code on the target system. In some application configurations, a remote user may be able to exploit this.",
+    "Solution": "HP has issued a fix for CVE-2014-7169, CVE-2014-6271, CVE-2014-7187, and CVE-2014-7186 for HP StoreOnce Backup Systems.\n\nThe HP advisory is available at:\n\nhttp://h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=emr_na-c04477872-1",
+    "Cause": "Input validation error",
+    "Message History": [
+        "https://securitytracker.com/id/1030890"
+    ]
+}{
+    "source": "1-2",
+    "Title": "HP StoreVirtual Bugs Let Remote Users Obtain Information and Remote Authenticated Users Gain Elevated Privileges",
+    "SecurityTracker Alert ID": "1030567",
+    "SecurityTracker URL": "http://securitytracker.com/id/1030567",
+    "CVE Reference": [
+        "CVE-2014-2605",
+        "CVE-2014-2606"
+    ],
+    "Date": "Jul 14 2014",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "HP StoreVirtual 4000 Storage and StoreVirtual VSA 9.5, 10.0, 10.5, 11.0",
+    "Description": "Two vulnerabilities were reported in HP StoreVirtual 4000 Storage and StoreVirtual VSA. A remote authenticated user can gain elevated privileges on the target system. A remote user can obtain potentially sensitive information.\nA remote user can obtain potentially sensitive information [CVE-2014-2605].\n\nA remote authenticated user can gain full control of the target system [CVE-2014-2606].\n\nCalum Hutton reported this vulnerabilities.",
+    "Impact'": "A remote authenticated user can gain full control of the target system.\n\nA remote user can obtain potentially sensitive information.",
+    "Solution": "The vendor has issued a fix.\n\nThe vendor's advisory is available at:\n\nhttp://h20565.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=1emr_na-c04281279-1",
+    "Vendor URL": "h20565.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=1emr_na-c04281279-1",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP StoreOnce Appliances Unspecified Flaw Lets Remote Users Gain Access",
+    "SecurityTracker Alert ID": "1029964",
+    "SecurityTracker URL": "http://securitytracker.com/id/1029964",
+    "CVE Reference": "CVE-2013-6211",
+    "Date": "Mar 27 2014",
+    "Impact": "User access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in HP StoreOnce Appliances. A remote user can gain access to the target system.\nNo details were provided.\n\nThe following products are affected:\n\nHP StoreOnce Virtual Storage Appliance (VSA)\nHP StoreOnce 2610 iSCSI Backup System\nBB852A HP StoreOnce 2620 iSCSI Backup System\nBB853A HP StoreOnce 4210 iSCSI Backup System\nBB854A HP StoreOnce 4210 FC Backup System\nBB855A HP StoreOnce 4220 Backup System\nBB856A HP StoreOnce 4420 Backup System\nBB857A HP StoreOnce 4430 Backup System\n\nJoshua Small of Daraco IT Services reported this vulnerability.",
+    "Impact'": "A remote user can gain access to the target system.",
+    "Solution": "The vendor has issued a fix.\n\nThe vendor's advisory is available at:\n\nhttp://h20565.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=emr_na-c04126368-2",
+    "Vendor URL": "h20565.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=emr_na-c04126368-2",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "EMC Connectrix Manager Converged Network Edition Input Validation Flaw in 'FileUploadController' Lets Remote Users Download Arbitrary Files",
+    "SecurityTracker Alert ID": "1029939",
+    "SecurityTracker URL": "http://securitytracker.com/id/1029939",
+    "CVE Reference": "CVE-2014-2276",
+    "Date": "Mar 20 2014",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "EMC Connectrix Manager Converged Network Edition (CMCNE) 12.1.2",
+    "Description": "A vulnerability was reported in EMC Connectrix. A remote user can view files on the target system.\nA remote user can exploit an input validation flaw in the 'FileUploadController' servlet to view arbitrary files on the target system.\n\nBluesea (via HP's Zero Day Initiative) reported this vulnerability.",
+    "Impact'": "A remote user can view arbitrary files on the target system.",
+    "Solution": "The vendor has issued a fix (EMC Connectrix Manager Converged Network Edition (CMCNE) 12.1.5).",
+    "Vendor URL": "www.emc.com/",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP StoreVirtual Unspecified Flaw in dbd_manager Lets Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1029815",
+    "SecurityTracker URL": "http://securitytracker.com/id/1029815",
+    "CVE Reference": "CVE-2013-4841",
+    "Date": "Feb 24 2014",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "HP StoreVirtual 4000; HP LeftHand OS prior to version 11.0",
+    "Description": "A vulnerability was reported in HP StoreVirtual. A remote user can execute arbitrary code on the target system.\nA remote user can send specially crafted data to execute arbitrary code on the target system.\n\nThis product is formerly known as HP LeftHand Virtual SAN Appliance.\n\n'e6af8de8b1d4b2b6d5ba2610cbf9cd38' reported this vulnerability via HP's Zero Day Initiative.",
+    "Impact'": "A remote user can execute arbitrary code on the target system.",
+    "Solution": "The vendor has issued a fix (HP LeftHand OS version 11.0).\n\nThe vendor's advisory is available at:\n\nhttp://h20565.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=emr_na-c03995204-1",
+    "Vendor URL": "h20565.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=emr_na-c03995204-1",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "QNAP QTS Input Validation Flaw in 'jc.cgi' Lets Remote Users View Files",
+    "SecurityTracker Alert ID": "1029577",
+    "SecurityTracker URL": "http://securitytracker.com/id/1029577",
+    "CVE Reference": "CVE-2013-7174",
+    "Date": "Jan  9 2014",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "QTS 4.0.3; possibly prior versions",
+    "Description": "A vulnerability was reported in QNAP QTS. A remote user can view files on the target system.\nThe web interface does not properly validate user-supplied input. A remote user can supply a specially crafted 'f' parameter value to 'cgi-bin/jc.cgi' to view files on target system.\n\nThe original advisory is available at:\n\nhttp://www.kb.cert.org/vuls/id/487078\n\nAn anonymous researcher (via US-CERT) reported this vulnerability.",
+    "Impact'": "A remote user can view files on the target system.",
+    "Solution": "The vendor has issued a fix (QTS 4.1.0).",
+    "Vendor URL": "www.qnap.com/",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "EMC Connectrix Manager Converged Network Edition Servlet Bugs Let Remote Users View and Upload Files and Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1029485",
+    "SecurityTracker URL": "http://securitytracker.com/id/1029485",
+    "CVE Reference": "CVE-2013-6810",
+    "Date": "Dec 12 2013",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of system information",
+        "Modification of user information",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "EMC Connectrix Manager Converged Network Edition (CMCNE) 11.2.1, 12.0.1 and 12.0.3",
+    "Description": "A vulnerability was reported in EMC Connectrix Manager Converged Network Edition. A remote user can view files on the target system. A remote user can upload files to the target system. A remote user can execute arbitrary code on the target system.\nA remote user can download files from the target EMC Connectrix Manager Converged Network Edition (CMCNE) system.\n\nA remote user can upload arbitrary files to the target CMCNE system and then cause those files to be executed on the target system.\n\nAndrea Micalizzi, aka rgod, reported this vulnerability (via HP's Zero Day Initiative).",
+    "Impact'": "A remote user can view files on the target system.\n\nA remote user can upload files to the target system.\n\nA remote user can execute arbitrary code on the target system.",
+    "Solution": "The vendor has issued a fix (EMC Connectrix Manager Converged Network Edition 12.1.2).",
+    "Vendor URL": "www.emc.com/",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP StoreOnce D2D Backup System Unspecified Flaw Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1028947",
+    "SecurityTracker URL": "http://securitytracker.com/id/1028947",
+    "CVE Reference": "CVE-2013-2353",
+    "Date": "Aug 23 2013",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "1.2.18 and prior, 2.2.18 and prior 2.x",
+    "Description": "A vulnerability was reported in HP StoreOnce D2D Backup System. A remote user can cause denial of service conditions.\nA remote user on the adjacent network can cause the target system to become unavailable.\n\nThe vendor has assigned SSRT101258 to this vulnerability.\n\nVersions 3.0.0 and later are not affected.",
+    "Impact'": "A remote user can cause denial of service conditions.",
+    "Solution": "The vendor has issued a fix (1.2.19, 2.3.0).\n\nThe vendor's advisory is available at:\n\nhttp://h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=emr_na-c03828580-1",
+    "Vendor URL": "h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=emr_na-c03828580-1",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP StoreVirtual Storage Undocumented Administrative Account Lets Remote Users Access the System",
+    "SecurityTracker Alert ID": "1028772",
+    "SecurityTracker URL": "http://securitytracker.com/id/1028772",
+    "CVE Reference": "CVE-2013-2352",
+    "Date": "Jul 11 2013",
+    "Impact": "User access via network",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in HP StoreVirtual Storage. A remote user can gain access to the target system.\nThe device includes an undocumented administrative account that cannot be disabled. A remote user with knowledge of the account and password can access the underlying LeftHand OS.\n\nThe following models are affected:\n\nHP P4300\nHP P4500\nHP P4300 G2\nHP P4500 G2\nHP P4800 G2\nHP P4900 G2\nHP P4000 VSA\nHP StoreVirtual 4130\nHP StoreVirtual 4330\nHP StoreVirtual 4530\nHP StoreVirtual 4630\nHP StoreVirtual 4730\nHP StoreVirtual VSA\nDell PowerEdge 2950\nHP DL320S\nIBM System x3650",
+    "Impact'": "A remote user can gain access to the target system.",
+    "Solution": "No solution was available at the time of this entry.\n\nThe vendor plans to issue a fix on or before July 17, 2013.\n\nThe vendor's advisory is available at:\n\nhttps://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c03825537",
+    "Vendor URL": "h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c03825537",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP LeftHand Virtual SAN Appliance Undocumented Administrative Account Lets Remote Users Access the System",
+    "SecurityTracker Alert ID": "1028771",
+    "SecurityTracker URL": "http://securitytracker.com/id/1028771",
+    "CVE Reference": "CVE-2013-2352",
+    "Updated": "Jul 18 2013",
+    "Original Entry Date": "Jul 11 2013",
+    "Impact": "User access via network",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in HP LeftHand Virtual SAN Appliance. A remote user can gain access to the target system.\nThe device includes an undocumented administrative account that cannot be disabled. A remote user with knowledge of the account and password can access the underlying LeftHand OS.\n\nThe following models are affected:\n\nLeftHand NSM2060\nLeftHand NSM2060 G2\nLeftHand NSM2120\nLeftHand NSM2120 G2\nLeftHand VSA",
+    "Impact'": "A remote user can gain access to the target system.",
+    "Solution": "No solution was available at the time of this entry.\n\nThe vendor plans to issue a fix on or before July 17, 2013.\n\nThe vendor's advisory is available at:\n\nhttps://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c03825537",
+    "Vendor URL": "h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c03825537",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP StoreOnce D2D Backup System Built-in Password Lets Remote Users Access the System",
+    "SecurityTracker Alert ID": "1028711",
+    "SecurityTracker URL": "http://securitytracker.com/id/1028711",
+    "CVE Reference": "CVE-2013-2342",
+    "Updated": "Jul  8 2013",
+    "Original Entry Date": "Jun 27 2013",
+    "Impact": "User access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "2.2.17 and prior, 1.2.17 and prior",
+    "Description": "A vulnerability was reported in HP StoreOnce D2D Backup System. A remote user can gain access to the target system.\nThe system includes a default user account 'HPSupport' with a hardcoded password. A remote user can access the system using the password.\n\nSoftware version 3.0.0 or newer is not affected.\n\nThe following models are affected:\n\nHP StoreOnce D2D4324 Backup System (EH985A)\nHP StoreOnce D2D4312 Backup System (EH983B)\nHP StoreOnce D2D4312 Backup System (EH983A)\nHP StoreOnce D2D4112 Backup System (EH993C)\nHP StoreOnce D2D4112 Backup System (EH993B)\nHP StoreOnce D2D4106i Backup System (EH996B)\nHP StoreOnce D2D4106i Backup System (EH996A)\nHP StoreOnce D2D4106fc Backup System (EH998B)\nHP StoreOnce D2D4106fc Backup System (EH998A)\nHP StoreOnce D2D2504i Backup System (EJ002C)\nHP StoreOnce D2D2504i Backup System (EJ002B)\nHP StoreOnce D2D2502i Backup System (EJ001C)\nHP StoreOnce D2D2502i Backup System (EJ001B)\nHP D2D4112 Backup System (EH993A)\nHP D2D4009fc Backup System (EH942A)\nHP D2D4009i Backup System (EH939A)\nHP D2D4004fc Backup System (EH941A)\nHP D2D4004i Backup System (EH938A)\nHP D2D2504i Backup System (EJ002A)\nHP D2D2503i Backup System (EH945A)\nHP D2D2502i Backup System (EJ001A)\n\nThe original advisory is available at:\n\nhttp://www.lolware.net/hpstorage.html\n\nJoshua Small reported this vulnerability.",
+    "Impact'": "A remote user can gain access to the target system.",
+    "Solution": "The vendor has issued a fix.\n\nThe vendor's advisory is available at:\n\nhttps://h20565.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=emr_na-c03813919-1",
+    "Vendor URL": "h20565.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=emr_na-c03813919-1",
+    "Cause": "Configuration error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "QNAP VioStor NVR Storage Devices Let Remote Users Access the System and Execute Arbitrary Shell Comands",
+    "SecurityTracker Alert ID": "1028642",
+    "SecurityTracker URL": "http://securitytracker.com/id/1028642",
+    "CVE Reference": [
+        "CVE-2013-0142",
+        "CVE-2013-0143",
+        "CVE-2013-0144"
+    ],
+    "Date": "Jun  7 2013",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "Modification of user information",
+        "User access via network"
+    ],
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "VioStor NVR firmware version 4.0.3; possibly prior versions",
+    "Description": "Several vulnerabilities were reported in QNAP VioStor NVR Storage Devices. A remote user can gain access to the system. A remote authenticated user can execute arbitrary code on the target system. A remote user can conduct cross-site request forgery attacks.\nThe system uses a hard-coded guest account. A remote user can use the password to gain access via the web service [CVE-2013-0142].\n\nA remote authenticated user can send a specially crafted query string to 'cgi-bin/pingping.cgi' to execute arbitrary shell commands [CVE-2013-0143].\n\nA remote user can conduct cross-site request forgery attacks to take actions on the device acting as the target user [CVE-2013-0144]. The NEW USER action of the 'cgi-bin/create_user.cgi' script is affected.\n\nThe original advisory is available at:\n\nhttp://www.kb.cert.org/vuls/id/927644\n\nTim Herres and David Elze of Daimler TSS reported these vulnerabilities.",
+    "Impact'": "A remote user can access the system.\n\nA remote authenticated user can execute arbitrary shell commands on the target system.\n\nA remote user can take actions on the device acting as the target user.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.qnap.com/",
+    "Cause": [
+        "Configuration error",
+        "Input validation error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "EMC VNX and EMC Celerra Control Station Lets Local Administrative Users Gain Elevated Privileges",
+    "SecurityTracker Alert ID": "1028574",
+    "SecurityTracker URL": "http://securitytracker.com/id/1028574",
+    "CVE Reference": "CVE-2013-3270",
+    "Date": "May 16 2013",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "Root access via local system"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to 6.0.70.1",
+    "Description": "A vulnerability was reported in EMC VNX and EMC Celerra Control Station. A local user can obtain elevated privileges on the target system.\nA local user with 'nasadmin' group privileges can invoke scripts that will execute arbitrary commands on the target system with root privileges.",
+    "Impact'": "A local user with 'nasadmin' group privileges can execute arbitrary commands on the target system with root privileges.",
+    "Solution": "The vendor has issued a fix (EMC VNX Control Station 7.1.70.2, EMC Celerra Control Station 6.0.70.1).",
+    "Vendor URL": "www.emc.com/",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "IBM Storwize V7000 Unified Samba Bug Lets Remote Authenticated Users Modify Files",
+    "SecurityTracker Alert ID": "1028365",
+    "SecurityTracker URL": "http://securitytracker.com/id/1028365",
+    "CVE Reference": "CVE-2013-0454",
+    "Date": "Mar 28 2013",
+    "Impact": "Modification of user information",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Storwize V7000 Unified ; 1.3.x, 1.4.x",
+    "Description": "A vulnerability was reported in IBM Storwize V7000 Unified. A remote authenticated user can modify files on the target share.\nA remote authenticated user can exploit a flaw in the Samba implementation to perform operations on the target Storwize V7000 Unified CIFS export that are not permitted by the CIFS share access control settings. This may include writing to read-only shares.",
+    "Impact'": "A remote authenticated user can modify files on the target share.",
+    "Solution": "The vendor has issued a fix (Storwize V7000 Unified 1.3.2.3, 1.4.0.1).\n\nThe vendor's advisory is available at:\n\nhttp://www.ibm.com/support/docview.wss?uid=ssg1S1004289",
+    "Vendor URL": "www.ibm.com/support/docview.wss?uid=ssg1S1004289",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Symantec NetBackup Appliance Management Console Lets Remote Authenticated Users Download Files",
+    "SecurityTracker Alert ID": "1028329",
+    "SecurityTracker URL": "http://securitytracker.com/id/1028329",
+    "CVE Reference": "CVE-2013-1608",
+    "Date": "Mar 21 2013",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "2.0.x",
+    "Description": "A vulnerability was reported in Symantec NetBackup Appliance. A remote authenticated user can view files on the target system.\nThe Management Console web interface does not properly validate user-supplied input.  A remote authenticated user can access privileged files on the target system.\n\nJoe Durbin with Pen Test Partners reported this vulnerability.",
+    "Impact'": "A remote authenticated user can view critical files on the target system.",
+    "Solution": "The vendor has issued a fix (2.5.x).\n\nThe vendor's advisory is available at:\n\nhttp://www.symantec.com/security_response/securityupdates/detail.jsp?fid=security_advisory&pvid=security_advisory&year=&suid=20130320_00",
+    "Vendor URL": "www.symantec.com/security_response/securityupdates/detail.jsp?fid=security_advisory&pvid=security_advisory&year=&suid=20130320_00",
+    "Cause": [
+        "Access control error",
+        "Input validation error"
+    ],
+    "Underlying OS": [
+        "UNIX (Solaris - SunOS)",
+        "Windows (2000)",
+        "Windows (2003)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP LeftHand Virtual SAN Appliance Bugs Let Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1028083",
+    "SecurityTracker URL": "http://securitytracker.com/id/1028083",
+    "CVE Reference": [
+        "CVE-2013-2343",
+        "CVE-2012-3282",
+        "CVE-2012-3283",
+        "CVE-2012-3284",
+        "CVE-2012-3285"
+    ],
+    "Updated": "Jul  3 2013",
+    "Original Entry Date": "Feb  5 2013",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to 10.0",
+    "Description": "A vulnerability was reported in HP LeftHand Virtual SAN Appliance. A remote user can execute arbitrary code on the target system.\nA remote user can send specially crafted data to execute arbitrary code on the target system.\n\nThe vendor was notified of CVE-2012-3282 on December 22, 2011.\n\nThe vendor was notified of the other vulnerabilities on March 14, 2012.\n\ne6af8de8b1d4b2b6d5ba2610cbf9cd38 reported these vulnerabilities via TippingPoint's Zero Day Initiative.",
+    "Impact'": "A remote user can execute arbitrary code on the target system.",
+    "Solution": "The vendor has issued a fix (10.0).\n\nThe vendor's advisory is available at:\n\nhttp://h20565.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?DdocId=emr_na-c03661318-1",
+    "Vendor URL": "h20565.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?DdocId=emr_na-c03661318-1",
+    "Cause": "Boundary error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP IBRIX X9000 Storage Discloses Information to Remote Users",
+    "SecurityTracker Alert ID": "1027590",
+    "SecurityTracker URL": "http://securitytracker.com/id/1027590",
+    "CVE Reference": "CVE-2012-3266",
+    "Date": "Oct  2 2012",
+    "Impact": "Disclosure of system information",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "IBRIX X9000; 6.1.196, 6.1.210, 6.1.228, 6.1.243, 6.1.247, 6.1.249, 6.1.251",
+    "Description": "A vulnerability was reported in HP IBRIX X9000. A remote user can obtain potentially sensitive information to take full control of the target device.\nNo details were provided.",
+    "Impact'": "A remote user can obtain potentially sensitive information and use that information to gain full control of the target device.",
+    "Solution": "The vendor has issued a fix (6.1.260).\n\nThe vendor's advisory is available at:\n\nhttp://h20566.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=emr_na-c03510876",
+    "Vendor URL": "h20566.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=emr_na-c03510876",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Iomega StorCenter EMC Lifeline Access Control Bug Lets Remote Authenticated Users Access Remote Shares",
+    "SecurityTracker Alert ID": "1027360",
+    "SecurityTracker URL": "http://securitytracker.com/id/1027360",
+    "CVE Reference": "CVE-2012-2283",
+    "Date": "Aug  8 2012",
+    "Impact": "User access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in Iomega StorCenter. A remote authenticated user can gain access to remote shares.\nOn Iomega network storage devices with EMC Lifeline firmware and with remote access (including port forwarding) enabled, a remote authenticated user can access arbitrary shares.\n\nThe following product versions are affected:\n\nHome Media Network Hard Drive               2.064\nHome Media Network Hard Drive Cloud Edition 3.1.14.995\niConnect                                    2.5.24.10916\nStorCenter ix2                              2.0.15.43099\nStorCenter ix2-200                          2.1.40.8151\nStorCenter ix2-200 Cloud Edition            3.2.3.9273\nStorCenter ix4-100                          2.0.15.43099\nStorCenter ix4-200d                         2.1.40.8151\nStorCenter ix4-200d Cloud Edition           3.2.3.9273\nStorCenter ix4-200r                         2.1.40.8151 or 2.0.15.43099\nStorCenter ix2-200                          2.1.40.8151\nStorCenter ix12-300r                        3.2.3.9273\nStorCenter px4-300d                         3.2.3.9273\nStorCenter px4-300r                         3.2.3.9273\nStorCenter px6-300d                         3.2.3.9273\nStorCenter px12-350r                        3.2.3.9273",
+    "Impact'": "A remote authenticated user can gain access to remote shares.",
+    "Solution": "The vendor has issued the following fixes.\n\nHome Media Network Hard Drive                   2.104\nHome Media Network Hard Drive Cloud Edition     3.2.3.15290\niConnect                                        2.5.26.18966\nStorCenter ix2                                  2.0.18.23122\nStorCenter ix2-200                              2.1.42.18967\nStorCenter ix2-200 Cloud Edition                3.2.3.15290 or above\nStorCenter ix4-100                              2.0.18.23122\nStorCenter ix4-200d                             2.1.42.18967\nStorCenter ix4-200d Cloud Edition               3.2.3.15290 or above\nStorCenter ix4-200r                             2.1.42.18967 or 2.0.18.23122\nStorCenter ix12-300r                            3.2.3.15290\nStorCenter px4-300d                             3.2.3.15290\nStorCenter px4-300r                             3.2.3.15290\nStorCenter px6-300d                             3.2.3.15290\nStorCenter px12-350r                            3.2.3.15290",
+    "Vendor URL": "www.emc.com/",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP StorageWorks File Migration Agent Buffer Overflows Let Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1027281",
+    "SecurityTracker URL": "http://securitytracker.com/id/1027281",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jul 19 2012",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Vendor Confirmed": "Yes",
+    "Description": "Two vulnerabilities were reported in HP StorageWorks File Migration Agent. A remote user can execute arbitrary code on the target system.\nA remote user can send specially crafted data to TCP port 9111 to trigger a buffer overflow in the 'HsmCfgSvc.exe' service and execute arbitrary code on the target system.\n\nSpecially crafted CIFS archives and FTP archives can trigger an overflow.\n\nThe vendor was notified on April 11, 2011.\n\nThe original advisories are available at:\n\nhttp://www.zerodayinitiative.com/advisories/ZDI-12-126\nhttp://www.zerodayinitiative.com/advisories/ZDI-12-127\n\nAbdulAziz Hariri reported these vulnerabilities via TippingPoint's Zero Day Initiative.",
+    "Impact'": "A remote user can execute arbitrary code on the target system.",
+    "Solution": "No solution was available at the time of this entry.\n\nThe vendor recommends using a firewall on the underlying system.",
+    "Vendor URL": "www.hp.com/",
+    "Cause": "Boundary error",
+    "Underlying OS": "Windows (Any)",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "EMC Celerra/VNX/VNXe Access Control Bug Lets Remote Authenticated Users Access Files/Directories",
+    "SecurityTracker Alert ID": "1027242",
+    "SecurityTracker URL": "http://securitytracker.com/id/1027242",
+    "CVE Reference": "CVE-2012-2282",
+    "Date": "Jul 11 2012",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Network Server 6.0.36.4 - 6.0.60.2",
+    "Description": "A vulnerability was reported in EMC Celerra/VNX/VNXe. A remote authenticated user can access files and directories on the target file system.\nA remote authenticated user can bypass access controls an gain unauthorized access to distributed files and directories on the target NFS file system.\n\nThe following product versions are affected:\n\nEMC Celerra Network Server versions 6.0.36.4 through 6.0.60.2\n\nEMC VNX versions 7.0.12.0 through 7.0.53.1\n\nEMC VNXe 2.0 (including SP1, SP2, and SP3)\n\nEMC VNXe MR1 (including SP1, SP2, SP3, and SP3.1) \n\nEMC VNXe MR2 (including SP0.1)",
+    "Impact'": "A remote authenticated user can access files and directories on the target system.",
+    "Solution": "The vendor has issued a fix:\n\nEMC Celerra Network Server Version 6.0.61.0 \nEMC VNX Operating Environment for File Version 7.0.53.2 \nEMC VNXe MR1 SP3.2 (2.1.3.19077) \nEMC VNXe MR2 SP0.2 (2.2.0.19078)",
+    "Vendor URL": "www.emc.com/",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "IBM System Storage Input Validation Flaws in Manager Profiler Permit Cross-Site Scripting and SQL Injection Attacks",
+    "SecurityTracker Alert ID": "1027194",
+    "SecurityTracker URL": "http://securitytracker.com/id/1027194",
+    "CVE Reference": [
+        "CVE-2012-2171",
+        "CVE-2012-2172"
+    ],
+    "Date": "Jun 21 2012",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of user information",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "prior to 10.83.xx.18",
+    "Description": "Two vulnerabilities were reported in IBM System Storage DS Series. A remote user can conduct cross-site scripting attacks. A remote user can inject SQL commands.\nThe software not properly filter HTML code from user-supplied input before displaying the input [CVE-2012-2172]. A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser.  The code will originate from the IBM System Storage device and will run in the security context of that site.  As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nA demonstration exploit URL is provided:\n\nhttp://[target]:9000/SoftwareRegistration.do?updateRegn=\"><script>alert(1);</script>\n\nA remote user can supply a specially crafted parameter value to execute SQL commands on the underlying database [CVE-2012-2171].\n\nA demonstration exploit URL is provided:\n\nhttp://[target]:9000/ModuleServlet?DeviceId=1&state=state_viewmodulelog&selectedModuleOnly=1[SQL QUERY]&selectedModule=1\n\nThe vendor was notified on April 19, 2012.\n\nThe original advisory is available at:\n\nhttp://www.zeroscience.mk/en/vulnerabilities/ZSL-2012-5094.php\n\nGjoko Krstic of Zero Science Lab reported these vulnerabilities.",
+    "Impact'": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the IBM System Storage device, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nA remote user can execute SQL commands on the underlying database.",
+    "Solution": "The vendor has issued a fix (10.83.xx.18 and later), which removes the vulnerable component.\n\nThe vendor's advisory is available at:\n\nhttps://www-304.ibm.com/connections/blogs/PSIRT/entry/secbulletin_stg-storage_cve-2012-2171_cve-2012-2172?lang=en_us",
+    "Vendor URL": "www-304.ibm.com/connections/blogs/PSIRT/entry/secbulletin_stg-storage_cve-2012-2171_cve-2012-2172?lang=en_us",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP StorageWorks Bugs Let Remote Users Traverse the Directory and Gain Administrative Access",
+    "SecurityTracker Alert ID": "1026514",
+    "SecurityTracker URL": "http://securitytracker.com/id/1026514",
+    "CVE Reference": "CVE-2011-4788",
+    "Date": "Jan 12 2012",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Exploit Included": "Yes",
+    "Version(s)": "StorageWorks P2000 G3",
+    "Description": "Some vulnerabilities were reported in HP StorageWorks. A remote user can gain administrative access on the target system. A remote user can view files on the target system.\nThe password file contains a default login account. A remote user can use the login credentials to perform administrative tasks.\n\nA remote user can supply a specially crafted request to the web interface on TCP port 80 to view arbitrary files on the target system.\n\nThe vendor was notified on June 1, 2011.\n\nCarlos Perez at Tenable Network Security reported this vulnerability.",
+    "Impact'": "A remote user can gain administrative access on the target system.\n\nA remote user can view files on the target system.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.hp.com/",
+    "Cause": [
+        "Access control error",
+        "Configuration error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP StorageWorks P4000 Virtual SAN Appliance Lets Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1026316",
+    "SecurityTracker URL": "http://securitytracker.com/id/1026316",
+    "CVE Reference": "CVE-2011-4157",
+    "Date": "Nov 11 2011",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "P4000; HP SAN/iQ prior to 9.5",
+    "Description": "A vulnerability was reported in HP StorageWorks P4000 Virtual SAN Appliance. A remote user can execute arbitrary code on the target system.\nA remote user can send specially crafted data to execute arbitrary code on the target system. The code will run with the privileges of the target service.\n\nNicolas Gregoire of Agarri (via TippingPoint's Zero Day Initiative) and an anonymous researcher (via iDefense VCP) reported this vulnerability.",
+    "Impact'": "A remote user can execute arbitrary code on the target system.",
+    "Solution": "The vendor has issued a fix.\n\nThe vendor's advisory is available at:\n\nhttp://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c03082086",
+    "Vendor URL": "h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c03082086",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP Virtual SAN Appliance Stack Overflow in 'hydra.exe' Lets Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1025249",
+    "SecurityTracker URL": "http://securitytracker.com/id/1025249",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Mar 23 2011",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "Root access via network"
+    ],
+    "Description": "A vulnerability was reported in HP Virtual SAN Appliance. A remote user can execute arbitrary code on the target device.\nA remote user can send a specially crafted login request to 'hydra.exe' on port 13838 to trigger a stack overflow and execute arbitrary code on the target system.  The code will run with System privileges.\n\nThe vendor was notified on September 24, 2010.\n\nThe original advisory is available at:\n\nhttp://www.zerodayinitiative.com/advisories/ZDI-11-111\n\nNicolas Gregoire of Agarri reported this vulnerability.",
+    "Impact'": "A remote user can execute arbitrary code on the target system.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.hp.com/",
+    "Cause": "Boundary error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP StorageWorks File Migration Agent Flaw Lets Remote Users Modify the Data Store",
+    "SecurityTracker Alert ID": "1025147",
+    "SecurityTracker URL": "http://securitytracker.com/id/1025147",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Mar  2 2011",
+    "Impact": "Modification of user information",
+    "Description": "A vulnerability was reported in HP StorageWorks File Migration Agent. A remote user can modify the archive data store.\nA remote user can exploit a flaw in the 'HsmCfgSvc.exe' service to make arbitrary modifications to the archive data store.\n\nThe vendor was notified on August 25, 2010.\n\nThe original advisory is available at:\n\nhttp://www.zerodayinitiative.com/advisories/ZDI-11-094\n\nAbdulAziz Hariri reported this vulnerability via TippingPoint's Zero Day Initiative.",
+    "Impact'": "A remote user can modify the archive data store.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.hp.com/",
+    "Cause": "Access control error",
+    "Underlying OS": "Windows (Any)",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP StorageWorks X9000 Expired Password Accounts Can Be Accessed By Remote Users",
+    "SecurityTracker Alert ID": "1025031",
+    "SecurityTracker URL": "http://securitytracker.com/id/1025031",
+    "CVE Reference": "CVE-2010-0833",
+    "Date": "Feb  8 2011",
+    "Impact": "User access via network",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "X9000; 5.4",
+    "Description": "A vulnerability was reported in HP StorageWorks X9000.  A remote user can gain access to the target system.\nA remote user can gain access to accounts with expired passwords on the target system.",
+    "Impact'": "A remote user can gain access to the target system.",
+    "Solution": "The vendor has described a workaround:\n\n   1. Explicitly disable the local Administrator account.\n   2. Explicitly disable any lsassd local-provider accounts that are not in use.\n\nThe vendor's advisory is available at:\n\nhttp://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c02712670",
+    "Vendor URL": "h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c02712670",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "EMC Celerra Network Attached Storage Lets Remote Users Access the NFS Data Directory",
+    "SecurityTracker Alert ID": "1024271",
+    "SecurityTracker URL": "http://securitytracker.com/id/1024271",
+    "CVE Reference": "CVE-2010-2860",
+    "Updated": "Sep  9 2010",
+    "Original Entry Date": "Aug  2 2010",
+    "Impact": [
+        "Disclosure of user information",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "5.6.50 and prior versions",
+    "Description": "A vulnerability was reported in EMC Celerra Network Attached Storage.  A remote user with the ability to spoof IP addresses can gain full access to the exported NFS directory.\nThe system grants access to remote users using an IP address white list intended for internal device communications.  A remote user can spoof certain IP addresses to mount and gain full access to the root NFS export on the target device.\n\nThe vendor was notified on May 7, 2010.\n\nSteve Ocepek of Trustwave's SpiderLabs reported this vulnerability.",
+    "Impact'": "A remote user with the ability to spoof IP addresses can gain full access to the exported NFS directory.",
+    "Solution": "The vendor has issued a fix (5.6.51).",
+    "Vendor URL": "www.emc.com/",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Kingston DataTraveler USB Flash Drive Password Validation Flaw Lets Local Users Bypass Access Controls",
+    "SecurityTracker Alert ID": "1023410",
+    "SecurityTracker URL": "http://securitytracker.com/id/1023410",
+    "CVE Reference": "CVE-2010-0221",
+    "Updated": "Jan  8 2010",
+    "Original Entry Date": "Jan  7 2010",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Description": "A vulnerability was reported in Kingston DataTraveler flash drives. A local user can bypass access controls to access files on the target device.\nA local user can modify a running version of the access control software to cause the password validation process to grant access to the local user.  The local user can then obtain files on the target device.\n\nThe following versions are affected:\n\nDataTraveler BlackBox (DTBB)\n\nThe original advisory is available at:\n\nhttp://www.syss.de/index.php?id=108&tx_ttnews[tt_news]=528&cHash=8d16fa63d9\n\nMatthias Deeg and Sebastian Schreiber of SySS reported this vulnerability.",
+    "Impact'": "A local user can bypass access controls to access files on the target flash drive.",
+    "Solution": "The vendor has issued a fix.\n\nThe vendor's advisory is available at:\n\nhttp://www.kingston.com/driveupdate/",
+    "Vendor URL": "www.kingston.com/driveupdate/",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Verbatim Corporate Secure USB Flash Drive Password Validation Flaw Lets Local Users Bypass Access Controls",
+    "SecurityTracker Alert ID": "1023409",
+    "SecurityTracker URL": "http://securitytracker.com/id/1023409",
+    "CVE Reference": "CVE-2010-0227",
+    "Updated": "Jan  8 2010",
+    "Original Entry Date": "Jan  7 2010",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Description": "A vulnerability was reported in Verbatim Corporate Secure flash drives. A local user can bypass access controls to access files on the target device.\nA local user can modify a running version of the access control software to cause the password validation process to grant access to the local user.  The local user can then obtain files on the target device.\n\nThe following versions are affected:\n\nVerbatim Corporate Secure USB Flash Drive 1GB, 2GB, 4GB, 8GB\nVerbatim Corporate Secure FIPS Edition USB Flash Drives 1GB, 2GB, 4GB, 8GB: \n\nThe original advisory is available at:\n\nhttp://www.syss.de/index.php?id=108&tx_ttnews[tt_news]=528&cHash=8d16fa63d9\n\nMatthias Deeg and Sebastian Schreiber of SySS reported this vulnerability.",
+    "Impact'": "A local user can bypass access controls to access files on the target flash drive.",
+    "Solution": "The vendor has issued a fix.\n\nThe vendor's advisory is available at:\n\nhttp://www.verbatim.com/security/security-update.cfm",
+    "Vendor URL": "www.verbatim.com/security/security-update.cfm",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "SanDisk Cruzer Enterprise USB Flash Drive Password Validation Flaw Lets Local Users Bypass Access Controls",
+    "SecurityTracker Alert ID": "1023408",
+    "SecurityTracker URL": "http://securitytracker.com/id/1023408",
+    "CVE Reference": "CVE-2010-0224",
+    "Updated": "Jan  8 2010",
+    "Original Entry Date": "Jan  7 2010",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Description": "A vulnerability was reported in the SanDisk Cruzer Enterprise USB flash drives.  A local user can bypass access controls to access files on the target device.\nA local user can modify a running version of the access control software to cause the password validation process to grant access to the local user.  The local user can then obtain files on the target device.\n\nThe following versions are affected:\n\nCruzer Enterprise USB flash drive, CZ22 - 1GB, 2GB, 4GB, 8GB\nCruzer Enterprise FIPS Edition USB flash drive, CZ32 - 1GB, 2GB, 4GB, 8GB\nCruzer Enterprise with McAfee USB flash drive, CZ38 - 1GB, 2GB, 4GB, 8GB\nCruzer Enterprise FIPS Edition with McAfee USB flash drive, CZ46 - 1GB, 2GB, 4GB, 8GB\n\nThe original advisory is available at:\n\nhttp://www.syss.de/index.php?id=108&tx_ttnews[tt_news]=528&cHash=8d16fa63d9\n\nMatthias Deeg and Sebastian Schreiber of SySS reported this vulnerability.",
+    "Impact'": "A local user can bypass access controls to access files on the target flash drive.",
+    "Solution": "The vendor has issued a fix.\n\nThe vendor's advisory is available at:\n\nhttp://www.sandisk.com/business-solutions/enterprise/technical-support/security-bulletin-december-2009",
+    "Vendor URL": "www.sandisk.com/business-solutions/enterprise/technical-support/security-bulletin-december-2009",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "QNAP Storage Devices Lets Local Users Decrypt Files on the Target Device",
+    "SecurityTracker Alert ID": "1022916",
+    "SecurityTracker URL": "http://securitytracker.com/id/1022916",
+    "CVE Reference": "CVE-2009-3200",
+    "Date": "Sep 20 2009",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Exploit Included": "Yes",
+    "Version(s)": "3.1.1 0815, 3.1.0 0627, 2.1.7 0613; possibly other releases",
+    "Description": "A vulnerability was reported in QNAP Storage Devices.  A local user can decrypt the file system.\nA local user can recover the key used to encrypt files on the storage device and then decrypt the files.\n\nThis vulnerability affects the TS-239 Pro and TS-639 Pro devices and possibly other devices.\n\nMarc Heuse of Baseline Security Consulting reported this vulnerability.\n\nThe original advisory is available at:\n\nhttp://www.baseline-security.de/downloads/BSC-Qnap_Crypto_Backdoor-CVE-2009-3200.txt",
+    "Impact'": "A local user can decrypt the file system.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.qnap.com/",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(Apple Issues Fix for Time Capsule) FreeBSD ICMPv6 Processing Flaw Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1021816",
+    "SecurityTracker URL": "http://securitytracker.com/id/1021816",
+    "CVE Reference": "CVE-2008-3530",
+    "Date": "Mar  6 2009",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "firmware prior to 7.4.1",
+    "Description": "A vulnerability was reported in the FreeBSD kernel's IPv6 stack.  A remote user can cause denial of service conditions.  Apple Time Capsule is affected.\nA remote user can send a specially crafted ICMPv6 'Packet Too Big Message' to trigger a kernel panic.\n\nSystems configured to process IPv6 packets that have active IPv6 TCP sockets are affected.\n\nTom Parker and Bjoern A. Zeeb reported this vulnerability.",
+    "Impact'": "A remote user can cause the target system to crash.",
+    "Solution": "Apple has released a fix (firmware 7.4.1) for Time Capsule, which is affected by this vulnerability.\n\nThe Apple advisory is available at:\n\nhttp://support.apple.com/kb/HT3467",
+    "Cause": "Input validation error",
+    "Message History": [
+        "https://securitytracker.com/id/1020820"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(Apple Issues Fix for Time Capsule) FreeBSD IPv6 Neighbor Discovery Protocol Spoofing Bug Lets Remote Users Modify Routing Data in Certain Cases",
+    "SecurityTracker Alert ID": "1021815",
+    "SecurityTracker URL": "http://securitytracker.com/id/1021815",
+    "CVE Reference": "CVE-2008-2476",
+    "Date": "Mar  6 2009",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "Modification of system information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "firmware prior to 7.4.1",
+    "Description": "A vulnerability was reported in the FreeBSD IPv6 Neighbor Discovery Protocol.  A remote user can modify routing data for a target router in certain cases.  Apple Time Capsule is affected.\nA remote user on a physical network of an IPv6 router can spoof Neighbor Discovery messages to update routing information for a target router on a different physical network adjacent to the IPv6 router.  The remote user can exploit this to deny service or access network traffic from the target router.\n\nDavid Miles reported this vulnerability.",
+    "Impact'": "A remote user can modify routing data for a target router in certain cases to deny service or redirect and access network traffic.",
+    "Solution": "Apple has released a fix (firmware 7.4.1) for Time Capsule, which is affected by this vulnerability.\n\nThe Apple advisory is available at:\n\nhttp://support.apple.com/kb/HT3467",
+    "Cause": "Authentication error",
+    "Message History": [
+        "https://securitytracker.com/id/1020968"
+    ]
+}{
+    "source": "1-2",
+    "Title": "HP USB Floppy Drive Key for Proliant Servers May Cause Virus Infections",
+    "SecurityTracker Alert ID": "1019785",
+    "SecurityTracker URL": "http://securitytracker.com/id/1019785",
+    "CVE Reference": "CVE-2008-0708",
+    "Date": "Apr  4 2008",
+    "Impact": "Modification of system information",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Option Part #442084-B21 HP 256MB USB 2.0 Floppy Drive Key; Option Part #442085-B21 HP 1GB USB 2.0 Floppy Drive Key",
+    "Description": "A vulnerability was reported in the HP USB Floppy Drive Key.  A virus infection may occur.\nThe device may cause a local 'W32.Fakerecy' or 'W32.SillyFDC' virus infection.",
+    "Impact'": "A virus infection may occur.",
+    "Solution": "No solution was available at the time of this entry.\n\nThe vendor's advisory is available at:\n\nhttps://www12.itrc.hp.com/service/cki/docDisplay.do?docId=emr_na-c01404119",
+    "Vendor URL": "www12.itrc.hp.com/service/cki/docDisplay.do?docId=emr_na-c01404119",
+    "Cause": "Not specified",
+    "Message History": "None."
+}

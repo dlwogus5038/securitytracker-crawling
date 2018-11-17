@@ -1,0 +1,542 @@
+{
+    "source": "1-2",
+    "Title": "(Oracle Issues Fix for Solaris) Multiple Vendor TCP Stack Implementations Let Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1031588",
+    "SecurityTracker URL": "http://securitytracker.com/id/1031588",
+    "CVE Reference": "CVE-2004-0230",
+    "Date": "Jan 21 2015",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Description": "A vulnerability was reported in several TCP stack implementations. A remote user may be able to cause denial of service conditions using a TCP reset attack. Multiple vendors are affected. Oracle Solaris is affected.\nThe UK National Infrastructure Security Co-Ordination Centre (NISCC) reported that some implementations of the Transmission Control Protocol (TCP) are particularly vulnerable to TCP reset attacks.  A remote user can cause TCP sessions to terminate prematurely, causing denial of service conditions.\n\nThe specific impact on applications that use TCP depends on the mechanisms built into the application to address premature TCP session termination.\n\nAccording to the report, NISCC considers the Border Gateway Protocol (BGP) to be one of the most affected applications, as it relies on a persistent TCP session between BGP peer entities.  Premature termination of an underlying TCP session may require routing tables to be rebuilt and may cause \"route flapping\".  In the case of BGP, using the TCP MD5 Signature Option and anti-spoofing measures can mitigate the vulnerability.\n\nOther applications, such as Domain Name System (DNS) and (Secure Sockets Layer) SSL based applications may also be affected, but to a lesser degree, the report said.\n\nA remote user can reportedly send a TCP packet with the RST (reset) flag set (or the SYN flag) with the appropriate spoofed source and destination IP addresses and TCP ports to cause the TCP session to be terminated.  Ordinarily, the remote user may have the probability of 1 in 2^32 of guessing the correct sequence number, the report said.  However, in actuality, a remote user may be able to guess an appropriate sequence number with much greater probability because many implementations will accept any sequence number within a certain window of the expected sequence number.  The Associate Press reports that the proper number can be guessed within as few as four attempts, requiring only seconds to achieve.\n\nThe report credits Paul A. Watson for discovering a practical method for conducting TCP reset attacks (presented in \"Slipping In The Window: TCP Reset Attacks\" at the CanSecWest 2004 conference).\n\nThe report indicates that the following vendors are affected [this is not an inclusive list]:\n\n- Cray Inc. is vulnerable on their UNICOS, UNICOS/mk and UNICOS/mp systems\n\n- Check Point is affected, but has issued a protection mechanism in the latest release for VPN-1/FireWall-1 (R55 HFA-03) that can protect both the firewall device and hosts located behind the firewall.\n\n- Internet Initiative Japan, Inc (IIJ) is affected.\n\n- InterNiche NicheStack and NicheLite are affected.\n\n- Juniper Networks products are affected.\n\n- Cisco products are affected, including IOS and non-IOS based devices.\n\nOther vendors are assessing the impact of this flaw.\n\nThe NISCC Vulnerability Advisory 236929 is available at:\n\nhttp://www.uniras.gov.uk/vuls/2004/236929/index.htm",
+    "Impact'": "A remote user can cause denial of service on the target TCP session.  The specific impact depends on the specific vendor implementation.",
+    "Solution": "Oracle has issued a fix for Oracle Solaris as part of the Oracle Critical Patch Update Advisory - January 2015.\n\nThe vendor's advisory is available at:\n\nhttp://www.oracle.com/technetwork/topics/security/cpujan2015-1972971.html",
+    "Vendor URL": "www.oracle.com/technetwork/topics/security/cpujan2015-1972971.html",
+    "Cause": "State error",
+    "Underlying OS": "UNIX (Solaris - SunOS)",
+    "Underlying OS Comments": "10, 11",
+    "Message History": [
+        "https://securitytracker.com/id/1009886"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(FreeBSD Issues Fix) Multiple Vendor TCP Stack Implementations Let Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1030854",
+    "SecurityTracker URL": "http://securitytracker.com/id/1030854",
+    "CVE Reference": "CVE-2004-0230",
+    "Date": "Sep 17 2014",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Description": "A vulnerability was reported in several TCP stack implementations.  A remote user may be able to cause denial of service conditions using a TCP reset attack.  Multiple vendors are affected.\nThe UK National Infrastructure Security Co-Ordination Centre (NISCC) reported that some implementations of the Transmission Control Protocol (TCP) are particularly vulnerable to TCP reset attacks.  A remote user can cause TCP sessions to terminate prematurely, causing denial of service conditions.\n\nThe specific impact on applications that use TCP depends on the mechanisms built into the application to address premature TCP session termination.\n\nAccording to the report, NISCC considers the Border Gateway Protocol (BGP) to be one of the most affected applications, as it relies on a persistent TCP session between BGP peer entities.  Premature termination of an underlying TCP session may require routing tables to be rebuilt and may cause \"route flapping\".  In the case of BGP, using the TCP MD5 Signature Option and anti-spoofing measures can mitigate the vulnerability.\n\nOther applications, such as Domain Name System (DNS) and (Secure Sockets Layer) SSL based applications may also be affected, but to a lesser degree, the report said.\n\nA remote user can reportedly send a TCP packet with the RST (reset) flag set (or the SYN flag) with the appropriate spoofed source and destination IP addresses and TCP ports to cause the TCP session to be terminated.  Ordinarily, the remote user may have the probability of 1 in 2^32 of guessing the correct sequence number, the report said.  However, in actuality, a remote user may be able to guess an appropriate sequence number with much greater probability because many implementations will accept any sequence number within a certain window of the expected sequence number.  The Associate Press reports that the proper number can be guessed within as few as four attempts, requiring only seconds to achieve.\n\nThe report credits Paul A. Watson for discovering a practical method for conducting TCP reset attacks (presented in \"Slipping In The Window: TCP Reset Attacks\" at the CanSecWest 2004 conference).\n\nThe report indicates that the following vendors are affected [this is not an inclusive list]:\n\n- Cray Inc. is vulnerable on their UNICOS, UNICOS/mk and UNICOS/mp systems\n\n- Check Point is affected, but has issued a protection mechanism in the latest release for VPN-1/FireWall-1 (R55 HFA-03) that can protect both the firewall device and hosts located behind the firewall.\n\n- Internet Initiative Japan, Inc (IIJ) is affected.\n\n- InterNiche NicheStack and NicheLite are affected.\n\n- Juniper Networks products are affected.\n\n- Cisco products are affected, including IOS and non-IOS based devices.\n\nOther vendors are assessing the impact of this flaw.\n\nThe NISCC Vulnerability Advisory 236929 is available at:\n\nhttp://www.uniras.gov.uk/vuls/2004/236929/index.htm",
+    "Impact'": "A remote user can cause denial of service on the target TCP session.  The specific impact depends on the specific vendor implementation.",
+    "Solution": "FreeBSD has issued a fix.\n\nThe FreeBSD advisory is available at:\n\nhttp://security.FreeBSD.org/advisories/FreeBSD-SA-14:19.tcp.asc",
+    "Cause": "State error",
+    "Underlying OS": "UNIX (FreeBSD)",
+    "Underlying OS Comments": "8.4, 9.1, 9.2, 9.3, 10.0",
+    "Message History": [
+        "https://securitytracker.com/id/1009886"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Various TCP Stack Implementations Let Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1021066",
+    "SecurityTracker URL": "http://securitytracker.com/id/1021066",
+    "CVE Reference": "CVE-2008-4609",
+    "Updated": "Sep  8 2009",
+    "Original Entry Date": "Oct 17 2008",
+    "Impact": "Denial of service via network",
+    "Description": "Several vulnerabilities were reported in various TCP stack implementations.  A remote user can cause denial of service conditions.  Multiple vendors and products are affected.\nA remote user can send specially crafted data to cause denial of service conditions on the target TCP connection queue.\n\nPublished reports indicate that a TCP connection must be established with the target system to exploit these vulnerabilities and that the vulnerabilities are based on weaknesses in the TCP protocol.\n\nRobert E. Lee and Jack Louis of Outpost24 reported these vulnerabilities.\n\nThe vulnerabilities were publicly referenced in August 2008 in a blog posting:\n\nhttp://blog.robertlee.name/2008/08/updates.html\n\nCERT-FI is coordinating with affected vendors.\n\nThe CERT-FI advisory is available at:\n\nhttps://www.cert.fi/haavoittuvuudet/2008/tcp-vulnerabilities.html\n\n[Editor's note:  This Alert is a placeholder to document the overall vendor community investigation of these vulnerabilities.  As vendors and researchers confirm which specific products are affected, separate Alerts will be issued for each affected product.]",
+    "Impact'": "A remote user can cause denial of service conditions.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Cause": "State error",
+    "Message History": [
+        "https://securitytracker.com/id/1022850",
+        "https://securitytracker.com/id/1022851",
+        "https://securitytracker.com/id/1022853",
+        "https://securitytracker.com/id/1022855",
+        "https://securitytracker.com/id/1022856",
+        "https://securitytracker.com/id/1022857",
+        "https://securitytracker.com/id/1022858",
+        "https://securitytracker.com/id/1022859",
+        "https://securitytracker.com/id/1022890",
+        "https://securitytracker.com/id/1022908",
+        "https://securitytracker.com/id/1022968",
+        "https://securitytracker.com/id/1023052",
+        "https://securitytracker.com/id/1023053",
+        "https://securitytracker.com/id/1023054",
+        "https://securitytracker.com/id/1023055",
+        "https://securitytracker.com/id/1023056",
+        "https://securitytracker.com/id/1023369",
+        "https://securitytracker.com/id/1023371"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(FreeBSD Issues Fix) KAME IPv6 Stack Can Be Crashed By Remote Users Sending an IPv6 Packet Containing an IPComp Header",
+    "SecurityTracker Alert ID": "1019417",
+    "SecurityTracker URL": "http://securitytracker.com/id/1019417",
+    "CVE Reference": "CVE-2008-0177",
+    "Date": "Feb 14 2008",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "5.5",
+    "Description": "A vulnerability was reported in the KAME IPv6 Stack.  A remote user can cause denial of service conditions.  FreeBSD is affected.\nA remote user can send an IPv6 packet with an IPComp header to cause the target service to crash.\n\nShoichi Sakane of the KAME project reported this vulnerability.\n\nThe original advisory is available at:\n\nhttp://www.kb.cert.org/vuls/id/110947\n\nApple Mac OS X xnu is also affected.  A demonstration exploit from mu-b of digit-labs.org is available at:\n\nhttp://www.digit-labs.org/files/exploits/xnu-ipv6-ipcomp.c",
+    "Impact'": "A remote user can cause the target system to crash.",
+    "Solution": "FreeBSD has provided the following solution information [quoted].\n\nPerform one of the following:\n\n1) Upgrade your vulnerable system to 5-STABLE, or to the RELENG_5_5\nsecurity branch dated after the correction date.\n\n2) To patch your present system:\n\nThe following patches have been verified to apply to FreeBSD 5.5 systems.\n\na) Download the relevant patch from the location below, and verify the\ndetached PGP signature using your PGP utility.\n\n# fetch http://security.FreeBSD.org/patches/SA-08:04/ipsec.patch\n# fetch http://security.FreeBSD.org/patches/SA-08:04/ipsec.patch.asc\n\nb) Apply the patch.\n\n# cd /usr/src\n# patch < /path/to/patch\n\nc) Recompile your kernel as described in\n<URL:http://www.FreeBSD.org/handbook/kernelconfig.html> and reboot the\nsystem.\n\nThe FreeBSD advisory is available at:\n\nhttp://security.FreeBSD.org/advisories/FreeBSD-SA-08:04.ipsec.asc",
+    "Vendor URL": "security.FreeBSD.org/advisories/FreeBSD-SA-08:04.ipsec.asc",
+    "Cause": "State error",
+    "Message History": [
+        "https://securitytracker.com/id/1019314"
+    ]
+}{
+    "source": "1-2",
+    "Title": "KAME IPv6 Stack Can Be Crashed By Remote Users Sending an IPv6 Packet Containing an IPComp Header",
+    "SecurityTracker Alert ID": "1019314",
+    "SecurityTracker URL": "http://securitytracker.com/id/1019314",
+    "CVE Reference": "CVE-2008-0177",
+    "Updated": "Feb 27 2008",
+    "Original Entry Date": "Feb  7 2008",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in the KAME IPv6 Stack.  A remote user can cause denial of service conditions.\nA remote user can send an IPv6 packet with an IPComp header to cause the target service to crash.\n\nShoichi Sakane of the KAME project reported this vulnerability.\n\nThe original advisory is available at:\n\nhttp://www.kb.cert.org/vuls/id/110947\n\nApple Mac OS X xnu is also affected.  A demonstration exploit from mu-b of digit-labs.org is available at:\n\nhttp://www.digit-labs.org/files/exploits/xnu-ipv6-ipcomp.c",
+    "Impact'": "A remote user can cause the target system to crash.",
+    "Solution": "The vendor has issued a source code fix, available at:\n\nhttp://www.kame.net/dev/cvsweb2.cgi/kame/kame/sys/netinet6/ipcomp_input.c.diff?r1=1.36;r2=1.37",
+    "Vendor URL": "www.kame.net/",
+    "Cause": "State error",
+    "Underlying OS": [
+        "UNIX (BSD/OS)",
+        "UNIX (FreeBSD)",
+        "UNIX (NetBSD)",
+        "UNIX (OpenBSD)"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1019417",
+        "https://securitytracker.com/id/1019509",
+        "https://securitytracker.com/id/1019530"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(NetBSD Issues Fix) BSD IPv6 Type 0 Route Headers May Let Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1018692",
+    "SecurityTracker URL": "http://securitytracker.com/id/1018692",
+    "CVE Reference": "CVE-2007-2242",
+    "Date": "Sep 14 2007",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "2.0, 2.1, 3.0, 3.1, 4.0",
+    "Description": "A vulnerability was reported in IPv6, affecting OpenBSD and FreeBSD.  A remote user can cause denial of service conditions.\nA remote user can use IPv6 Type 0 route headers to conduct denial of service attacks against hosts and networks.\n\n[Editor's note:  The vendor indicates that this a design flaw in IPv6 and not a flaw in OpenBSD.]",
+    "Impact'": "A remote user can cause denial of service conditions.",
+    "Solution": "NetBSD has released a fix.\n\nThe NetBSD advisory is available at:\n\nftp://ftp.NetBSD.org/pub/NetBSD/security/advisories/NetBSD-SA2007-005.txt.asc",
+    "Cause": "Resource error",
+    "Message History": [
+        "https://securitytracker.com/id/1017949"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(Apple Issues Fix for Mac OS X) BSD IPv6 Type 0 Route Headers May Let Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1018273",
+    "SecurityTracker URL": "http://securitytracker.com/id/1018273",
+    "CVE Reference": "CVE-2007-2242",
+    "Updated": "Jul  3 2007",
+    "Original Entry Date": "Jun 20 2007",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "10.4.x",
+    "Description": "A vulnerability was reported in IPv6, affecting OpenBSD and FreeBSD.  A remote user can cause denial of service conditions.  Mac OS X is affected.\nA remote user can use IPv6 Type 0 route headers to conduct denial of service attacks against hosts and networks.\n\n[Editor's note:  The vendor indicates that this a design flaw in IPv6 and not a flaw in OpenBSD.]",
+    "Impact'": "A remote user can cause denial of service conditions.",
+    "Solution": "Apple has released a fix (10.4.4) for Mac OS X, which is affected by this IPv6 vulnerability.  Mac OS X v10.4.10 is available from the Software Update pane in System Preferences, or Apple's Software Downloads web site at:\n\nhttp://www.apple.com/support/downloads/\n\nFor Mac OS X v10.4.9 (PowerPC)\nThe download file is named:  \"MacOSXUpd10.4.10PPC.dmg\"\nIts SHA-1 digest is:  9894afbafcc1deb9c331bba2e847a0884059e6aa\n\nFor Mac OS X v10.4 (PowerPC) through v10.4.8 (PowerPC)\nThe download file is named:  \"MacOSXUpdCombo10.4.10PPC.dmg\"\nIts SHA-1 digest is:  7c40b6296b9a8a8845a776597a89a8795c391a19\n\nFor Mac OS X v10.4.9 (Intel)\nThe download file is named:  \"MacOSXUpd10.4.10Intel.dmg\"\nIts SHA-1 digest is:  0d3abab73af3370699bbe5389513511a1ba8b8fd\n\nFor Mac OS X v10.4.4 (Intel) through v10.4.8 (Intel)\nThe download file is named:  \"MacOSXUpdCombo10.4.10Intel.dmg\"\nIts SHA-1 digest is:  d3e72724dccda1c10a3ed393a262145fba105f55\n\nFor Mac OS X Server v10.4.9 (PowerPC)\nThe download file is named:  \"MacOSXServerUpd10.4.10PPC.dmg\"\nIts SHA-1 digest is:  9901cfdb6f3dd3a01bdde43b8a3fbc2d1ebfc8b9\n\nFor Mac OS X Server v10.4 through v10.4.8 (PowerPC)\nThe download file is named:  \"MacOSXSrvrCombo10.4.10PPC.dmg\"\nIts SHA-1 digest is:  434334396f2cfd4b9e23124d7f00d5ca3a64fd03\n\nFor Mac OS X Server v10.4.7 through v10.4.9 (Universal)\nThe download file is named:  \"MacOSXSrvrCombo10.4.10Univ.dmg\"\nIts SHA-1 digest is:  f46d19a88f0439f4dc91bc9c1217b60e681c5470\n\nSystems prior to Mac OS X v10.4 are not affected.\n\nOn July 2, 2007, Apple released Version 1.1 of Mac OS X 10.4.10 Update that includes this fix as well as a separate non-security fix for Intel-based systems.  Users that have not installed the original 10.4.10 update can install this new version 1.1 of the update.  Users that have installed the original update can apply the non-security fix separately.\n\nFor Mac OS X v10.4.9 (Intel)\nThe download file is named:  \"MacOSXUpd10.4.10Intel.dmg\"\nIts SHA-1 digest is:  94ba0b3b7e400774fe2c8a8488115a39d3177e9f\n\nFor Mac OS X v10.4.4 (Intel) through v10.4.8 (Intel)\nThe download file is named:  \"MacOSXUpdCombo10.4.10Intel.dmg\"\nIts SHA-1 digest is:  40c81fba3b127a12aa519e27a3fa38904cb811b4\n\nThe Apple advisory is available at:\n\nhttp://docs.info.apple.com/article.html?artnum=305712",
+    "Cause": "Resource error",
+    "Message History": [
+        "https://securitytracker.com/id/1017949"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(Red Hat Issues Fix) BSD IPv6 Type 0 Route Headers May Let Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1018074",
+    "SecurityTracker URL": "http://securitytracker.com/id/1018074",
+    "CVE Reference": "CVE-2007-2242",
+    "Date": "May 16 2007",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "5",
+    "Description": "A vulnerability was reported in IPv6, affecting OpenBSD and FreeBSD.  A remote user can cause denial of service conditions.  The Linux kernel is also affected.\nA remote user can use IPv6 Type 0 route headers to conduct denial of service attacks against hosts and networks.\n\n[Editor's note:  The vendor indicates that this a design flaw in IPv6 and not a flaw in OpenBSD.]",
+    "Impact'": "A remote user can cause denial of service conditions.",
+    "Solution": "Red Hat has released a fix for Red Hat Enterprise Linux, which is affected by this IPv6 vulnerability.\n\nThe Red Hat advisory is available at:\n\nhttps://rhn.redhat.com/errata/RHSA-2007-0347.html",
+    "Cause": "Resource error",
+    "Message History": [
+        "https://securitytracker.com/id/1017949"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(FreeBSD Issues Fix) BSD IPv6 Type 0 Route Headers May Let Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1017973",
+    "SecurityTracker URL": "http://securitytracker.com/id/1017973",
+    "CVE Reference": "CVE-2007-2242",
+    "Date": "Apr 27 2007",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "5.5, 6.1, 6.2",
+    "Description": "A vulnerability was reported in IPv6, affecting OpenBSD and FreeBSD.  A remote user can cause denial of service conditions.\nA remote user can use IPv6 Type 0 route headers to conduct denial of service attacks against hosts and networks.\n\n[Editor's note:  The vendor indicates that this a design flaw in IPv6 and not a flaw in OpenBSD.]",
+    "Impact'": "A remote user can cause denial of service conditions.",
+    "Solution": "FreeBSD has released a fix and has provided the following solution instructions [quoted]:\n\nPerform one of the following:\n\n1) Upgrade your vulnerable system to 5-STABLE, or 6-STABLE, or to the\nRELENG_6_2, RELENG_6_1, or RELENG_5_5 security branch dated after the\ncorrection date.\n\n2) To patch your present system:\n\nThe following patches have been verified to apply to FreeBSD 5.5, 6.1,\nand 6.2 systems.\n\na) Download the relevant patch from the location below, and verify the\ndetached PGP signature using your PGP utility.\n\n# fetch http://security.FreeBSD.org/patches/SA-07:03/ipv6.patch\n# fetch http://security.FreeBSD.org/patches/SA-07:03/ipv6.patch.asc\n\nb) Apply the patch.\n\n# cd /usr/src\n# patch < /path/to/patch\n\nc) Recompile your kernel as described in\n<URL:http://www.FreeBSD.org/handbook/kernelconfig.html> and reboot the\nsystem.\n\nThe FreeBSD advisory is available at:\n\nhttp://security.FreeBSD.org/advisories/FreeBSD-SA-07:03.ipv6.asc",
+    "Cause": "Resource error",
+    "Message History": [
+        "https://securitytracker.com/id/1017949"
+    ]
+}{
+    "source": "1-2",
+    "Title": "BSD IPv6 Type 0 Route Headers May Let Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1017949",
+    "SecurityTracker URL": "http://securitytracker.com/id/1017949",
+    "CVE Reference": "CVE-2007-2242",
+    "Updated": "Apr 27 2007",
+    "Original Entry Date": "Apr 23 2007",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "3.9, 4.0",
+    "Description": "A vulnerability was reported in IPv6, affecting OpenBSD and FreeBSD.  A remote user can cause denial of service conditions.\nA remote user can use IPv6 Type 0 route headers to conduct denial of service attacks against hosts and networks.\n\n[Editor's note:  The vendor indicates that this a design flaw in IPv6 and not a flaw in OpenBSD.]",
+    "Impact'": "A remote user can cause denial of service conditions.",
+    "Solution": "OpenBSD has issued the following patches to provide protection against IPv6 Type 0 route header attacks:\n\nftp://ftp.openbsd.org/pub/OpenBSD/patches/3.9/common/022_route6.patch\nftp://ftp.openbsd.org/pub/OpenBSD/patches/4.0/common/012_route6.patch\n\n[Editor's note:  A fix is also available for FreeBSD.  A separate Alert will be issued covering the FreeBSD advisory.]",
+    "Vendor URL": "www.openbsd.org/",
+    "Cause": "Resource error",
+    "Message History": [
+        "https://securitytracker.com/id/1017973",
+        "https://securitytracker.com/id/1018074",
+        "https://securitytracker.com/id/1018273",
+        "https://securitytracker.com/id/1018625",
+        "https://securitytracker.com/id/1018692"
+    ]
+}{
+    "source": "1-2",
+    "Title": "XORP OSPF Link State Advertisement Validation Error Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1017079",
+    "SecurityTracker URL": "http://securitytracker.com/id/1017079",
+    "CVE Reference": "CVE-2006-5425",
+    "Updated": "Jun  3 2008",
+    "Original Entry Date": "Oct 18 2006",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "1.2, 1.3",
+    "Description": "A vulnerability was reported in XORP.  A remote user can cause denial of service conditions.\nA remote user can send a specially crafted OSPF Link State Advertisement (LSA) length field value to cause the target OSPF daemon to crash.\n\nThe vendor was notified on October 13, 2006.\n\nThis vulnerability was discovered by the Mu Security research team.",
+    "Impact'": "A remote user can cause denial of service conditions.",
+    "Solution": "The vendor has issued a fix and has provided the following solution information [quoted].\n\nApply the relevant patch to your XORP system and restart OSPF.\n\n1) To patch your present system:\n\n[XORP 1.2]\n# wget http://www.xorp.org/patches/SA-06:01/xorp_sa_06:01.ospf_1.2.patch\n\n[XORP 1.3]\n# wget http://www.xorp.org/patches/SA-06:01/xorp_sa_06:01.ospf_1.3.patch\n\n2) Execute the following commands (only the last one has to be as root):\n\n# cd xorp\n# patch -p0 < /path/to/patch\n# gmake\n# cd ospf\n# gmake install\n\n3) Restart OSPFv2\n\na) Save the current configuration to a file.\n\n# xorpsh\nXorp> configure\nXORP# save /tmp/xorp.boot\n\nb) Delete ospf4 from the configuration and commit. OSPFv2 should no\nlonger be running.\n\nXORP# delete protocols ospf4\nXORP# commit\n\nc) Reload the saved configuration, which will restart OSPFv2\nXORP# load /tmp/xorp.boot\n\nThe vendor's advisory is available at:\n\nhttp://www.xorp.org/advisories/XORP_SA_06:01.ospf.txt",
+    "Vendor URL": "www.xorp.org/advisories/XORP_SA_06:01.ospf.txt",
+    "Cause": [
+        "Exception handling error",
+        "Input validation error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(Microsoft Issues Fix) Multiple Vendor TCP Stack Implementations Let Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1017036",
+    "SecurityTracker URL": "http://securitytracker.com/id/1017036",
+    "CVE Reference": "CVE-2004-0230",
+    "Date": "Oct 10 2006",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in several TCP stack implementations.  A remote user may be able to cause denial of service conditions using a TCP reset attack.  Multiple vendors are affected.\nThe UK National Infrastructure Security Co-Ordination Centre (NISCC) reported that some implementations of the Transmission Control Protocol (TCP) are particularly vulnerable to TCP reset attacks.  A remote user can cause TCP sessions to terminate prematurely, causing denial of service conditions.\n\nThe specific impact on applications that use TCP depends on the mechanisms built into the application to address premature TCP session termination.\n\nAccording to the report, NISCC considers the Border Gateway Protocol (BGP) to be one of the most affected applications, as it relies on a persistent TCP session between BGP peer entities.  Premature termination of an underlying TCP session may require routing tables to be rebuilt and may cause \"route flapping\".  In the case of BGP, using the TCP MD5 Signature Option and anti-spoofing measures can mitigate the vulnerability.\n\nOther applications, such as Domain Name System (DNS) and (Secure Sockets Layer) SSL based applications may also be affected, but to a lesser degree, the report said.\n\nA remote user can reportedly send a TCP packet with the RST (reset) flag set (or the SYN flag) with the appropriate spoofed source and destination IP addresses and TCP ports to cause the TCP session to be terminated.  Ordinarily, the remote user may have the probability of 1 in 2^32 of guessing the correct sequence number, the report said.  However, in actuality, a remote user may be able to guess an appropriate sequence number with much greater probability because many implementations will accept any sequence number within a certain window of the expected sequence number.  The Associate Press reports that the proper number can be guessed within as few as four attempts, requiring only seconds to achieve.\n\nThe report credits Paul A. Watson for discovering a practical method for conducting TCP reset attacks (presented in \"Slipping In The Window: TCP Reset Attacks\" at the CanSecWest 2004 conference).\n\nThe report indicates that the following vendors are affected [this is not an inclusive list]:\n\n- Cray Inc. is vulnerable on their UNICOS, UNICOS/mk and UNICOS/mp systems\n\n- Check Point is affected, but has issued a protection mechanism in the latest release for VPN-1/FireWall-1 (R55 HFA-03) that can protect both the firewall device and hosts located behind the firewall.\n\n- Internet Initiative Japan, Inc (IIJ) is affected.\n\n- InterNiche NicheStack and NicheLite are affected.\n\n- Juniper Networks products are affected.\n\n- Cisco products are affected, including IOS and non-IOS based devices.\n\nOther vendors are assessing the impact of this flaw.\n\nThe NISCC Vulnerability Advisory 236929 is available at:\n\nhttp://www.uniras.gov.uk/vuls/2004/236929/index.htm",
+    "Impact'": "A remote user can cause denial of service on the target TCP session.  The specific impact depends on the specific vendor implementation.",
+    "Solution": "The vendor has issued the following fixes:\n\nMicrosoft Windows XP Service Pack 1 and Microsoft Windows XP Service Pack 2:\n\nhttp://www.microsoft.com/downloads/details.aspx?FamilyId=9fd73d12-ff7c-411d-944d-a6f147b20775\n\nMicrosoft Windows XP Professional x64 Edition:\n\nhttp://www.microsoft.com/downloads/details.aspx?FamilyId=fc98f55c-520e-4a68-a3c3-0df51c6122bb\n\nMicrosoft Windows Server 2003 and Microsoft Windows Server 2003 Service Pack 1:\n\nhttp://www.microsoft.com/downloads/details.aspx?FamilyId=102591a0-2b58-497b-bc20-593571b96e9c\n\nMicrosoft Windows Server 2003 for Itanium-based Systems and Microsoft Windows Server 2003 with SP1 for Itanium-based Systems:\n\nhttp://www.microsoft.com/downloads/details.aspx?FamilyId=12515d47-134d-4d1f-9ae7-f0a7167ec424\n\nMicrosoft Windows Server 2003 x64 Edition:\n\nhttp://www.microsoft.com/downloads/details.aspx?FamilyId=c5faba34-48f5-4875-a0fa-6b8207f9b276\n\nA restart is required.\n\nThe Microsoft advisory is available at:\n\nhttp://www.microsoft.com/technet/security/bulletin/ms06-064.mspx",
+    "Vendor URL": "www.microsoft.com/technet/security/bulletin/ms06-064.mspx",
+    "Cause": "State error",
+    "Underlying OS": [
+        "Windows (2003)",
+        "Windows (XP)"
+    ],
+    "Underlying OS Comments": "2003 SP1, XP SP2; and prior service packs",
+    "Message History": [
+        "https://securitytracker.com/id/1009886"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Microsoft Windows Buffer Overflow in TCP/IP Stack Lets Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1016290",
+    "SecurityTracker URL": "http://securitytracker.com/id/1016290",
+    "CVE Reference": "CVE-2006-2379",
+    "Date": "Jun 13 2006",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in the Microsoft Windows TCP/IP stack.  A remote user can execute arbitrary code on the target system.\nA remote user can send a specially crafted IP source routing message to trigger a buffer overflow and execute arbitrary code on the target system.  The code will run with the privileges of the target service.  The remote user can take full control of the target system.\n\nMicrosoft credits Andrey Minaev with reporting this vulnerability.",
+    "Impact'": "A remote user can execute arbitrary code on the target system.",
+    "Solution": "The vendor has issued the following fixes:\n\nMicrosoft Windows 2000 Service Pack 4:\n\nhttp://www.microsoft.com/downloads/details.aspx?FamilyId=305e208c-d75c-471b-9e57-30d01e320ad1\n\nMicrosoft Windows XP Service Pack 1 and Microsoft Windows XP Service Pack 2:\n\nhttp://www.microsoft.com/downloads/details.aspx?FamilyId=b62abe8e-4735-4934-a66e-5b957986efbf\n\nMicrosoft Windows XP Professional x64 Edition:\n\nhttp://www.microsoft.com/downloads/details.aspx?FamilyId=44213900-9082-45dc-b514-31d38717fe89\n\nMicrosoft Windows Server 2003 and Microsoft Windows Server 2003 Service Pack 1:\n\nhttp://www.microsoft.com/downloads/details.aspx?FamilyId=ea319c61-b405-41ab-9eee-d5b3488b90e0\n\nMicrosoft Windows Server 2003 for Itanium-based Systems and Microsoft Windows Server 2003 with SP1 for Itanium-based Systems:\n\nhttp://www.microsoft.com/downloads/details.aspx?FamilyId=cd8b88b5-f90f-4c0c-a5ad-3641751381c9\n\nMicrosoft Windows Server 2003 x64 Edition:\n\nhttp://www.microsoft.com/downloads/details.aspx?FamilyId=cd8699bc-6760-4f0e-b8e0-2e7d89092ce8\n\nThe vendor's advisory is available at:\n\nhttp://www.microsoft.com/technet/security/bulletin/ms06-032.mspx",
+    "Vendor URL": "www.microsoft.com/technet/security/bulletin/ms06-032.mspx",
+    "Cause": "Boundary error",
+    "Underlying OS": [
+        "Windows (2000)",
+        "Windows (2003)",
+        "Windows (XP)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "OpenBSD TCP Timestamp Boundary Error Lets Remote Users Panic the System",
+    "SecurityTracker Alert ID": "1012861",
+    "SecurityTracker URL": "http://securitytracker.com/id/1012861",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jan 12 2005",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in OpenBSD in the tcp(4) stack.  A remote user can cause a system panic.\nOpenBSD reported that a remote user can send packets with specially crafted values in the TCP timestamp option to cause a system panic on the target system.  The panic occurs because the stack permits an invalid argument (rtt less than zero or greater than TCP_RTT_MAX) to be used in calculating the TCP retransmit timeout value.",
+    "Impact'": "A remote user can cause a system panic on the target system.",
+    "Solution": "The following source code patches are available:\n\nftp://ftp.openbsd.org/pub/OpenBSD/patches/3.5/common/027_rtt.patch\nftp://ftp.openbsd.org/pub/OpenBSD/patches/3.6/common/010_rtt.patch",
+    "Vendor URL": "www.openbsd.org/",
+    "Cause": "Boundary error",
+    "Underlying OS": "UNIX (OpenBSD)",
+    "Underlying OS Comments": "OpenBSD 3.5, 3.6",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(HP Issues Fix for Tru64) Multiple Vendor TCP Stack Implementations Let Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1012679",
+    "SecurityTracker URL": "http://securitytracker.com/id/1012679",
+    "CVE Reference": "CVE-2004-0230",
+    "Date": "Dec 24 2004",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in several TCP stack implementations.  A remote user may be able to cause denial of service conditions using a TCP reset attack.  Multiple vendors are affected.\nThe UK National Infrastructure Security Co-Ordination Centre (NISCC) reported that some implementations of the Transmission Control Protocol (TCP) are particularly vulnerable to TCP reset attacks.  A remote user can cause TCP sessions to terminate prematurely, causing denial of service conditions.\n\nThe specific impact on applications that use TCP depends on the mechanisms built into the application to address premature TCP session termination.\n\nAccording to the report, NISCC considers the Border Gateway Protocol (BGP) to be one of the most affected applications, as it relies on a persistent TCP session between BGP peer entities.  Premature termination of an underlying TCP session may require routing tables to be rebuilt and may cause \"route flapping\".  In the case of BGP, using the TCP MD5 Signature Option and anti-spoofing measures can mitigate the vulnerability.\n\nOther applications, such as Domain Name System (DNS) and (Secure Sockets Layer) SSL based applications may also be affected, but to a lesser degree, the report said.\n\nA remote user can reportedly send a TCP packet with the RST (reset) flag set (or the SYN flag) with the appropriate spoofed source and destination IP addresses and TCP ports to cause the TCP session to be terminated.  Ordinarily, the remote user may have the probability of 1 in 2^32 of guessing the correct sequence number, the report said.  However, in actuality, a remote user may be able to guess an appropriate sequence number with much greater probability because many implementations will accept any sequence number within a certain window of the expected sequence number.  The Associate Press reports that the proper number can be guessed within as few as four attempts, requiring only seconds to achieve.\n\nThe report credits Paul A. Watson for discovering a practical method for conducting TCP reset attacks (presented in \"Slipping In The Window: TCP Reset Attacks\" at the CanSecWest 2004 conference).\n\nThe report indicates that the following vendors are affected [this is not an inclusive list]:\n\n- Cray Inc. is vulnerable on their UNICOS, UNICOS/mk and UNICOS/mp systems\n\n- Check Point is affected, but has issued a protection mechanism in the latest release for VPN-1/FireWall-1 (R55 HFA-03) that can protect both the firewall device and hosts located behind the firewall.\n\n- Internet Initiative Japan, Inc (IIJ) is affected.\n\n- InterNiche NicheStack and NicheLite are affected.\n\n- Juniper Networks products are affected.\n\n- Cisco products are affected, including IOS and non-IOS based devices.\n\nOther vendors are assessing the impact of this flaw.\n\nThe NISCC Vulnerability Advisory 236929 is available at:\n\nhttp://www.uniras.gov.uk/vuls/2004/236929/index.htm",
+    "Impact'": "A remote user can cause denial of service on the target TCP session.  The specific impact depends on the specific vendor implementation.",
+    "Solution": "HP has issued the following fixes for Tru64 UNIX.\n\nHP Tru64 UNIX 5.1B-2/PK4\nERP Kit Name:        T64KIT0024531-V51BB25-ES-20041219\nGeneral ITRC Patch Page:  http://www.itrc.hp.com/service/patch/mainPage.do\nKit Location:  \nhttp://www.itrc.hp.com/service/patch/patchDetail.do?patchid=T64KIT0024531-V51BB25-ES-20041219\n\nHP Tru64 UNIX 5.1B-1/PK3\nERP Kit Name:        T64KIT0024529-V51BB24-ES-20041219\nGeneral ITRC Patch Page:  http://www.itrc.hp.com/service/patch/mainPage.do\n Kit Location:  \nhttp://www.itrc.hp.com/service/patch/patchDetail.do?patchid=T64KIT0024529-V51BB24-ES-20041219\n\nHP Tru64 UNIX 5.1A\nPREREQUISITE:      HP Tru64 UNIX with 5.1A with PK6 installed\nERP Kit Name:       T64KIT0024527-V51AB24-ES-20041219\nGeneral ITRC Patch Page:  http://www.itrc.hp.com/service/patch/mainPage.do\nKit Location:  \nhttp://www.itrc.hp.com/service/patch/patchDetail.do?patchid=T64KIT0024527-V51AB24-ES-20041219\n\nHP Tru64 UNIX 4.0G\nPREREQUISITE:      HP Tru64 UNIX with 4.0G with PK4 installed\nERP Kit Name:        T64KIT0024524-V40GB22-ES-20041219\nGeneral ITRC Patch Page:  http://www.itrc.hp.com/service/patch/mainPage.do\nKit Location:\nhttp://www.itrc.hp.com/service/patch/patchDetail.do?patchid=T64KIT0024524-V40GB22-ES-20041219\n\nHP Tru64 UNIX 4.0F\nPREREQUISITE:      HP Tru64 UNIX with 4.0F with PK8 (BL22) installed\nERP Kit Name:        DUXKIT0024523-V40FB22-ES-20041219\nGeneral ITRC Patch Page:  http://www.itrc.hp.com/service/patch/mainPage.do\nKit Location:\nhttp://www.itrc.hp.com/service/patch/patchDetail.do?patchid=DUXKIT0024523-V40FB22-ES-20041219",
+    "Cause": "State error",
+    "Underlying OS": "UNIX (Tru64)",
+    "Underlying OS Comments": "HP Tru64 UNIX  V5.1B PK4, V5.1B PK3, V5.1A PK6, V4.0G PK4, V4.0F PK8",
+    "Message History": [
+        "https://securitytracker.com/id/1009886"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(SGI Issues Fix) Multiple Vendor TCP Stack Implementations Let Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1011452",
+    "SecurityTracker URL": "http://securitytracker.com/id/1011452",
+    "CVE Reference": "CVE-2004-0230",
+    "Date": "Sep 29 2004",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in several TCP stack implementations.  A remote user may be able to cause denial of service conditions using a TCP reset attack.  Multiple vendors are affected.\nThe UK National Infrastructure Security Co-Ordination Centre (NISCC) reported that some implementations of the Transmission Control Protocol (TCP) are particularly vulnerable to TCP reset attacks.  A remote user can cause TCP sessions to terminate prematurely, causing denial of service conditions.\n\nThe specific impact on applications that use TCP depends on the mechanisms built into the application to address premature TCP session termination.\n\nAccording to the report, NISCC considers the Border Gateway Protocol (BGP) to be one of the most affected applications, as it relies on a persistent TCP session between BGP peer entities.  Premature termination of an underlying TCP session may require routing tables to be rebuilt and may cause \"route flapping\".  In the case of BGP, using the TCP MD5 Signature Option and anti-spoofing measures can mitigate the vulnerability.\n\nOther applications, such as Domain Name System (DNS) and (Secure Sockets Layer) SSL based applications may also be affected, but to a lesser degree, the report said.\n\nA remote user can reportedly send a TCP packet with the RST (reset) flag set (or the SYN flag) with the appropriate spoofed source and destination IP addresses and TCP ports to cause the TCP session to be terminated.  Ordinarily, the remote user may have the probability of 1 in 2^32 of guessing the correct sequence number, the report said.  However, in actuality, a remote user may be able to guess an appropriate sequence number with much greater probability because many implementations will accept any sequence number within a certain window of the expected sequence number.  The Associate Press reports that the proper number can be guessed within as few as four attempts, requiring only seconds to achieve.\n\nThe report credits Paul A. Watson for discovering a practical method for conducting TCP reset attacks (presented in \"Slipping In The Window: TCP Reset Attacks\" at the CanSecWest 2004 conference).\n\nThe report indicates that the following vendors are affected [this is not an inclusive list]:\n\n- Cray Inc. is vulnerable on their UNICOS, UNICOS/mk and UNICOS/mp systems\n\n- Check Point is affected, but has issued a protection mechanism in the latest release for VPN-1/FireWall-1 (R55 HFA-03) that can protect both the firewall device and hosts located behind the firewall.\n\n- Internet Initiative Japan, Inc (IIJ) is affected.\n\n- InterNiche NicheStack and NicheLite are affected.\n\n- Juniper Networks products are affected.\n\n- Cisco products are affected, including IOS and non-IOS based devices.\n\nOther vendors are assessing the impact of this flaw.\n\nThe NISCC Vulnerability Advisory 236929 is available at:\n\nhttp://www.uniras.gov.uk/vuls/2004/236929/index.htm",
+    "Impact'": "A remote user can cause denial of service on the target TCP session.  The specific impact depends on the specific vendor implementation.",
+    "Solution": "The vendor has issued the following patches:\n\nIRIX 6.5.22:  5738\nIRIX 6.5.23:  5737\nIRIX 6.5.24:  5728\nIRIX 6.5.25:  5729\n\nThe patches are available at:\n\nhttp://www.sgi.com/support/security/\nftp://patches.sgi.com/support/free/security/patches/",
+    "Vendor URL": "www.sgi.com/",
+    "Cause": "State error",
+    "Underlying OS": "UNIX (SGI/IRIX)",
+    "Underlying OS Comments": "IRIX 6.5.25 and prior versions",
+    "Message History": [
+        "https://securitytracker.com/id/1009886"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(APC Issues Advisory) Multiple Vendor TCP Stack Implementations Let Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1010252",
+    "SecurityTracker URL": "http://securitytracker.com/id/1010252",
+    "CVE Reference": "CVE-2004-0230",
+    "Date": "May 21 2004",
+    "Impact": "Denial of service via network",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in several TCP stack implementations. A remote user may be able to cause denial of service conditions using a TCP reset attack.  APC devices are affected.\nThe UK National Infrastructure Security Co-Ordination Centre (NISCC) reported that some implementations of the Transmission Control Protocol (TCP) are particularly vulnerable to TCP reset attacks.  A remote user can cause TCP sessions to terminate prematurely, causing denial of service conditions.\n\nThe specific impact on applications that use TCP depends on the mechanisms built into the application to address premature TCP session termination.\n\nAccording to the report, NISCC considers the Border Gateway Protocol (BGP) to be one of the most affected applications, as it relies on a persistent TCP session between BGP peer entities.  Premature termination of an underlying TCP session may require routing tables to be rebuilt and may cause \"route flapping\".  In the case of BGP, using the TCP MD5 Signature Option and anti-spoofing measures can mitigate the vulnerability.\n\nOther applications, such as Domain Name System (DNS) and (Secure Sockets Layer) SSL based applications may also be affected, but to a lesser degree, the report said.\n\nA remote user can reportedly send a TCP packet with the RST (reset) flag set (or the SYN flag) with the appropriate spoofed source and destination IP addresses and TCP ports to cause the TCP session to be terminated.  Ordinarily, the remote user may have the probability of 1 in 2^32 of guessing the correct sequence number, the report said.  However, in actuality, a remote user may be able to guess an appropriate sequence number with much greater probability because many implementations will accept any sequence number within a certain window of the expected sequence number.  The Associate Press reports that the proper number can be guessed within as few as four attempts, requiring only seconds to achieve.\n\nThe report credits Paul A. Watson for discovering a practical method for conducting TCP reset attacks (presented in \"Slipping In The Window: TCP Reset Attacks\" at the CanSecWest 2004 conference).\n\nThe report indicates that the following vendors are affected [this is not an inclusive list]:\n\n- Cray Inc. is vulnerable on their UNICOS, UNICOS/mk and UNICOS/mp systems\n\n- Check Point is affected, but has issued a protection mechanism in the latest release for VPN-1/FireWall-1 (R55 HFA-03) that can protect both the firewall device and hosts located behind the firewall.\n\n- Internet Initiative Japan, Inc (IIJ) is affected.\n\n- InterNiche NicheStack and NicheLite are affected.\n\n- Juniper Networks products are affected.\n\n- Cisco products are affected, including IOS and non-IOS based devices.\n\nOther vendors are assessing the impact of this flaw.\n\nThe NISCC Vulnerability Advisory 236929 is available at:\n\nhttp://www.uniras.gov.uk/vuls/2004/236929/index.htm",
+    "Impact'": "A remote user can cause denial of service on the target TCP session.  The specific impact depends on the specific vendor implementation.",
+    "Solution": "No fix was available at the time of this entry.  The vendor recommends that APC products be protected by a firewall that can detect and respond to that class of attacks described in the advisory.",
+    "Vendor URL": "nam-en.apc.com/cgi-bin/nam_en.cfg/php/enduser/std_alp.php?APCSiteCode=us",
+    "Cause": "State error",
+    "Message History": [
+        "https://securitytracker.com/id/1009886"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(OpenBSD Issues Fix) Multiple Vendor TCP Stack Implementations Let Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1010095",
+    "SecurityTracker URL": "http://securitytracker.com/id/1010095",
+    "CVE Reference": "CVE-2004-0230",
+    "Date": "May  7 2004",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in several TCP stack implementations.  A remote user may be able to cause denial of service conditions using a TCP reset attack.  Multiple vendors are affected.\nThe UK National Infrastructure Security Co-Ordination Centre (NISCC) reported that some implementations of the Transmission Control Protocol (TCP) are particularly vulnerable to TCP reset attacks.  A remote user can cause TCP sessions to terminate prematurely, causing denial of service conditions.\n\nThe specific impact on applications that use TCP depends on the mechanisms built into the application to address premature TCP session termination.\n\nAccording to the report, NISCC considers the Border Gateway Protocol (BGP) to be one of the most affected applications, as it relies on a persistent TCP session between BGP peer entities.  Premature termination of an underlying TCP session may require routing tables to be rebuilt and may cause \"route flapping\".  In the case of BGP, using the TCP MD5 Signature Option and anti-spoofing measures can mitigate the vulnerability.\n\nOther applications, such as Domain Name System (DNS) and (Secure Sockets Layer) SSL based applications may also be affected, but to a lesser degree, the report said.\n\nA remote user can reportedly send a TCP packet with the RST (reset) flag set (or the SYN flag) with the appropriate spoofed source and destination IP addresses and TCP ports to cause the TCP session to be terminated.  Ordinarily, the remote user may have the probability of 1 in 2^32 of guessing the correct sequence number, the report said.  However, in actuality, a remote user may be able to guess an appropriate sequence number with much greater probability because many implementations will accept any sequence number within a certain window of the expected sequence number.  The Associate Press reports that the proper number can be guessed within as few as four attempts, requiring only seconds to achieve.\n\nThe report credits Paul A. Watson for discovering a practical method for conducting TCP reset attacks (presented in \"Slipping In The Window: TCP Reset Attacks\" at the CanSecWest 2004 conference).\n\nThe report indicates that the following vendors are affected [this is not an inclusive list]:\n\n- Cray Inc. is vulnerable on their UNICOS, UNICOS/mk and UNICOS/mp systems\n\n- Check Point is affected, but has issued a protection mechanism in the latest release for VPN-1/FireWall-1 (R55 HFA-03) that can protect both the firewall device and hosts located behind the firewall.\n\n- Internet Initiative Japan, Inc (IIJ) is affected.\n\n- InterNiche NicheStack and NicheLite are affected.\n\n- Juniper Networks products are affected.\n\n- Cisco products are affected, including IOS and non-IOS based devices.\n\nOther vendors are assessing the impact of this flaw.\n\nThe NISCC Vulnerability Advisory 236929 is available at:\n\nhttp://www.uniras.gov.uk/vuls/2004/236929/index.htm",
+    "Impact'": "A remote user can cause denial of service on the target TCP session.  The specific impact depends on the specific vendor implementation.",
+    "Solution": "OpenBSD has issued the following patches:\n\nftp://ftp.openbsd.org/pub/OpenBSD/patches/3.4/common/019_tcp2.patch\nftp://ftp.openbsd.org/pub/OpenBSD/patches/3.5/common/005_tcp.patch",
+    "Vendor URL": "www.openbsd.org/",
+    "Cause": "State error",
+    "Underlying OS": "UNIX (OpenBSD)",
+    "Underlying OS Comments": "OpenBSD 3.4, 3.5",
+    "Message History": [
+        "https://securitytracker.com/id/1009886"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(NetBSD Issues Fix) Multiple Vendor TCP Stack Implementations Let Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1009903",
+    "SecurityTracker URL": "http://securitytracker.com/id/1009903",
+    "CVE Reference": "CVE-2004-0230",
+    "Date": "Apr 21 2004",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in several TCP stack implementations.  A remote user may be able to cause denial of service conditions using a TCP reset attack.  Multiple vendors are affected.\nThe UK National Infrastructure Security Co-Ordination Centre (NISCC) reported that some implementations of the Transmission Control Protocol (TCP) are particularly vulnerable to TCP reset attacks.  A remote user can cause TCP sessions to terminate prematurely, causing denial of service conditions.\n\nThe specific impact on applications that use TCP depends on the mechanisms built into the application to address premature TCP session termination.\n\nAccording to the report, NISCC considers the Border Gateway Protocol (BGP) to be one of the most affected applications, as it relies on a persistent TCP session between BGP peer entities.  Premature termination of an underlying TCP session may require routing tables to be rebuilt and may cause \"route flapping\".  In the case of BGP, using the TCP MD5 Signature Option and anti-spoofing measures can mitigate the vulnerability.\n\nOther applications, such as Domain Name System (DNS) and (Secure Sockets Layer) SSL based applications may also be affected, but to a lesser degree, the report said.\n\nA remote user can reportedly send a TCP packet with the RST (reset) flag set (or the SYN flag) with the appropriate spoofed source and destination IP addresses and TCP ports to cause the TCP session to be terminated.  Ordinarily, the remote user may have the probability of 1 in 2^32 of guessing the correct sequence number, the report said.  However, in actuality, a remote user may be able to guess an appropriate sequence number with much greater probability because many implementations will accept any sequence number within a certain window of the expected sequence number.  The Associate Press reports that the proper number can be guessed within as few as four attempts, requiring only seconds to achieve.\n\nThe report credits Paul A. Watson for discovering a practical method for conducting TCP reset attacks (presented in \"Slipping In The Window: TCP Reset Attacks\" at the CanSecWest 2004 conference).\n\nThe report indicates that the following vendors are affected [this is not an inclusive list]:\n\n- Cray Inc. is vulnerable on their UNICOS, UNICOS/mk and UNICOS/mp systems\n\n- Check Point is affected, but has issued a protection mechanism in the latest release for VPN-1/FireWall-1 (R55 HFA-03) that can protect both the firewall device and hosts located behind the firewall.\n\n- Internet Initiative Japan, Inc (IIJ) is affected.\n\n- InterNiche NicheStack and NicheLite are affected.\n\n- Juniper Networks products are affected.\n\n- Cisco products are affected, including IOS and non-IOS based devices.\n\nOther vendors are assessing the impact of this flaw.\n\nThe NISCC Vulnerability Advisory 236929 is available at:\n\nhttp://www.uniras.gov.uk/vuls/2004/236929/index.htm",
+    "Impact'": "A remote user can cause denial of service on the target TCP session.  The specific impact depends on the specific vendor implementation.",
+    "Solution": "NetBSD has issued the fixes listed below and plans to include a fix as part of 2.0.\n\nFor NetBSD-current:\n\nSystems running NetBSD-current dated from before 2004-04-21 should be upgraded to NetBSD-current dated 2004-04-22 or later.\n\nThe following directories need to be updated from the netbsd-current CVS branch (aka HEAD):\n\t\tsys/netinet\n\nTo update from CVS, re-build, and re-install the kernel:\n\t\t# cd src\n\t\t# cvs update -d -P sys/netinet\n\t\t# cd arch/ARCH/conf\n\t\t# config CONFIG\n\t\t# cd ../compile/CONFIG\n\t\t# make clean depend; make\n\n\t\t# cp netbsd /\n\t\t# reboot\n\n\nFor NetBSD 1.6, 1.6.1, 1.6.2:\n\nThe binary distribution of NetBSD 1.6, 1.6.1 and 1.6.2 are vulnerable.\n\nSystems running NetBSD 1.6 sources dated from before 2004-04-21 should be upgraded from NetBSD 1.6 sources dated 2004-04-22 or later.\n\nNetBSD 1.6.3 will include the fix.\n\nThe following directories need to be updated from the netbsd-1-6 CVS branch:\n\t\tsys/netinet\n\nTo update from CVS, re-build, and re-install the kernel:\n\n\t\t# cd src\n\t\t# cvs update -d -P -r netbsd-1-6 sys/netinet\n\t\t# cd arch/ARCH/conf\n\t\t# config CONFIG\n\t\t# cd ../compile/CONFIG\n\t\t# make clean depend; make\n\n\t\t# cp netbsd /\n\t\t# reboot\n\n\nFor information on the Binary Patch, see the Source Message for the vendor's advisory.\n\nFor NetBSD 1.5, 1.5.1, 1.5.2, 1.5.3:\n\nThe binary distribution of NetBSD 1.5 to 1.5.3 are vulnerable.   \n\nSystems running NetBSD 1.5, 1.5.1, 1.5.2, or 1.5.3 sources dated from before 2004-04-21 should be upgraded from NetBSD 1.5.* sources dated 2004-04-22 or later.\n\nThe following directories need to be updated from the netbsd-1-5 CVS branch:\n\t\tsys/netinet\n\nTo update from CVS, re-build, and re-install the kernel:\n\n\t\t# cd src\n\t\t# cvs update -d -P -r netbsd-1-5 sys/netinet\n\t\t# cd arch/ARCH/conf\n\t\t# config CONFIG\n\t\t# cd ../compile/CONFIG\n\t\t# make clean depend; make\n\n\t\t# cp netbsd /\n\t\t# reboot",
+    "Vendor URL": "www.netbsd.org/Security/",
+    "Cause": "State error",
+    "Underlying OS": "UNIX (NetBSD)",
+    "Underlying OS Comments": "NetBSD 1.5, 1.5.1, 1.5.2, 1.5.3, 1.6, 1.6.1, 1.6.2, 2.0",
+    "Message History": [
+        "https://securitytracker.com/id/1009886"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Multiple Vendor TCP Stack Implementations Let Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1009886",
+    "SecurityTracker URL": "http://securitytracker.com/id/1009886",
+    "CVE Reference": "CVE-2004-0230",
+    "Updated": "Oct 10 2006",
+    "Original Entry Date": "Apr 20 2004",
+    "Impact": "Denial of service via network",
+    "Exploit Included": "Yes",
+    "Description": "A vulnerability was reported in several TCP stack implementations.  A remote user may be able to cause denial of service conditions using a TCP reset attack.  Multiple vendors are affected.\nThe UK National Infrastructure Security Co-Ordination Centre (NISCC) reported that some implementations of the Transmission Control Protocol (TCP) are particularly vulnerable to TCP reset attacks.  A remote user can cause TCP sessions to terminate prematurely, causing denial of service conditions.\n\nThe specific impact on applications that use TCP depends on the mechanisms built into the application to address premature TCP session termination.\n\nAccording to the report, NISCC considers the Border Gateway Protocol (BGP) to be one of the most affected applications, as it relies on a persistent TCP session between BGP peer entities.  Premature termination of an underlying TCP session may require routing tables to be rebuilt and may cause \"route flapping\".  In the case of BGP, using the TCP MD5 Signature Option and anti-spoofing measures can mitigate the vulnerability.\n\nOther applications, such as Domain Name System (DNS) and (Secure Sockets Layer) SSL based applications may also be affected, but to a lesser degree, the report said.\n\nA remote user can reportedly send a TCP packet with the RST (reset) flag set (or the SYN flag) with the appropriate spoofed source and destination IP addresses and TCP ports to cause the TCP session to be terminated.  Ordinarily, the remote user may have the probability of 1 in 2^32 of guessing the correct sequence number, the report said.  However, in actuality, a remote user may be able to guess an appropriate sequence number with much greater probability because many implementations will accept any sequence number within a certain window of the expected sequence number.  The Associate Press reports that the proper number can be guessed within as few as four attempts, requiring only seconds to achieve.\n\nThe report credits Paul A. Watson for discovering a practical method for conducting TCP reset attacks (presented in \"Slipping In The Window: TCP Reset Attacks\" at the CanSecWest 2004 conference).\n\nThe report indicates that the following vendors are affected [this is not an inclusive list]:\n\n- Cray Inc. is vulnerable on their UNICOS, UNICOS/mk and UNICOS/mp systems\n\n- Check Point is affected, but has issued a protection mechanism in the latest release for VPN-1/FireWall-1 (R55 HFA-03) that can protect both the firewall device and hosts located behind the firewall.\n\n- Internet Initiative Japan, Inc (IIJ) is affected.\n\n- InterNiche NicheStack and NicheLite are affected.\n\n- Juniper Networks products are affected.\n\n- Cisco products are affected, including IOS and non-IOS based devices.\n\nOther vendors are assessing the impact of this flaw.\n\nThe NISCC Vulnerability Advisory 236929 is available at:\n\nhttp://www.uniras.gov.uk/vuls/2004/236929/index.htm",
+    "Impact'": "A remote user can cause denial of service on the target TCP session.  The specific impact depends on the specific vendor implementation.",
+    "Solution": "Fixes for implementations from affected TCP/IP vendors will be reported in separate Alerts [see the Message History].",
+    "Cause": "State error",
+    "Message History": [
+        "https://securitytracker.com/id/1009887",
+        "https://securitytracker.com/id/1009890",
+        "https://securitytracker.com/id/1009891",
+        "https://securitytracker.com/id/1009892",
+        "https://securitytracker.com/id/1009893",
+        "https://securitytracker.com/id/1009894",
+        "https://securitytracker.com/id/1009895",
+        "https://securitytracker.com/id/1009903",
+        "https://securitytracker.com/id/1009904",
+        "https://securitytracker.com/id/1009906",
+        "https://securitytracker.com/id/1010028",
+        "https://securitytracker.com/id/1010029",
+        "https://securitytracker.com/id/1010095",
+        "https://securitytracker.com/id/1010216",
+        "https://securitytracker.com/id/1010252",
+        "https://securitytracker.com/id/1011452",
+        "https://securitytracker.com/id/1012679",
+        "https://securitytracker.com/id/1013685",
+        "https://securitytracker.com/id/1013872",
+        "https://securitytracker.com/id/1017036",
+        "https://securitytracker.com/id/1030562",
+        "https://securitytracker.com/id/1030854",
+        "https://securitytracker.com/id/1031588",
+        "https://securitytracker.com/id/1035758"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(Mandrake Issues Fix) Re: Linux ICMP Stack Implementation Discloses Previously Allocated Server Memory Contents to Remote Users",
+    "SecurityTracker Alert ID": "1004711",
+    "SecurityTracker URL": "http://securitytracker.com/id/1004711",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jul  4 2002",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "An information disclosure vulnerability was reported in the Linux kernel's Internet Control Message Protocol (ICMP) implementation.  A remote user may be able to view the contents of memory that was previously allocated on the server.\nIt is reported that the Linux ICMP implementation leaks previously allocated memory contents into ICMP TTL Exceeded messages and possibly other ICMP messages.  A remote user can generate an ICMP message and send it to a Linux host to trigger a (valid) ICMP response.  The response may contain some small parts of the host's memory.\n\nA demonstration exploit transcript is provided in the Source Message.",
+    "Impact'": "A remote user may be able to view the contents of some memory that was previously allocated and used on the server.",
+    "Solution": "Mandrake has issued a fix.\n\nFor 7.1, 7.2, Corporate Server, and Single Network Firewall, see the Source Message.\n\nMandrake Linux 8.0:\n 6a8e28c0d1c8d2b3ce3e26a304b3f146  8.0/RPMS/initscripts-5.83-7.1mdk.i586.rpm\n 15a22adbed6ba7939acce1129fc08c63  8.0/RPMS/iptables-1.2.5-1.1mdk.i586.rpm\n 18d0f2803934688bdb00c3833daceb00  8.0/RPMS/iptables-ipv6-1.2.5-1.1mdk.i586.rpm\n 280ff798cc5215a8e5d0ba600e56735c  8.0/RPMS/kernel-2.4.18.8.2mdk-1-3mdk.i586.rpm\n c5e21fba0203a05179b8c4bd7eddb0d6  8.0/RPMS/kernel-2.4.18.8.2mdk-pcmcia-cs-1-3mdk.i586.rpm\n 4aff00e0df570a380be6b8f5c0803a3c  8.0/RPMS/kernel-BOOT-2.4.18.8.2mdk-1-3mdk.i586.rpm\n 074a3539369e8a3324fd3881b8b7811e  8.0/RPMS/kernel-doc-2.4.18-8.2mdk.i586.rpm\n b8a3586edf1003e150848203e676ee2f  8.0/RPMS/kernel-doc-html-2.4.18-8.2mdk.i586.rpm\n df5af818d1ee2c765061bd43869d3e5a  8.0/RPMS/kernel-doc-pdf-2.4.18-8.2mdk.i586.rpm\n 9a33086e43750f0f687f97130f9fa590  8.0/RPMS/kernel-doc-ps-2.4.18-8.2mdk.i586.rpm\n 76a496110a624afac0ffe2fdaaa89e47  8.0/RPMS/kernel-enterprise-2.4.18.8.2mdk-1-3mdk.i586.rpm\n 1b827d3e66e19d30629923cf0365a37b  8.0/RPMS/kernel-secure-2.4.18.8.2mdk-1-3mdk.i586.rpm\n b958d00f0d3bb37228328a838133f76a  8.0/RPMS/kernel-smp-2.4.18.8.2mdk-1-3mdk.i586.rpm\n 0092267146ac3a774a77bb85d8c40109  8.0/RPMS/kernel-source-2.4.18-8.2mdk.i586.rpm\n 0a18529d9bbb8f4f8dd7210f7878cc15  8.0/RPMS/kernel22-2.2.20-9.2mdk.i586.rpm\n a47458e6cdc0bc3741714c70f393cb35  8.0/RPMS/kernel22-smp-2.2.20-9.2mdk.i586.rpm\n e76c465f909695ddf0221e8100dde47a  8.0/RPMS/kernel22-source-2.2.20-9.2mdk.i586.rpm\n 795dbae0b1befb5e5ea040c465b94a31  8.0/RPMS/mkinitrd-3.1.6-28.1mdk.i586.rpm\n 4deb9724b61a696185ae7153d71aad40  8.0/SRPMS/initscripts-5.83-7.1mdk.src.rpm\n 7ac99ba7e3baf59966a22d3bad5a860a  8.0/SRPMS/iptables-1.2.5-1.1mdk.src.rpm\n cbac2540c632f2c03b9b82f187086614  8.0/SRPMS/kernel-2.4.18.8.2mdk-1-3mdk.src.rpm\n 8b3994c11c9c024744c319ad621a4b13  8.0/SRPMS/kernel22-2.2.20-9.2mdk.src.rpm\n 441cb1f8eaefc707ad1ba47da5224de7  8.0/SRPMS/mkinitrd-3.1.6-28.1mdk.src.rpm\n\n Mandrake Linux 8.0/ppc:\n f6290470bdff3220ecc3ede9ba21b147  ppc/8.0/RPMS/initscripts-5.83-7.1mdk.ppc.rpm\n 1eed80705d99d242d47f75878822c690  ppc/8.0/RPMS/iptables-1.2.5-1.1mdk.ppc.rpm\n 7ba74fffc19c7d7587f5d9efcb99357e  ppc/8.0/RPMS/iptables-ipv6-1.2.5-1.1mdk.ppc.rpm\n 50b3fe21d25c8842819f7dba157c6681  ppc/8.0/RPMS/kernel-2.4.18.8.2mdk-1-3mdk.ppc.rpm\n aae89320d2d41b2caf1e6c7b9ef8d756  ppc/8.0/RPMS/kernel-2.4.18.8.2mdk-pcmcia-cs-1-3mdk.ppc.rpm\n cee26bdf384252b87c10baf9f273bdfa  ppc/8.0/RPMS/kernel-doc-2.4.18-8.2mdk.ppc.rpm\n 8f2417c851137bfe3ffb89e328709cac  ppc/8.0/RPMS/kernel-doc-html-2.4.18-8.2mdk.ppc.rpm\n 542e188fb022174c9fb3bfb7fac263c8  ppc/8.0/RPMS/kernel-doc-pdf-2.4.18-8.2mdk.ppc.rpm\n 6a2bf33e2e1448c1fa711dfcaaaec59f  ppc/8.0/RPMS/kernel-doc-ps-2.4.18-8.2mdk.ppc.rpm\n b905355774f5449e1e9ccd33ee4bda4d  ppc/8.0/RPMS/kernel-enterprise-2.4.18.8.2mdk-1-3mdk.ppc.rpm\n f116d2c4fdbca61e387a2f5af4cd9e70  ppc/8.0/RPMS/kernel-smp-2.4.18.8.2mdk-1-3mdk.ppc.rpm\n dd070919e6b9a1c6b32dcdc63cdf193c  ppc/8.0/RPMS/kernel-source-2.4.18-8.2mdk.ppc.rpm\n 8540df4b8fd1410132e55a88b709a388  ppc/8.0/RPMS/kernel22-2.2.20-9.2mdk.ppc.rpm\n 2ed0bb03780967c0a954f3945e155ff5  ppc/8.0/RPMS/kernel22-smp-2.2.20-9.2mdk.ppc.rpm\n 9a64bcbcc95395dd17907102c9da44e8  ppc/8.0/RPMS/kernel22-source-2.2.20-9.2mdk.ppc.rpm\n b3d983312e9f964ef765e007451131a6  ppc/8.0/RPMS/mkinitrd-3.1.6-28.1mdk.ppc.rpm\n 4deb9724b61a696185ae7153d71aad40  ppc/8.0/SRPMS/initscripts-5.83-7.1mdk.src.rpm\n 7ac99ba7e3baf59966a22d3bad5a860a  ppc/8.0/SRPMS/iptables-1.2.5-1.1mdk.src.rpm\n cbac2540c632f2c03b9b82f187086614  ppc/8.0/SRPMS/kernel-2.4.18.8.2mdk-1-3mdk.src.rpm\n 8b3994c11c9c024744c319ad621a4b13  ppc/8.0/SRPMS/kernel22-2.2.20-9.2mdk.src.rpm\n 441cb1f8eaefc707ad1ba47da5224de7  ppc/8.0/SRPMS/mkinitrd-3.1.6-28.1mdk.src.rpm\n\n Mandrake Linux 8.1:\n 05c5b96aafcf2fd0d4dabbaed8e5bb72  8.1/RPMS/iptables-1.2.5-1.1mdk.i586.rpm\n e51e1c114518bf35db324a80b52f6f80  8.1/RPMS/iptables-ipv6-1.2.5-1.1mdk.i586.rpm\n ff744515582a1c4aaf086db157c4206f  8.1/RPMS/kernel-2.4.18.8.2mdk-1-3mdk.i586.rpm\n 134c6b5b65568b932d76c1fabd3deffc  8.1/RPMS/kernel-2.4.18.8.2mdk-pcmcia-cs-1-3mdk.i586.rpm\n d13a440bf10b438a3af314b60d7a865c  8.1/RPMS/kernel-doc-2.4.18-8.2mdk.i586.rpm\n 309676e8e0d8df03d05ca7d5ec8619ec  8.1/RPMS/kernel-doc-html-2.4.18-8.2mdk.i586.rpm\n 5f51054a2e39beab7bb8e04992f65458  8.1/RPMS/kernel-doc-pdf-2.4.18-8.2mdk.i586.rpm\n c6a78308ecd332a7e7134e41761a35ba  8.1/RPMS/kernel-doc-ps-2.4.18-8.2mdk.i586.rpm\n 81886f368c2d1b7fc7fe1b1494bd55eb  8.1/RPMS/kernel-enterprise-2.4.18.8.2mdk-1-3mdk.i586.rpm\n 65a86c68e312349b7525f15eba9648d2  8.1/RPMS/kernel-secure-2.4.18.8.2mdk-1-3mdk.i586.rpm\n cf0f8237835f21ee9ff611966094296e  8.1/RPMS/kernel-smp-2.4.18.8.2mdk-1-3mdk.i586.rpm\n bd8ba58d623f1467a41f764e20378dc3  8.1/RPMS/kernel-source-2.4.18-8.2mdk.i586.rpm\n 54dbc921dfd376e073f2fa4cbdd99f43  8.1/RPMS/kernel22-2.2.20-9.2mdk.i586.rpm\n 0a1abeec31a25fe2120d9968c8ef0d90  8.1/RPMS/kernel22-smp-2.2.20-9.2mdk.i586.rpm\n f0e89d7e072078d2435d6957908ef1f5  8.1/RPMS/kernel22-source-2.2.20-9.2mdk.i586.rpm\n 10f7e9c656fb926439addbb1705aa77a  8.1/RPMS/mkinitrd-3.1.6-28.1mdk.i586.rpm\n 7ac99ba7e3baf59966a22d3bad5a860a  8.1/SRPMS/iptables-1.2.5-1.1mdk.src.rpm\n cbac2540c632f2c03b9b82f187086614  8.1/SRPMS/kernel-2.4.18.8.2mdk-1-3mdk.src.rpm\n 8b3994c11c9c024744c319ad621a4b13  8.1/SRPMS/kernel22-2.2.20-9.2mdk.src.rpm\n 441cb1f8eaefc707ad1ba47da5224de7  8.1/SRPMS/mkinitrd-3.1.6-28.1mdk.src.rpm\n\n Mandrake Linux 8.2:\n a784430846ca56b52151b64f74744528  8.2/RPMS/devfsd-1.3.25-1.1mdk.i586.rpm\n 32969698f7badf0c3bc7fa3e4f278977  8.2/RPMS/kernel-2.4.18.8.1mdk-1-3mdk.i586.rpm\n 8780d75e33c52ddc0fee1c84fcab35b3  8.2/RPMS/kernel-BOOT-2.4.18.8.1mdk-1-3mdk.i586.rpm\n 09998125ec43033ec81857713a0c8426  8.2/RPMS/kernel-doc-2.4.18-8.1mdk.i586.rpm\n 885b857618b0aa899b6d0a4fe6f0b111  8.2/RPMS/kernel-doc-html-2.4.18-8.1mdk.i586.rpm\n 4129c6390bf04f90e910904748dc53ea  8.2/RPMS/kernel-doc-pdf-2.4.18-8.1mdk.i586.rpm\n a7a833d162893b3afe5e082a9bcbffe5  8.2/RPMS/kernel-doc-ps-2.4.18-8.1mdk.i586.rpm\n a1ba4d745bf80add95b73006634fcbc6  8.2/RPMS/kernel-enterprise-2.4.18.8.1mdk-1-3mdk.i586.rpm\n cf7a7343bff1a12796d68fe7b12c5403  8.2/RPMS/kernel-secure-2.4.18.8.1mdk-1-3mdk.i586.rpm\n 215e844621ba72e68b73756d1fad4ff3  8.2/RPMS/kernel-smp-2.4.18.8.1mdk-1-3mdk.i586.rpm\n b40235a56e88bef36e827fd3baec374c  8.2/RPMS/kernel-source-2.4.18-8.1mdk.i586.rpm\n d19ee6183a1fad278df1990b8c23e9bb  8.2/RPMS/kernel22-2.2.20-9.1mdk.i586.rpm\n 5bd5d0df44876a9252869ce39a63a675  8.2/RPMS/kernel22-smp-2.2.20-9.1mdk.i586.rpm\n 6f34d89907d78997c2cd55a31ed4e86e  8.2/RPMS/kernel22-source-2.2.20-9.1mdk.i586.rpm\n 6abfb4e1be1194616f267eb624065491  8.2/SRPMS/devfsd-1.3.25-1.1mdk.src.rpm\n 883ac7630080a1120323adabf2f80113  8.2/SRPMS/kernel-2.4.18.8.1mdk-1-3mdk.src.rpm\n 5583ac07de85a815e9947304c32fa1c1  8.2/SRPMS/kernel22-2.2.20-9.1mdk.src.rpm\n\n Mandrake Linux 8.2/ppc:\n 3e845487107a567eef546362d274acc4  ppc/8.2/RPMS/kernel-2.4.18.8.1mdk-1-3mdk.ppc.rpm\n 5c5d749e10f85c2759e4726f1bef988b  ppc/8.2/RPMS/kernel-doc-2.4.18-8.1mdk.ppc.rpm\n f30e3ae0f42e9ac4936f8e4aaf3c7255  ppc/8.2/RPMS/kernel-doc-html-2.4.18-8.1mdk.ppc.rpm\n abc3f86f3c264bf4e329bba78a7f0b35  ppc/8.2/RPMS/kernel-doc-pdf-2.4.18-8.1mdk.ppc.rpm\n 09c27bae3001380592e5a30b64b3a7b3  ppc/8.2/RPMS/kernel-doc-ps-2.4.18-8.1mdk.ppc.rpm\n  86f8dccb5db21ba9161e23a65a580186  ppc/8.2/RPMS/kernel-enterprise-2.4.18.8.1mdk-1-3mdk.ppc.rpm\n ec7f88601b5d1de1d56b6e52c7f75b8b  ppc/8.2/RPMS/kernel-smp-2.4.18.8.1mdk-1-3mdk.ppc.rpm\n 4c57b54857d78250c12b0c4f886bbc8b  ppc/8.2/RPMS/kernel-source-2.4.18-8.1mdk.ppc.rpm\n 2ba95aa5905599843be289616f57610f  ppc/8.2/RPMS/kernel22-2.2.20-9.1mdk.ppc.rpm\n 85b9d2407847420d73fe3b5220c575b3  ppc/8.2/RPMS/kernel22-smp-2.2.20-9.1mdk.ppc.rpm\n 38f6a6bed062f20afadf6fd485633b29  ppc/8.2/RPMS/kernel22-source-2.2.20-9.1mdk.ppc.rpm\n 883ac7630080a1120323adabf2f80113  ppc/8.2/SRPMS/kernel-2.4.18.8.1mdk-1-3mdk.src.rpm\n 5583ac07de85a815e9947304c32fa1c1  ppc/8.2/SRPMS/kernel22-2.2.20-9.1mdk.src.rpm",
+    "Cause": "Resource error",
+    "Underlying OS": "Linux (Mandriva/Mandrake)",
+    "Underlying OS Comments": "7.1, 7.2, 8.0, 8.1, 8.2, Corporate Server 1.0.1, Single Network Firewall 7.2",
+    "Message History": [
+        "https://securitytracker.com/id/1003325"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Compaq Tru64 Networking Stack Allows Remote Users to Cause Connections to Freeze",
+    "SecurityTracker Alert ID": "1003408",
+    "SecurityTracker URL": "http://securitytracker.com/id/1003408",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Updated": "Jan 31 2002",
+    "Original Entry Date": "Jan 31 2002",
+    "Impact": "Denial of service via network",
+    "Exploit Included": "Yes",
+    "Description": "A denial of service vulnerability was reported in Compaq's Tru64 operating system's networking stack.  A remote user can cause connections to freeze and/or be blocked.\nIt is reported that a remote user can conduct a network scan (using nmap, for example) against a Compaq Tru64 host to cause the telnet and ftp connections to freeze and timeout.  It is reported that new connections will be denied for a temporary period of time (~ 1 minute).\n\nThe following nmap command line was used to trigger this flaw:\n\nnmap -T Polite -O -p 23,139 -oM /tmp/lst 'xxx.xxx.16-44.*'",
+    "Impact'": "A remote user can cause the operating system's networking stack to freeze connections and refuse new connections for a period of time.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.tru64unix.compaq.com/",
+    "Cause": "Exception handling error",
+    "Underlying OS": "UNIX (Tru64)",
+    "Underlying OS Comments": "Tru64 Unix 4.0D patch kit 3 on Alpha 4100's and 8400's",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(Red Hat Issues Fix) Linux ICMP Stack Implementation Discloses Previously Allocated Server Memory Contents to Remote Users",
+    "SecurityTracker Alert ID": "1003348",
+    "SecurityTracker URL": "http://securitytracker.com/id/1003348",
+    "CVE Reference": "CVE-2002-0046",
+    "Date": "Jan 24 2002",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "An information disclosure vulnerability was reported in the Linux kernel's Internet Control Message Protocol (ICMP) implementation.  A remote user may be able to view the contents of memory that was previously allocated on the server.\nIt is reported that the Linux ICMP implementation leaks previously allocated memory contents into ICMP TTL Exceeded messages and possibly other ICMP messages.  A remote user can generate an ICMP message and send it to a Linux host to trigger a (valid) ICMP response.  The response may contain some small parts of the host's memory.\n\nA demonstration exploit transcript is provided in the Source Message.",
+    "Impact'": "A remote user may be able to view the contents of some memory that was previously allocated and used on the server.",
+    "Solution": "The vendor has released a fix.  Red Hat notes that 2.4 kernels after version 2.4.0-test6 and 2.2 kernels after version 2.2.18 have this bug fixed.  \n\nAll Red Hat Linux 2.4 kernels have this fix are not vulnerable to this bug.  It is recommended that users running older 2.2 kernels on Red Hat Linux 6.2 or 7 upgrade to the latest available errata kernel, which includes a fix for this problem.\n\nBefore applying this update, make sure all previously released errata relevant to your system have been applied. Red Hat Linux 7.1 users should update the packages in the XFree86 Erratum (RHEA-2002:010).\n\nThe procedure for upgrading the kernel is documented at:\n\nhttp://www.redhat.com/support/docs/howto/kernel-upgrade/\n\nPlease read the directions for your architecture carefully before proceeding with the kernel upgrade.\n\nRed Hat Linux 7.1:\n\nSRPMS:\nftp://updates.redhat.com/7.1/en/os/SRPMS/kernel-2.4.9-21.src.rpm\nftp://updates.redhat.com/7.1/en/os/SRPMS/modutils-2.4.10-1.src.rpm\nftp://updates.redhat.com/7.1/en/os/SRPMS/tux-2.2.0-1.src.rpm\n\nalpha:\nftp://updates.redhat.com/7.1/en/os/alpha/kernel-2.4.9-21.alpha.rpm\nftp://updates.redhat.com/7.1/en/os/alpha/kernel-smp-2.4.9-21.alpha.rpm\nftp://updates.redhat.com/7.1/en/os/alpha/kernel-source-2.4.9-21.alpha.rpm\nftp://updates.redhat.com/7.1/en/os/alpha/kernel-BOOT-2.4.9-21.alpha.rpm\nftp://updates.redhat.com/7.1/en/os/alpha/kernel-headers-2.4.9-21.alpha.rpm\nftp://updates.redhat.com/7.1/en/os/alpha/kernel-doc-2.4.9-21.alpha.rpm\nftp://updates.redhat.com/7.1/en/os/alpha/modutils-2.4.10-1.alpha.rpm\nftp://updates.redhat.com/7.1/en/os/alpha/tux-2.2.0-1.alpha.rpm\n\nathlon:\nftp://updates.redhat.com/7.1/en/os/athlon/kernel-2.4.9-21.athlon.rpm\nftp://updates.redhat.com/7.1/en/os/athlon/kernel-smp-2.4.9-21.athlon.rpm\n\ni386:\nftp://updates.redhat.com/7.1/en/os/i386/kernel-2.4.9-21.i386.rpm\nftp://updates.redhat.com/7.1/en/os/i386/kernel-source-2.4.9-21.i386.rpm\nftp://updates.redhat.com/7.1/en/os/i386/kernel-BOOT-2.4.9-21.i386.rpm\nftp://updates.redhat.com/7.1/en/os/i386/kernel-headers-2.4.9-21.i386.rpm\nftp://updates.redhat.com/7.1/en/os/i386/kernel-doc-2.4.9-21.i386.rpm\nftp://updates.redhat.com/7.1/en/os/i386/modutils-2.4.10-1.i386.rpm\nftp://updates.redhat.com/7.1/en/os/i386/tux-2.2.0-1.i386.rpm\n\ni586:\nftp://updates.redhat.com/7.1/en/os/i586/kernel-2.4.9-21.i586.rpm\nftp://updates.redhat.com/7.1/en/os/i586/kernel-smp-2.4.9-21.i586.rpm\n\ni686:\nftp://updates.redhat.com/7.1/en/os/i686/kernel-2.4.9-21.i686.rpm\nftp://updates.redhat.com/7.1/en/os/i686/kernel-smp-2.4.9-21.i686.rpm\nftp://updates.redhat.com/7.1/en/os/i686/kernel-enterprise-2.4.9-21.i686.rpm\nftp://updates.redhat.com/7.1/en/os/i686/kernel-debug-2.4.9-21.i686.rpm\n\nia64:\nftp://updates.redhat.com/7.1/en/os/ia64/kernel-2.4.9-21.ia64.rpm\nftp://updates.redhat.com/7.1/en/os/ia64/kernel-smp-2.4.9-21.ia64.rpm\nftp://updates.redhat.com/7.1/en/os/ia64/kernel-source-2.4.9-21.ia64.rpm\nftp://updates.redhat.com/7.1/en/os/ia64/kernel-headers-2.4.9-21.ia64.rpm\nftp://updates.redhat.com/7.1/en/os/ia64/kernel-doc-2.4.9-21.ia64.rpm\nftp://updates.redhat.com/7.1/en/os/ia64/modutils-2.4.10-1.ia64.rpm\nftp://updates.redhat.com/7.1/en/os/ia64/tux-2.2.0-1.ia64.rpm\n\nRed Hat Linux 7.2:\n\nSRPMS:\nftp://updates.redhat.com/7.2/en/os/SRPMS/kernel-2.4.9-21.src.rpm\nftp://updates.redhat.com/7.2/en/os/SRPMS/modutils-2.4.10-1.src.rpm\nftp://updates.redhat.com/7.2/en/os/SRPMS/tux-2.2.0-1.src.rpm\n\nathlon:\nftp://updates.redhat.com/7.2/en/os/athlon/kernel-2.4.9-21.athlon.rpm\nftp://updates.redhat.com/7.2/en/os/athlon/kernel-smp-2.4.9-21.athlon.rpm\n\ni386:\nftp://updates.redhat.com/7.2/en/os/i386/kernel-2.4.9-21.i386.rpm\nftp://updates.redhat.com/7.2/en/os/i386/kernel-source-2.4.9-21.i386.rpm\nftp://updates.redhat.com/7.2/en/os/i386/kernel-BOOT-2.4.9-21.i386.rpm\nftp://updates.redhat.com/7.2/en/os/i386/kernel-headers-2.4.9-21.i386.rpm\nftp://updates.redhat.com/7.2/en/os/i386/kernel-doc-2.4.9-21.i386.rpm\nftp://updates.redhat.com/7.2/en/os/i386/modutils-2.4.10-1.i386.rpm\nftp://updates.redhat.com/7.2/en/os/i386/tux-2.2.0-1.i386.rpm\n\ni586:\nftp://updates.redhat.com/7.2/en/os/i586/kernel-2.4.9-21.i586.rpm\nftp://updates.redhat.com/7.2/en/os/i586/kernel-smp-2.4.9-21.i586.rpm\n\ni686:\nftp://updates.redhat.com/7.2/en/os/i686/kernel-2.4.9-21.i686.rpm\nftp://updates.redhat.com/7.2/en/os/i686/kernel-smp-2.4.9-21.i686.rpm\nftp://updates.redhat.com/7.2/en/os/i686/kernel-enterprise-2.4.9-21.i686.rpm\nftp://updates.redhat.com/7.2/en/os/i686/kernel-debug-2.4.9-21.i686.rpm\n\nia64:\nftp://updates.redhat.com/7.2/en/os/ia64/kernel-2.4.9-21.ia64.rpm\nftp://updates.redhat.com/7.2/en/os/ia64/kernel-smp-2.4.9-21.ia64.rpm\nftp://updates.redhat.com/7.2/en/os/ia64/kernel-source-2.4.9-21.ia64.rpm\nftp://updates.redhat.com/7.2/en/os/ia64/kernel-headers-2.4.9-21.ia64.rpm\nftp://updates.redhat.com/7.2/en/os/ia64/kernel-doc-2.4.9-21.ia64.rpm\nftp://updates.redhat.com/7.2/en/os/ia64/tux-2.2.0-1.ia64.rpm\n\nThe verification checksums are:\n\nMD5 sum                          Package Name\n--------------------------------------------------------------------------\nc98c533651ad7ddf1953291c6b86e24d 7.1/en/os/SRPMS/kernel-2.4.9-21.src.rpm\nbce506e9913f952f74ecb1cc4f5e0d14 7.1/en/os/SRPMS/modutils-2.4.10-1.src.rpm\n0fc99d749b73ce672ce314097fa75680 7.1/en/os/SRPMS/tux-2.2.0-1.src.rpm\ne968e639383c1c6ac5f81cac4ef23282 7.1/en/os/alpha/kernel-2.4.9-21.alpha.rpm\n963d4f2f6b7aba6a872cddef8ea98a0a 7.1/en/os/alpha/kernel-BOOT-2.4.9-21.alpha.rpm\n56cdcbcdfb7986b8925320e5c6147894 7.1/en/os/alpha/kernel-doc-2.4.9-21.alpha.rpm\n76e4da4321e4fc73bf71cad185d7c74c 7.1/en/os/alpha/kernel-headers-2.4.9-21.alpha.rpm\n23e236f018b86d66c7d6a0e703d8741b 7.1/en/os/alpha/kernel-smp-2.4.9-21.alpha.rpm\nb0b96c30d406279778e17f2425564182 7.1/en/os/alpha/kernel-source-2.4.9-21.alpha.rpm\n34b7a78b5a0f91f8b476448532c6ca01 7.1/en/os/alpha/modutils-2.4.10-1.alpha.rpm\nbe01c0f774210275c54158b30ce241a5 7.1/en/os/alpha/tux-2.2.0-1.alpha.rpm\n3ca1396e73f1d5f105fdc70577c1ad5b 7.1/en/os/athlon/kernel-2.4.9-21.athlon.rpm\n98c26aa144875e66ad7a24d715fffc3c 7.1/en/os/athlon/kernel-smp-2.4.9-21.athlon.rpm\n071131740198219c636b8927f8f88457 7.1/en/os/i386/kernel-2.4.9-21.i386.rpm\n36d81ca909ec13711442a7ced06c5954 7.1/en/os/i386/kernel-BOOT-2.4.9-21.i386.rpm\n13389781e18047d555a0e65ae0e1e53b 7.1/en/os/i386/kernel-doc-2.4.9-21.i386.rpm\n6e02167e35be2a1234419dc04d285c8d 7.1/en/os/i386/kernel-headers-2.4.9-21.i386.rpm\nb1d7f572f45b208f1c9dc4983bf51cc7 7.1/en/os/i386/kernel-source-2.4.9-21.i386.rpm\n62512921c8a9704642ace9972f2bcb32 7.1/en/os/i386/modutils-2.4.10-1.i386.rpm\nb071d20ef0474a1e4ca5ec65b333796f 7.1/en/os/i386/tux-2.2.0-1.i386.rpm\n243e4c5fa57a8002046bf24de2e1ffd2 7.1/en/os/i586/kernel-2.4.9-21.i586.rpm\n2510b6f2059f2790d9528cdd63e92f95 7.1/en/os/i586/kernel-smp-2.4.9-21.i586.rpm\ndeb1513ff79d1d40dde059cf1e3142db 7.1/en/os/i686/kernel-2.4.9-21.i686.rpm\n9b0033255956ed2be1c6878dfd84c472 7.1/en/os/i686/kernel-debug-2.4.9-21.i686.rpm\n2881b02642d6244d36fe7baaa4954c45 7.1/en/os/i686/kernel-enterprise-2.4.9-21.i686.rpm\neaaac60d828e3954c6f2018cc7dfb2d6 7.1/en/os/i686/kernel-smp-2.4.9-21.i686.rpm\nd4b7d97af57ead842eb82c2b81e8c395 7.1/en/os/ia64/kernel-2.4.9-21.ia64.rpm\nbe80ab57387b969df0b046893a991735 7.1/en/os/ia64/kernel-doc-2.4.9-21.ia64.rpm\n55a98e22cb5ac68e1f35a971206ef30c 7.1/en/os/ia64/kernel-headers-2.4.9-21.ia64.rpm\n4724141890684670cf7d636eedecda3f 7.1/en/os/ia64/kernel-smp-2.4.9-21.ia64.rpm\n3931d07ace606c7772f0aa68f1a7026c 7.1/en/os/ia64/kernel-source-2.4.9-21.ia64.rpm\n747b4ec0ea09f49b2cd1f1bea75f2b26 7.1/en/os/ia64/modutils-2.4.10-1.ia64.rpm\n0115dc46812b1aa8404b753815f18186 7.1/en/os/ia64/tux-2.2.0-1.ia64.rpm\nc98c533651ad7ddf1953291c6b86e24d 7.2/en/os/SRPMS/kernel-2.4.9-21.src.rpm\nbce506e9913f952f74ecb1cc4f5e0d14 7.2/en/os/SRPMS/modutils-2.4.10-1.src.rpm\n0fc99d749b73ce672ce314097fa75680 7.2/en/os/SRPMS/tux-2.2.0-1.src.rpm\n3ca1396e73f1d5f105fdc70577c1ad5b 7.2/en/os/athlon/kernel-2.4.9-21.athlon.rpm\n98c26aa144875e66ad7a24d715fffc3c 7.2/en/os/athlon/kernel-smp-2.4.9-21.athlon.rpm\n071131740198219c636b8927f8f88457 7.2/en/os/i386/kernel-2.4.9-21.i386.rpm\n36d81ca909ec13711442a7ced06c5954 7.2/en/os/i386/kernel-BOOT-2.4.9-21.i386.rpm\n13389781e18047d555a0e65ae0e1e53b 7.2/en/os/i386/kernel-doc-2.4.9-21.i386.rpm\n6e02167e35be2a1234419dc04d285c8d 7.2/en/os/i386/kernel-headers-2.4.9-21.i386.rpm\nb1d7f572f45b208f1c9dc4983bf51cc7 7.2/en/os/i386/kernel-source-2.4.9-21.i386.rpm\n62512921c8a9704642ace9972f2bcb32 7.2/en/os/i386/modutils-2.4.10-1.i386.rpm\nb071d20ef0474a1e4ca5ec65b333796f 7.2/en/os/i386/tux-2.2.0-1.i386.rpm\n243e4c5fa57a8002046bf24de2e1ffd2 7.2/en/os/i586/kernel-2.4.9-21.i586.rpm\n2510b6f2059f2790d9528cdd63e92f95 7.2/en/os/i586/kernel-smp-2.4.9-21.i586.rpm\ndeb1513ff79d1d40dde059cf1e3142db 7.2/en/os/i686/kernel-2.4.9-21.i686.rpm\n9b0033255956ed2be1c6878dfd84c472 7.2/en/os/i686/kernel-debug-2.4.9-21.i686.rpm\n2881b02642d6244d36fe7baaa4954c45 7.2/en/os/i686/kernel-enterprise-2.4.9-21.i686.rpm\neaaac60d828e3954c6f2018cc7dfb2d6 7.2/en/os/i686/kernel-smp-2.4.9-21.i686.rpm\nd4b7d97af57ead842eb82c2b81e8c395 7.2/en/os/ia64/kernel-2.4.9-21.ia64.rpm\nbe80ab57387b969df0b046893a991735 7.2/en/os/ia64/kernel-doc-2.4.9-21.ia64.rpm\n55a98e22cb5ac68e1f35a971206ef30c 7.2/en/os/ia64/kernel-headers-2.4.9-21.ia64.rpm\n4724141890684670cf7d636eedecda3f 7.2/en/os/ia64/kernel-smp-2.4.9-21.ia64.rpm\n3931d07ace606c7772f0aa68f1a7026c 7.2/en/os/ia64/kernel-source-2.4.9-21.ia64.rpm\n0115dc46812b1aa8404b753815f18186 7.2/en/os/ia64/tux-2.2.0-1.ia64.rpm",
+    "Cause": "Resource error",
+    "Underlying OS": "Linux (Red Hat Linux)",
+    "Underlying OS Comments": "Affects Linux 2.2.x and 2.4.0-pre*.  Does not affect Linux 2.4.x (which has been fixed).",
+    "Message History": [
+        "https://securitytracker.com/id/1003325"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Linux ICMP Stack Implementation Discloses Previously Allocated Server Memory Contents to Remote Users",
+    "SecurityTracker Alert ID": "1003325",
+    "SecurityTracker URL": "http://securitytracker.com/id/1003325",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Updated": "Jan 23 2002",
+    "Original Entry Date": "Jan 22 2002",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Exploit Included": "Yes",
+    "Description": "An information disclosure vulnerability was reported in the Linux kernel's Internet Control Message Protocol (ICMP) implementation.  A remote user may be able to view the contents of memory that was previously allocated on the server.\nIt is reported that the Linux ICMP implementation leaks previously allocated memory contents into ICMP TTL Exceeded messages and possibly other ICMP messages.  A remote user can generate an ICMP message and send it to a Linux host to trigger a (valid) ICMP response.  The response may contain some small parts of the host's memory.\n\nA demonstration exploit transcript is provided in the Source Message.",
+    "Impact'": "A remote user may be able to view the contents of some memory that was previously allocated and used on the server.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Cause": "Resource error",
+    "Underlying OS": "Linux (Any)",
+    "Underlying OS Comments": "Affects Linux 2.2.x and 2.4.0-pre*.  Does not affect Linux 2.4.x (which has been fixed).",
+    "Message History": [
+        "https://securitytracker.com/id/1003348",
+        "https://securitytracker.com/id/1004711"
+    ]
+}{
+    "source": "1-2",
+    "Title": "SGI IRIX Operating System IGMP Protocol Error Lets Remote Users Cause a Kernel Panic",
+    "SecurityTracker Alert ID": "1002616",
+    "SecurityTracker URL": "http://securitytracker.com/id/1002616",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Oct 23 2001",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "SGI issued an advisory warning of a vulnerability in the IRIX Internet Group Multicast Protocol (IGMP) implementation.  A remote user can craft a malformed IGMP packet to cause the host operating system to panic.\nThe nature of the malformed packet required to cause the crash was not disclosed.",
+    "Impact'": "A remote user can cause the operating system to panic.",
+    "Solution": "SGI has issued patches, as listed below.\n\nOS Version,     Vulnerable?,     Patch #,      Other Actions\nIRIX 3.x,        unknown, ,                    Note 1\nIRIX 4.x,        unknown, ,                    Note 1\nIRIX 5.x,        unknown, ,                    Note 1\nIRIX 6.0.x,      unknown, ,                    Note 1\nIRIX 6.1,        unknown, ,                    Note 1\nIRIX 6.2,        unknown, ,                    Note 1\nIRIX 6.3,        unknown, ,                    Note 1\nIRIX 6.4,        unknown, ,                    Note 1\nIRIX 6.5,          yes, ,                      Note 2\nIRIX 6.5.1,        yes, ,                      Note 2\nIRIX 6.5.2,        yes, ,                      Note 2\nIRIX 6.5.3,        yes, ,                      Note 2\nIRIX 6.5.4,        yes, ,                      Note 2\nIRIX 6.5.5,        yes, ,                      Note 2\nIRIX 6.5.6,        yes, ,                      Note 2\nIRIX 6.5.7,        yes, ,                      Note 2\nIRIX 6.5.8,        yes, ,                      Note 2\nIRIX 6.5.9,        yes, ,                      Note 2\nIRIX 6.5.10m,      yes,           4335,        Note 2\nIRIX 6.5.10f,      yes,           4336,        Note 2\nIRIX 6.5.11m,      yes,           4344,        Note 2\nIRIX 6.5.11f,      yes,           4345,        Note 2\nIRIX 6.5.12m,      yes,           4346,        Note 2\nIRIX 6.5.12f,      yes,           4347,        Note 2\nIRIX 6.5.13,       no, ,                       Note 4 & 5\n\n   NOTES\n\n     1) This version of the IRIX operating has been retired.\n        Upgrade to an actively supported IRIX operating system.\n        See http://support.sgi.com/irix/news/index.html#policy\n        for more information.\n\n     2) This version of the IRIX operating system is in maintenance mode.\n        Upgrade to an actively supported IRIX operating system.\n        See http://support.sgi.com/news/support/index.html for more\n        information.\n\n     3) Download the IRIX 6.5.13 Maintenance Release Stream from the URL:\n        http://support.sgi.com/colls/patches/tools/relstream/index.html\n\n     4) If you have not received an IRIX 6.5.13 CD for IRIX 6.5, contact your\n        SGI Support Provider or URL: http://support.sgi.com/irix/swupdates/\n\nSGI Security Patches can be found at:\nhttp://www.sgi.com/support/security/ and\nftp://patches.sgi.com/support/free/security/patches/\n\nSGI patches for IRIX can be found at the following patch servers:\nhttp://support.sgi.com/irix/ and ftp://patches.sgi.com/",
+    "Vendor URL": "www.sgi.com/support/security/",
+    "Cause": "Exception handling error",
+    "Underlying OS": "UNIX (SGI/IRIX)",
+    "Message History": "None."
+}

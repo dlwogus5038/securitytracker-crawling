@@ -1,0 +1,1434 @@
+{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Security Network IPS) OpenSSL bn_sqrx8x_internal() Carry Bug Lets Remote Users Obtain Potentially Sensitive Information on the Target System in Certain Cases",
+    "SecurityTracker Alert ID": "1041526",
+    "SecurityTracker URL": "http://securitytracker.com/id/1041526",
+    "CVE Reference": "CVE-2017-3736",
+    "Date": "Aug 20 2018",
+    "Impact": "Disclosure of authentication information",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "4.6.1, 4.6.2",
+    "Description": "A vulnerability was reported in OpenSSL. A remote user can obtain potentially sensitive information on the target system in certain cases. IBM Security Network IPS is affected.\nA remote user can exploit a carry propagation flaw in the the x86_64 Montgomery squaring function bn_sqrx8x_internal() to potentially determine information about the private key in certain situations.\n\nProcessors that support the BMI1, BMI2, and ADX extensions (e.g., Intel Broadwell 5th generation and later, AMD Ryzen) are affected.\n\nEC algorithms are not affected.\n\nThe Google OSS-Fuzz project reported this vulnerability.",
+    "Impact'": "A remote user can potentially determine information about the private key in certain situations.",
+    "Solution": "IBM has issued a fix for IBM Security Network IPS.\n\nThe IBM advisory is available at:\n\nhttps://www-01.ibm.com/support/docview.wss?uid=ibm10713555",
+    "Vendor URL": "www-01.ibm.com/support/docview.wss?uid=ibm10713555",
+    "Cause": "State error",
+    "Message History": [
+        "https://securitytracker.com/id/1039727"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Security Network IPS) OpenSSL Multiple Bugs Let Remote Users Deny Service and Obtain Potentially Sensitive Information",
+    "SecurityTracker Alert ID": "1041525",
+    "SecurityTracker URL": "http://securitytracker.com/id/1041525",
+    "CVE Reference": "CVE-2017-3732",
+    "Date": "Aug 20 2018",
+    "Impact": [
+        "Denial of service via network",
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "4.6.1, 4.6.2",
+    "Description": "Several vulnerabilities were reported in OpenSSL. A remote user can cause the target service to crash. A remote user can obtain potentially sensitive information on the target system. IBM Security Network IPS is affected.\nA remote user can send a specially crafted truncated packet to the target server or client running on a 32-bit host and using a specific cipher to trigger an out-of-bounds memory read error and cause the service to crash [CVE-2017-3731]. CHACHA20/POLY1305 is affected on version 1.1.0. RC4-MD5 is affected on version 1.0.2.\n\nThe vendor was notified on November 13, 2016.\n\nRobert Swiecki of Google reported this vulnerability.\n\nA remote server can supply specially crafted parameters for a DHE or ECDHE key exchange to trigger a null pointer dereference and cause the target client service to crash [CVE-2017-3730]. Version 1.1.0 is affected.\n\nThe vendor was notified on January 14, 2017.\n\nGuido Vranken reported this vulnerability.\n\nA remote user can exploit a carry propagation flaw in BN_mod_exp() to potentially determine information about the private key in certain situations [CVE-2017-3732].\n\nSystems configured for persistent DH parameters and sharing a private key between multiple clients are affected.\n\nThe vendor was notified on January 15, 201.\n\nThe OSS-Fuzz project reported this vulnerability.",
+    "Impact'": "A remote user can cause the target service to crash.\n\nA remote user can obtain potentially sensitive information on the target system.",
+    "Solution": "IBM has issued a fix for CVE-2017-3732 for IBM Security Network IPS.\n\nThe IBM advisory is available at:\n\nhttps://www-01.ibm.com/support/docview.wss?uid=ibm10713555",
+    "Vendor URL": "www-01.ibm.com/support/docview.wss?uid=ibm10713555",
+    "Cause": "Access control error",
+    "Message History": [
+        "https://securitytracker.com/id/1037717"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Security Network IPS) OpenSSL Flaws Let Remote Users Deny Service and Decrypt TLS Sessions in Certain Cases",
+    "SecurityTracker Alert ID": "1041524",
+    "SecurityTracker URL": "http://securitytracker.com/id/1041524",
+    "CVE Reference": "CVE-2016-0705",
+    "Date": "Aug 20 2018",
+    "Impact": [
+        "Denial of service via network",
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "4.6.1, 4.6.2",
+    "Description": "Multiple vulnerabilities were reported in OpenSSL. A remote user can decrypt TLS sessions in certain cases. A remote user can cause denial of service conditions on the target system. IBM Security Network IPS is affected.\nA remote user can decrypt TLS sessions in certain cases by using a server that supports SSLv2 and EXPORT cipher suites as a Bleichenbacher RSA padding oracle [CVE-2016-0800]. This attack is known as a DROWN attack.\n\nSystems with a private key used on another server for any protocol that allows SSLv2 connections are affected.\n\nSystems running versions prior to 1.0.2a, 1.0.1m, 1.0.0r, and 0.9.8zf (released on March 19, 2015) can be exploited more readily.\n\nThe original advisory is available at:\n\nhttps://drownattack.com/drown-attack-paper.pdf\n\nNimrod Aviram, Sebastian Schinzel, Juraj Somorovsky, Nadia Heninger, Maik Dankel, Jens Steube, Luke Valenta, David Adrian, J. Alex Halderman, Viktor Dukhovni, Emilia Kasper, Shaanan Cohney, Susanne Engels, Christof Paar, and Yuval Shavitt reported this vulnerability.\n\nA remote user can create a specially crafted private DSA key that, when processed by OpenSSL, will trigger a double free memory error and cause denial of service conditions [CVE-2016-0705].\n\nAdam Langley (Google/BoringSSL) reported this vulnerability.\n\nA remote user can supply a specially crafted username value to the target SRP server to trigger a memory leak [CVE-2016-0798].\n\nEmilia Kasper of the OpenSSL development team reported this vulnerability.\n\nA user can create specially crafted data (e.g., configuration file) that, when processed by OpenSSL, will trigger a null pointer dereference in the BN_hex2bn/BN_dec2bn() functions [CVE-2016-0797].\n\nGuido Vranken reported this vulnerability.\n\nA user can create specially crafted data that, when processed by OpenSSL, will trigger a memory error in BIO_*printf() functions [CVE-2016-0799].\n\nGuido Vranken reported this vulnerability.\n\nA local user can conduct a side-channel attack against a system based on the Intel Sandy-Bridge microarchitecture to potentially recover RSA keys [CVE-2016-0702].\n\nYuval Yarom, the University of Adelaide and NICTA, Daniel Genkin, Technion and Tel Aviv University, and Nadia Heninger, University of Pennsylvania, reported this vulnerability.\n\nThe SSLv2 's2_srvr.c' code does not ensure that a clear-key-length value is 0 for non-export ciphers. As a result, clear-key bytes can displace encrypted-key bytes, which can be exploited to conduct a key recovery attack [CVE-2016-0703].\n\nVersions 1.0.2, 1.0.1l, 1.0.0q, and 0.9.8ze and prior versions are affected.\n\nDavid Adrian and J. Alex Halderman of the University of Michigan reported this vulnerability.\n\nThe Bleichenbacher protection for export cipher suites in 's2_srvr.c' overwrites bytes incorrectly in the master-key, which may provide a Bleichenbacher oracle that can be used to decrypt sessions [CVE-2016-0704].\n\nVersions 1.0.2, 1.0.1l, 1.0.0q, and 0.9.8ze and all prior versions are affected.\n\nDavid Adrian and J. Alex Halderman of the University of Michigan reported this vulnerability.\n\nA remote user can trigger an out-of-bounds memory write error in doapr_outch() in 'crypto/bio/b_print.c' to potentially execute arbitrary code on the target system [CVE-2016-2842].\n\nGuido Vranken reported this vulnerability.",
+    "Impact'": "A remote user can decrypt TLS sessions in certain cases.\n\nA remote user can cause denial of service conditions.\n\nA remote user can execute arbitrary code on the target system.",
+    "Solution": "IBM has issued a fix for CVE-2016-0705 for IBM Security Network IPS.\n\nThe IBM advisory is available at:\n\nhttps://www-01.ibm.com/support/docview.wss?uid=ibm10713555",
+    "Vendor URL": "www-01.ibm.com/support/docview.wss?uid=ibm10713555",
+    "Cause": "Access control error",
+    "Message History": [
+        "https://securitytracker.com/id/1035133"
+    ]
+}{
+    "source": "1-2",
+    "Title": "McAfee Network Security Manager Web Interface Bug Lets Remote Authenticated Users Gain Elevated Privileges",
+    "SecurityTracker Alert ID": "1040036",
+    "SecurityTracker URL": "http://securitytracker.com/id/1040036",
+    "CVE Reference": "CVE-2016-8029",
+    "Date": "Dec 21 2017",
+    "Impact": "User access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to 8.2.7.71.1",
+    "Description": "A vulnerability was reported in McAfee Network Security Manager. A remote authenticated user can gain elevated privileges.\nA remote authenticated user can supply a specially crafted HTTP request parameter to exploit a flaw in the web interface and gain elevated privileges on the target system.\n\nTomasz Klicki from COMP S.A. reported this vulnerability.",
+    "Impact'": "A remote authenticated user can gain elevated privileges on the target system.",
+    "Solution": "The vendor has issued a fix (8.3.7.64, 9.1.7.11) [disclosed in November 2017].\n\nThe vendor advisory is available at:\n\nhttps://kc.mcafee.com/corporate/index?page=content&id=SB10210",
+    "Vendor URL": "kc.mcafee.com/corporate/index?page=content&id=SB10210",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Cisco Intrusion Prevention System Device Manager Configuration Screen HTML Comments Let Remote Users Obtain Potentially Sensitive Information on the Target System",
+    "SecurityTracker Alert ID": "1037842",
+    "SecurityTracker URL": "http://securitytracker.com/id/1037842",
+    "CVE Reference": "CVE-2017-3842",
+    "Date": "Feb 15 2017",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in Cisco Intrusion Prevention System Device Manager. A remote user can obtain potentially sensitive information on the target system.\nA remote user can view potentially sensitive information in certain HTML comments on certain configuration pages on the web interface.\n\nThe vendor has assigned bug ID CSCuh91455 to this vulnerability.",
+    "Impact'": "A remote user can obtain potentially sensitive information on the target system.",
+    "Solution": "The vendor has issued a fix (Device Manager 07.3(00)C98).\n\nThe vendor advisory is available at:\n\nhttps://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170215-idm",
+    "Vendor URL": "tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170215-idm",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(Cisco Issues Advisory for Cisco Intrusion Prevention System) ntp Multiple Bugs Let Remote Users Modify Parameters and Deny Service",
+    "SecurityTracker Alert ID": "1036061",
+    "SecurityTracker URL": "http://securitytracker.com/id/1036061",
+    "CVE Reference": [
+        "CVE-2016-4953",
+        "CVE-2016-4954",
+        "CVE-2016-4955",
+        "CVE-2016-4956",
+        "CVE-2016-4957"
+    ],
+    "Date": "Jun  9 2016",
+    "Impact": [
+        "Denial of service via network",
+        "Modification of system information"
+    ],
+    "Vendor Confirmed": "Yes",
+    "Description": "Multiple vulnerabilities were reported in ntp. A remote user can cause denial of service conditions on the target system. A remote user can modify configuration parameters in certain cases. Cisco Intrusion Prevention System is affected.\nA remote user can send a specially crafted spoofed packet containing an invalid MAC to the target system to demobilize its ephemeral association [CVE-2016-4953].\n\nA remote user can send specially crafted spoofed packets to bypass some validation checks in the receive() function and be processed by the process_packet() function in 'ntp_proto.c' [CVE-2016-4954]. In some cases, the remote user may be able to modify certain peer variables on the target system.\n\nA remote user can send a specially crafted spoofed packet with an invalid MAC or crypto-NAK to the target system to reset its association and potentially prevent the association from working [CVE-2016-4955]. Systems using autokey for authentication are affected.\n\nA remote user can send specially crafted data to cause a target broadcast client to switch to interleave mode and cause the client synchronization to become disabled [CVE-2016-4956].\n\nA remote user can send a specially crafted crypto-NAK packet to the target system to trigger a null pointer dereference and cause the ntpd process to crash [CVE-2016-4957].\n\nJakub Prokes of Red Hat Quality Engineering, Miroslav Lichvar of Red Hat, and Nicolas Edet of Cisco reported these vulnerabilities.",
+    "Impact'": "A remote user can modify configuration parameters in certain cases.\n\nA remote user can cause denial of service conditions, including crashing the daemon, destabilizing ephemeral associations, and disabling synchronization.",
+    "Solution": "No solution was available at the time of this entry.\n\nThe product has reached End of Software Maintenance Support. A fix is not planned.\n\nThe Cisco advisory is available at:\n\nhttps://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160603-ntpd",
+    "Vendor URL": "tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160603-ntpd",
+    "Cause": [
+        "Access control error",
+        "Input validation error",
+        "State error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1036037"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Sourcefire 3D System Appliance Input Validation Flaw Lets Remote Users Bypass Malware Detection on the Target System",
+    "SecurityTracker Alert ID": "1035438",
+    "SecurityTracker URL": "http://securitytracker.com/id/1035438",
+    "CVE Reference": "CVE-2016-1345",
+    "Date": "Mar 30 2016",
+    "Impact": [
+        "Host/resource access via network",
+        "Modification of system information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "FirePOWER",
+    "Description": "A vulnerability was reported in Sourcefire 3D System Appliances. A remote user can bypass malware detection.\nA remote user can supply specially crafted HTTP header values to the target system to trigger an input validation flaw in the malicious file detection and blocking features and bypass malware detection on the target system.\n\nThe vendor has assigned bug ID CSCux22726 to this vulnerability.\n\nDikla Barda, Liad Mizrachi, and Oded Vanunu of the Check Point Security Team reported this vulnerability.",
+    "Impact'": "A remote user can bypass malware detection on the target system.",
+    "Solution": "The vendor has issued a fix (FirePOWER 5.4.0.7, 5.4.1.6, 6.0.1).\n\nThe vendor's advisory is available at:\n\nhttps://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160330-fp",
+    "Vendor URL": "tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160330-fp",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(Cisco Issues Advisory for Cisco Intrusion Prevention System) OpenSSL Flaws Let Remote Users Recover DH Keys in Certain Cases and Let Remote Users Negotiate Disabled Ciphers",
+    "SecurityTracker Alert ID": "1034963",
+    "SecurityTracker URL": "http://securitytracker.com/id/1034963",
+    "CVE Reference": [
+        "CVE-2015-3197",
+        "CVE-2016-0701"
+    ],
+    "Date": "Feb  9 2016",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Modification of system information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "Two vulnerabilities were reported in OpenSSL. A remote user can recover keys in certain cases. A remote user can negotiate disabled ciphers. Cisco Intrusion Prevention System is affected.\nThe system may use primes for generating Diffie Hellman (DH) parameters that are not safe when using X9.42 style parameter files [CVE-2016-0701]. A remote user that complete multiple handshakes with the target peer where the peer uses the same private DH exponent may be able to determine the target peer's private DH exponent and then conduct man-in-the-middle attacks against the ostensibly secure connection.\n\nSystems that reuse the private DH exponent or use a static DH ciphersuite are affected.\n\nSystems with the SSL_OP_SINGLE_DH_USE option for ephemeral DH (DHE) in TLS disabled reuse the same private DH exponent for the life of the server process and are affected.\n\nVersion 1.0.2 is affected.\n\nThe vendor was notified on January 12, 2016\n\nAntonio Sanso (Adobe) reported this vulnerability.\n\nWhen the SSLv2 protocol is not disabled via SSL_OP_NO_SSLv2 on the target server, a remote user can negotiate SSLv2 ciphers that have been disabled on the target server [CVE-2015-3197]. Versions 1.0.1 and 1.0.2 are affected.\n\nThe vendor was notified on December 26, 2015.\n\nNimrod Aviram and Sebastian Schinzel reported this vulnerability.",
+    "Impact'": "A remote user can recover keys in certain cases.\n\nA remote user can negotiate disabled ciphers.",
+    "Solution": "The vendor plans to issue a fix (7.1(11) in March 2016, 7.3(05) in April 2016).\n\nThe Cisco advisory is available at:\n\nhttps://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160129-openssl",
+    "Vendor URL": "tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160129-openssl",
+    "Cause": [
+        "Access control error",
+        "State error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1034849"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Security Network IPS) IBM Security Network Protection Flaw Lets Remote Users Obtain Authentication Credentials on the Target System",
+    "SecurityTracker Alert ID": "1034942",
+    "SecurityTracker URL": "http://securitytracker.com/id/1034942",
+    "CVE Reference": "CVE-2016-0201",
+    "Date": "Feb  5 2016",
+    "Impact": "Disclosure of authentication information",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "4.6.1, 4.6.2",
+    "Description": "A vulnerability was reported in IBM Security Network Protection. A remote user can obtain authentication credentials on the target system. IBM Security Network IPS is affected.\nA remote user can exploit an MD5 collision bug in the GSKit component to obtain authentication credentials.",
+    "Impact'": "A remote user can obtain authentication credentials on the target system.",
+    "Solution": "IBM has issued a fix for IBM Security Network IPS.\n\nThe IBM advisory is available at:\n\nhttps://www-304.ibm.com/support/docview.wss?uid=swg21974240",
+    "Vendor URL": "www-304.ibm.com/support/docview.wss?uid=swg21974240",
+    "Cause": "Access control error",
+    "Message History": [
+        "https://securitytracker.com/id/1034696"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Security Network IPS) Mozilla Firefox MD5 Signature Support in TLS ServerKeyExchange Messages Exposes Users to Hash Collision Forgery Attacks",
+    "SecurityTracker Alert ID": "1034904",
+    "SecurityTracker URL": "http://securitytracker.com/id/1034904",
+    "CVE Reference": "CVE-2015-7575",
+    "Date": "Feb  2 2016",
+    "Impact": "Modification of system information",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "4.6.1, 4.6.2",
+    "Description": "A vulnerability was reported in Mozilla Firefox. A remote user can conduct hash collision forgery attacks. IBM Security Network IPS is affected.\nThe system allows the use of MD5 server signatures in a TLS 1.2 ServerKeyExchange message. As a result, the system may be subject to hash collision forgery attacks.\n\nKarthikeyan Bhargavan reported this vulnerability.",
+    "Impact'": "A remote user can conduct hash collision forgery attacks.",
+    "Solution": "IBM has issued a fix for IBM Security Network IPS.\n\nThe following product models are affected: GX3002, GX4002, GX4004, GX4004-v2, GX5008, GX5008-v2, GX5108, GX5108-v2, GX5208, GX5208-v2, GX6116, GX7412, GX7412-10, GX7412-05, GX7800, GV200, GV1000\n\nThe IBM advisory is available at:\n\nhttps://www-304.ibm.com/support/docview.wss?uid=swg21974643",
+    "Vendor URL": "www-304.ibm.com/support/docview.wss?uid=swg21974643",
+    "Cause": "State error",
+    "Message History": [
+        "https://securitytracker.com/id/1034541"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(Cisco Issues Advisory for Cisco Intrusion Prevention System) ntp Multiple Flaws Let Remote Users Deny Service, View Files, and Bypass Authentication to Modify the Time",
+    "SecurityTracker Alert ID": "1034019",
+    "SecurityTracker URL": "http://securitytracker.com/id/1034019",
+    "CVE Reference": [
+        "CVE-2015-7691",
+        "CVE-2015-7692",
+        "CVE-2015-7701",
+        "CVE-2015-7702",
+        "CVE-2015-7703",
+        "CVE-2015-7704",
+        "CVE-2015-7705",
+        "CVE-2015-7848",
+        "CVE-2015-7849",
+        "CVE-2015-7850",
+        "CVE-2015-7851",
+        "CVE-2015-7852",
+        "CVE-2015-7853",
+        "CVE-2015-7854",
+        "CVE-2015-7855",
+        "CVE-2015-7871"
+    ],
+    "Date": "Oct 29 2015",
+    "Impact": [
+        "Denial of service via network",
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "Modification of system information",
+        "Modification of user information"
+    ],
+    "Vendor Confirmed": "Yes",
+    "Description": "Multiple vulnerabilities were reported in ntp. A remote user can view files on the target system. A remote user can cause denial of service conditions on the target system. A remote user can bypass authentication. A remote user can modify the time on the target system. Cisco Intrusion Prevention System is affected.\nA remote user can trigger a memory leak in CRYPTO_ASSOC [CVE-2015-7701].\n\nA remote user can send AutoKey messages with a specially crafted AutoKey data packet length value to cause denial of service conditions [CVE-2015-7691, CVE-2015-7692, CVE-2015-7702].\n\nA remote user can overwrite \"pidfile\" and \"driftfile\" configuration file directives [CVE-2015-7703].\n\nA remote user can supply specially crafted data to cause denial of service conditions [CVE-2015-7704, CVE-2015-7705].\n\nA remote user can trigger a mode 7 loop counter integer overflow in ntpd [CVE-2015-7848].\n\nA remote user can trigger a use-after-free memory error in the processing of trusted keys [CVE-2015-7849].\n\nA remote user can exploit a logfile-keyfile configuration flaw to cause denial of service conditions [CVE-2015-7850].\n\nA remote user can exploit a directory traversal flaw in ntpd saveconfig [CVE-2015-7851].\n\nA remote user can trigger a memory corruption error in the ntpq atoascii() function [CVE-2015-7852].\n\nA remote user can supply specially crafted reference clock data to trigger a buffer overflow [CVE-2015-7853].\n\nA remote user can supply a specially crafted password value to trigger a memory corruption error [CVE-2015-7854].\n\nA remote user can send a specially crafted control packet message to exploit a flaw in decodenetnum() to cause denial of service conditions [CVE-2015-7855].\n\nA remote user can exploit a flaw in the crypto-NAK() function to bypass symmetric association authentication [CVE-2015-7871].\n\nCisco ASIG, IDA, Cisco TALOS, Tenable, RedHat, OpenVMS, and Boston University reported these vulnerabilities.",
+    "Impact'": "A remote user can modify time on the target system.\n\nA remote user can view files on the target system.\n\nA remote user can cause denial of service conditions.\n\nA remote user can bypass authentication on the target system.",
+    "Solution": "No solution was available at the time of this entry.\n\nCisco has assigned bug ID CSCuw84972 to this vulnerability.\n\nThe Cisco advisory is available at:\n\nhttp://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151021-ntp",
+    "Vendor URL": "tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151021-ntp",
+    "Cause": [
+        "Access control error",
+        "Boundary error",
+        "Input validation error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1033951"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Security Network IPS) Net-snmp Incomplete Parsing in snmp_pdu_parse() Lets Remote Users Crash snmpd or Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1033865",
+    "SecurityTracker URL": "http://securitytracker.com/id/1033865",
+    "CVE Reference": "CVE-2015-5621",
+    "Date": "Oct 19 2015",
+    "Impact": [
+        "Denial of service via network",
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "4.3, 4.4, 4.5, 4.6, 4.6.1, 4.6.2",
+    "Description": "A vulnerability was reported in Net-snmp. A remote user can cause the target service to crash. A remote user can execute arbitrary code on the target system. IBM Security Network IPS is affected.\nA remote user can send specially crafted data to trigger a parsing error in snmp_pdu_parse() and cause the target snmpd process to crash or execute arbitrary code on the target system. The code will run with the privileges of the target snmp service.\n\nQinghao Tang of QIHU 360, China, reported this vulnerability.",
+    "Impact'": "A remote user can cause the target service to crash.\n\nA remote user can execute arbitrary code on the target system.",
+    "Solution": "IBM has issued a fix for IBM Security Network IPS.\n\nThe IBM advisory is available at:\n\nhttps://www-304.ibm.com/support/docview.wss?uid=swg21966694",
+    "Vendor URL": "www-304.ibm.com/support/docview.wss?uid=swg21966694",
+    "Cause": "Access control error",
+    "Message History": [
+        "https://securitytracker.com/id/1033304"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Security Network IPS) Glibc Buffer Overflow in getanswer_r() Lets Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1033864",
+    "SecurityTracker URL": "http://securitytracker.com/id/1033864",
+    "CVE Reference": "CVE-2015-1781",
+    "Date": "Oct 19 2015",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "4.3, 4.4, 4.5, 4.6, 4.6.1, 4.6.2",
+    "Description": "A vulnerability was reported in Glibc. A remote user can execute arbitrary code on the target system. IBM Security Network IPS is affected.\nA remote user can send a specially crafted DNS response to trigger a buffer overflow in getanswer_r() and potentially execute arbitrary code on the target system. The code will run with the privileges of the target application or service.\n\nThe vulnerability resides in '/resolv/nss_dns/dns-host.c'.\n\nArjun Shankar of Red Hat reported this vulnerability.",
+    "Impact'": "A remote user can execute arbitrary code on the target system.",
+    "Solution": "IBM has issued a fix for IBM Security Network IPS.\n\nThe IBM advisory is available at:\n\nhttps://www-304.ibm.com/support/docview.wss?uid=swg21966788",
+    "Vendor URL": "www-304.ibm.com/support/docview.wss?uid=swg21966788",
+    "Cause": "Boundary error",
+    "Message History": [
+        "https://securitytracker.com/id/1032178"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Security Network IPS) Glibc nss_files File Pointer Reset Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1033863",
+    "SecurityTracker URL": "http://securitytracker.com/id/1033863",
+    "CVE Reference": "CVE-2014-8121",
+    "Date": "Oct 19 2015",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "4.3, 4.4, 4.5, 4.6, 4.6.1, 4.6.2",
+    "Description": "A vulnerability was reported in Glibc. A remote user can cause denial of service conditions on the target system. IBM Security Network IPS is affected.\nThe nss_files database for the Name Service Switch (NSS) does not properly handle lookups that occur in the middle of iterations and may reset the file pointer during the iteration. A remote or local user can cause the target application to enter an infinite loop.\n\nThe Samba application is affected.\n\nRobin Hack of Red Hat reported this vulnerability.",
+    "Impact'": "A remote user can cause the target application to enter an infinite loop.",
+    "Solution": "IBM has issued a fix for IBM Security Network IPS.\n\nThe IBM advisory is available at:\n\nhttps://www-304.ibm.com/support/docview.wss?uid=swg21966788",
+    "Vendor URL": "www-304.ibm.com/support/docview.wss?uid=swg21966788",
+    "Cause": "State error",
+    "Message History": [
+        "https://securitytracker.com/id/1031838"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Security Network IPS) Red Hat OpenSSL Locking Error in ssleay_rand_bytes() Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1033194",
+    "SecurityTracker URL": "http://securitytracker.com/id/1033194",
+    "CVE Reference": "CVE-2015-3216",
+    "Date": "Aug  6 2015",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "4.3, 4.4, 4.5, 4.6, 4.6.1, 4.6.2",
+    "Description": "A vulnerability was reported in OpenSSL on Red Hat. A remote user can cause denial of service conditions on the target system. IBM Security Network IPS is affected.\nA remote user can send specially crafted data to a target multi-threaded application that uses OpenSSL to trigger an out-of-bounds memory read error in ssleay_rand_bytes() and cause the application to crash.\n\nJohannes Bauer reported this vulnerability.",
+    "Impact'": "A remote user can cause the target application to crash.",
+    "Solution": "IBM has issued a fix for IBM Security Network IPS.\n\nThe IBM advisory is available at:\n\nhttps://www-304.ibm.com/support/docview.wss?uid=swg21962039",
+    "Vendor URL": "www-304.ibm.com/support/docview.wss?uid=swg21962039",
+    "Cause": "Access control error",
+    "Message History": [
+        "https://securitytracker.com/id/1032587"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Security Network IPS) OpenSSL Double Free Memory Error in ssl3_get_new_session_ticket() Has Unspecified Impact",
+    "SecurityTracker Alert ID": "1033193",
+    "SecurityTracker URL": "http://securitytracker.com/id/1033193",
+    "CVE Reference": "CVE-2015-1791",
+    "Date": "Aug  6 2015",
+    "Impact": "Not specified",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "4.3, 4.4, 4.5, 4.6, 4.6.1, 4.6.2",
+    "Description": "A vulnerability was reported in OpenSSL. The impact was not specified. IBM Security Network IPS is affected.\nA remote server can return a specially crafted NewSessionTicket message to a connected multi-threaded client to cause the client to attempt to reuse a previous ticket and trigger a race condition. As a result, a double free memory error may occur in ssl3_get_new_session_ticket().\n\nEmilia Kasper of the OpenSSL development team reported this vulnerability.",
+    "Impact'": "The impact was not specified.",
+    "Solution": "IBM has issued a fix for IBM Security Network IPS.\n\nThe IBM advisory is available at:\n\nhttps://www-304.ibm.com/support/docview.wss?uid=swg21962039",
+    "Vendor URL": "www-304.ibm.com/support/docview.wss?uid=swg21962039",
+    "Cause": [
+        "Access control error",
+        "State error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1032479"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(IBM Issues Fix for IBM Security Network IPS) OpenSSL Bugs Let Remote Users Deny Service and Potentially Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1033192",
+    "SecurityTracker URL": "http://securitytracker.com/id/1033192",
+    "CVE Reference": [
+        "CVE-2014-8176",
+        "CVE-2015-1788",
+        "CVE-2015-1789",
+        "CVE-2015-1790",
+        "CVE-2015-1792"
+    ],
+    "Date": "Aug  6 2015",
+    "Impact": [
+        "Denial of service via network",
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "4.3, 4.4, 4.5, 4.6, 4.6.1, 4.6.2",
+    "Description": "Multiple vulnerabilities were reported in OpenSSL. A remote user can cause denial of service conditions on the target system. A remote authenticated user may be able to execute arbitrary code on the target system. IBM Security Network IPS is affected.\nA remote authenticated user can send specially crafted application data to a connected DTLS peer between the ChangeCipherSpec and Finished messages to trigger an invalid memory free and cause a segmentation fault or memory corruption error and potentially execute arbitrary code [CVE-2014-8176]. Versions 0.9.8 prior to 0.9.8za, 1.0.0 prior to 1.0.0m, and 1.0.1 prior to 1.0.1h are affected.\n\nPraveen Kariyanahalli and Ivan Fratric and Felix Groebert of Google separately reported this vulnerability.\n\nA remote user can send specially crafted ECParameters to cause the target service to enter an infinite loop [CVE-2015-1788]. Applications that process public keys, certificate requests, or certificates are affected. TLS clients and TLS servers with client authentication enabled are affected. Versions 1.0.1 and 1.0.2 are affected.\n\nJoseph Birr-Pixton reported this vulnerability on April 6, 2015.\n\nA remote user can create a specially crafted certificate or certificate revocation list (CRL) that, when processed by the target application, will trigger an out-of-bound memory read in X509_cmp_time() and cause a segmentation fault [CVE-2015-1789]. TLS clients that verify CRLs are affected. TLS clients and servers with client authentication enabled and that use custom verification callbacks may be affected.\n\nRobert Swiecki of Google reported this vulnerability on April 8, 2015 and Hanno Bock independently reported this vulnerability on April 11, 2015.\n\nA remote user can create specially crafted ASN.1-encoded PKCS#7 data with a missing EnvelopedContent component to trigger a null pointer dereference [CVE-2015-1790]. Applications that decrypt or parse PKCS#7 data from untrusted sources are affected. OpenSSL clients and servers are not affected. The impact was not specified.\n\nMichal Zalewski of Google reported this vulnerability on April 18, 2015.\n\nA remote user can create a specially crafted signedData message that specifies an unknown hash function OID to trigger an infinite loop in the CMS code [CVE-2015-1792]. Applications that verify signedData messages using the CMS code are affected.\n\nJohannes Bauer reported this vulnerability on March 31, 2015.",
+    "Impact'": "A remote user can cause the target application to crash or enter an infinite loop.\n\nA remote authenticated user may be able to execute arbitrary code on the target system.\n\nThe impact of one vulnerability was not disclosed.",
+    "Solution": "IBM has issued a fix for IBM Security Network IPS.\n\nThe IBM advisory is available at:\n\nhttps://www-304.ibm.com/support/docview.wss?uid=swg21962039",
+    "Vendor URL": "www-304.ibm.com/support/docview.wss?uid=swg21962039",
+    "Cause": [
+        "Access control error",
+        "Boundary error",
+        "Not specified",
+        "State error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1032564"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(Cisco Issues Advisory for Cisco Intrusion Prevention System) OpenSSL Double Free Memory Error in ssl3_get_new_session_ticket() Has Unspecified Impact",
+    "SecurityTracker Alert ID": "1032602",
+    "SecurityTracker URL": "http://securitytracker.com/id/1032602",
+    "CVE Reference": "CVE-2015-1791",
+    "Date": "Jun 17 2015",
+    "Impact": "Not specified",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to 7.1.11 and 7.3.5",
+    "Description": "A vulnerability was reported in OpenSSL. The impact was not specified. Cisco Intrusion Prevention System is affected.\nA remote server can return a specially crafted NewSessionTicket message to a connected multi-threaded client to cause the client to attempt to reuse a previous ticket and trigger a race condition. As a result, a double free memory error may occur in ssl3_get_new_session_ticket().\n\nEmilia Kasper of the OpenSSL development team reported this vulnerability.",
+    "Impact'": "The impact was not specified.",
+    "Solution": "Cisco has issued an advisory for Cisco Intrusion Prevention System. The vendor plans to issue a fix (7.1.11, 7.3.5).\n\nThe vendor has assigned bug ID CSCuu82497 to this vulnerability.\n\nThe Cisco advisory is available at:\n\nhttp://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150612-openssl",
+    "Vendor URL": "tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150612-openssl",
+    "Cause": [
+        "Access control error",
+        "State error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1032479"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(Cisco Issues Advisory for Cisco Intrusion Prevention System) OpenSSL Bugs Let Remote Users Deny Service and Potentially Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1032601",
+    "SecurityTracker URL": "http://securitytracker.com/id/1032601",
+    "CVE Reference": [
+        "CVE-2014-8176",
+        "CVE-2015-1788",
+        "CVE-2015-1789",
+        "CVE-2015-1790",
+        "CVE-2015-1792"
+    ],
+    "Date": "Jun 17 2015",
+    "Impact": [
+        "Denial of service via network",
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to 7.1.11 and 7.3.5",
+    "Description": "Multiple vulnerabilities were reported in OpenSSL. A remote user can cause denial of service conditions on the target system. A remote authenticated user may be able to execute arbitrary code on the target system. Cisco Intrusion Prevention System is affected.\nA remote authenticated user can send specially crafted application data to a connected DTLS peer between the ChangeCipherSpec and Finished messages to trigger an invalid memory free and cause a segmentation fault or memory corruption error and potentially execute arbitrary code [CVE-2014-8176]. Versions 0.9.8 prior to 0.9.8za, 1.0.0 prior to 1.0.0m, and 1.0.1 prior to 1.0.1h are affected.\n\nPraveen Kariyanahalli and Ivan Fratric and Felix Groebert of Google separately reported this vulnerability.\n\nA remote user can send specially crafted ECParameters to cause the target service to enter an infinite loop [CVE-2015-1788]. Applications that process public keys, certificate requests, or certificates are affected. TLS clients and TLS servers with client authentication enabled are affected. Versions 1.0.1 and 1.0.2 are affected.\n\nJoseph Birr-Pixton reported this vulnerability on April 6, 2015.\n\nA remote user can create a specially crafted certificate or certificate revocation list (CRL) that, when processed by the target application, will trigger an out-of-bound memory read in X509_cmp_time() and cause a segmentation fault [CVE-2015-1789]. TLS clients that verify CRLs are affected. TLS clients and servers with client authentication enabled and that use custom verification callbacks may be affected.\n\nRobert Swiecki of Google reported this vulnerability on April 8, 2015 and Hanno Bock independently reported this vulnerability on April 11, 2015.\n\nA remote user can create specially crafted ASN.1-encoded PKCS#7 data with a missing EnvelopedContent component to trigger a null pointer dereference [CVE-2015-1790]. Applications that decrypt or parse PKCS#7 data from untrusted sources are affected. OpenSSL clients and servers are not affected. The impact was not specified.\n\nMichal Zalewski of Google reported this vulnerability on April 18, 2015.\n\nA remote user can create a specially crafted signedData message that specifies an unknown hash function OID to trigger an infinite loop in the CMS code [CVE-2015-1792]. Applications that verify signedData messages using the CMS code are affected.\n\nJohannes Bauer reported this vulnerability on March 31, 2015.",
+    "Impact'": "A remote user can cause the target application to crash or enter an infinite loop.\n\nA remote authenticated user may be able to execute arbitrary code on the target system.\n\nThe impact of one vulnerability was not disclosed.",
+    "Solution": "Cisco has issued an advisory for Cisco Intrusion Prevention System. The vendor plans to issue a fix (7.1.11, 7.3.5).\n\nThe vendor has assigned bug ID CSCuu82497 to this vulnerability.\n\nThe Cisco advisory is available at:\n\nhttp://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150612-openssl",
+    "Vendor URL": "tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150612-openssl",
+    "Cause": [
+        "Access control error",
+        "Boundary error",
+        "Not specified",
+        "State error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1032564"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(Juniper Issues Advisory for Juniper IDP) OpenSSL Multiple Flaws Let Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1032468",
+    "SecurityTracker URL": "http://securitytracker.com/id/1032468",
+    "CVE Reference": [
+        "CVE-2015-0209",
+        "CVE-2015-0286",
+        "CVE-2015-0287",
+        "CVE-2015-0288",
+        "CVE-2015-0289",
+        "CVE-2015-0292",
+        "CVE-2015-0293"
+    ],
+    "Date": "Jun  3 2015",
+    "Impact": [
+        "Denial of service via network",
+        "Modification of system information",
+        "Not specified"
+    ],
+    "Vendor Confirmed": "Yes",
+    "Description": "Several vulnerabilities were reported in OpenSSL. A remote user can cause denial of service conditions on the target system. Juniper IDP is affected by some of these vulnerabilities.\nA remote user can send a specially crafted ClientHello message to trigger a segmentation fault in DTLSv1_listen() and cause the target service to crash [CVE-2015-0207]. Only version 1.0.2 is affected. DTLS systems are affected. Per Allansson reported this vulnerability.\n\nA remote user can send an ASN.1 signature using the RSA PSS algorithm and specially crafted parameters to cause the target application to crash [CVE-2015-0208]. Only version 1.0.2 is affected. Brian Carpenter reported this vulnerability.\n\nA user can invoke the d2i_ECPrivateKey() function with a specially crafted EC private key file to trigger a memory free error and cause denial of service conditions [CVE-2015-0209]. Applications that receive EC private keys from untrusted sources may be affected. The BoringSSL project reported this vulnerability.\n\nIn certain situations, a client may complete a handshake with using an unseeded PRNG [CVE-2015-0285]. As a result, information generated (such as keys) may be predictable. Only version 1.0.2 is affected. Matt Caswell of the OpenSSL development team reported this vulnerability.\n\nA remote user can send a specially crafted ASN.1 boolean type to trigger a flaw in the ASN1_TYPE_cmp() function and cause the target application to crash [CVE-2015-0286]. Stephen Henson of the OpenSSL development team reported this vulnerability.\n\nA remote user can send specially crafted ASN.1 data to trigger a memory corruption error in the target application [CVE-2015-0287]. Applications that parse structures containing CHOICE or ANY DEFINED BY components may be affected. OpenSSL clients and servers are not affected. Emilia Kasper reported this vulnerability.\n\nA user can invoke the X509_to_X509_REQ() function with an invalid certificate key to trigger a null pointer dereference and cause the target application to crash [CVE-2015-0288]. Brian Carpenter reported this vulnerability.\n\nA remote user can send specially crafted ASN.1-encoded PKCS#7 blobs with missing ContentInfo to trigger a null pointer dereference and cause the target application to crash [CVE-2015-0289]. OpenSSL clients and servers are not affected. Michal Zalewski of Google and Emilia Kasper of the OpenSSL development team reported this vulnerability.\n\nA remote user may be able to trigger a flaw in the 'multiblock' code on 64-bit x86 systems that support AES NI instructions and cause the target system to potentially crash [CVE-2015-0290]. Only version 1.0.2 is affected. Daniel Danner and Rainer Mueller reported this vulnerability.\n\nA remote user can renegotiate with an invalid signature algorithm extension to trigger a null pointer dereference and cause the target service to crash [CVE-2015-0291]. Only version 1.0.2 is affected. David Ramos (@ramosbugs) of Stanford University reported this vulnerability.\n\nA remote user can send base64 encoded data to trigger a flaw in OpenSSL and cause the target application or service to crash [CVE-2015-0292]. Versions 0.9.8, 1.0.0, and 1.0.1 are affected. Robert Dugal and David Ramos separately reported this vulnerability.\n\n[Editor's note: This vulnerability was previously fixed in source code commits d0666f289a (1.0.1), 84fe686173 (1.0.0) and 9febee0272 (0.9.8) but was not disclosed in a security advisory.]\n\nA remote user can send a specially crafted SSLv2 CLIENT-MASTER-KEY message to cause the target server to crash [CVE-2015-0293]. Systems that both support SSLv2 and enable export cipher suites are affected. Sean Burford of Google and Emilia Kasper of the OpenSSL development team reported this vulnerability.\n\nA remote user can select a DHE ciphersuite and send a zero length ClientKeyExchange message to cause the target service to crash [CVE-2015-1787]. Only version 1.0.2 is affected. Matt Caswell of the OpenSSL development team reported this vulnerability.",
+    "Impact'": "A remote user can cause denial of service conditions on the target system.\n\nA remote user may be able to more readily predict keys in certain cases.",
+    "Solution": "Juniper has issued an advisory for CVE-2015-0209, CVE-2015-0286, CVE-2015-0287, CVE-2015-0288, CVE-2015-0289, CVE-2015-0292, and CVE-2015-0293 for Juniper IDP.\n\nNo solution was available at the time of this entry. The vendor is working on a fix (via the pending DDoS Secure software update; reference PR 1072987).\n\nThe Juniper advisory is available at:\n\nhttps://kb.juniper.net/InfoCenter/index?page=content&id=JSA10680",
+    "Vendor URL": "kb.juniper.net/InfoCenter/index?page=content&id=JSA10680",
+    "Cause": [
+        "Access control error",
+        "Randomization error",
+        "State error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1031929"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(Juniper Issues Fix for Juniper IDP) GNU bash Environment Variable Processing Flaws Let Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1032451",
+    "SecurityTracker URL": "http://securitytracker.com/id/1032451",
+    "CVE Reference": [
+        "CVE-2014-6271",
+        "CVE-2014-6277",
+        "CVE-2014-6278",
+        "CVE-2014-7169",
+        "CVE-2014-7186",
+        "CVE-2014-7187"
+    ],
+    "Date": "Jun  2 2015",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "Execution of arbitrary code via network",
+        "User access via local system",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Description": "Several vulnerabilities were reported in GNU bash. A user can execute arbitrary code on the target system. Juniper IDP is affected.\nThe software does not properly process environment variables.\n\nA user can supply a specially crafted value that includes a bash function followed by additional code that, when processed by bash, will execute the additional code [CVE-2014-6271]. This vulnerability is known as \"Shellshock\".\n\nStephane Chazelas reported this vulnerability.\n\nAn initial fix for CVE-2014-6271 did not properly fix this flaw [CVE-2014-7169].\n\nA user can supply a specially crafted value to trigger an out-of-bounds memory access in redir_stack() and potentially execute arbitrary code [CVE-2014-7186].\n\nFlorian Weimer of Red Hat Product Security reported this vulnerability.\n\nA user can supply specially crafted, deeply nested flow control constructs to trigger an off-by-one error and potentially execute arbitrary code [CVE-2014-7187].\n\nFlorian Weimer of Red Hat Product Security reported this vulnerability.\n\nA user can supply specially crafted data to access uninitialized memory and overwrite a pointer to potentially execute arbitrary code [CVE-2014-6277].\n\nA user can supply specially crafted data to execute arbitrary code [CVE-2014-6278].\n\nMichal Zalewski reported these vulnerabilities.\n\nOn a system with an application that passes data from a remote or remote authenticated user to bash, a remote or remote authenticated user may be able to exploit these vulnerabilities to execute arbitrary code.\n\nSome common system application configurations are affected.\n\nDemonstration exploit code is available.\n\nThis vulnerability is being actively exploited.",
+    "Impact'": "A user can execute arbitrary code on the target system. In some application configurations, a remote user may be able to exploit this.",
+    "Solution": "Juniper has issued a fix for Juniper IDP (5.1r4).\n\nThe Juniper advisory is available at:\n\nhttp://kb.juniper.net/InfoCenter/index?page=content&id=JSA10648",
+    "Vendor URL": "kb.juniper.net/InfoCenter/index?page=content&id=JSA10648",
+    "Cause": "Input validation error",
+    "Message History": [
+        "https://securitytracker.com/id/1030890"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(Juniper Issues Advisory for Juniper IDP) OpenSSL Bugs Let Remote Users Deny Service and Downgrade Session Security",
+    "SecurityTracker Alert ID": "1032093",
+    "SecurityTracker URL": "http://securitytracker.com/id/1032093",
+    "CVE Reference": [
+        "CVE-2014-3569",
+        "CVE-2014-3570",
+        "CVE-2014-3571",
+        "CVE-2014-3572",
+        "CVE-2014-8275",
+        "CVE-2015-0204",
+        "CVE-2015-0205",
+        "CVE-2015-0206"
+    ],
+    "Date": "Apr 11 2015",
+    "Impact": [
+        "Denial of service via network",
+        "Disclosure of system information",
+        "Modification of authentication information"
+    ],
+    "Vendor Confirmed": "Yes",
+    "Description": "Several vulnerabilities were reported in OpenSSL. A remote user can cause denial of service conditions. A remote user can downgrade the session security in certain cases. Juniper IDP is affected.\nA remote user can send a specially crafted DTLS message to trigger a null pointer dereference fault in dtls1_get_record() and cause the target service to crash [CVE-2014-3571].\n\nThe vendor was notified on October 22, 2014.\n\nMarkus Stenberg of Cisco Systems, Inc. reported this vulnerability.\n\nA remote user can send repeated DTLS records with the same sequence number but for the next epoch to trigger a memory leak in dtls1_buffer_record() and consume excessive memory resources on the target system [CVE-2015-0206]. Versions 1.0.0 and 1.0.1 are affected.\n\nThe vendor was notified on January 7, 2015. \n\nChris Mueller reported this vulnerability.\n\nOn systems built with the 'no-ssl3' option, a remote user can send a SSLv3 ClientHello message to later trigger a null pointer dereference [CVE-2014-3569].\n\nThe vendor was notified on October 17, 2014.\n\nFrank Schmirler reported this vulnerability.\n\nA remote server can initiate a handshake using an ephemeral ECDH ciphersuite using an ECDSA certificate but with the server key exchange message omitted to downgrade from ECDHE to ECDH and remove forward secrecy from the ciphersuite [CVE-2014-3572].\n\nThe vendor was notifed on October 22, 2014.\n\nKarthikeyan Bhargavan of the PROSECCO team at INRIA reported this vulnerability.\n\nA remote server can supply a weak RSA temporary key for a non-export RSA key exchange ciphersuite to downgrade the session security [CVE-2015-0204].\n\nThe vendor was notified on October 22, 2014.\n\nKarthikeyan Bhargavan of the PROSECCO team at INRIA reported this vulnerability.\n\nA remote client can send a DH certificate for client authentication without the certificate verify message to systems that trust a client certificate authority that issues certificates containing DH keys to authenticate without the use of a private key [CVE-2015-0205]. Versions 1.0.0 and 1.0.1 are affected.\n\nThe vendor was notified on October 22, 2014.\n\nKarthikeyan Bhargavan of the PROSECCO team at INRIA reported this vulnerability.\n\nA remote user can modify the certificate fingerprint in certain cases [CVE-2014-8275]. Applications that rely on the uniqueness of certificate fingerprints may be affected.\n\nThe vendor was notified on December 1, 2014 and December 12, 2014 by separate parties.\n\nAntti Karjalainen and Tuomo Untinen from the Codenomicon CROSS program (via NCSC-FI) reported one variant of this vulnerability. Konrad Kraszewski from Google reported another variant of this vulnerability.\n\nBignum squaring (BN_sqr) may randomly and rarely produce incorrect results on some platforms (including x86_64). The impact was not specified [CVE-2014-3570].\n\nThe vendor was notified on November 2, 2014.\n\nPieter Wuille (Blockstream) reported this vulnerability.",
+    "Impact'": "A remote user can cause the target system to crash.\n\nA remote user can consume excessive memory resources on the target system.\n\nA remote server can downgrade the session security in certain cases.\n\nA remote user can bypass authentication in certain rare cases.",
+    "Solution": "Juniper has issued an advisory for Juniper IDP.\n\nA fix is pending.\n\nJuniper has assigned PR 1072987 to this vulnerability.\n\nThe Juniper advisory is available at:\n\nhttp://kb.juniper.net/InfoCenter/index?page=content&id=JSA10679",
+    "Vendor URL": "openssl.org/news/secadv_20150108.txt",
+    "Cause": [
+        "Access control error",
+        "Authentication error",
+        "State error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1031513"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(Cisco Issues Advisory for Cisco Intrusion Prevention System) Ntpd Symmetric Mode Packet Processing Flaw Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1032070",
+    "SecurityTracker URL": "http://securitytracker.com/id/1032070",
+    "CVE Reference": "CVE-2015-1799",
+    "Date": "Apr 10 2015",
+    "Impact": "Denial of service via network",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Description": "A vulnerability was reported in Ntpd. A remote user can cause denial of service conditions on the target system. Cisco Intrusion Prevention System is affected.\nA remote user with knowledge of a symmetric association between two hosts can periodically send a specially crafted packet to one host of the symmetric association to cause both hosts to fail to synchronize.\n\nSystems that are configured to use symmetric key authentication are affected.\n\nMiroslav Lichvar of Red Hat reported this vulnerability.",
+    "Impact'": "A remote user can cause two hosts of a symmetric association to fail to synchronize.",
+    "Solution": "Cisco has issued an advisory for Cisco Intrusion Prevention System.\n\nCisco has assigned bug ID CSCut77568 to this vulnerability.\n\nThe Cisco advisory is available at:\n\nhttp://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150408-ntpd",
+    "Vendor URL": "support.ntp.org/bin/view/Main/SecurityNotice#Authentication_doesn_t_protect_s",
+    "Cause": "State error",
+    "Message History": [
+        "https://securitytracker.com/id/1032031"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(Cisco Issues Advisory for Cisco Intrusion Prevention System) Ntpd MAC Checking Failure Lets Remote Users Bypass Authentication",
+    "SecurityTracker Alert ID": "1032069",
+    "SecurityTracker URL": "http://securitytracker.com/id/1032069",
+    "CVE Reference": "CVE-2015-1798",
+    "Date": "Apr 10 2015",
+    "Impact": "Host/resource access via network",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Description": "A vulnerability was reported in Ntpd. A remote user can bypass authentication on the target system. Cisco Intrusion Prevention System is affected.\nWhen configured for symmetric key authentication, the system accepts packets that do not contain a message authentication code (MAC) as valid packets. A remote user with the ability to conduct a man-in-the-middle attack can send a specially crafted spoofed packet that does not contain a MAC value to bypass authentication.\n\nAuthentication using autokey is not affected.\n\nMiroslav Lichvar of Red Hat reported this vulnerability.",
+    "Impact'": "A remote user can bypass authentication on the target system.",
+    "Solution": "Cisco has issued an advisory for Cisco Intrusion Prevention System.\n\nCisco has assigned bug ID CSCut77568 to this vulnerability.\n\nThe Cisco advisory is available at:\n\nhttp://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150408-ntpd",
+    "Vendor URL": "support.ntp.org/bin/view/Main/SecurityNotice#ntpd_accepts_unauthenticated_pac",
+    "Cause": "Authentication error",
+    "Message History": [
+        "https://securitytracker.com/id/1032032"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Cisco Intrusion Prevention System MainApp SSL Processing Flaw Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1031908",
+    "SecurityTracker URL": "http://securitytracker.com/id/1031908",
+    "CVE Reference": "CVE-2015-0654",
+    "Date": "Mar 11 2015",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to 7.3(3)E4",
+    "Description": "A vulnerability was reported in Cisco Intrusion Prevention System. A remote user can cause denial of service conditions on the target system.\nA remote user can negotiate multiple HTTPS connections with the management interface to trigger a race condition and cause the target MainApp process and web service to become unresponsive. As a result, the IPS sensor may fail to perform alert notification, event store management, and sensor authentication. The Cisco IPS web server is also unavailable while the MainApp process is unresponsive. The Analysis Engine may fail to work properly.\n\nThe system must be restarted to return to normal operations.\n\nThe vendor has assigned bug ID CSCuq40652 to this vulnerability.",
+    "Impact'": "A remote user can cause the web interface to become unavailable and cause the system to fail to perform alert notification, event store management, and sensor authentication.",
+    "Solution": "The vendor has issued a fix (7.3(3)E4).\n\nThe vendor's advisory is available at:\n\nhttp://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150311-ips",
+    "Vendor URL": "tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150311-ips",
+    "Cause": "State error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Cisco Intrusion Prevention System SSL/TLS Key Regeneration Bug Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1031780",
+    "SecurityTracker URL": "http://securitytracker.com/id/1031780",
+    "CVE Reference": "CVE-2015-0631",
+    "Date": "Feb 23 2015",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in Cisco Intrusion Prevention System. A remote user can cause denial of service conditions on the target system.\nA remote user can negotiate a number of HTTPS connections with the target web management interface while key regeneration is in process during an upgrade from an image prior to version 7.2 to image version 7.2 (or later) to trigger a race condition in the SSL/TLS subsystem. An unspecified denial of service condition may occur.\n\nA restart is required to return the system to normal operations.\n\nThe vendor has assigned bug ID CSCui25688 to this vulnerability.",
+    "Impact'": "A remote user can cause denial of service conditions.",
+    "Solution": "The vendor has issued a fix.\n\nThe vendor's advisory is available at:\n\nhttp://tools.cisco.com/security/center/content/CiscoSecurityNotice/CVE-2015-0631",
+    "Vendor URL": "tools.cisco.com/security/center/content/CiscoSecurityNotice/CVE-2015-0631",
+    "Cause": "State error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(Juniper Issues Advisory for Juniper IDP-SA) Glibc Buffer Overflow in __nss_hostname_digits_dots() Lets Remote and Local Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1031682",
+    "SecurityTracker URL": "http://securitytracker.com/id/1031682",
+    "CVE Reference": "CVE-2015-0235",
+    "Date": "Jan 30 2015",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "Execution of arbitrary code via network",
+        "User access via local system",
+        "User access via network"
+    ],
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in Glibc. A remote user can execute arbitrary code on the target system. A local user can obtain elevated privileges on the target system. Juniper IDP-SA is affected.\nA remote or local user can send specially crafted data to trigger a buffer overflow in __nss_hostname_digits_dots() and execute arbitrary code on the target system. The code will run with the privileges of the target application or service using the glibc library.\n\nThe buffer overflow can be accessed via the various gethostbyname() functions.\n\nSeveral Linux-based applications that use glibc are affected.\n\nQualys reported this vulnerability.",
+    "Impact'": "A remote user can execute arbitrary code on the target system.\n\nA local user can obtain elevated privileges on the target system.",
+    "Solution": "Juniper has issued an advisory for Juniper IDP-SA.\n\nNo solution was available at the time of this entry.\n\nJuniper has assigned PR 1060071 to this vulnerability.\n\nThe Juniper advisory is available at:\n\nhttp://kb.juniper.net/InfoCenter/index?page=content&id=JSA10671",
+    "Vendor URL": "www.gnu.org/software/libc/",
+    "Cause": "Boundary error",
+    "Message History": [
+        "https://securitytracker.com/id/1031639"
+    ]
+}{
+    "source": "1-2",
+    "Title": "TippingPoint Intrusion Prevention System Local Security Manager SSL 3.0 Protocol Downgrade Flaw Lets Remote Users Decrypt SSL Traffic",
+    "SecurityTracker Alert ID": "1031124",
+    "SecurityTracker URL": "http://securitytracker.com/id/1031124",
+    "CVE Reference": "CVE-2014-3566",
+    "Date": "Oct 28 2014",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "3.7.1.4231 and prior",
+    "Description": "A vulnerability was reported in TippingPoint Intrusion Prevention System Local Security Manager. A remote user can decrypt SSL sessions in certain cases.\nA remote user can with the ability to conduct a man-in-the-middle attack can force a client to negotiate a downgrade to SSLv3 instead of a TLS v1.x protocol and then conduct a BEAST-style of attack to decrypt portions of the session.\n\nThis protocol vulnerability is referred to as the POODLE (\"Padding Oracle On Downgraded Legacy Encryption\") vulnerability.\n\nThis is a flaw in the protocol rather than in the SSL implementation.\n\nThe original advisory is available at:\n\nhttps://www.openssl.org/~bodo/ssl-poodle.pdf\n\nBodo Moller, Thai Duong, and Krzysztof Kotowicz reported this vulnerability.",
+    "Impact'": "A remote user with the ability to conduct a man-in-the-middle attack can decrypt SSL sessions.",
+    "Solution": "The vendor has issued a fix (3.1.3.1325, 3.6.4.4113, 3.7.2.4252).\n\nThe vendor's advisory is available at:\n\nhttps://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c04487990",
+    "Vendor URL": "h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c04487990",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Cisco Intrusion Prevention System SSL 3.0 Protocol Downgrade Flaw Lets Remote Users Decrypt SSL Traffic",
+    "SecurityTracker Alert ID": "1031091",
+    "SecurityTracker URL": "http://securitytracker.com/id/1031091",
+    "CVE Reference": "CVE-2014-3566",
+    "Date": "Oct 21 2014",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Description": "A vulnerability was reported in Cisco Intrusion Prevention System. A remote user can decrypt SSL sessions in certain cases.\nA remote user can with the ability to conduct a man-in-the-middle attack can force a client to negotiate a downgrade to SSLv3 instead of a TLS v1.x protocol and then conduct a BEAST-style of attack to decrypt portions of the session.\n\nThis protocol vulnerability is referred to as the POODLE (\"Padding Oracle On Downgraded Legacy Encryption\") vulnerability.\n\nThis is a flaw in the protocol rather than in the SSL implementation.\n\nCisco has assigned bug ID CSCur29000 to this vulnerability.\n\nThe original advisory is available at:\n\nhttps://www.openssl.org/~bodo/ssl-poodle.pdf\n\nBodo Moller, Thai Duong, and Krzysztof Kotowicz reported this vulnerability.",
+    "Impact'": "A remote user with the ability to conduct a man-in-the-middle attack can decrypt SSL sessions.",
+    "Solution": "No solution was available at the time of this entry.\n\nThe vendor's advisory is available at:\n\nhttp://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20141015-poodle",
+    "Vendor URL": "tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20141015-poodle",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Cisco Intrusion Prevention System Web Framework User Token Bug Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1030977",
+    "SecurityTracker URL": "http://securitytracker.com/id/1030977",
+    "CVE Reference": "CVE-2014-3402",
+    "Date": "Oct  8 2014",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in Cisco Intrusion Prevention System. A remote user can cause denial of service conditions.\nA remote user can send a specially crafted connection request to the target Cisco IPS management interface to trigger a flaw in the handling of user token and cause MainApp to hang.\n\nThe vendor has assigned bug ID CSCuq39550 to this vulnerability.",
+    "Impact'": "A remote user can cause MainApp to hang.",
+    "Solution": "The vendor has issued a fix.\n\nThe vendor's advisory is available at:\n\nhttp://tools.cisco.com/security/center/content/CiscoSecurityNotice/CVE-2014-3402",
+    "Vendor URL": "tools.cisco.com/security/center/content/CiscoSecurityNotice/CVE-2014-3402",
+    "Cause": "State error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(Cisco Issues Advisory for Cisco Intrusion Prevention System Solutions) GNU bash Environment Variable Processing Flaw Lets Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1030913",
+    "SecurityTracker URL": "http://securitytracker.com/id/1030913",
+    "CVE Reference": [
+        "CVE-2014-6271",
+        "CVE-2014-6277",
+        "CVE-2014-6278",
+        "CVE-2014-7169",
+        "CVE-2014-7186",
+        "CVE-2014-7187"
+    ],
+    "Date": "Sep 26 2014",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "Execution of arbitrary code via network",
+        "User access via local system",
+        "User access via network"
+    ],
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Description": "A vulnerability was reported in GNU bash. A user can execute arbitrary code on the target system. Cisco Intrusion Prevention System Solutions is affected. The impact may vary.\nThe software does not properly process environment variables.\n\nA user can supply a specially crafted value that includes a bash function followed by additional code that, when processed by bash, will execute the additional code [CVE-2014-6271]. This vulnerability is known as \"Shellshock\".\n\nStephane Chazelas reported this vulnerability.\n\nAn initial fix for CVE-2014-6271 did not properly fix this flaw [CVE-2014-7169].\n\nA user can supply a specially crafted value to trigger an out-of-bounds memory access in redir_stack() and potentially execute arbitrary code [CVE-2014-7186].\n\nFlorian Weimer of Red Hat Product Security reported this vulnerability.\n\nA user can supply specially crafted, deeply nested flow control constructs to trigger an off-by-one error and potentially execute arbitrary code [CVE-2014-7187].\n\nFlorian Weimer of Red Hat Product Security reported this vulnerability.\n\nA user can supply specially crafted data to access uninitialized memory and overwrite a pointer to potentially execute arbitrary code [CVE-2014-6277].\n\nA user can supply specially crafted data to execute arbitrary code [CVE-2014-6278].\n\nMichal Zalewski reported these vulnerabilities.\n\nOn a system with an application that passes data from a remote or remote authenticated user to bash, a remote or remote authenticated user may be able to exploit these vulnerabilities to execute arbitrary code.\n\nSome common system application configurations are affected.\n\nDemonstration exploit code is available.\n\nThis vulnerability is being actively exploited.",
+    "Impact'": "A user can execute arbitrary code on the target system. In some application configurations, a remote user may be able to exploit this.",
+    "Solution": "Cisco has issued an advisory for Cisco Intrusion Prevention System Solutions.\n\nCisco has assigned bug ID CSCur00552 to this vulnerability.\n\nThe Cisco advisory is available at:\n\nhttp://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20140926-bash",
+    "Vendor URL": "www.gnu.org/software/bash/",
+    "Cause": "Input validation error",
+    "Message History": [
+        "https://securitytracker.com/id/1030890"
+    ]
+}{
+    "source": "1-2",
+    "Title": "McAfee Network Security Manager Input Validation Flaw in User Management Module Permits Cross-Site Request Forgery Attacks",
+    "SecurityTracker Alert ID": "1030674",
+    "SecurityTracker URL": "http://securitytracker.com/id/1030674",
+    "CVE Reference": "CVE-2014-2390",
+    "Date": "Aug  6 2014",
+    "Impact": "Modification of user information",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to versions 6.1.15.39, 7.1.5.15, 7.1.15.7, 7.5.5.9, 8.1.7.3",
+    "Description": "A vulnerability was reported in McAfee Network Security Manager. A remote user can conduct cross-site request forgery attacks.\nThe User Management module does not properly validate user-supplied requests. A remote user can create content that, when loaded by the target user, will take actions on the device interface acting as the target user.\n\nAdi Volkovitz and Oded Vanunu from the Check Point Security Research Team reported this vulnerability.",
+    "Impact'": "A remote user can take actions on the target device acting as the target user.",
+    "Solution": "The vendor has issued a fix (6.1.15.39, 7.1.5.15, 7.1.15.7, 7.5.5.9, 8.1.7.3).\n\nThe vendor's advisory is available at:\n\nhttps://kc.mcafee.com/corporate/index?page=content&id=SB10081",
+    "Vendor URL": "kc.mcafee.com/corporate/index?page=content&id=SB10081",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Cisco Intrusion Prevention System SNMP Processing Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1029846",
+    "SecurityTracker URL": "http://securitytracker.com/id/1029846",
+    "CVE Reference": "CVE-2014-2103",
+    "Date": "Feb 27 2014",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in Cisco Intrusion Prevention System. A remote user can cause denial of service conditions.\nA remote user can send specially crafted SNMP data to the management interface to cause the MainApp process to become unresponsive, preventing certain functions (e.g., alert notification, event store management, sensor authentication, web interface). Other functions (e.g., the Analysis Engine) may not function properly.\n\nOn systems with the SNMP v3 user configured with the noAuth option, authentication is not required to exploit this flaw.\n\nThe vendor has assigned bug IDs CSCum52355 and CSCul49309 to this vulnerability.",
+    "Impact'": "A remote user can cause denial of service conditions.",
+    "Solution": "The vendor has described a workaround.\n\nThe vendor's advisory is available at:\n\nhttp://tools.cisco.com/security/center/content/CiscoSecurityNotice/CVE-2014-2103",
+    "Vendor URL": "tools.cisco.com/security/center/content/CiscoSecurityNotice/CVE-2014-2103",
+    "Cause": "State error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Cisco Intrusion Prevention System Bugs Let Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1029787",
+    "SecurityTracker URL": "http://securitytracker.com/id/1029787",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Feb 20 2014",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "6.x, 7.0, 7.1, 7.2",
+    "Description": "Three vulnerabilities were reported in Cisco Intrusion Prevention System (IPS). A remote user can cause denial of service conditions.\nA remote user can send specially crafted fragmented packets through the target system to cause the target Analysis Engine to become unresponsive [CVE-2014-0718]. Systems with the produce-verbose-alert action enabled are affected.\n\nThe vendor has assigned bug ID CSCui91266 to this vulnerability.\n\nA remote user can send specially crafted TCP packets to TCP port 7000 of the management IP interface to cause the Control-Plane MainApp to become unresponsive [CVE-2014-0719]. This may cause critical functions to fail.  Only Cisco IPS on Cisco ASA 5500 Series and Cisco ASA 5500-X Series devices is affected.\n\nThe vendor has assigned bug ID CSCui67394 to this vulnerability.\n\nA remote user can send specially crafted jumbo frames at a high rate through the target device to cause the Analysis Engine process to become unresponsive [CVE-2014-0720].\n\nThe vendor has assigned bug ID CSCuh94944 to this vulnerability.",
+    "Impact'": "A remote user can cause the target system to become unresponsive.",
+    "Solution": "The vendor has issued a fix (7.1(8p2)E4, 7.2(2)E4).\n\nThe vendor's advisory is available at:\n\nhttp://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20140219-ips",
+    "Vendor URL": "tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20140219-ips",
+    "Cause": [
+        "Input validation error",
+        "State error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Juniper NetScreen-IDP Input Validation Flaw Permits Cross-Site Scripting Attacks",
+    "SecurityTracker Alert ID": "1029491",
+    "SecurityTracker URL": "http://securitytracker.com/id/1029491",
+    "CVE Reference": "CVE-2013-6957",
+    "Date": "Dec 12 2013",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in Juniper NetScreen-IDP. A remote user can conduct cross-site scripting attacks.\nThe ACM web server does not properly filter HTML code from user-supplied input before displaying the input. A remote user can cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the NetScreen-IDP interface and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+    "Impact'": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the NetScreen-IDP interface, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+    "Solution": "The vendor has described a configuration modification to correct the vulnerability.\n\nThe vendor's advisory is available at:\n\nhttp://kb.juniper.net/InfoCenter/index?page=content&id=JSA10603",
+    "Vendor URL": "kb.juniper.net/InfoCenter/index?page=content&id=JSA10603",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Cisco Intrusion Prevention System Authentication Manager Process Flaw Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1029057",
+    "SecurityTracker URL": "http://securitytracker.com/id/1029057",
+    "CVE Reference": "CVE-2013-5497",
+    "Date": "Sep 19 2013",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in Cisco Intrusion Prevention System. A remote user can cause denial of service conditions.\nA remote user can send a specially crafted request to the Cisco IPS management interface to exploit a token handling flaw in the authentication manager process and cause MainApp to hang intermittently.\n\nThe vendor has assigned bug ID CSCuf20148 to this vulnerability.",
+    "Impact'": "A remote user can cause the target MainApp process to hang.",
+    "Solution": "The vendor has issued a fix.\n\nThe vendor's advisory is available at:\n\nhttp://tools.cisco.com/security/center/content/CiscoSecurityNotice/CVE-2013-5497",
+    "Vendor URL": "tools.cisco.com/security/center/content/CiscoSecurityNotice/CVE-2013-5497",
+    "Cause": "State error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Cisco Intrusion Prevention System Packet Processing Flaws Let Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1028806",
+    "SecurityTracker URL": "http://securitytracker.com/id/1028806",
+    "CVE Reference": [
+        "CVE-2013-1218",
+        "CVE-2013-1243",
+        "CVE-2013-3410",
+        "CVE-2013-3411"
+    ],
+    "Date": "Jul 17 2013",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "Several vulnerabilities were reported in Cisco Intrusion Prevention System. A remote user can cause denial of service conditions.\nA remote user can send specially crafted packets to the management interface via IPv4 to cause the target MainApp process to become unresponsive, preventing alert notification, event store management, and sensor authentication and causing the Cisco IPS web server will to be unavailable [CVE-2013-1243]. The vendor has assigned bug ID CSCtx18596 to this vulnerability.\n\nA remote user can send specially crafted fragmented IP packets through a system to cause the Cisco IPS SSP software module Analysis Engine process on the target Cisco ASA 5500-X Series device to become unresponsive or reload [CVE-2013-1218]. Cisco IPS SSP hardware modules on the Cisco ASA5585-X Series are not affected. The vendor has assigned Cisco bug ID CSCue51272 to this vulnerability.\n\nA remote user can send specially crafted IP packets via IPv4 to the management interface to cause the target system to reload [CVE-2013-3410]. Cisco IPS Software running on Cisco IPS NME is affected. The vendor has assigned bug ID CSCua61977 to this vulnerability.\n\nA remote user can send specially crafted TCP packets (pre-handshake) to the management interface to trigger a flaw in the IDSM-2 drivers and cause the target system kernel to become unresponsive, preventing alert notification, event store management, sensor authentication, and traffic inspection and causing the Cisco IPS web server to be unavailable [CVE-2013-3411]. A hard reboot is required to return the system to normal operations. Cisco IPS Software running on Cisco IDSM-2 Module is affected. The vendor has assigned bug ID CSCuh27460 to this vulnerability.",
+    "Impact'": "A remote user can cause the target system or interface to become unavailable or reload.",
+    "Solution": "The vendor has issued a fix, except for CVE-2013-3411. A patch matrix is available in the vendor's advisory.\n\nNo solution was available for CVE-2013-3411 at the time of this entry. However, the vendor has provided a workaround.\n\nThe vendor's advisory is available at:\n\nhttp://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20130717-ips",
+    "Vendor URL": "tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20130717-ips",
+    "Cause": [
+        "Input validation error",
+        "State error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Cisco Intrusion Prevention System Regex Processing Flaw Lets Remote Authenticated Users Deny Service",
+    "SecurityTracker Alert ID": "1028485",
+    "SecurityTracker URL": "http://securitytracker.com/id/1028485",
+    "CVE Reference": "CVE-2013-1219",
+    "Date": "Apr 30 2013",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in Cisco Intrusion Prevention System (IPS). A remote authenticated user can cause denial of service conditions.\nA remote authenticated user can invoke certain operations to trigger a flaw in the regex processing hardware and cause the target device to become unresponsive.\n\nCisco has assigned Cisco Bug ID CSCuc74630 to this vulnerability.\n\nThe following operations are affected:\n\nInitiate signature upgrade\nInitiate global correlation\nRun show statistics anomaly-detection command\nRun clear database command",
+    "Impact'": "A remote authenticated user can cause the target device to become unresponsive.",
+    "Solution": "The vendor has issued a fix.\n\nThe vendor's advisory is available at:\n\nhttp://tools.cisco.com/security/center/content/CiscoSecurityNotice/CVE-2013-1219",
+    "Vendor URL": "tools.cisco.com/security/center/content/CiscoSecurityNotice/CVE-2013-1219",
+    "Cause": "State error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "RSA enVision Bugs Permit Cross-Site Scripting, SQL Injection, and Directory Traversal Attacks",
+    "SecurityTracker Alert ID": "1026819",
+    "SecurityTracker URL": "http://securitytracker.com/id/1026819",
+    "CVE Reference": [
+        "CVE-2012-0399",
+        "CVE-2012-0400",
+        "CVE-2012-0401",
+        "CVE-2012-0402",
+        "CVE-2012-0403"
+    ],
+    "Date": "Mar 19 2012",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of user information",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "4.x, prior to 4.1 Patch 4",
+    "Description": "Several vulnerabilities were reported in RSA enVision. A remote user can access the system. A remote authenticated user can conduct cross-site scripting attacks. A remote authenticated user can inject SQL commands. A remote authenticated user can view files on the target system.\nThe system does not properly filter HTML code from user-supplied input before displaying the input [CVE-2012-0399]. A remote user can cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the RSA enVision interface and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nThe system does not properly restrict excessive authentication attempts [CVE-2012-0400]. A remote user can conduct brute force password guessing attacks.\n\nThe system does not properly validate user-supplied input [CVE-2012-0401]. A remote authenticated user can supply a specially crafted parameter value to execute SQL commands on the underlying database.\n\nThe system has hardcoded authentication credentials [CVE-2012-0402]. A remote user can access the system using these credentials.\n\nA remote authenticated user can supply a specially crafted request to view files on the target system [CVE-2012-0403].\n\nFilip Palian reported some of these vulnerabilities.",
+    "Impact'": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the RSA enVision interface, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nA remote authenticated user can execute SQL commands on the underlying database.\n\nA remote authenticated user can view files on the target system.\n\nA remote user can conduct brute force password guessing attacks.",
+    "Solution": "The vendor has issued a fix (4.1 Patch 4).",
+    "Vendor URL": "www.rsa.com/",
+    "Cause": [
+        "Access control error",
+        "Input validation error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "RSA enVision Discloses Environment Variable Information to Remote Users",
+    "SecurityTracker Alert ID": "1026591",
+    "SecurityTracker URL": "http://securitytracker.com/id/1026591",
+    "CVE Reference": "CVE-2011-4143",
+    "Date": "Jan 26 2012",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "4.0 prior to 4.0 SP4 P5, 4.1 prior to 4.1 P3",
+    "Description": "A vulnerability was reported in RSA enVision. A remote user can view potentially sensitive data on the target system.\nA remote user can view environmental variable data and obtain information about the web server setup.",
+    "Impact'": "A remote user can view potentially sensitive data about the web server configuration on the target system.",
+    "Solution": "The vendor has issued a fix (4.0 SP4 P5, 4.1 P3).",
+    "Vendor URL": "www.emc.com/",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "RSA enVision Lets Remote Users View Files and Remote Authenticated Users Obtain Passwords",
+    "SecurityTracker Alert ID": "1025979",
+    "SecurityTracker URL": "http://securitytracker.com/id/1025979",
+    "CVE Reference": [
+        "CVE-2011-2736",
+        "CVE-2011-2737"
+    ],
+    "Date": "Aug 26 2011",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "3.x, 4.x",
+    "Description": "Two vulnerabilities were reported in RSA enVision. A remote user can view files on the target system. A remote authenticated user can obtain administrative passwords.\nA remote authenticated user can view administrative credentials in Task Escalation emails [CVE-2011-2736]. Only version 4.x is affected.\n\nA remote user can view arbitrary files on target system [CVE-2011-2737].",
+    "Impact'": "A remote user can view files on the target system.\n\nA remote authenticated user can obtain administrative passwords.",
+    "Solution": "The vendor has issued a fix (4 SP4 P3).",
+    "Vendor URL": "www.rsa.com/",
+    "Cause": [
+        "Access control error",
+        "Input validation error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "IBM Security Network IPS Web Application Firewall Can Be Bypassed By Remote Users",
+    "SecurityTracker Alert ID": "1025683",
+    "SecurityTracker URL": "http://securitytracker.com/id/1025683",
+    "CVE Reference": "CVE-2011-3140",
+    "Updated": "Aug 17 2011",
+    "Original Entry Date": "Jun 21 2011",
+    "Impact": "Host/resource access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "Tested on G400 IPS-G400-IB-1 (Intrusion Prevention Update: 2011-03-11 00:34:23 - version: 31.030) and GX4004 IPS-GX4004-IB-2 (Intrusion Prevention Update: 2011-03-10 23:49:15 - version: 31.030)",
+    "Description": "A vulnerability was reported in IBM Security Network IPS. A remote user can bypass the web application firewall.\nA remote user can supply a specially crafted request to bypass the web application firewall.\n\nA demonstration exploit URL is provided:\n\nhttp://[target]/find_ta_def.aspx?id=2571&iid='; /*&iid=1*/ EXEC\n/*&iid=1*/ master..xp_cmdshell /*&iid=1*/ \"ping 10.1.1.3\" /*&iid=1*/ --\n\nThe IBM Web Application Firewall is also included in IBM Security Server Protection products and IBM Security Multi-Function products.\n\nThe original advisory is available at:\n\nhttps://www.trustwave.com/spiderlabs/advisories/TWSL2011-006.txt\n\nWendel Guglielmetti Henrique of Trustwave's SpiderLabs reported this vulnerability.",
+    "Impact'": "A remote user can bypass the web application firewall.",
+    "Solution": "The vendor has issued a fix (on June 16, 2011).",
+    "Vendor URL": "www.ibm.com/",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "RSA enVision Input Validation Flaw Lets Remote Authenticated Users Deny Service",
+    "SecurityTracker Alert ID": "1024295",
+    "SecurityTracker URL": "http://securitytracker.com/id/1024295",
+    "CVE Reference": "CVE-2010-2634",
+    "Date": "Aug  6 2010",
+    "Impact": "Denial of service via network",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to 3.7 SP1",
+    "Description": "A vulnerability was reported in RSA enVision.  A remote authenticated user can cause denial of service conditions.\nA remote authenticated user can send specially crafted data to cause 'partial' denial of service conditions on the target device.\n\nAbdoul Karim Ganame reported this vulnerability.",
+    "Impact'": "A remote authenticated user can cause denial of service conditions on the target system.",
+    "Solution": "The vendor has issued a fix (3.7 SP1, 4.0).",
+    "Vendor URL": "www.emc.com/",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Sourcefire 3D Sensor and Defense Center Use Common Private SSL Keys",
+    "SecurityTracker Alert ID": "1024092",
+    "SecurityTracker URL": "http://securitytracker.com/id/1024092",
+    "CVE Reference": "CVE-2010-2306",
+    "Updated": "Jun 18 2010",
+    "Original Entry Date": "Jun 11 2010",
+    "Impact": "Disclosure of authentication information",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "3D Sensor 1000, 3D Sensor 2000, 3D Sensor 9900, Defense Center 1000",
+    "Description": "A vulnerability was reported in Sourcefire 3D Sensor and Defense Center products.  A user with access to one key can access ostensibly protected communications between other devices.\nThe products use common private SSL keys across multiple devices and installation.  A user with access to one copy of the key can use the key to decrypt SSL communications between other devices.\n\nThe vendor was notified on June 2, 2010.\n\nAn anonymous researcher reported this vulnerability via TippingPoint.",
+    "Impact'": "A user with access to one copy of the key can use the key to decrypt SSL communications between other devices.",
+    "Solution": "The vendor recommends replacing the static keys with custom keys.\n\nThe vendor's advisory is available at:\n\nhttps://support.sourcefire.com/notices/notice/1437",
+    "Vendor URL": "support.sourcefire.com/notices/notice/1437",
+    "Cause": "Configuration error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "McAfee IntruShield Network Security Manager Permits Session Hijacking Attacks",
+    "SecurityTracker Alert ID": "1023172",
+    "SecurityTracker URL": "http://securitytracker.com/id/1023172",
+    "CVE Reference": "CVE-2009-3566",
+    "Date": "Nov 12 2009",
+    "Impact": "Disclosure of authentication information",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "NSM 5.1.7.7",
+    "Description": "A vulnerability was reported in McAfee IntruShield Network Security Manager.  A remote user can conduct session hijacking attacks.\nThe server does not set the 'HttpOnly' tag on authentication cookies.  A remote user can obtain the cookies (via a cross-site scripting attack, for example) to gain access to the target user's session.\n\nDan King of SecureWorks reported this vulnerability.",
+    "Impact'": "A remote user can access the target user's authentication cookies.",
+    "Solution": "The vendor has issued a fix (NSM update 5.1.11.8.1).\n\nThe vendor's advisory is available at:\n\nhttps://kc.mcafee.com/corporate/index?page=content&id=SB10005",
+    "Vendor URL": "kc.mcafee.com/corporate/index?page=content&id=SB10005",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "McAfee IntruShield NSM Input Validation Flaw Permits Cross-Site Scripting Attacks",
+    "SecurityTracker Alert ID": "1023171",
+    "SecurityTracker URL": "http://securitytracker.com/id/1023171",
+    "CVE Reference": "CVE-2009-3565",
+    "Date": "Nov 12 2009",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "NSM 5.1.7.7",
+    "Description": "A vulnerability was reported in McAfee IntruShield Network Security Manager.  A remote user can conduct cross-site scripting attacks.\nThe 'Login.jsp' script does not properly filter HTML code from user-supplied input in the 'iaction' and 'node' parameters before displaying the input.  A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser.  The code will originate from the McAfee IntruShield device and will run in the security context of that site.  As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nThe original advisory is available at:\n\nhttp://www.secureworks.com/ctu/advisories/SWRX-2009-001/\n\nDan King of SecureWorks reported this vulnerability.",
+    "Impact'": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the McAfee IntruShield interface, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+    "Solution": "The vendor has issued a fix (NSM update 5.1.11.6).\n\nThe vendor's advisory is available at:\n\nhttps://kc.mcafee.com/corporate/index?page=content&id=SB10004",
+    "Vendor URL": "kc.mcafee.com/corporate/index?page=content&id=SB10004",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Sourcefire 3D Sensor and Defense Center Lets Remote Authenticated Users Gain Elevated Privileges",
+    "SecurityTracker Alert ID": "1022500",
+    "SecurityTracker URL": "http://securitytracker.com/id/1022500",
+    "CVE Reference": "CVE-2009-2344",
+    "Updated": "Jul 27 2009",
+    "Original Entry Date": "Jul  2 2009",
+    "Impact": "User access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "4.8 - 4.8.1",
+    "Description": "A vulnerability was reported in Sourcefire 3D Sensor and Defense Center.  A remote authenticated user can obtain elevated privileges on the target system.\nA remote authenticated user can submit a specially crafted request to the 'user.cgi' script to gain read and write access with administrator privileges.\n\nOther scripts on the device may also be affected.\n\nThe vendor was notified on May 5, 2009.\n\nGregory Duchemin reported this vulnerability.",
+    "Impact'": "A remote authenticated user can obtain elevated privileges on the target system.",
+    "Solution": "The vendor has issued a fix (4.8.2).",
+    "Vendor URL": "www.sourcefire.com/",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "TippingPoint Intrusion Prevention System Fragmented Packet Processing Lets Remote Users Evade Detection",
+    "SecurityTracker Alert ID": "1018386",
+    "SecurityTracker URL": "http://securitytracker.com/id/1018386",
+    "CVE Reference": "CVE-2007-3711",
+    "Updated": "May  6 2008",
+    "Original Entry Date": "Jul 13 2007",
+    "Impact": "Host/resource access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "2.1.x, 2.2.x prior to 2.2.5, and 2.5.x prior to 2.5.2",
+    "Description": "A vulnerability was reported in TippingPoint Intrusion Prevention System.  A remote user can evade detection.\nA remote user can send specially fragmented packets to evade detection.\n\nThe vendor was notified on February 6, 2006.\n\nThe vendor credits Andres Riancho of Cybsec Security Systems with reporting this vulnerability.\n\nThe original advisory is available at:\n\nhttp://www.cybsec.com/vuln/CYBSEC-Security_Pre-Advisory_3Com_TippingPoint_IPS_Detection_Bypass_2.pdf",
+    "Impact'": "A remote user can evade detection.",
+    "Solution": "The vendor has issued fixed versions (2.5.2 and 2.2.5).\n\nThe 3Com advisory is available at:\n\nhttp://www.3com.com/securityalert/alerts/3COM-07-002.html",
+    "Vendor URL": "www.3com.com/securityalert/alerts/3COM-07-002.html",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "TippingPoint Intrusion Prevention System Alternate Unicode Character Encodings Lets Remote Users Evade Detection",
+    "SecurityTracker Alert ID": "1018361",
+    "SecurityTracker URL": "http://securitytracker.com/id/1018361",
+    "CVE Reference": "CVE-2007-3701",
+    "Updated": "May  6 2008",
+    "Original Entry Date": "Jul 11 2007",
+    "Impact": "Host/resource access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "2.1, 2.2.0 - 2.2.4",
+    "Description": "A vulnerability was reported in TippingPoint Intrusion Prevention System.  A remote user can evade detection.\nA remote user can send specially encoded data to avoid detection by the IPS.  Specific Unicode encoding for the forward slash character can be used to cause the request to fail to match IPS signatures.\n\nSome web servers will properly decode these characters.\n\nSome demonstration exploit URLs are provided:\n\nhttp://[target]/scripts%c0%afcmd.exe\nhttp://[target]/scripts%e0%80%afcmd.exe\nhttp://[target]/scripts%c1%9ccmd.exe\n\nThe vendor was notified on January 18, 2006.\n\nPaul Craig of Security-Assessment.com discovered this vulnerability.\n\nThe original advisory is available at:\n\nhttp://security-assessment.com/files/advisories/2007-07-11_Tippingpoint_IPS_Signature_Evasion.pdf",
+    "Impact'": "A remote user can evade intrusion detection.",
+    "Solution": "The vendor has issued fixed versions.\n\nThe 3Com/TippingPoint advisory is available at:\n\nhttp://www.3com.com/securityalert/alerts/3COM-07-003.html",
+    "Vendor URL": "www.3com.com/securityalert/alerts/3COM-07-003.html",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Cisco Intrusion Prevention System Lets Remote Users Deny Service or Evade Detection",
+    "SecurityTracker Alert ID": "1016891",
+    "SecurityTracker URL": "http://securitytracker.com/id/1016891",
+    "CVE Reference": [
+        "CVE-2006-4910",
+        "CVE-2006-4911"
+    ],
+    "Updated": "Jun  3 2008",
+    "Original Entry Date": "Sep 20 2006",
+    "Impact": [
+        "Denial of service via network",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "5.1(2), 5.0(6p2), 4.1(5c); and prior versions",
+    "Description": "A vulnerability was reported in Cisco Intrusion Prevention System.  A remote user can cause denial of service conditions.  A remote user can also evade detection.\nA remote user can send a specially crafted SSLv2 Client Hello packet to the target web administration interface to potentially cause the mainApp process (for remote access) to crash.  This will prevent future management requests via the web administration interface, command line interface, or the console.\n\nTraffic inspecition is not affected.  The device must be rebooted to return management communications to normal operations.\n\nThe following versions are affected by the denial of service vulnerability.\n\n  * Cisco IDS 4.1(x) software prior to 4.1(5c)\n  * Cisco IPS 5.0(x) software prior to 5.0(6p1)\n  * Cisco IPS 5.1(x) software prior to 5.1(2)\n\nCisco has assigned Cisco bug IDs CSCsd91720 and CSCsd92033 to the denial of service vulnerability.\n\nA remote user can send a specially crafted sequence of fragmented IP packets to evade detection.  Devices running in inline and promiscuous modes are affected.\n\nThe following versions are affected by the fragmented packet evasion vulnerability:\n\n  * Cisco IPS 5.0(x) software prior to 5.0(6p2)\n  * Cisco IPS 5.1(x) software prior to 5.1(2)\n\nCisco has assigned Cisco bug IDs CSCse17206 and CSCsf12379 to the packet evasion vulnerability.\n\nCisco discovered the web administration interface SSL denial of service vulnerability.\n\nCisco credits Pratap Ramamurthy and Shai Rubin of the Wisconsin Safety Analyzer group (WiSA) in the Computer Science department at the University of Wisconsin with reporting the fragmented packet IPS evasion vulnerability.",
+    "Impact'": "A remote user can cause denial of service conditions.\n\nA remote user can evade detection.",
+    "Solution": "Cisco has issued fixed versions (4.1(5c), 5.0(6p2), 5.1(2)).\n\nThe Cisco advisory is available at:\n\nhttp://www.cisco.com/warp/public/707/cisco-sa-20060920-ips.shtml",
+    "Vendor URL": "www.cisco.com/warp/public/707/cisco-sa-20060920-ips.shtml",
+    "Cause": [
+        "Exception handling error",
+        "Input validation error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Cisco Guard Input Validation Flaw in Anti-Spoofing Feature Permits Cross-Site Scripting Attacks",
+    "SecurityTracker Alert ID": "1016890",
+    "SecurityTracker URL": "http://securitytracker.com/id/1016890",
+    "CVE Reference": "CVE-2006-4909",
+    "Updated": "Jun  3 2008",
+    "Original Entry Date": "Sep 20 2006",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to 5.1(6)",
+    "Description": "A vulnerability was reported in Cisco Guard.  A remote user can conduct cross-site scripting attacks.\nWhen the anit-spoofing feature is enabled, the device does not properly filter HTML code from user-supplied input.  A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser.  The code will originate from an arbitrary site protected by the device.  As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nA remote user can exploit this even if the protected website does not contain a cross-site scripting vulnerability if the site returns a meta refresh in response to an invalid link where the site does not validate the link data.\n\nThe following products are affected:\n\n  * Cisco Guard Appliance (Software Version 3.X)\n  * Cisco Guard Blade (Software Version 4.X)\n  * Cisco Guard Appliance [Software Version 5.0(3)]\n  * Cisco Guard Appliance [Software Version 5.1(5)]\n\nCisco has assigned bug ID CSCsf01438 to this vulnerability.\n\nA customer reported this vulnerability to Cisco.",
+    "Impact'": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with arbitrary sites protected by the device, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+    "Solution": "Cisco has issued a fixed version (5.1(6)) of the Cisco Anomaly Guard code.\n\nThe Cisco advisory is available at:\n\nhttp://www.cisco.com/warp/public/707/cisco-sa-20060920-guardxss.shtml",
+    "Vendor URL": "www.cisco.com/warp/public/707/cisco-sa-20060920-guardxss.shtml",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Proventia 'SMB_MailSlot_Heap_Overflow Decode' Parsing Error Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1016592",
+    "SecurityTracker URL": "http://securitytracker.com/id/1016592",
+    "CVE Reference": "CVE-2006-3840",
+    "Date": "Jul 27 2006",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "A, G, M; also Proventia Server 1.0 and Proventia Desktop 8.0",
+    "Description": "A vulnerability was reported in Proventia.  A remote user can cause denial of service conditions.\nA vulnerability resides in the July XPUs in the virtual patch protection against the vulnerability described in Microsoft Security Bulletin MS06-035.  A remote user can send valid SMB Mailslot data to trigger a protocol parsing error and cause the target protocol analysis module to stop responding.\n\nISS credits NSFOCUS Security Team with reporting this vulnerability.",
+    "Impact'": "A remote user can cause denial of service conditions.",
+    "Solution": "The vendor has issued a fix (Proventia A Series, XPU 24.40; Proventia G Series, XPU 24.40/1.79; Proventia M Series, XPU 1.79; Proventia Server 1.0.914.1880; Proventia Desktop 8.0.812.1790/8.0.675.1790).\n\nThe ISS advisory is available at:\n\nhttp://xforce.iss.net/xforce/alerts/id/230\n\nAdditional information is available at:\n\nhttps://iss.custhelp.com/cgi-bin/iss.cfg/php/enduser/std_adp.php?p_faqid=3630",
+    "Vendor URL": "xforce.iss.net/xforce/alerts/id/230",
+    "Cause": [
+        "Input validation error",
+        "State error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "TippingPoint Intrusion Prevention System Lets Remote Users Bypass the Detection Mechanism",
+    "SecurityTracker Alert ID": "1016562",
+    "SecurityTracker URL": "http://securitytracker.com/id/1016562",
+    "CVE Reference": "CVE-2006-3678",
+    "Updated": "Jun 13 2008",
+    "Original Entry Date": "Jul 24 2006",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "2.2.3.6514 and prior versions",
+    "Description": "A vulnerability was reported in the TippingPoint Intrusion Prevention System.  A remote user can shutdown the detection mechanism.\nA remote user can send a specially crafted packet to cause the target device to fallback to layer 2 mode, where all traffic is forwarded without inspection.\n\nThe vendor was notified on June 2, 2006.\n\nAndres Riancho of CYBSEC reported this vulnerability.",
+    "Impact'": "A remote user can shutdown the detection mechanism.",
+    "Solution": "The vendor issued a fix (on July 21, 2006).",
+    "Vendor URL": "www.3com.com/",
+    "Cause": "Exception handling error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Cisco Intrusion Prevention System Can Be Crashed By Remote Users",
+    "SecurityTracker Alert ID": "1016474",
+    "SecurityTracker URL": "http://securitytracker.com/id/1016474",
+    "CVE Reference": "CVE-2006-3596",
+    "Updated": "Jul 18 2008",
+    "Original Entry Date": "Jul 12 2006",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "42xx appliances; 5.1(1) and other 5.1 versions",
+    "Description": "A vulnerability was reported in Cisco Intrusion Prevention System.  A remote user can cause denial of service conditions.\nThe custom device driver for Intel-based gigabit network adapters used in certain IPS devices contains a vulnerability.  A remote user can send specially crafted data to cause a kernel panic on the target device.  The device will stop all processing and will become inaccessible.\n\nA power reset is required to return the IPS device to normal operations.\n\nCisco Intrusion Prevention System 42xx appliances running IPS software versions 5.1(1), 5.1(1a), 5.1(1b), 5.1(1c), 5.1(1d), 5.1(1e), or 5.1(p1) are affected.  The following devices may be vulnerable:\n\nIDS-4235\nIPS-4240\nIDS-4250-SX\nIDS-4250-TX\nIDS-4250-XL (4250 with XL accelerator card)\nIPS-4255\n\nCisco has assigned Cisco bug ID CSCsd36590 to this vulnerability.",
+    "Impact'": "A remote user can cause the device to stop processing.",
+    "Solution": "Cisco has issued a fixed version (5.1(2)), available at:\n\nhttp://www.cisco.com/pcgi-bin/tablebuild.pl/ips5\n\nThe Cisco advisory is available at:\n\nhttp://www.cisco.com/warp/public/707/cisco-sa-20060712-ips.shtml",
+    "Vendor URL": "www.cisco.com/warp/public/707/cisco-sa-20060712-ips.shtml",
+    "Cause": "Exception handling error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "TippingPoint Intrusion Prevention System HTTP Processing Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1015511",
+    "SecurityTracker URL": "http://securitytracker.com/id/1015511",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jan 19 2006",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Version(s)": "2.1.3.6323 and prior;  2.2.0.6504",
+    "Description": "A vulnerability was reported in the TippingPoint Intrusion Prevention System.  A remote user can cause denial of service conditions.\nA remote user can send certain HTTP packets to cause the target device to consume excessive CPU resources.\n\nSecunia reported this vulnerability based on reports from 3Com customers.",
+    "Impact'": "A remote user can cause denial of service conditions.",
+    "Solution": "The vendor has issued fixed versions (2.1.4.6324 and 2.2.1.6506), available via the Threat Management Center.",
+    "Vendor URL": "www.tippingpoint.com/products_ips.html",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Cisco Intrusion Prevention System Command Line Interface Bug Lets Authenticated Users Gain Elevated Privileges",
+    "SecurityTracker Alert ID": "1014757",
+    "SecurityTracker URL": "http://securitytracker.com/id/1014757",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Aug 22 2005",
+    "Impact": [
+        "Root access via local system",
+        "Root access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "5.0(1) and 5.0(2)",
+    "Description": "A vulnerability was reported in the Cisco Intrusion Prevention System (IPS) devices.  A local user or remote authenticated user may be able to gain full administrative privileges.\nAn authenticated user with OPERATOR or VIEWER access privileges can exploit a flaw in the command line processing (CLI) logic to gain full administrative control of the target IPS device.\n\nWith full administrative access, the user can bypass intrusion detection logic, execute arbitrary code, perform denial of service attacks against the device or the network.",
+    "Impact'": "An authenticated user may be able to gain full administrative privileges.",
+    "Solution": "The vendor has issued a fixed version (5.0(3)), available at:\n\nhttp://www.cisco.com/cgi-bin/tablebuild.pl/ips5",
+    "Vendor URL": "www.cisco.com/warp/public/707/cisco-sa-20050824-ips.shtml",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Juniper Networks NetScreen-IDP May Let Remote SSH Servers Overwrite Files in Certain Cases",
+    "SecurityTracker Alert ID": "1011144",
+    "SecurityTracker URL": "http://securitytracker.com/id/1011144",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Sep  2 2004",
+    "Impact": [
+        "Modification of system information",
+        "Modification of user information",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "3.0r2 and prior versions",
+    "Description": "A vulnerability was reported in Juniper Networks NetScreen IDP.  A remote SSH server can overwrite arbitrary files on the target system in certain situations.\nIt is reported that when a local user (on the IDP) uses scp to copy files from an untrusted remote server to the IDP, the remote server can cause the scp client on the IDP to overwrite arbitrary files.  This is due to an underlying directory traversal vulnerability in scp, the report said.",
+    "Impact'": "A remote SSH server can overwrite arbitrary files on the target system in certain situations.",
+    "Solution": "Juniper Networks has provided the following four solution options [quoted]:\n\nOption 1:  Upgrade the IDP with the latest OpenSSH rpm packages\n\nVersion                                  MD5 Hash\nopenssh-3.1p1-14.idp2.i386.rpm           d2165c9ade41573a17ccf4c718981a3e\nopenssh-client-3.1p1-14.idp2.i386.rpm    36c02ddb5267ac17aff907e906bbeffe\nopenssh-server-3.1p1-14.idp2.i386.rpm    f20f558aa7c9aa20fea6cdeccbc11c5f\n\na. Copy the RPM packages to the /tmp directory on the IDP appliance.\n\nb. Login to the IDP as the root user using the serial interface, or directly on the appliance (keyboard/monitor).\n\nc. Upgrade the RPM packages by typing the following as the root user:\n\n$ rpm -Uvh --force /tmp/openssh*3.1p1-14.idp2.i386.rpm\n\nOption 2:  Do not use scp command on the IDP. Use scp client on remote host to push files to the IDP.\n\nOption 3:  Do not use scp command to connect to an untrusted OpenSSH server.\n\nOption 4:  Use sftp as an alternative to scp for files download.",
+    "Vendor URL": "www.juniper.net/support/security/alerts/adv59739.txt",
+    "Cause": [
+        "Access control error",
+        "Input validation error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Top Layer Attack Mitigator IPS Error Condition Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1011068",
+    "SecurityTracker URL": "http://securitytracker.com/id/1011068",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Aug 26 2004",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "Model 5500; Prior to 3.11.014; Tested on 3.11.008",
+    "Description": "A vulnerability was reported in Top Layer's Attack Mitigator IPS 5500.  A remote user can cause the device to top processing network traffic.\nInformation Risk Management Plc. reported that a remote user can send more than 2000 concurrent HTTP requests to a network protected by the IPS 5500 to cause the target device to consume all available CPU resources.  As a result, the system will no longer be able to process HTTP traffic.\n\nThe system is only vulnerable when configured so that packets traverse the device twice (where the protected segment is a stub segment), the report said.\n\nThe error condition occurs when the device incorrectly enters an overload protection mode.\n\nThe vendor was notified on July 23, 2004.",
+    "Impact'": "A remote user can cause denial of service conditions on the target device.",
+    "Solution": "The vendor has issued a fixed version (3.11.014), available at:\n\nhttp://www.toplayer.com/content/support/tech_assist/index.jsp",
+    "Vendor URL": "www.toplayer.com/content/products/intrusion_detection/attack_mitigator.jsp",
+    "Cause": [
+        "Resource error",
+        "State error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(Proventia Not Affected by Witty Worm) ISS Proventia Buffer Overflow in Processing ICQ Messages May Let Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1009504",
+    "SecurityTracker URL": "http://securitytracker.com/id/1009504",
+    "CVE Reference": "CVE-2004-0362",
+    "Updated": "Mar 23 2004",
+    "Original Entry Date": "Mar 20 2004",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "Root access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "Proventia A Series XPU 22.11 and before, G Series XPU 22.11 and before, M Series XPU 1.9 and before",
+    "Description": "A buffer vulnerability was reported in ISS Proventia in the ICQ protocol analysis component.  A remote user can execute arbitrary code on the target system.\nISS confirmed that that the component does not properly parse the ICQ protocol. A remote user can send a specially crafted packet over a network monitored by Proventia to trigger the flaw and execute arbitrary code on the target system.\n\nThe vulnerability was originally reported by eEye Digital Security as affecting ISS RealSecure and BlackICE (Alert IDs 1009348 and 1009347).\n\nA worm that exploits the ICQ parsing flaw in ISS BlackICE and other ISS products has been reported.  However, ISS reports that Proventia is not affected by this worm.\n\nThe worm sends a spoofed ICQ packet to randomly generated IP addresses with random destination ports and a source port of UDP 4000.  On vulnerable systems, the worm may be able to execute arbitrary code on the target system.\n\nOnce infected, the worm on the infected system will send packets to 20,000 random IP addresses and then opens a random physical drive and performs certain operations (the anti-virus vendors are uncertain of what it does at this time).  The worm will eventually crash.\n\nThe worm reportedly includes the following text:\n\n    (^.^)      insert witty message here      (^.^)\n\nThe ISS description of the worm is available at:\n\nhttp://xforce.iss.net/xforce/alerts/id/167",
+    "Impact'": "A remote user can execute arbitrary code on the target system.",
+    "Solution": "The vendor has issued a fix, available at the ISS Download Center:\n\nhttp://www.iss.net/download/\n\nThe following fixed versions are available:\n\nProventia A Series XPU 22.12 \nProventia G Series XPU 22.12 \nProventia M Series XPU 1.10",
+    "Vendor URL": "xforce.iss.net/xforce/alerts/id/166",
+    "Cause": "Boundary error",
+    "Message History": [
+        "https://securitytracker.com/id/1009486"
+    ]
+}{
+    "source": "1-2",
+    "Title": "ISS Proventia Buffer Overflow in Processing ICQ Messages May Let Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1009486",
+    "SecurityTracker URL": "http://securitytracker.com/id/1009486",
+    "CVE Reference": "CVE-2004-0362",
+    "Updated": "Mar 23 2004",
+    "Original Entry Date": "Mar 18 2004",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "Root access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Proventia A Series XPU 22.11 and before, G Series XPU 22.11 and before, M Series XPU 1.9 and before",
+    "Description": "A buffer vulnerability was reported in ISS Proventia in the ICQ protocol analysis component.  A remote user can execute arbitrary code on the target system.\nISS confirmed that that the component does not properly parse the ICQ protocol.  A remote user can send a specially crafted packet over a network monitored by Proventia to trigger the flaw and execute arbitrary code on the target system.\n\nThe vulnerability was originally reported by eEye Digital Security as affecting ISS RealSecure and BlackICE (Alert IDs 1009348 and 1009347).",
+    "Impact'": "A remote user can execute arbitrary code on the target system.",
+    "Solution": "The vendor has issued a fix, available at the ISS Download Center:\n\nhttp://www.iss.net/download/\n\nThe following fixed versions are available:\n\nProventia A Series XPU 22.12 \nProventia G Series XPU 22.12 \nProventia M Series XPU 1.10",
+    "Vendor URL": "xforce.iss.net/xforce/alerts/id/166",
+    "Cause": "Boundary error",
+    "Message History": [
+        "https://securitytracker.com/id/1009504"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(eEye Issues Advisory) ISS Proventia SMB Parsing Error Lets Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1009236",
+    "SecurityTracker URL": "http://securitytracker.com/id/1009236",
+    "CVE Reference": "CVE-2004-0193",
+    "Updated": "Mar  4 2004",
+    "Original Entry Date": "Feb 27 2004",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "Root access via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Proventia A Series XPU 20.15 through 22.9; Proventia G Series XPU 22.3 through 22.9; Proventia M Series XPU 1.3 through 1.7",
+    "Description": "A vulnerability was reported in ISS Proventia in the parsing of Server Message Block (SMB) packets.  A remote user can execute arbitrary code on the target system.\nThe flaw reportedly resides in the ISS Protocol Analysis Module (PAM) component of several ISS products, where the size of certain protocol fields is not properly validated.\n\nA remote user can send a specially crafted SMB packet to cause the target system to execute arbitrary code.  When the packet is reassembled for analysis, a heap-based overflow may occur.  To trigger the overflow, a remote user can reportedly issue a \"SMB Session Setup AndX request\" packet with an AccountName parameter with a string of 300 bytes or greater.\n\nAlthough the vendor report does not credit anyone, eEye Digital Security discovered the flaw.  The eEye advisory is available at:\n\nhttp://www.eeye.com/html/Research/Advisories/AD20040226.html",
+    "Impact'": "A remote user can execute arbitrary code with the privileges of the target process.",
+    "Solution": "The vendor has issued a fix, available at:\n\nhttp://www.iss.net/download/",
+    "Vendor URL": "www.iss.net",
+    "Cause": "Boundary error",
+    "Message History": [
+        "https://securitytracker.com/id/1009224"
+    ]
+}{
+    "source": "1-2",
+    "Title": "ISS Proventia SMB Parsing Error Lets Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1009224",
+    "SecurityTracker URL": "http://securitytracker.com/id/1009224",
+    "CVE Reference": "CVE-2004-0193",
+    "Updated": "Mar  4 2004",
+    "Original Entry Date": "Feb 26 2004",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "Root access via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Proventia A Series XPU 20.15 through 22.9; Proventia G Series XPU 22.3 through 22.9; Proventia M Series XPU 1.3 through 1.7",
+    "Description": "A vulnerability was reported in ISS Proventia in the parsing of Server Message Block (SMB) packets.  A remote user can execute arbitrary code on the target system.\nThe flaw reportedly resides in the ISS Protocol Analysis Module (PAM) component of several ISS products, where the size of certain protocol fields is not properly validated.\n\nA remote user can send a specially crafted SMB packet to cause the target system to execute arbitrary code.  When the packet is reassembled for analysis, a heap-based overflow may occur.  To trigger the overflow, a remote user can reportedly issue a \"SMB Session Setup AndX request\" packet with an AccountName parameter with a string of 300 bytes or greater.\n\nAlthough the vendor report does not credit anyone, eEye Digital Security discovered the flaw.  The eEye advisory is available at:\n\nhttp://www.eeye.com/html/Research/Advisories/AD20040226.html",
+    "Impact'": "A remote user can execute arbitrary code with the privileges of the target process.",
+    "Solution": "The vendor has issued a fix, available at:\n\nhttp://www.iss.net/download/",
+    "Vendor URL": "www.iss.net",
+    "Cause": "Boundary error",
+    "Message History": [
+        "https://securitytracker.com/id/1009236"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(NetScreen Issues Fix for NetScreen-IDP) Re: OpenSSH buffer_append_space() and Other Buffer Management Errors May Let Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1007767",
+    "SecurityTracker URL": "http://securitytracker.com/id/1007767",
+    "CVE Reference": [
+        "CVE-2003-0693",
+        "CVE-2003-0695",
+        "CVE-2003-0682"
+    ],
+    "Updated": "Dec 10 2003",
+    "Original Entry Date": "Sep 20 2003",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "Root access via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "IDP 2.1",
+    "Description": "Several buffer management vulnerabilities were reported in OpenSSH. A remote user may be able to execute arbitrary code on the target system.  The NetScreen-IDP appliance uses OpenSSH and, therefore, is affected.\nIt is reported that there are potentially exploitable buffer management errors in OpenSSH in the buffer_append_space(), buffer_init(), and buffer_free() functions in 'buffer.c'.  A similiar flaw resides in 'channels.c', the report said.  (CVE-2003-0693 and CVE-2003-0695).  The flaws affect version 3.7 and prior versions.  The vendor reports that it is not certain if these flaws are exploitable or not.\n\nSolar Designer has reportedly identified four additional similar bugs as the result of a review of the OpenSSH 3.6.1p2 source code for potentially incorrect uses of *realloc().  According to Solar Designer, two of the bugs are in 'sshd'.  Of those two bugs, one reportedly cannot be triggered in the current code, and the other occurs after the authentication process.  Solar Designer believes that none of the four bugs should give an unauthenticated shell via sshd, not even in cases where 'privsep' is not used.  CVE has assigned CVE-2003-0682 to these four bugs.  These four bugs have *not* been fixed in version 3.7.1, but have been fixed in the OpenBSD CVS and will be included in the next release of OpenSSH.  These four additional bugs are reportedly not considered to present a security risk.",
+    "Impact'": "The report indicated that it is not known whether the flaws are exploitable.  If exploitable, a remote user may be able to execute arbitrary code.  The report did not indicate what privileges the code would execute with and whether or not privilege separation provides protection against possible root exploitation.",
+    "Solution": "NetScreen has issued a fix for the SSH service used by NetScreen-IDP, available at:\n\nhttps://www.netscreen.com/cso\n\nFor installation instructions, see the NetScreen Advisory 57961:\n\nhttp://www.netscreen.com/services/security/alerts/openssh_1.jsp",
+    "Vendor URL": "www.netscreen.com/services/security/alerts/openssh_1.jsp",
+    "Cause": "Boundary error",
+    "Message History": [
+        "https://securitytracker.com/id/1007716"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Cisco Catalyst 6000 Intrusion Detection System Module Fails to Detect '%u' Encoding Obfuscation Attacks Against Microsoft Web Servers",
+    "SecurityTracker Alert ID": "1002330",
+    "SecurityTracker URL": "http://securitytracker.com/id/1002330",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Sep  6 2001",
+    "Impact": "Host/resource access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Description": "eEye Digital Security reported a vulnerability in the Cisco Catalyst 6000 Intrusion Detection System Module, as well as several other intrusion detection systems (IDSs). The flaw allows remote users to attack Microsoft Internet Information Server (IIS) web servers without detection.\nMicrosoft IIS offers a non-standard '%u' URL encoding method for representation of Unicode characters in URLs.  The Cisco product does not decode %u strings in URLs. As a result, a remote user can craft an attack against an IIS web server using %u encoding that will not be detected by the intrusion detection system.\n\nFor example, the following HTTP request will translate into a request for the file 'himom.ida' but the IDS system will not detect the 'himom.ida' request:\n\nGET /himom.id%u0061 HTTP/1.0\n\nCisco has assigned Bug ID CSCdv20287 to this vulnerability.\n\nOther products affected are:\n\nCisco Secure Intrusion Detection System\nISS RealSecure Network Sensor 5.x and 6.x before XPU 3.2\nISS RealSecure Server Sensor 6.x prior to 6.0.1\nISS RealSecure Server Sensor 5.5\nDragon Sensor 4.x\nSnort prior to 1.8.1\nNetwork Flight Record (possibly vulnerable)\n\nSee separate Alerts for those products.",
+    "Impact'": "A remote user can issue an attack against Microsoft IIS web servers that will not be detected by the IDS.",
+    "Solution": "The vendor notes that this vulnerability will be repaired in service pack 3.0 for the Cisco Catalyst 6000 Intrusion Detection Module. Basic obfuscation detection was reportedly slated for the 3.0 release (early October 2001). A service pack to the 3.0 release will include the full fix (which will follow the 3.0 release by an unspecified period of time).",
+    "Vendor URL": "www.cisco.com/warp/public/707/cisco-intrusion-detection-obfuscation-vuln-pub.shtml",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Cisco Secure Intrusion Detection System (NetRanger) Fails to Detect Certain Attacks Against Microsoft Web Servers",
+    "SecurityTracker Alert ID": "1002326",
+    "SecurityTracker URL": "http://securitytracker.com/id/1002326",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Sep  6 2001",
+    "Impact": "Host/resource access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Description": "eEye Digital Security reported a vulnerability in the Cisco Secure Intrusion Detection System, as well as several other intrusion detection systems (IDSs).  The flaw allows remote users to attack Microsoft Internet Information Server (IIS) web servers without detection.\nMicrosoft IIS offers a non-standard '%u' URL encoding method for representation of Unicode characters in URLs.\n\nThe Cisco product does not decode %u strings in URLs.  As a result, a remote user can craft an attack against an IIS web server using %u encoding that will not be detected by the intrusion detection system.\n\nFor example, the following HTTP request will translate into a request for the file 'himom.ida' but the IDS system will not detect the 'himom.ida' request:\n\nGET /himom.id%u0061 HTTP/1.0\n\nCisco has assigned Bug ID CSCdv20287 to this vulnerability.\n\nOther products affected are:\n\nCisco Catalyst 6000 Intrusion Detection System Module\nISS RealSecure Network Sensor 5.x and 6.x before XPU 3.2\nISS RealSecure Server Sensor 6.x prior to 6.0.1\nISS RealSecure Server Sensor 5.5\nDragon Sensor 4.x\nSnort prior to 1.8.1\nNetwork Flight Record (possibly vulnerable)\n\nSee separate Alerts for those products.",
+    "Impact'": "A remote user can issue an attack against Microsoft IIS web servers that will not be detected by the IDS.",
+    "Solution": "The vendor has released a beta fix in service pack 3.0(2)S6.  To access the update, please visit the Vendor URL.",
+    "Vendor URL": "www.cisco.com/warp/public/707/cisco-intrusion-detection-obfuscation-vuln-pub.shtml",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}

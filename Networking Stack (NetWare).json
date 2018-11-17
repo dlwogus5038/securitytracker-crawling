@@ -1,0 +1,244 @@
+{
+    "source": "1-2",
+    "Title": "NetWare NILE.NLM May Use a Weak Encryption Algorithm or Cleartext via the SSL Port",
+    "SecurityTracker Alert ID": "1015799",
+    "SecurityTracker URL": "http://securitytracker.com/id/1015799",
+    "CVE Reference": [
+        "CVE-2006-0997",
+        "CVE-2006-0998",
+        "CVE-2006-0999"
+    ],
+    "Date": "Mar 22 2006",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "6.5",
+    "Description": "A vulnerability was reported in NetWare.  The system may use weak encryption algorithms by default.\nWhen an SSL handshake is negotiated, the SSL server may use a weak encryption algorithm or clear text communications via the SSL port.\n\nThe vulnerability resides in NILE.NLM.",
+    "Impact'": "The system may use a weaker cryptographic algorithm than available or may use no encryption at all.",
+    "Solution": "The vendor has issued a fix, available at:\n\nhttp://support.novell.com/servlet/filedownload/sec/ftf/nile65sp5a.exe\n\nThe vendor's advisory is available at:\n\nhttp://support.novell.com/cgi-bin/search/searchtid.cgi?/2973427.htm",
+    "Vendor URL": "support.novell.com/cgi-bin/search/searchtid.cgi?/2973427.htm",
+    "Cause": "State error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Novell Distributed Print Services Discloses Broker Statistics",
+    "SecurityTracker Alert ID": "1007863",
+    "SecurityTracker URL": "http://securitytracker.com/id/1007863",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Oct  2 2003",
+    "Impact": "Disclosure of system information",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "NetWare 5.1 and 6, NDPS, and iPrint",
+    "Description": "A vulnerability was reported in the Novell Distributed Print Services (NDPS).  A remote user can view NDPS Broker statistics.\nIt is reported that a remote user can view NDPS Broker statistics using the following type of URL without having to authenticate to the system:\n\nhttp://<ip_address>:8008/Broker\n\nA remote user can determine if there is a Broker on this server, the name and context of the Broker object, and which Broker services, if any, are running, the report said.\n\nNovell states that the security risk is low.\n\nBowulf reportedly discovered this flaw [but Novell did not indicate that in their report].",
+    "Impact'": "A remote user can view NDPS broker statistics.",
+    "Solution": "Novell reports that for NetWare 6 and NetWare 5.1, the support packs NW6SP4/NW51SP7 will include a fix for this issue.",
+    "Vendor URL": "support.novell.com/cgi-bin/search/searchtid.cgi?/10087316.htm",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Novell NetWare IPX Compatibility Port Allows Remote Users to Cause the System to Crash",
+    "SecurityTracker Alert ID": "1004243",
+    "SecurityTracker URL": "http://securitytracker.com/id/1004243",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "May  8 2002",
+    "Impact": "Denial of service via network",
+    "Exploit Included": "Yes",
+    "Description": "cqure.net warned that Novell NetWare is still vulnerable to a denial of service issue reported in July 2000.  A remote user can cause a NetWare process to end abnormally (abend) or cause the server to crash and reboot.\nIt is reported that the IPX compatibility feature of NetWare contains a vulnerability in processing data on port 40193.  A remote user can send random data or fragmented packets to the system to cause the SDMR.NLM process to abend or, in some cases, cause the system to reboot.\n\nThe vendor has reportedly been notified.",
+    "Impact'": "A remote user can cause a NetWare process to abend or cause the entire system to reboot.",
+    "Solution": "No solution was available at the time of this entry.\n\nThe report indicates that the IPX-Compatibility feature should not be enabled on production servers.",
+    "Vendor URL": "www.novell.com/",
+    "Cause": "Exception handling error",
+    "Underlying OS Comments": "5.0 SP 5, 6.0 SP 1",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Novell NetWare Client Has Buffer Overflows in the Resolution of Long Host Names",
+    "SecurityTracker Alert ID": "1004239",
+    "SecurityTracker URL": "http://securitytracker.com/id/1004239",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "May  8 2002",
+    "Impact": "Execution of arbitrary code via local system",
+    "Version(s)": "Client 4.83",
+    "Description": "cqure.net reported several buffer overflow vulnerabilities in the Novell NetWare client for Windows.  The impact of these vulnerabilities was not stated.\nIt is reported that buffer overflows can be triggered through commands that invoke name resolution, such as ping, traceroute, rexec, and rsh.\n\nA local user can can reportedly execute a ping command with a long hostname to cause an access violation to occur.  \n\nThe report does not indicate if code execution is feasible or not.  It appears that exploitation is limited to the local system.  However, a remote user could convince a target (victim) user to execute an affected command to trigger the overflow.\n\nThe vendor has reportedly been notified.",
+    "Impact'": "The impact appears to be limited to the local execution of arbitrary code which would only yield the same privileges as the local user already had.  If a remote user could get a target (victim) user to execute one of the affected commands with a long hostname, the target system could crash.  It is not clear if the remote user could cause arbitrary code to be executed to gain access to the target user's system.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.novell.com/",
+    "Cause": "Boundary error",
+    "Underlying OS": "Windows (Any)",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(Vendor Issues Patch) Re: Novell Netware Remote Manager Buffer Overlow Lets Remote Users Crash the Manager and Possibly Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1004013",
+    "SecurityTracker URL": "http://securitytracker.com/id/1004013",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Apr 10 2002",
+    "Impact": [
+        "Denial of service via network",
+        "Execution of arbitrary code via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "5.1, 6",
+    "Description": "iXsecurity reported a buffer overflow vulnerability in the Netware 6 Remote Manager.  A remote user can cause the server to crash or possibly to execute arbitrary code.\nIt is reported that a remote user could cause the HTTPSTK.NLM or SERVER.NLM to ABEND by sending a long username or password to the manager's secure web interface on port 8009 (default configuration).   According to the report, it may be possible to execute arbitrary code (the remote user can cause the EAX register to be overwritten with arbitrary data), but this has not been confirmed.\n\nThe vendor has reportedly been notified.",
+    "Impact'": "A remote user can cause certain services to crash.  A remote user may be able to cause arbitrary code to be executed on the system, but this has not been confirmed.",
+    "Solution": "The vendor has released a fix, available at:\n\nhttp://support.novell.com/servlet/filedownload/pub/httpstk1.exe/\n\nNovell has provided the following fix information, available at the Vendor URL:\n\nFor NetWare 5.1, Novell recommends that customers have Support Pack 3 installed on their servers prior to the installation of this fix.\n\nFor NetWare 6, this fix can be applied to a NetWare 6 server either with or without Support Pack 1 installed.\n\nMethod #1: Use NWCONFIG.NLM and install the patch automatically.\nMethod #2: Manually copy the files to the server.\n\nINSTRUCTIONS:\nMethod #1\n1. Run HTTPSTK1.EXE, unzipping the files into a directory.\n\n2. If the directory where the files were extracted is not located on the server to be updated, copy that directory structure to the server to be updated.\n\n3. Load NWCONFIG.NLM on the server to be updated.\n\n4. On the main menu of NWCONFIG.NLM, select \"Product Options\". This will display a new menu. On this new menu, select \"Install a product not listed\" and then press <ENTER>.\n\n5. Follow the on screen prompts to correctly select the location of the directory to where the patch was extracted on the server.\n\n6. Press <F10> to start the file copy procedure.\n\nMethod #2\n1. Flag the older version of httpstk.nlm appropriately so that it can be over written with the new version of httpstk.nlm. This file is located on the server's SYS: volume in the system directory.\n\n2. Copy the newer version of httpstk.nlm to the server's SYS:system directory.\n\n3. Flag the file to be RO SH.\n\nAfter the installation of the file is complete, the new code can either be enabled manually, or automatically. The manual method requires knowledge of the command line switches httpstk.nlm uses on loading. These switches are found in the autoexec.ncf file (in the SYS:system directory). Unload portal.nlm and httpstk.nlm and then reload httpstk.nlm (with the correct switches) and portal.nlm. This will reenable Novell Remote Manager with the new code.\n\nThe automatic method of enabling the code is a server reboot. Once the NLM has been copied into the SYS:system directory, the server will automatically use it (if asked to) when booting.\n\nNote that the internal date displayed using the modules list on the server may not match the date of the actual physical file. This behavior is normal and does not indicate a problem.\n\nNetWare 5.1 and NetWare 6 include NetWare Remote Manager by default.\n\nNetWare 5.1 Support Pack 5 will include this new version of httpstk.nlm.\nNetWare 6 Support Pack 2 will include this new version of httpstk.nlm.",
+    "Vendor URL": "support.novell.com/servlet/tidfinder/2962026",
+    "Cause": "Boundary error",
+    "Underlying OS Comments": "Netware 5.1, 6, 6 SP1",
+    "Message History": [
+        "https://securitytracker.com/id/1003947"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Novell Netware Remote Manager Buffer Overlow Lets Remote Users Crash the Manager and Possibly Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1003947",
+    "SecurityTracker URL": "http://securitytracker.com/id/1003947",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Apr  2 2002",
+    "Impact": [
+        "Denial of service via network",
+        "Execution of arbitrary code via network"
+    ],
+    "Version(s)": "6",
+    "Description": "iXsecurity reported a buffer overflow vulnerability in the Netware 6 Remote Manager.  A remote user can cause the server to crash or possibly to execute arbitrary code.\nIt is reported that a remote user could cause the HTTPSTK.NLM or SERVER.NLM to ABEND by sending a long username or password to the manager's secure web interface on port 8009 (default configuration).   According to the report, it may be possible to execute arbitrary code (the remote user can cause the EAX register to be overwritten with arbitrary data), but this has not been confirmed.\n\nThe vendor has reportedly been notified.",
+    "Impact'": "A remote user can cause certain services to crash.  A remote user may be able to cause arbitrary code to be executed on the system, but this has not been confirmed.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.novell.com/",
+    "Cause": "Boundary error",
+    "Underlying OS Comments": "Netware 6, 6 SP1",
+    "Message History": [
+        "https://securitytracker.com/id/1004013"
+    ]
+}{
+    "source": "1-2",
+    "Title": "NetWare NDS for NT Configuration Error May Lets Remote Users Obtain NT Domain Administration Privileges",
+    "SecurityTracker Alert ID": "1003416",
+    "SecurityTracker URL": "http://securitytracker.com/id/1003416",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Feb  1 2002",
+    "Impact": "User access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "NetWare 5.x",
+    "Description": "A configuration vulnerability was reported in Novell's NDS for NT.  A remote user with a valid NDS account may be able to obtain NT domain administrator privileges on a remote NT server.\nA user with a valid Novell NDS account (regardless of security level) may be able to obtain \"Domain Admin\" access to any server in an NT domain, except for the primary and backup domain controllers.  This may occur in a specific situation.  It is reported that any NDS account in the NDS tree that is configured with \"domain admin\" rights over the NT domain can apparently be accessed with a null password if the account does not exist in the NT domain.\n\nA demonstration exploit scenario is described in the Source Message.",
+    "Impact'": "A remote user with an NDS account may be able to obtain domain administrator access on a remote NT server in a certain situation.",
+    "Solution": "It is reported that Novell has indicated that this is a customer configuration error.  The author of the report indicates that there is no apparent mention of this configuration situation in Novell documentation.\n\nAccording to the report, the fix is to uncheck the check box for \"admin rights on the NT Domain\" from any affected NDS account (i.e., one that does not exist on the NT domain).",
+    "Vendor URL": "www.novell.com/",
+    "Cause": "Configuration error",
+    "Underlying OS": "Windows (NT)",
+    "Underlying OS Comments": "Novell NetWare 5.x (NDS tree) with NT 4.0 SP6a; Novell version 4.80 32bit desktop client",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Re: Novel Netware Allows Login Access With No Passwords",
+    "SecurityTracker Alert ID": "1001086",
+    "SecurityTracker URL": "http://securitytracker.com/id/1001086",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Mar 14 2001",
+    "Impact": "User access via network",
+    "Version(s)": "Netware 3.1-5.1",
+    "Description": "A vulnerability has been reported in the default configuration of Novell Netware that allows login access with no passwords.\nOne user notes that they have had high school students use printer accounts with no passwords.  While logged in as the printer, the students have written to the print queue directory, filling up the SYS volume with games and pictures.\n\nThis was reportedly observed in Netware 4.10, and it has followed since.",
+    "Impact'": "An attacker can log into a Netware network using a Print Server account and obtain the rights of the container that the Print Server resides in.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.novell.com",
+    "Cause": "Authentication error",
+    "Message History": [
+        "https://securitytracker.com/id/1001070"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Re: Novel Netware Allows Login Access With No Passwords",
+    "SecurityTracker Alert ID": "1001085",
+    "SecurityTracker URL": "http://securitytracker.com/id/1001085",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Mar 14 2001",
+    "Impact": "User access via network",
+    "Version(s)": "Netware 3.1-5.1",
+    "Description": "A vulnerability has been reported in the default configuration of Novell Netware that allows login access with no passwords.\nA user reports that an exploit may follow the following steps in using an API called ChangeToClientRights:\n\n\"1. Login as printer.\n2. Wait for supe/admin person to print something.\n3. Execute ChangeToClientRights.\n4. Do bad things.\"\n\nThe user also indicates that there is some code at http://www.nmrc.org/files/netware/netware.zip and somewhere on Packetstorm (http://packetstorm.securify.com/) that may perform some of these steps.",
+    "Impact'": "An attacker can log into a Netware network using a Print Server account and obtain the rights of the container that the Print Server resides in.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.novell.com",
+    "Cause": "Authentication error",
+    "Message History": [
+        "https://securitytracker.com/id/1001070"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Re: Novel Netware Allows Login Access With No Passwords",
+    "SecurityTracker Alert ID": "1001073",
+    "SecurityTracker URL": "http://securitytracker.com/id/1001073",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Mar 12 2001",
+    "Impact": "User access via network",
+    "Version(s)": "Netware 3.1-5.1",
+    "Description": "A vulnerability has been reported in the default configuration of Novell Netware that allows login access with no passwords.\nA user reports that this may not work with NDPS printing and that you'll need to create an old fashioned queue-based setup.\n\nThis user was able to replicate it on both 4.11 sp9 & 5.0 sp6a servers.  However, print server objects created by AXIS NetPilot or HP-JetDirect don't work - they give a 669 error (effectively, incorrect password); that is as opposed to a -601 for object not found.",
+    "Impact'": "An attacker can log into a Netware network using a Print Server account and obtain the rights of the container that the Print Server resides in.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.novell.com",
+    "Cause": "Authentication error",
+    "Message History": [
+        "https://securitytracker.com/id/1001070"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Re: Novel Netware Allows Login Access With No Passwords",
+    "SecurityTracker Alert ID": "1001072",
+    "SecurityTracker URL": "http://securitytracker.com/id/1001072",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Mar 12 2001",
+    "Impact": "User access via network",
+    "Version(s)": "Netware 3.1-5.1",
+    "Description": "A vulnerability has been reported in the default configuration of Novell Netware that allows login access with no passwords.\nA user reports successfully tesing this exploit with NW 5.1 SP2a using a queue based Print Server object.  The user could login as the object with no password, but the object only had public rights (i.e., browse, compare and read), no volume scan, read or write rights.",
+    "Impact'": "An attacker can log into a Netware network using a Print Server account and obtain the rights of the container that the Print Server resides in.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.novell.com",
+    "Cause": "Authentication error",
+    "Message History": [
+        "https://securitytracker.com/id/1001070"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Re: Novel Netware Allows Login Access With No Passwords",
+    "SecurityTracker Alert ID": "1001071",
+    "SecurityTracker URL": "http://securitytracker.com/id/1001071",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Mar 12 2001",
+    "Impact": "User access via network",
+    "Version(s)": "Netware 3.1-5.1",
+    "Description": "A vulnerability has been reported in the default configuration of Novell Netware that allows login access with no passwords.\nA user reportedly tried it on Netware 4.11 SP9 and was able to log in as the print server, but with limited access to resources.",
+    "Impact'": "An attacker can log into a Netware network using a Print Server account and obtain the rights of the container that the Print Server resides in.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.novell.com",
+    "Cause": "Authentication error",
+    "Message History": [
+        "https://securitytracker.com/id/1001070"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Novel Netware Allows Login Access With No Passwords",
+    "SecurityTracker Alert ID": "1001070",
+    "SecurityTracker URL": "http://securitytracker.com/id/1001070",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Mar 12 2001",
+    "Impact": "User access via network",
+    "Version(s)": "Netware 3.1-5.1",
+    "Description": "A vulnerability has been reported in the default configuration of Novell Netware that allows login access with no passwords.\nAn unauthorized user can log into a Novell Netware network by using a Print Server as the username.  Under a default configuration, Novell Print Servers have blank passwords.  If a password is assigned, Novell Print Servers do not have intruder detection capability as a user account would, so the Print Server accounts are vulnerable to a brute force password guessing attack without risk of account lockout.  When a Print Server is logged into as a User, the account will have the same rights as are assigned to the container that it resides in.\n\nThe vendor was notified on November 2, 2000 but had not responded at the time of the report.\n\nThe information in the original report was supplied by Chris Hughes hughescj@usa.net.",
+    "Impact'": "An attacker can log into a Netware network using a Print Server account and obtain the rights of the container that the Print Server resides in.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.novell.com",
+    "Cause": "Authentication error",
+    "Message History": [
+        "https://securitytracker.com/id/1001071",
+        "https://securitytracker.com/id/1001072",
+        "https://securitytracker.com/id/1001073",
+        "https://securitytracker.com/id/1001085",
+        "https://securitytracker.com/id/1001086"
+    ]
+}

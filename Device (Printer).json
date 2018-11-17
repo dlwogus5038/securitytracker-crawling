@@ -1,0 +1,1539 @@
+{
+    "source": "1-2",
+    "Title": "HP Inkjet Printers Buffer Overflows in Processing Files Let Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1041415",
+    "SecurityTracker URL": "http://securitytracker.com/id/1041415",
+    "CVE Reference": [
+        "CVE-2018-5924",
+        "CVE-2018-5925"
+    ],
+    "Date": "Aug  3 2018",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "Two vulnerabilities were reported in HP Inkjet Printers. A remote user can execute arbitrary code on the target system.\nA remote user can create a specially crafted file that, when sent to target device, will trigger a buffer overflow and execute arbitrary code on the target device.\n\nThe vendor has assigned PSR-2018-0072 to these vulnerabilities.\n\nThe following Pagewide Pro, HP DesignJet, HP Officejet, HP Deskjet, and HP Envy models are affected:\n\nHP PageWide Managed MFP P77740dn\nHP PageWide Managed MFP P77740dw\nHP PageWide Managed MFP P77740z\nHP PageWide Managed MFP P77750z\nHP PageWide Managed MFP P77760z\nHP PageWide Managed P75050dn\nHP PageWide Managed P75050dw\nHP PageWide Pro 750dn\nHP PageWide Pro 750dw\nHP PageWide Pro MFP 772dn\nHP PageWide Pro MFP 772dw\nHP DesignJet rugged case\nHP Designjet T120 24-in ePrinter\nHP Designjet T120 24-in Printer\nHP Designjet T120 24-in Printer (2018 edition)\nHP Designjet T120 24-in Rmkt ePrinter\nHP Designjet T520 24-in ePrinter\nHP Designjet T520 24-in Printer\nHP Designjet T520 24-in Printer (2018 edition)\nHP Designjet T520 24-in Printer (2018 edition)\nHP Designjet T520 24-in Printer (2018 edition, legless)\nHP Designjet T520 24-in Rmkt ePrinter\nHP Designjet T520 36-in ePrinter\nHP Designjet T520 36-in Printer\nHP Designjet T520 36-in Printer (2018 edition)\nHP Designjet T520 36-in Printer (2018 edition, legless)\nHP Designjet T520 36-in Rmkt ePrinter\nHP DesignJet T730 36in Printer\nHP DesignJet T730 36in Printer\nHP Designjet T730 with Rugged Case\nHP DesignJet T830 24in eMFP Printer\nHP DesignJet T830 24-in MFP Printer\nHP DesignJet T830 MFP with Armor Case\nHP DesignJet T830 MFP with Armour Case\nHP DesignJet T830 MFP with Rugged Case\nHP AMP 1xx Printerseries \nHP AMP 1xx Printerseries \nHP AMP 1xx Printerseries \nHP Deskjet 2540 All-in-One\nHP Deskjet 2540 All-in-One\nHP DeskJet 2600 All-in-One Printer\nHP DeskJet 2600 All-in-One Printer\nHP DeskJet 2600 All-in-One Printer\nHP DeskJet 2600 All-in-One Printer\nHP DeskJet 2600 All-in-One Printer\nHP DeskJet 2600 All-in-One Printer\nHP Deskjet 2620 Ink Advantage series\nHP Deskjet 3540 series\nHP Deskjet 3540 series\nHP Deskjet 3540 series\nHP DeskJet 3630 series\nHP DeskJet 3630 series\nHP DeskJet 3630 series\nHP DeskJet 3700 All-in-One Printerseries\nHP DeskJet 3700 All-in-One Printerseries\nHP DeskJet 3700 All-in-One Printerseries\nHP Deskjet 4510 series\nHP DeskJet 4530 series\nHP DeskJet 4530 series\nHP DeskJet 4530 series\nHP DeskJet 4720 series\nHP DeskJet 4720 series\nHP DeskJet 5000 series\nHP DeskJet 5275 All-in-One Printer\nHP DeskJet 5640 series\nHP DeskJet 5730 series\nHP DeskJet 5730 series\nHP Deskjet Ink Advantage 2540 All-in-One\nHP DeskJet Ink Advantage 2600 All-in-One Printer\nHP DeskJet Ink Advantage 2600 All-in-One Printer\nHP DeskJet Ink Advantage 3630 All-in-One Printer\nHP DeskJet Ink Advantage 3630 All-in-One Printer\nHP DeskJet Ink Advantage 3700 All-in-One Printerseries\nHP DeskJet Ink Advantage 3700 All-in-One Printerseries\nHP DeskJet Ink Advantage 3700 All-in-One Printerseries\nHP DeskJet Ink Advantage 3700 All-in-One Printerseries\nHP DeskJet Ink Advantage 3700 All-in-One Printerseries\nHP Deskjet Ink Advantage 3830 e-All-in-One Printer\nHP Deskjet Ink Advantage 3830 e-All-in-One Printer\nHP Deskjet Ink Advantage 4615 All-in-One Printer\nHP Deskjet Ink Advantage 4625 e-All-in-One\nHP Deskjet Ink Advantage 4640 e-All-in-One Printerseries\nHP DeskJet Ink Advantage 4670 All-in-One Printer\nHP Deskjet Ink Advantage 5525 e-All-in-One\nHP DeskJet Ink Advantage 5570 All-in-One printer\nHP DeskJet Ink Advantage 5570 All-in-One printer\nHP Deskjet Ink Advantage 6525 e-All-in-One\nHP Envy 120 Series\nHP ENVY 4500 series\nHP ENVY 4500 series\nHP ENVY 4500 series\nHP ENVY 4500 series\nHP ENVY 4510 All-in-One Printer\nHP ENVY 4520 series\nHP ENVY 4520 series\nHP ENVY 4520 series\nHP ENVY 4520 series\nHP ENVY 4520 series\nHP ENVY 4520 series\nHP ENVY 4520 series\nHP ENVY 5000 series\nHP ENVY 5000 series\nHP ENVY 5000 series\nHP ENVY 5530 series\nHP ENVY 5530 series\nHP ENVY 5540 All-in-One Printer\nHP ENVY 5540 All-in-One Printer\nHP ENVY 5540 All-in-One Printer\nHP ENVY 5540 All-in-One Printer\nHP ENVY 5640 series\nHP ENVY 5640 series\nHP ENVY 5640 series\nHP ENVY 5640 series\nHP ENVY 5660 series\nHP ENVY 5660 series\nHP ENVY 5660 series\nHP ENVY 7640 series\nHP ENVY Photo 6200 All-in-One Printerseries\nHP ENVY Photo 7100 All-in-One Printerseries\nHP ENVY Photo 7100 All-in-One Printerseries\nHP Ink Tank 310\nHP Ink Tank 310\nHP Ink Tank Wireless 410\nHP Ink Tank Wireless 410\nHP Ink Tank Wireless 410\nHP OfficeJet 200 Mobile series\nHP OfficeJet 200 Mobile series\nHP OfficeJet 202 Mobile series\nHP OfficeJet 202 Mobile series\nHP OfficeJet 252 Mobile All-in-One\nHP Officejet 2620 series\nHP Officejet 2620 series\nHP Officejet 3830 e-All-in-One Printer\nHP Officejet 3830 e-All-in-One Printer\nHP Officejet 3830 e-All-in-One Printer\nHP Officejet 4610 e-All-in-One Printer\nHP Officejet 4620 e-All-in-One Printer\nHP Officejet 4622 e-All-in-One Printer\nHP Officejet 4630 e-All-in-One Printerseries\nHP Officejet 4630 e-All-in-One Printerseries\nHP OfficeJet 4650 All-in-One Printer\nHP OfficeJet 4650 All-in-One Printer\nHP OfficeJet 4650 All-in-One Printer\nHP OfficeJet 4650 All-in-One Printer\nHP OfficeJet 4650 All-in-One Printer\nHP OfficeJet 5200 AlI-in-One Printer\nHP OfficeJet 5200 AlI-in-One Printer\nHP OfficeJet 5200 AlI-in-One Printer\nHP Officejet 5740 series\nHP Officejet 5740 series\nHP Officejet 5740 series\nHP Officejet 6220 / HP Officejet Pro 6230 ePrinter\nHP Officejet 6220 / HP Officejet Pro 6230 ePrinter\nHP OfficeJet 6600 e-All-in-One\nHP OfficeJet 6700 Premium e-All-in-One\nHP Officejet 6810/6820 e-All-in-One Printer\nHP Officejet 6810/6820 e-All-in-One Printer\nHP OfficeJet 6950 All-in-One\nHP OfficeJet 6950 All-in-One\nHP OfficeJet 6950 All-in-One\nHP OfficeJet 6960 All-in-One\nHP OfficeJet Pro 6960 All-in-One \nHP OfficeJet Pro 6960 All-in-One \nHP Officejet 7110 Wide Format ePrinter\nHP Officejet 7510 Wide Format All-in-One Printer\nHP Officejet 7612 Wide Format e-All-in-One\nHP Officejet Pro 251dw Printer\nHP Officejet Pro 276dw Multifunction Printer\nHP Officejet Pro 6830 e-All-in-One Printer\nHP Officejet Pro 6830 e-All-in-One Printer\nHP OfficeJet Pro 6970 All-in-One Printer\nHP OfficeJet Pro 6970 All-in-One Printer\nHP OfficeJet Pro 7720 Wide Format All-in-One\nHP OfficeJet Pro 7730 Wide Format All-in-One\nHP OfficeJet Pro 7740 Wide Format All-in-One\nHP OfficeJet Pro 7740 Wide Format All-in-One\nHP OfficeJet Pro 7740 Wide Format All-in-One\nHP OfficeJet Pro 8210 Printer\nHP OfficeJet Pro 8216\nHP OfficeJet Pro 8216\nHP OfficeJet Pro 8216\nHP OfficeJet Pro 8600A e-All-in-One\nHP OfficeJet Pro 8600A Plus e-All-in-One\nHP OfficeJet Pro 8600A Premium e-All-in-One\nHP Officejet Pro 8610 e-All-in-One Printer\nHP Officejet Pro 8610 e-All-in-One Printer\nHP Officejet Pro 8610 e-All-in-One Printer\nHP Officejet Pro 8610 e-All-in-One Printer\nHP Officejet Pro 8610 e-All-in-One Printer\nHP Officejet Pro 8620 e-All-in-One Printer\nHP Officejet Pro 8620 e-All-in-One Printer\nHP Officejet Pro 8630 e-All-in-One Printer\nHP Officejet Pro 8640 e-All-in-One Printer\nHP Officejet Pro 8660 e-All-in-One Printer\nHP OfficeJet Pro 8710 All-in-One Printer\nHP OfficeJet Pro 8710 All-in-One Printer\nHP OfficeJet Pro 8710 All-in-One Printer\nHP OfficeJet Pro 8710 All-in-One Printer\nHP OfficeJet Pro 8710 All-in-One Printer\nHP OfficeJet Pro 8710 All-in-One Printer\nHP OfficeJet Pro 8710 All-in-One Printer\nHP OfficeJet Pro 8710 All-in-One Printer\nHP OfficeJet Pro 8720 All-in-One Printer\nHP OfficeJet Pro 8720 All-in-One Printer\nHP OfficeJet Pro 8720 All-in-One Printer\nHP OfficeJet Pro 8720 All-in-One Printer\nHP OfficeJet Pro 8720 All-in-One Printer\nHP OfficeJet Pro 8720 All-in-One Printer\nHP OfficeJet Pro 8720 All-in-One Printer\nHP OfficeJet Pro 8720 All-in-One Printer\nHP OfficeJet Pro 8720 All-in-One Printer\nHP OfficeJet Pro 8730\nHP OfficeJet Pro 8732M All-in-One Printer\nHP OfficeJet Pro 8740\nHP Photosmart 5520 series e-All-in-One\nHP Photosmart 5521 e-All-in-One\nHP Photosmart 5522 e-All-in-One\nHP Photosmart 5524 e-All-in-One\nHP Photosmart 5525 e-All-in-One\nHP Photosmart 6520 e-All-in-One\nHP Photosmart 7520 series\nHP Photosmart 7520 series\nHP Smart Tank Wireless 450\nHP Smart Tank Wireless 450",
+    "Impact'": "A remote user can send a file to the target system to execute arbitrary code on the target system.",
+    "Solution": "The vendor has issued a fix, available at:\n\nhttps://support.hp.com/us-en/drivers\n\nThe vendor advisory is available at:\n\nhttps://support.hp.com/us-en/document/c06097712",
+    "Vendor URL": "support.hp.com/us-en/document/c06097712",
+    "Cause": "Boundary error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP LaserJet and OfficeJet Printers Let Remote Users Obtain Potentially Sensitive Information on the Target System",
+    "SecurityTracker Alert ID": "1035191",
+    "SecurityTracker URL": "http://securitytracker.com/id/1035191",
+    "CVE Reference": "CVE-2016-2244",
+    "Date": "Mar  4 2016",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in HP LaserJet and OfficeJet Printers. A remote user can obtain potentially sensitive information on the target system.\nNo details were provided.\n\nThe following models are affected:\n\nHP Color LaserJet Enterprise M651 (CZ255A, CZ256A, CZ257A, CZ258A) \nHP Color LaserJet Enterprise M750 (D3L08A, D3L09A, D3L10A) \nHP Color LaserJet M680 (CZ249A, CZ250A, CA251A) \nHP LaserJet Enterprise 500 color MFP M575dn (CD644A, CD645A) \nHP LaserJet Enterprise 500 MFP M525f (CF116A, CF117A) \nHP LaserJet Enterprise 600 M601 (CE989A, CE990A) \nHP LaserJet Enterprise 600 M602 (CE991A, CE992A, CE993A) \nHP LaserJet Enterprise 600 M603xh (CE994A, CE995A, CE996A) \nHP LaserJet Enterprise 700 color MFP M775 series (CC522A, CC523A, CC524A) \nHP LaserJet Enterprise 700 M712xh (CF235A, CF236A, CF238A) \nHP LaserJet Enterprise 800 color M855 (A2W77A, A2W78A, A2W79A) \nHP LaserJet Enterprise 800 color MFP M880 (A2W76A, A2W75A, D7P70A, D7P71A) \nHP LaserJet Enterprise Color 500 M551 Series (CF081A,CF082A,CF083A) \nHP LaserJet Enterprise Color flow MFP M575c (CD646A) \nHP LaserJet Enterprise flow M830z MFP (CF367A) \nHP LaserJet Enterprise flow MFP M525c (CF118A) \nHP LaserJet Enterprise Flow MFP M630z (B3G85A) \nHP LaserJet Enterprise M806 (CZ244A, CZ245A) \nHP LaserJet Enterprise MFP M630 (J7X28A) \nHP LaserJet Enterprise MFP M725 (CF066A, CF067A, CF068A, CF069A) \nHP OfficeJet Enterprise Color MFP X585 (B5L04A, B5L05A, B5L07A) \nHP OfficeJet Enterprise Color X555 (C2S11A, C2S12A)",
+    "Impact'": "A remote user can obtain potentially sensitive information on the target system.",
+    "Solution": "HP has issued a fix.\n\nA firmware patch matrix is available in the vendor's advisory.\n\nThe HP advisory is available at:\n\nhttps://h20565.www2.hp.com/hpsc/doc/public/display?docId=emr_na-c05030353",
+    "Vendor URL": "h20565.www2.hp.com/hpsc/doc/public/display?docId=emr_na-c05030353",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Samsung Printer SoftAP Weak Default WiFi Key Lets Remote Users Bypass WiFi Security Protections",
+    "SecurityTracker Alert ID": "1034503",
+    "SecurityTracker URL": "http://securitytracker.com/id/1034503",
+    "CVE Reference": "CVE-2015-5729",
+    "Date": "Dec 18 2015",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of system information"
+    ],
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Xpress M2880FW; other models may be affected",
+    "Description": "A vulnerability was reported in Samsung Printers. A remote user can bypass security controls on the target system.\nThe SoftAP uses a weak generated password for generating the WPA2-PSK key. A remote user can that can monitor the wireless network can conduct a brute force guessing attack to recover the key and decrypt the traffic.\n\nThe vendor was notified on July 20, 2015.\n\nThe original advisory is available at:\n\nhttp://kaoticoneutral.blogspot.com.ar/2015/12/samsung-smarttv-and-printers-weak.html\n\nAugusto Pereyra reported this vulnerability.",
+    "Impact'": "A remote user that can monitor the wireless network can recover the WPA2-PSK key.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.samsung.com/",
+    "Cause": "Randomization error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(HP Issues Fix for HP Printers) OpenSSL SSL 3.0 Protocol Downgrade Flaw Lets Remote Users Decrypt SSL Traffic",
+    "SecurityTracker Alert ID": "1032745",
+    "SecurityTracker URL": "http://securitytracker.com/id/1032745",
+    "CVE Reference": "CVE-2014-3566",
+    "Date": "Jun 30 2015",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Description": "A vulnerability was reported in OpenSSL. A remote user can decrypt SSL sessions in certain cases. HP Printers are affected.\nA remote user can with the ability to conduct a man-in-the-middle attack can force a client to negotiate a downgrade to SSLv3 instead of a TLS v1.x protocol and then conduct a BEAST-style of attack to decrypt portions of the session.\n\nThis protocol vulnerability is referred to as the POODLE (\"Padding Oracle On Downgraded Legacy Encryption\") vulnerability.\n\nThis is a flaw in the protocol rather than in the OpenSSL implementation.\n\nThe original advisory is available at:\n\nhttps://www.openssl.org/~bodo/ssl-poodle.pdf\n\nBodo Moller, Thai Duong, and Krzysztof Kotowicz reported this vulnerability.",
+    "Impact'": "A remote user with the ability to conduct a man-in-the-middle attack can decrypt SSL sessions.",
+    "Solution": "HP has issued a fix for HP LaserJet Printers and Multi-Function Printers (MFPs) and HP OfficeJet Printers and MFPs.\n\nA patch matrix is available in the vendor's advisory.\n\nThe HP advisory is available at:\n\nhttps://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c04720842",
+    "Vendor URL": "h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c04720842",
+    "Cause": "Access control error",
+    "Message History": [
+        "https://securitytracker.com/id/1031029"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(HP Issues Fix for HP Printers) OpenSSL SSL/TLS Weak Key Man-in-the-Middle Attack Lets Remote Users Decrypt and Modify Data",
+    "SecurityTracker Alert ID": "1031874",
+    "SecurityTracker URL": "http://securitytracker.com/id/1031874",
+    "CVE Reference": "CVE-2014-0224",
+    "Date": "Mar 10 2015",
+    "Impact": [
+        "Disclosure of user information",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in OpenSSL. A remote user can conduct a man-in-the-middle attack to decrypt and modify data. Some HP LaserJet printers, MFPs, and HP OfficeJet Enterprise printers are affected.\nA remote user with the ability to conduct a man-in-the-middle attack between an affected client and an affected server can use a specially crafted handshake to cause the system to use a weak key.\n\nServer versions 1.0.1 and 1.0.2-beta1 are affected.\n\nAll client versions are affected.\n\nThe vendor was notified on May 1, 2014.\n\nKIKUCHI Masashi (Lepidum Co. Ltd.) reported this vulnerability via JPCERT/CC.",
+    "Impact'": "A remote user can conduct a man-in-the-middle attack to decrypt and modify data.",
+    "Solution": "HP has issued a fix for certain HP LaserJet printers, MFPs, and HP OfficeJet Enterprise printers.\n\nA patch matrix is available in the vendor's advisory.\n\nThe HP advisory is available at:\n\nhttp://h20564.www2.hp.com/hpsc/doc/public/display?docId=emr_na-c04451722",
+    "Vendor URL": "www.openssl.org/news/secadv_20140605.txt",
+    "Cause": "Access control error",
+    "Message History": [
+        "https://securitytracker.com/id/1030336"
+    ]
+}{
+    "source": "1-2",
+    "Title": "HP CM3530 Color LaserJet Printer Lets Remote Users Access Data and Deny Service",
+    "SecurityTracker Alert ID": "1031153",
+    "SecurityTracker URL": "http://securitytracker.com/id/1031153",
+    "CVE Reference": "CVE-2014-7875",
+    "Date": "Oct 31 2014",
+    "Impact": [
+        "Denial of service via network",
+        "Disclosure of system information",
+        "Modification of system information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "CM3530 model numbers CC519A and CC520A",
+    "Description": "A vulnerability was reported in the HP CM3530 Color LaserJet Printer. A remote user can cause denial of service conditions. A remote user can access and modify data.\nPrinter model numbers CC519A and CC520A are affected.",
+    "Impact'": "A remote user can cause denial of service conditions.\n\nA remote user can access and modify data.",
+    "Solution": "The vendor has issued a firmware fix.\n\nThe vendor's advisory is available at:\n\nhttp://h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=emr_na-c04483249-1",
+    "Vendor URL": "h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=emr_na-c04483249-1",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Xerox ColorQube 8700/8900 Unspecified Flaw Has Unspecified Impact",
+    "SecurityTracker Alert ID": "1029761",
+    "SecurityTracker URL": "http://securitytracker.com/id/1029761",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Feb 13 2014",
+    "Impact": "Not specified",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to 071.161.203.15600; models 8700, 8900",
+    "Description": "A vulnerability was reported in Xerox ColorQube 8700/8900. The impact was not specified.\nNo details were provided.",
+    "Impact'": "The impact was not specified.",
+    "Solution": "The vendor has issued a fix (Version 071.161.203.15600 for the ColorQube 8700/8900).\n\nThe vendor's advisory is available at:\n\nhttp://www.xerox.com/download/security/security-bulletin/f89c-4f1d6f982b8a7/cert_XRX14-001_v1.0.pdf",
+    "Vendor URL": "www.xerox.com/download/security/security-bulletin/f89c-4f1d6f982b8a7/cert_XRX14-001_v1.0.pdf",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP LaserJet Printers Let Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1029497",
+    "SecurityTracker URL": "http://securitytracker.com/id/1029497",
+    "CVE Reference": "CVE-2013-6193",
+    "Date": "Dec 13 2013",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in HP LaserJet Printers. A remote user can cause denial of service conditions.\nA remote user can send specially crafted data to cause partial denial of service conditions on the target printer.\n\nThe following printers are affected:\n\nHP Color LaserJet CM1312nfi Multifunction Printer \nHP Color LaserJet CM2320n Multifunction Printer \nHP Color LaserJet CP1515 \nHP Color LaserJet CP1518 \nHP Color LaserJet CP2025 Printer \nHP Color LaserJet CP5225 Series \nHP LaserJet M1522n Multifunction Printer \nHP LaserJet M2727 Multifunction Printer \nHP LaserJet Pro 100 color MFP M175 \nHP LaserJet Pro 300 color MFP Printer M375 \nHP LaserJet Pro 300 color Printer M351 \nHP LaserJet Pro 400 color MFP M475 \nHP LaserJet Pro 400 color Printer M451 \nHP LaserJet Pro CM1415fnw Color Multifunction Printer \nHP LaserJet Pro CP1025nw \nHP LaserJet Pro CP1525nw Color Printer \nHP LaserJet Pro M1212nf MFP \nHP LaserJet Pro M1213nf MFP \nHP LaserJet Pro M1214nfh MFP \nHP LaserJet Pro M1216nfh MFP \nHP LaserJet Pro M1217nfw MFP \nHP LaserJet Pro M1536dnf Multifunction Printer \nHP LaserJet Pro P1102 \nHP LaserJet Pro P1606dn \nHP TopShot LaserJet Pro M275 MFP\n\nRoel Bouwman reported this vulnerability via CERT.org.",
+    "Impact'": "A remote user can cause denial of service conditions.",
+    "Solution": "The vendor has issued a fix.\n\nThe vendor's advisory is available at:\n\nhttp://h20565.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=emr_na-c04041432-1",
+    "Vendor URL": "h20565.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=emr_na-c04041432-1",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP Officejet Pro 8500 Printer Input Validation Flaw Permits Cross-Site Scripting Attacks",
+    "SecurityTracker Alert ID": "1029466",
+    "SecurityTracker URL": "http://securitytracker.com/id/1029466",
+    "CVE Reference": "CVE-2013-4845",
+    "Date": "Dec 11 2013",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "HP Officejet Pro 8500 (A909)",
+    "Description": "A vulnerability was reported in the HP Officejet Pro 8500 Printer. A remote user can conduct cross-site scripting attacks.\nThe printer interface does not properly filter HTML code from user-supplied input before displaying the input. A remote user can cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the HP Printer interface and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nThe vendor has assigned SSRT101164 to this vulnerability.\n\nThe following model numbers are affected:\n\nCB022A, CB023A, CB025A, CB793A, CB794A, CB862A, CB874A, CN539A",
+    "Impact'": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the HP Printer interface, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+    "Solution": "The vendor has issued a fix (firmware version DLM1FN1344AR).\n\nThe vendor's advisory is available at:\n\nhttp://h20565.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=emr_na-c04035829-1",
+    "Vendor URL": "h20565.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=emr_na-c04035829-1",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Xerox WorkCentre and ColorQube Let Remote Users Gain Unauthorized Access",
+    "SecurityTracker Alert ID": "1029224",
+    "SecurityTracker URL": "http://securitytracker.com/id/1029224",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Oct 22 2013",
+    "Impact": "User access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in Xerox WorkCentre and ColorQube. A remote user can gain unauthorized access.\nA remote user can exploit a remote protocol flaw to gain unauthorized access to the target device.\n\nThe following ColorQube models are affected:\n\n9201\n9202\n9203\n\nThe following WorkCentre models are affected:\n\n6400\n7525\n7530\n7535\n7545\n7556\n7755\n7765\n7775\n\nAndrei Costin (of www.firmware.re) reported this vulnerability.",
+    "Impact'": "A remote user can gain unauthorized access.",
+    "Solution": "The vendor has issued a fix.\n\nThe vendor's advisory is available at:\n\nhttp://www.xerox.com/download/security/security-bulletin/148ae-4e940cfff7450/cert_XRX13-008_v1.0.pdf",
+    "Vendor URL": "www.xerox.com/download/security/security-bulletin/148ae-4e940cfff7450/cert_XRX13-008_v1.0.pdf",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP FutureSmart Multi-Function Printer Bugs Let Local Users Obtain Scanned Information and Let Remote Users Decrypt PDF Documents",
+    "SecurityTracker Alert ID": "1029127",
+    "SecurityTracker URL": "http://securitytracker.com/id/1029127",
+    "CVE Reference": [
+        "CVE-2013-4828",
+        "CVE-2013-4829"
+    ],
+    "Date": "Oct  4 2013",
+    "Impact": "Disclosure of system information",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "Two vulnerabilities were reported in certain HP FutureSmart Multi-Function Printers. A local user can obtain potentially sensitive information. A remote user may be able to decrypt PDF files.\nA local user can obtain potentially sensitive scanned information [CVE-2013-4829].\n\nA remote user may be able to decrypt PDF files [CVE-2013-4828].\n\nThe vendor has assigned ID SSRT101249 and SSRT101327 to these vulnerabilities.\n\nThe following LaserJet models are affected:\n\nCC522A HP Color LaserJet M775dn MFP \nCC523A HP Color LaserJet M775f MFP \nCC524A HP Color LaserJet M775z MFP \nCF304A HP Color LaserJet M775z+ MFP \nCF066A HP LaserJet MFP M725dn \nCF067A HP LaserJet MFP M725f \nCF068A HP LaserJet MFP M725z+ \nCF069A HP LaserJet MFP M725z \nCD646A HP LaserJet Enterprise color flow MFP M575c \nCD644A HP Color LaserJet MFP M575dn \nCD645A HP Color LaserJet MFP M575f \nCF118A HP LaserJet flow MFP M525c \nCF116A HP LaserJet MFP M525f \nCF117A HP LaserJet MFP M525dn \nCE502A HP LaserJet M4555 MFP \nCE738A HP LaserJet M4555h MFP \nCE503A HP LaserJet M4555f MFP \nCE504A HP LaserJet M4555fskm MFP \nCC419A HP Color LaserJet CM4540 MFP \nCC420A HP Color LaserJet CM4540f MFP \nCC421A HP Color LaserJet CM4540fskm MFP \nL2717A ScanJet Enterprise 8500fn1",
+    "Impact'": "A local user can obtain potentially sensitive information.\n\nA remote user may be able to decrypt PDF files.",
+    "Solution": "The vendor has issued a fix.\n\nA patch matrix is available in the vendor's advisory.\n\nThe vendor's advisory is available at:\n\nhttps://h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c03888014",
+    "Vendor URL": "h20564.www2.hp.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c03888014",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP LaserJet Pro Printer Bug Lets Remote Users Access Data",
+    "SecurityTracker Alert ID": "1028869",
+    "SecurityTracker URL": "http://securitytracker.com/id/1028869",
+    "CVE Reference": "CVE-2013-4807",
+    "Date": "Aug  2 2013",
+    "Impact": "Disclosure of system information",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in HP Printer. A remote user can obtain potentially sensitive information.\nNo details were provided.\n\nThe vendor has assigned SSRT101181 to this vulnerability.\n\nThe following models are affected:\n\nHP LaserJet Pro P1102w CE657A/CE658A\nHP LaserJet Pro P1606dn CE749A\nHP LaserJet Pro M1212nf MFP CE841A\nHP LaserJet Pro M1213nf MFP CE845A\nHP LaserJet Pro M1214nfh MFP CE842A\nHP LaserJet Pro M1216nfh MFP CE843A\nHP LaserJet Pro M1217nfw MFP CE844A\nHP LaserJet Pro M1218nfs MFP B4K88A\nHP LaserJet Pro CP1025nw CE914A/CE918A\n\nMicha Sajdak of Securitum.pl reported this vulnerability.",
+    "Impact'": "A remote user can obtain potentially sensitive information.",
+    "Solution": "The vendor has issued a fix (firmware 2013-07-26, Version:20130703).\n\nThe vendor's advisory is available at:\n\nhttp://h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=emr_na-c03825817-2",
+    "Vendor URL": "h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=emr_na-c03825817-2",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP Printers Let Remote Users Access Files on the Printer",
+    "SecurityTracker Alert ID": "1028476",
+    "SecurityTracker URL": "http://securitytracker.com/id/1028476",
+    "CVE Reference": "CVE-2012-5221",
+    "Updated": "May 29 2013",
+    "Original Entry Date": "Apr 26 2013",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in HP Printers. A remote user can access files on the printer.\nHP LaserJet MFP printers, HP Color LaserJet MFP printers, and certain HP LaserJet printers are affected.\n\nThe following product models are affected:\n\nHP Color LaserJet 3000 Q7534A\nHP Color LaserJet 3800 Q5981A\nHP Color LaserJet 4700 Q7492A\nHP Color LaserJet 4730 Multifunction Printer CB480A\nHP Color LaserJet CM4730 Multifunction Printer CB480A\nHP Color LaserJet 5550 Q3714A\nHP Color LaserJet 9500 Multifunction Printer C8549A\nHP Color LaserJet CM6030 Multifunction Printer CE664A\nHP Color LaserJet CM6040 Multifunction Printer Q3939A\nHP Color LaserJet CP3505 CB442A\nHP Color LaserJet CP3525 CC469A\nHP Color LaserJet CP4005 CB503A\nHP Color LaserJet CP6015 Q3932A\nHP Color LaserJet Enterprise CP4025 CC490A\nHP Color LaserJet Enterprise CP4525 CC493A\nHP LaserJet 4240 Q7785A\nHP LaserJet 4250 Q5400A\nHP LaserJet 4345 Multifunction Printer Q3942A\nHP LaserJet 4350 Q5407A\nHP LaserJet 5200L Q7543A \nHP LaserJet 5200N Q7543A\nHP LaserJet 9040 Q7697A\nHP LaserJet 9040 Multifunction Printer Q3721A\nHP LaserJet 9050 Q3722A\nHP LaserJet 9050 Multifunction Printer Q3728A\nHP LaserJet Enterprise P3015 CE526A\nHP LaserJet M3027 Multifunction Printer CB416A\nHP LaserJet M3035 Multifunction Printer CB414A\nHP LaserJet CM3530 Multifunction Printer CC519A\nHP LaserJet M4345 Multifunction Printer CB425A\nHP LaserJet M5025 Multifunction Printer Q7840A\nHP LaserJet M5035 Multifunction Printer Q7829A\nHP LaserJet M9040 Multifunction Printer CC394A\nHP LaserJet M9050 Multifunction Printer CC395A\nHP LaserJet P3005 Q7812A\nHP LaserJet P4014 CB507A\nHP LaserJet P4015 CB509A\nHP LaserJet P4515 CB514A\nHP 9250c Digital Sender CB472A \n\nAndrei Costin reported this vulnerability via the iDefense Vulnerability Contributor Program.",
+    "Impact'": "A remote user can access files on the printer.",
+    "Solution": "The vendor has issued a fix.\n\nA patch matrix is available in the vendor's advisory.\n\nThe vendor's advisory is available at:\n\nhttp://h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=emr_na-c03744742-1",
+    "Vendor URL": "h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=emr_na-c03744742-1",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP LaserJet Pro Printer Bug Lets Remote Users Modify Data and Deny Service",
+    "SecurityTracker Alert ID": "1028258",
+    "SecurityTracker URL": "http://securitytracker.com/id/1028258",
+    "CVE Reference": "CVE-2012-5215",
+    "Date": "Mar  7 2013",
+    "Impact": [
+        "Denial of service via network",
+        "Modification of system information",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in HP LaserJet Pro Printers. A remote user can modify data on the target system and cause denial of service conditions.\nNo details were provided.\n\nThe following product versions are affected:\n\nHP LaserJet Pro P1102w\nHP LaserJet Pro P1102w\nHP LaserJet Pro P1606dn\nHP LaserJet Pro M1212nf MFP\nHP LaserJet Pro M1213nf MFP\nHP LaserJet Pro M1214nfh MFP\nHP LaserJet Pro M1216nfh Multifunction Printer\nHP LaserJet Pro M1217nfw Multifunction Printer\nHP HotSpot LaserJet Pro M1218nfs MFP\nHP LaserJet Pro M1219nf MFP\nHP LaserJet Pro CP1025nw\nHP LaserJet Pro CP1025nw\n\nChristoph von Wittich of Hentschke Bau GmbH reported this vulnerability via US-CERT.",
+    "Impact'": "A remote user can modify data on the target system and can cause denial of service conditions.",
+    "Solution": "The vendor has issued a fix.\n\nThe vendor's advisory is available at:\n\nhttp://h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=emr_na-c03684249-1",
+    "Vendor URL": "h20566.www2.hp.com/portal/site/hpsc/template.PAGE/public/kb/docDisplay/?docId=emr_na-c03684249-1",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP LaserJet and Color LaserJet Printer Input Validation Flaw Permits Cross-Site Scripting Attacks",
+    "SecurityTracker Alert ID": "1027841",
+    "SecurityTracker URL": "http://securitytracker.com/id/1027841",
+    "CVE Reference": "CVE-2012-3272",
+    "Date": "Dec  6 2012",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in HP LaserJet and Color LaserJet Printers. A remote user can conduct cross-site scripting attacks.\nA remote user can cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the printer interface and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nThe following versions are affected:\n\nHP Color LaserJet CM3530\n\nHP Color LaserJet CM6030\n\nHP Color LaserJet CM6040\n\nHP Color LaserJet CP3525\n\nHP Color LaserJet CP4025\n\nHP Color LaserJet CP4525\n\nHP Color LaserJet CP6015\n\nLaserJet P3015\n\nLaserJet P4014\n\nLaserJet P4015\n\nLaserJet P4515\n\nDominic Sim of KPMG reported this vulnerability.",
+    "Impact'": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the HP Printer interface, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+    "Solution": "The vendor has issued a fix.\n\nThe vendor's advisory is available at:\n\nhttps://h20566.www2.hp.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c03556108",
+    "Vendor URL": "h20566.www2.hp.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c03556108",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP LaserJet Pro 400 Multi Function Printers Bug Lets Remote Users Access the Printer",
+    "SecurityTracker Alert ID": "1027840",
+    "SecurityTracker URL": "http://securitytracker.com/id/1027840",
+    "CVE Reference": "CVE-2012-3273",
+    "Date": "Dec  6 2012",
+    "Impact": "User access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in HP LaserJet Pro 400 Multi Function Printers. A remote user can gain access to the target system.\nThe following versions are affected:\n\nHP LaserJet Pro 400 MFP M425, Firmware version 20120625:\n\nHP LaserJet Pro 400 MFP M425dn\nHP LaserJet Pro 400 MFP M425dw\n\nHP LaserJet 400 M401, Firmware version 20120621:\n\nHP LaserJet Pro 400 M401a\nHP LaserJet Pro 400 M401d\nHP LaserJet Pro 400 M401n\nHP LaserJet Pro 400 M401dn\nHP LaserJet Pro 400 M401dw",
+    "Impact'": "A remote user can gain access to the target system.",
+    "Solution": "The vendor has issued a fix.\n\nThe vendor's advisory is available at:\n\nhttps://h20566.www2.hp.com/portal/site/hpsc/public/kb/docDisplay?docId=emr_na-c03464042",
+    "Vendor URL": "h20566.www2.hp.com/portal/site/hpsc/public/kb/ docDisplay?docId=emr_na-c03464042",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Samsung Printers Hardcoded Password Lets Remote Users Gain Administrative Access",
+    "SecurityTracker Alert ID": "1027819",
+    "SecurityTracker URL": "http://securitytracker.com/id/1027819",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Nov 29 2012",
+    "Impact": "User access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "firmware prior to October 31, 2012.",
+    "Description": "A vulnerability was reported in Samsung Printers. A remote user can gain administrative access.\nThe printer firmware contains a hard-coded SNMP full read-write community string. A remote user with knowledge of the password can gain administrative access via SNMP.\n\nDisabling SNMP via the printer management utility does not remove the password.\n\nPrinter firmware issued on or prior to October 31, 2012 is affected.\n\nSome Dell printers are also affected.\n\nThe original advisory is available at:\n\nhttp://www.kb.cert.org/vuls/id/281284\n\nNeil Smith reported this vulnerability.",
+    "Impact'": "A remote user can gain administrative access.",
+    "Solution": "Firmware released after October 31, 2012 is not vulnerable.\n\nThe vendor plans to issue a patch tool later this year for firmware versions released on or prior to October 31, 2012.",
+    "Vendor URL": "www.samsung.com/",
+    "Cause": "Configuration error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP Photosmart Bug Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1027213",
+    "SecurityTracker URL": "http://securitytracker.com/id/1027213",
+    "CVE Reference": "CVE-2012-2017",
+    "Date": "Jun 29 2012",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in HP Photosmart. A remote user can cause denial of service conditions.\nA remote user can send specially crafted data to cause the target service to crash.\n\nThe following versions are affected:\n\nHP Photosmart Wireless e-All-in-One Printer series - B110\nHP Photosmart e-All-in-One Printer series - D110\nHP Photosmart Plus e-All-in-One Printer series - B210\nHP Photosmart eStation All-in-One Printer series - C510\nHP Photosmart Ink Advantage e-All-in-One Printer series - K510\nHP Photosmart Premium Fax e-All-in-One Printer series - C410",
+    "Impact'": "A remote user can cause denial of service conditions.",
+    "Solution": "The vendor has issued a fix.\n\nNo updates are available for the following printers:\n\nHP Photosmart Ink Advantage e-All-in-One Printer series - K510\nHP Photosmart Premium Fax e-All-in-One Printer series - C410\n\nThe vendor's advisory is available at:\n\nhttp://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c02931414",
+    "Vendor URL": "h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c02931414",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP LaserJet Printer Flaw Lets Remote Users View Files",
+    "SecurityTracker Alert ID": "1026488",
+    "SecurityTracker URL": "http://securitytracker.com/id/1026488",
+    "CVE Reference": "CVE-2011-4785",
+    "Date": "Jan  9 2012",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "LaserJet P3015; firmware prior to 07.080.3",
+    "Description": "A vulnerability was reported in some HP LaserJet Printers. A remote user can view files on the target system.\nA remote user can supply a specially crafted request to view files on the target system.\n\nThe Digital Defense, Inc. (DDI) Vulnerability Research Team (VRT) reported this vulnerability.",
+    "Impact'": "A remote user can view files on the target system.",
+    "Solution": "The vendor has issued a fix (HP LaserJet P3015; firmware 07.080.3).\n\nThe vendor's advisory is available at:\n\nhttp://h20566.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=emr_na-c03140700",
+    "Vendor URL": "h20566.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=emr_na-c03140700",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP LaserJet Printers Unspecified Flaw Lets Remote Users Update Firmware with Arbitrary Code",
+    "SecurityTracker Alert ID": "1026357",
+    "SecurityTracker URL": "http://securitytracker.com/id/1026357",
+    "CVE Reference": "CVE-2011-4161",
+    "Updated": "Mar 19 2012",
+    "Original Entry Date": "Nov 29 2011",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "Root access via network"
+    ],
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in some HP LaserJet Printers. A remote user can update the firmware with arbitrary code.\nA remote user can send a specially crafted print job or specially crafted data to TCP port 9100 on the target printer to trigger an unspecified flaw and cause the printer to upgrade its firmware with arbitrary code. Some printers do not check digital signatures on firmware upgrades.\n\nIn some cases, the vulnerability can be exploited to cause the target printer's fuser to overheat and trip a thermal switch to shutdown the printer.\n\nThe following models are affected:\n\nHP LaserJet Pro 100 color MFP M175 \nHP TopShot LaserJet Pro M275 \nHP LaserJet Pro 300 color M351 \nHP LaserJet Pro 300 color M351 \nHP LaserJet Pro 300 color MFP M375 \nHP LaserJet Pro 400 color M451 \nHP LaserJet Pro 400 color MFP M475 \nHP LaserJet Enterprise 500 color M551 \nHP LaserJet Enterprise 600 M601 \nHP LaserJet Enterprise 600 M602 \nHP LaserJet Enterprise 600 M603 \nHP LaserJet Pro CP1025 Color Printer series \nHP LaserJet Pro M1136 Multifunction Printer series \nHP LaserJet Pro P1102 Printer series \nHP Color LaserJet CP1210 Printer series \nHP LaserJet Pro M1212nf Multifunction Printer series \nHP Color LaserJet CM1312 Multifunction Printer \nHP Color LaserJet CM1312nfi Multifunction Printer \nHP LaserJet M1319 Multifunction Printer series \nHP LaserJet Pro CM1415 Color Multifunction Printer \nHP LaserJet P1500 Printer series \nHP Color LaserJet CP1510 Printer series \nHP LaserJet M1522 Multifunction Printer series \nHP LaserJet Pro CP1525 Color Printer \nHP LaserJet Pro M1536 Multifunction Printer \nHP LaserJet Pro P1606dn Printer \nHP Color LaserJet CP2025 \nHP LaserJet P2035 Printer series \nHP LaserJet P2055 Printer series \nHP Color LaserJet CM2320 Multifunction Printer series \nHP LaserJet M2727 Multifunction Printer series \nHP Color LaserJet 3000 \nHP LaserJet P3005 \nHP LaserJet Enterprise P3015 \nHP LaserJet M3027 Multifunction Printer \nHP LaserJet M3035 \nHP Color LaserJet CP3505 \nHP Color LaserJet CP3525 \nHP Color LaserJet CM3530 \nHP Color LaserJet 3800 \nHP Color LaserJet CP4005 \nHP LaserJet P4014 \nHP LaserJet P4015 \nHP LaserJet 4240 \nHP LaserJet 4250 \nHP LaserJet M4345 Multifunction Printer \nHP LaserJet 4350 \nHP LaserJet P4515 \nHP Color LaserJet Enterprise CP4525 \nHP Color LaserJet Enterprise CM4540 Multifunction Printer \nHP LaserJet Enterprise M4555 Multifunction Printer \nHP Color LaserJet 4700 \nHP Color LaserJet 4730 Multifunction Printer \nHP Color LaserJet CM4730 Multifunction Printer \nHP LaserJet M5025 Multifunction Printer \nHP LaserJet M5035 Multifunction Printer \nHP LaserJet 5200L \nHP LaserJet 5200N \nHP Color LaserJet Professional CP5225 Printer series \nHP Color LaserJet CP5525 \nHP Color LaserJet 5550 \nHP Color LaserJet CP6015 \nHP Color LaserJet CM6030 \nHP Color LaserJet CM6040 \nHP CM8060 Color Multifunction Printer with Edgeline \nHP LaserJet 9040 \nHP LaserJet M9040 Multifunction Printer \nHP LaserJet 9050 \nHP LaserJet M9050 Multifunction Printer \nHP 9200c Digital Sender \nHP 9250c Digital Sender \nHP Color LaserJet 9500 \n\nThe original advisory is available at:\n\nhttp://redtape.msnbc.msn.com/_news/2011/11/29/9076395-exclusive-millions-of-printers-open-to-devastating-hack-attack-researchers-say\n\nSalvatore Stolfo and Ang Cui of Columbia University reported this vulnerability.",
+    "Impact'": "A remote user can upgrade the printer's firmware with arbitrary code.",
+    "Solution": "No solution was available at the time of this entry.\n\nThe vendor recommends disabling the 'Printer Firmware Update' feature as described at:\n\nhttp://h71028.www7.hp.com/enterprise/downloads/HP-Imaging10.pdf\n\nThe vendor's advisory is available at:\n\nhttp://h20565.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=emr_na-c03102449",
+    "Vendor URL": "h20565.www2.hp.com/portal/site/hpsc/public/kb/docDisplay/?docId=emr_na-c03102449",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP Photosmart Printer Bugs Let Remote Users Access and Modify Data and Conduct Cross-Site Scripting Attacks",
+    "SecurityTracker Alert ID": "1025315",
+    "SecurityTracker URL": "http://securitytracker.com/id/1025315",
+    "CVE Reference": [
+        "CVE-2011-1531",
+        "CVE-2011-1532",
+        "CVE-2011-1533"
+    ],
+    "Date": "Apr 12 2011",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of system information",
+        "Modification of user information"
+    ],
+    "Vendor Confirmed": "Yes",
+    "Description": "Several vulnerabilities were reported in HP Photosmart printers. A remote user can conduct cross-site scripting attacks. A remote user can partially access and modify data.\nA remote user can cause arbitrary scripting code to be executed by the target user's browser [CVE-2011-1533].  The code will originate from the site running the Photosmart software and will run in the security context of that site.  As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nA remote user can partially access data via the printer's embedded web server [CVE-2011-1531].\n\nA remote user can partially modify data via the printer's SNMP server [CVE-2011-1532].\n\nThe following printer models are affected:\n\nHP Photosmart D110 series\nHP Photosmart B110 series\nHP Photosmart Plus B210 series\nHP Photosmart Premium C310 series\nHP Photosmart Premium Fax All-in-One\nHP Photosmart Premium C510 series\nHP ENVY 100 D410 series\n\nAaron Sigel of vtty.com reported these vulnerabilities.",
+    "Impact'": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running the Photosmart software, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nA remote user can partially access and modify data on the target system.\n\nA remote user can determine the installation path.",
+    "Solution": "No solution was available at the time of this entry.\n\nThe vendor's advisory is available at:\n\nhttp://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c02267197",
+    "Vendor URL": "h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c02267197",
+    "Cause": [
+        "Access control error",
+        "Input validation error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP LaserJet Printer Printer Job Language (PJL) Interface Directory Traversal Flaw Lets Remote Users View Arbitrary Files",
+    "SecurityTracker Alert ID": "1024741",
+    "SecurityTracker URL": "http://securitytracker.com/id/1024741",
+    "CVE Reference": "CVE-2010-4107",
+    "Updated": "Nov 29 2010",
+    "Original Entry Date": "Nov 16 2010",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Description": "A vulnerability was reported in HP LaserJet Printers.  A remote user can view files on the target system.\nA remote user can exploit a directory traversal flaw in the Printer Job Language (PJL) interface to view arbitrary files on the target device.\n\nA demonstration python exploit command is provided:\n\n$ python -c 'print \"\\x1b%-12345X@PJL FSDIRLIST NAME=\\\"0:\\\\..\\\\..\\\\..\\\\\\\" \\\n  ENTRY=1 COUNT=999999\\x0d\\x0a\\x1b%-12345X\\x0d\\x0a\"' | nc 192.168.0.1 9100\n\nThe following device models are affected:\n\nHP LaserJet MFP printers (all models with Printer Job Language (PJL) support), HP Color LaserJet MFP printers (all models with Printer Job Language (PJL) support), LaserJet 4100 series, 4200 series, 4300 series, 5100 series, 8150 series, 9000 series.\n\nThe vendor was notified on November 25, 2009.\n\nMoritz Jodeit of n.runs AG reported this vulnerability.",
+    "Impact'": "A remote user can view files on the target system.",
+    "Solution": "No solution was available at the time of this entry.\n\nThe vendor recommends either disabling file system access via the PJL interface or setting a PJL password.\n\nThe vendor's advisory is available at:\n\nhttp://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c02004333",
+    "Vendor URL": "h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c02004333",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Lexmark Printers HTTP Authorization Field Processing Bug Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1023960",
+    "SecurityTracker URL": "http://securitytracker.com/id/1023960",
+    "CVE Reference": "CVE-2010-0101",
+    "Date": "May 10 2010",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Various",
+    "Description": "A vulnerability was reported in some Lexmark Printers and MarkNet devices.  A remote user can cause denial of service conditions.\nA remote user can send specially crafted HTTP header 'Authorization' field characters to the target device on TCP ports 80, 443, 631, or 8000 to cause the device to crash.",
+    "Impact'": "A remote user can cause the target device to crash.",
+    "Solution": "The vendor has issued a fix.\n\nThe vendor's advisory is available at:\n\nhttp://support.lexmark.com/index?page=content&id=TE87",
+    "Vendor URL": "support.lexmark.com/index?page=content&id=TE87",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Lexmark Laser Printer Buffer Overflow in Processing PJL Data Lets Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1023735",
+    "SecurityTracker URL": "http://securitytracker.com/id/1023735",
+    "CVE Reference": "CVE-2010-0619",
+    "Date": "Mar 24 2010",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Various",
+    "Description": "A vulnerability was reported in Lexmark Laser Printers.  A remote user can execute arbitrary code on the target system.\nA remote user can send specially crafted Printer Job Language (PJL) data to trigger a buffer overflow and execute arbitrary code on the target printer.",
+    "Impact'": "A remote user can execute arbitrary code on the target printer.",
+    "Solution": "The vendor has issued a fix.\n\nThe vendor's advisory is available at:\n\nhttp://support.lexmark.com/index?page=content&id=TE84",
+    "Vendor URL": "support.lexmark.com/index?page=content&id=TE84",
+    "Cause": "Boundary error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Lexmark Laser Printer FTP Service Flood Protection Error Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1023734",
+    "SecurityTracker URL": "http://securitytracker.com/id/1023734",
+    "CVE Reference": "CVE-2010-0618",
+    "Date": "Mar 24 2010",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "Various",
+    "Description": "A vulnerability was reported in Lexmark Printer.  A remote user can cause denial of service conditions.\nA remote user can establish passive FTP connections that time out, causing the FTP flood protection mechanism to become permanently enabled, causing denial of service conditions on the target printer.  A power reset is required to return the device to normal operations.\n\nSeveral laser printer models are affected.\n\nThe vendor was notified on January 6, 2010.\n\nFrancis Provencher of Protek Research Lab's reported this vulnerability.",
+    "Impact'": "A remote user can cause denial of service conditions on the target printer.",
+    "Solution": "The vendor has issued a fix.\n\nThe vendor's advisory is available at:\n\nhttp://support.lexmark.com/index?page=content&id=TE85",
+    "Vendor URL": "support.lexmark.com/index?page=content&id=TE85",
+    "Cause": "State error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Xerox WorkCentre Bugs Let Remote Users Access Mailboxes and View Device Configuration Settings",
+    "SecurityTracker Alert ID": "1023501",
+    "SecurityTracker URL": "http://securitytracker.com/id/1023501",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jan 25 2010",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "5632, 5638, 5645, 5655, 5665, 5675, 5687",
+    "Description": "A vulnerability was reported in Xerox WorkCentre.  A remote user can access mailboxes.  A remote user can view device configuration settings.\nA remote user can bypass Scan to Mailbox authorization to access mailboxes stored on the target device.\n\nA remote user can bypass web server authorization to view device configuration settings (but not customer and user passwords).\n\nThe Network Controller and Web Server are affected.\n\nThe following WorkCentre products are affected:\n\n5632\n5638\n5645\n5655\n5665\n5675\n5687\n\nDaniel Fabian of SEC Consult reported these vulnerabilities.",
+    "Impact'": "A remote user can access mailboxes.\n\nA remote user can view device configuration settings.",
+    "Solution": "The vendor has issued a fix (Patch 41).\n\nThe vendor's advisory is available at:\n\nhttp://www.xerox.com/downloads/usa/en/c/cert_XRX10-002_v1.0.pdf",
+    "Vendor URL": "www.xerox.com/downloads/usa/en/c/cert_XRX10-002_v1.0.pdf",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Xerox WorkCentre 6400 PostScript Processing Flaw Lets Remote Users Access the Network Controller Directory Structure",
+    "SecurityTracker Alert ID": "1023500",
+    "SecurityTracker URL": "http://securitytracker.com/id/1023500",
+    "CVE Reference": "CVE-2010-0549",
+    "Updated": "Feb  9 2010",
+    "Original Entry Date": "Jan 25 2010",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "6400",
+    "Description": "A vulnerability was reported in Xerox WorkCentre.  A remote user can view files on the target Network Controller.\nThe software does not properly validate user-supplied input.  A remote user can supply a specially crafted PostScript document to access files on target Network Controller.\n\nWorkCentre 6400 is affected.",
+    "Impact'": "A remote user can access files on the target Network Controller.",
+    "Solution": "The vendor has issued a fix (Patch 40).\n\nThe vendor's advisory is available at:\n\nhttp://www.xerox.com/downloads/usa/en/c/cert_XRX10-001_v1.0.pdf",
+    "Vendor URL": "www.xerox.com/downloads/usa/en/c/cert_XRX10-001_v1.0.pdf",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP Color LaserJet CM3530 and CP3525 Flaw Lets Remote Users Access Data and Deny Service",
+    "SecurityTracker Alert ID": "1023201",
+    "SecurityTracker URL": "http://securitytracker.com/id/1023201",
+    "CVE Reference": "CVE-2009-3842",
+    "Updated": "Jun 20 2011",
+    "Original Entry Date": "Nov 19 2009",
+    "Impact": [
+        "Denial of service via network",
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "HP Color LaserJet CM3530 Multifunction Printer firmware 53.021.2, HP Color LaserJet CP3525 Printer firmware 05.058.4",
+    "Description": "A vulnerability was reported in certain HP Printers.  A remote user can access data on the target system.  A remote user can cause denial of service conditions.\nThe HP Color LaserJet CM3530 Multifunction Printer and HP Color LaserJet CP3525 Printer are affected.",
+    "Impact'": "A remote user can access data on the target system.\n\nA remote user can cause denial of service conditions.",
+    "Solution": "The vendor has issued a fix.\n\nHP Color LaserJet CM3530 Multifunction Printer: firmware 53.031.4 or subsequent\n\nHP Color LaserJet CP3525 Printer: firmware 05.059.3 or subsequent\n\nThe HP advisory is available at:\n\nhttp://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c01886100",
+    "Vendor URL": "h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c01886100",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP LaserJet Printers, Color LaserJet Printers, and Digital Senders Input Validation Flaw Permits Cross-Site Scripting Attacks",
+    "SecurityTracker Alert ID": "1022991",
+    "SecurityTracker URL": "http://securitytracker.com/id/1022991",
+    "CVE Reference": "CVE-2009-2684",
+    "Date": "Oct  7 2009",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in certain HP LaserJet printers, Color LaserJet printers, and Digital Senders.  A remote user can conduct cross-site scripting attacks.\nSeveral HP printers do not properly filter HTML code from user-supplied input before displaying the input.  A remote user can cause arbitrary scripting code to be executed by the target user's browser.  The code will originate from the HP Printer device and will run in the security context of that site.  As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nThe following versions of Jetdiret on HP LaserJet printers, HP Color LaserJet printers, and HP Digital Senders are affected:\n\nJ7949E V.28.XX,\nJ7973E V.30.31,\nJ7974E V.34.40,\nJ7979E V.33.55,\nJ7982E V.34.08,\nJ7987E V.34.60,\nJ7990E V.33.41,\nJ7991E V.34.60,\nJ7992E V.34.12,\nJ7993E V.36.35,\nJ8003E V.36.35,\nJ8004E V.36.35,\nJ8006E V.36.35\n\nDigital Security Research Group reported this vulnerability.",
+    "Impact'": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the HP Printer device, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+    "Solution": "The vendor has issued a fix.\n\nA patch matrix is available in the vendor's advisory.\n\nThe vendor's advisory is available at:\n\nhttp://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c01841397",
+    "Vendor URL": "h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c01841397",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Xerox WorkCentre Web Server Can Be Accessed By Remote Users",
+    "SecurityTracker Alert ID": "1022791",
+    "SecurityTracker URL": "http://securitytracker.com/id/1022791",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Aug 31 2009",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of system information",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "5632, 5638, 5645, 5655, 5665, 5675, 5687",
+    "Description": "A vulnerability was reported in Xerox WorkCentre.  A remote user can access the system configuration and potentially obtain passwords.\nWhen SSL is not enabled on the target device, a remote user can exploit a flaw in the web server to access device configuration settings. The remote user may be able to obtain customer passwords.\n\nThe following WorkCentre products are affected:\n\n5632 \n5638 \n5645 \n5655 \n5665 \n5675 \n5687",
+    "Impact'": "A remote user can access the configuration settings and may be able to obtain user passwords.",
+    "Solution": "The vendor has issued a fix (Patch 39).\n\nThe vendor's advisory is available at:\n\nhttp://www.xerox.com/downloads/usa/en/c/cert_XRX09-003_v1.0.pdf",
+    "Vendor URL": "www.xerox.com/downloads/usa/en/c/cert_XRX09-003_v1.0.pdf",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Xerox WorkCentre LPD Queue Name Processing Flaw Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1022768",
+    "SecurityTracker URL": "http://securitytracker.com/id/1022768",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Aug 25 2009",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "7132, WC7232/7242, WC7328/7335/7345/7346 and WC7425/28/35",
+    "Description": "A vulnerability was reported in Xerox WorkCentre.  A remote user can cause denial of service conditions.\nA remote user can send specially crafted data to the LPD daemon to cause the target device to crash.  A power cycle is required to return the device to normal operations.\n\nA flood of LPD requests with a long queue name field can trigger the flaw if another feature on the device is used (either remotely or locally) while the LPD requests are being sent. \n\nDemonstration exploit code is available at:\n\nhttp://www.louhinetworks.fi/advisory/xerox/exploit.py\nhttp://www.louhinetworks.fi/advisory/xerox/webInterface.py\n\nThe vendor was notified on or before November 20, 2008.\n\nThe original advisory is available at:\n\nhttp://www.louhinetworks.fi/advisory/xerox_0908.txt\n\nJuho Ranta and Henri Lindberg of Louhi Networks Oy reported this vulnerability.",
+    "Impact'": "A remote user can cause the target device to crash.",
+    "Solution": "The vendor has issued a fix.\n\nThe vendor's advisory is available at:\n\nhttp://www.support.xerox.com/go/results.asp?Xtype=download&prodID=WC7232_WC7242&Xlang=en_US&Xcntry=USA",
+    "Vendor URL": "www.xerox.com/",
+    "Cause": "Resource error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Xerox WorkCentre Command Injection Bug Lets Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1022238",
+    "SecurityTracker URL": "http://securitytracker.com/id/1022238",
+    "CVE Reference": "CVE-2009-1656",
+    "Updated": "May 25 2009",
+    "Original Entry Date": "May 15 2009",
+    "Impact": "Execution of arbitrary code via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in Xerox WorkCentre.  A remote user can execute arbitrary code on the target system.\nA remote user can submit specially crafted input to the web service to execute arbitrary code on the target device.\n\nThe vendor notes that customer and user passwords are not exposed. \n\nThe following WorkCentre products are affected:\n\n232\n238\n245\n255\n265\n275\n5632\n5638\n5645  \n5655  \n5665  \n5675  \n5687  \n7655  \n7665\n7675\n\nThe following WorkCentre Pro products are affected:\n\n232\n238\n245\n255\n265\n275",
+    "Impact'": "A remote user can execute arbitrary code on the target system.",
+    "Solution": "The vendor has issued a fix, available at:\n\nhttp://www.xerox.com/downloads/usa/en/c/cert_P38v1_WCP275_WC7675_WC5687_Patch.zip\n\nThe vendor's advisory is available at:\n\nhttp://www.xerox.com/downloads/usa/en/c/cert_XRX09-02_v1.0.pdf",
+    "Vendor URL": "www.xerox.com/downloads/usa/en/c/cert_XRX09-02_v1.0.pdf",
+    "Cause": [
+        "Input validation error",
+        "State error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP JetDirect Printers Let Remote Users Traverse the Directory",
+    "SecurityTracker Alert ID": "1021687",
+    "SecurityTracker URL": "http://securitytracker.com/id/1021687",
+    "CVE Reference": "CVE-2008-4419",
+    "Updated": "Apr 13 2010",
+    "Original Entry Date": "Feb  5 2009",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in HP JetDirect printers.  A remote user can view files on the target system.\nA remote user can supply a specially crafted request to view files on target system that are located outside of the document directory, including system configuration files and cached documents.\n\nCertain HP LaserJet printers, HP Color LaserJet printers and HP Digital Senders are affected.\n\nThe following products are affected:\n\nHP LaserJet 2410 with firmware prior to 20080819 SPCL112A\nHP LaserJet 2420 with firmware prior to 20080819 SPCL112A\nHP LaserJet 2430 with firmware prior to 20080819 SPCL112A\nHP LaserJet P3005 with firmware prior to 02.043.1\nHP LaserJet P3015 with firmware prior to 06.043.2\nHP LaserJet P4015 with firmware prior to 04.049.0\nHP Color LaserJet CP4025 with firmware prior to 07.20.7\nHP Color LaserJet CP4525 with firmware prior to 07.20.7\nHP LaserJet 4250 with firmware prior to 08.160.4\nHP LaserJet 4350 with firmware prior to 08.160.4\nHP LaserJet 5200 with firmware prior to 08.062.0\nHP Color LaserJet 5550 with firmware prior to 7.014.0\nHP LaserJet 9040 with firmware prior to 08.112.0\nHP LaserJet 9050 with firmware prior to 08.112.0\nHP LaserJet 4345mfp with firmware prior to 09.120.9\nHP Color LaserJet 4730mfp with firmware prior to 46.200.9\nHP LaserJet 9040mfp with firmware prior to 08.110.9\nHP LaserJet 9050mfp with firmware prior to 08.110.9\nHP 9200C Digital Sender with firmware prior to 09.120.9\nHP 9250 Digital Sender with firmware prior to 48.091.3\nHP Color LaserJet 9500mfp with firmware prior to 08.110.9\n\nShmoov and r@b13$ from Digital Defense, Inc. reported this vulnerability.",
+    "Impact'": "A remote user can view files on the target system.",
+    "Solution": "The vendor has issued fixes.\n\nA patch matrix is available in the vendor's advisory.\n\nThe vendor's advisory is available at:\n\nhttp://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c01623905",
+    "Vendor URL": "h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c01623905",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Xerox Copier/Printer Input Validation Hole Permits Cross-Site Scripting Attacks",
+    "SecurityTracker Alert ID": "1020282",
+    "SecurityTracker URL": "http://securitytracker.com/id/1020282",
+    "CVE Reference": "CVE-2008-2743",
+    "Updated": "Jun 18 2008",
+    "Original Entry Date": "Jun 13 2008",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "4110, 4590, 4595",
+    "Description": "A vulnerability was reported in the Xerox Copier/Printer.  A remote user can conduct cross-site scripting attacks.\nThe web interface does not properly filter HTML code from user-supplied input before displaying the input.  A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser.  The code will originate from the Xerox Copier/Printer device and will run in the security context of that site.  As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nLouhi Networks of Finland reported this vulnerability.",
+    "Impact'": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the Xerox Copier/Printer device, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+    "Solution": "The vendor has issued a fix, available at:\n\nhttp://www.xerox.com/downloads/usa/en/c/XC110_080519_PS-1.EXE\n\nThe vendor's advisory is available at:\n\nhttp://www.xerox.com/downloads/usa/en/c/cert_XRX08_007.pdf",
+    "Vendor URL": "www.xerox.com/downloads/usa/en/c/cert_XRX08_007.pdf",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Xerox WorkCentre Extensible Interface Platform Bug Lets Remote Users Modify the Configuration",
+    "SecurityTracker Alert ID": "1020281",
+    "SecurityTracker URL": "http://securitytracker.com/id/1020281",
+    "CVE Reference": "CVE-2008-2824",
+    "Updated": "Jun 25 2008",
+    "Original Entry Date": "Jun 13 2008",
+    "Impact": "Modification of system information",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "WorkCentre 7655, 7665, 7675",
+    "Description": "A vulnerability was reported in Xerox WorkCentre.  A remote user can modify the system configuration.\nA remote user can access the Extensible Interface Platform feature to make modifications to the target system configuration.",
+    "Impact'": "A remote user can modify the system configuration.",
+    "Solution": "The vendor has issued a fix (patch P34), available at:\n\nhttp://www.xerox.com/downloads/usa/en/c/cert_P34v1_WC76xx_Patch.zip\n\nThe vendor's advisory is available at:\n\nhttp://www.xerox.com/downloads/usa/en/c/cert_XRX08_006.pdf",
+    "Vendor URL": "www.xerox.com/downloads/usa/en/c/cert_XRX08_006.pdf",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Xerox WorkCentre Input Validation Hole Permits Cross-Site Scripting Attacks",
+    "SecurityTracker Alert ID": "1020280",
+    "SecurityTracker URL": "http://securitytracker.com/id/1020280",
+    "CVE Reference": "CVE-2008-2825",
+    "Updated": "Jun 25 2008",
+    "Original Entry Date": "Jun 13 2008",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "WorkCentre M123, M128, 133; WorkCentre Pro 123, 128, 133",
+    "Description": "A vulnerability was reported in Xerox WorkCentre.  A remote user can conduct cross-site scripting attacks.\nThe web interface does not properly filter HTML code from user-supplied input before displaying the input.  A remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser.  The code will originate from the Xerox WorkCentre web interface and will run in the security context of that site.  As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nHenri Lindberg of Louhi Networks, Finland, (www.louhi.fi) reported this vulnerability.",
+    "Impact'": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the Xerox WorkCentre web interface, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+    "Solution": "The vendor has issued a fix (P35 patch software):\n\nGroup 1 Languages Standard -- http://www.xerox.com/downloads/usa/en/c/cert_P35_WC123_128_133-STD-G1_EXEC.zip\n\n  Group 1 Languages with Postscript-- http://www.xerox.com/downloads/usa/en/c/cert_P35_WC123_128_133-PS-G1_EXEC.zip\n\n  Group 2 Languages Standard -- http://www.xerox.com/downloads/usa/en/c/cert_P35_WC123_128_133-STD-G2_EXEC.zip\n\n  Group 2 Languages with Postscript -- http://www.xerox.com/downloads/usa/en/c/cert_P35_WC123_128_133-PS-G2_EXEC.zip\n\n  Group 3 Languages Standard -- http://www.xerox.com/downloads/usa/en/c/cert_P35_WC123_128_133-STD-G3_EXEC.zip\n\n  Group 3 Languages with Postscript -- http://www.xerox.com/downloads/usa/en/c/cert_P35_WC123_128_133-PS-G3_EXEC.zip\n\nThe vendor's advisory is available at:\n\nhttp://www.xerox.com/downloads/usa/en/c/cert_XRX08_005.pdf",
+    "Vendor URL": "www.xerox.com/downloads/usa/en/c/cert_XRX08_005.pdf",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Xerox WorkCentre Input Validation Hole Permits Cross-Site Scripting Attacks",
+    "SecurityTracker Alert ID": "1020109",
+    "SecurityTracker URL": "http://securitytracker.com/id/1020109",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "May 23 2008",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "7132, 7228, 7235, 7245",
+    "Description": "A vulnerability was reported in Xerox WorkCentre.  A remote user can conduct cross-site scripting attacks.\nThe web server does not properly filter HTML code from user-supplied input before displaying the input.  A remote user can cause arbitrary scripting code to be executed by the target user's browser.  The code will originate from the Xerox WorkCentre software and will run in the security context of that site.  As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nHenri Lindberg, Louhi Networks, Finland (www.louhi.fi) reported this vulnerability.",
+    "Impact'": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the Xerox WorkCentre device, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+    "Solution": "The vendor has issued the following fixes.\n\nWorkCentre 7132 Standard Executable -- http://www.xerox.com/downloads/usa/en/c/cert_P35_WC7132-STD_EXEC.zip\n\nWorkCentre 7132 Standard Binary -- http://www.xerox.com/downloads/usa/en/c/cert_P35_WC7132-STD_BIN.zip\n\nWorkCentre 7132 with Postscript Executable -- http://www.xerox.com/downloads/usa/en/c/cert_P35_WC7132-PS_EXEC.zip\n\nWorkCentre 7132 with Postscript Binary -- http://www.xerox.com/downloads/usa/en/c/cert_P35_WC7132-PS_BIN.zip\n\nWorkCentre 7228/7235/7245 Executable -- http://www.xerox.com/downloads/usa/en/c/cert_P35_WC7228-7235-7245_EXEC.zip\n\nWorkCentre 7228/7235/7245 Binary -- http://www.xerox.com/downloads/usa/en/c/cert_P35_WC7228-7235-7245_BIN.zip\n\nThe vendor's advisory is available at:\n\nhttp://www.xerox.com/downloads/usa/en/c/cert_XRX08_004.pdf",
+    "Vendor URL": "www.xerox.com/downloads/usa/en/c/cert_XRX08_004.pdf",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "imageRUNNER Printers Enable FTP Bounce Attacks",
+    "SecurityTracker Alert ID": "1019528",
+    "SecurityTracker URL": "http://securitytracker.com/id/1019528",
+    "CVE Reference": "CVE-2008-0303",
+    "Date": "Feb 29 2008",
+    "Impact": "Host/resource access via network",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "Various models",
+    "Description": "A vulnerability was reported in various Canon imageRUNNER printers in the FTP Print function.  A remote user can conduct FTP bounce attacks via the printers.\nA remote user can connect to arbitrary ports on arbitrary systems via the target device using an FTP bounce attack.\n\nCertain Canon imageRUNNER, Color imageRUNNER, and imagePRESS devices are vulnerable.\n\nEngines using imagePASS, imagePRESS Servers, and ColorPASS devices are not affected.\n\nNate Johnson and the Indiana University reported this vulnerability.",
+    "Impact'": "A remote user can conduct FTP bounce attacks.",
+    "Solution": "The vendor recommends disabling the FTP Print function or applying a username and password to the function.\n\nThe vendor's advisory is available at:\n\nhttp://www.usa.canon.com/html/security/pdf/CVA-001.pdf",
+    "Vendor URL": "www.usa.canon.com/html/security/pdf/CVA-001.pdf",
+    "Cause": [
+        "Access control error",
+        "State error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "JetDirect FTP Bug Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1017532",
+    "SecurityTracker URL": "http://securitytracker.com/id/1017532",
+    "CVE Reference": "CVE-2007-1772",
+    "Updated": "May  3 2007",
+    "Original Entry Date": "Jan 18 2007",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "firmware x.20.nn up to and including x.24.nn",
+    "Description": "A vulnerability was reported in JetDirect.  A remote user can cause denial of service conditions.\nA remote user can open a passive FTP connection and send a RERT command with a specially crafted pathname value to cause the target engine to crash.\n\nA demonstration exploit was provided [using python]:\n\npython /usr/lib/python2.4/ftplib.py -d [target] -l -p `python -c 'print \"A\"*300'`\n\nHandrix from MorX security research team reported the details of this vulnerability.",
+    "Impact'": "A remote user can cause the target engine to crash.",
+    "Solution": "HP has issued a fix.\n\nFor J4169A 610n - upgrade the firmware to version L.25.nn or greater.\n\nFor J6057A 615n - upgrade the firmware to version R.25.nn or greater.\n\nInstructions for upgrading Jetdirect firmware are available at:\n\nhttp://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=bpj07429\n\nThe HP advisory is available at:\n\nhttp://www2.itrc.hp.com/service/cki/docDisplay.do?docId=c00838612",
+    "Vendor URL": "www2.itrc.hp.com/service/cki/docDisplay.do?docId=c00838612",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(Additional Models Are Affected) Xerox WorkCentre Input Validation Flaw in 'hostname' Parameter Lets Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1017338",
+    "SecurityTracker URL": "http://securitytracker.com/id/1017338",
+    "CVE Reference": "CVE-2006-5290",
+    "Date": "Dec  5 2006",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "WorkCentre M35, M45, M55, M165, M175, WorkCentre Pro 35, 45, 55, 65, 75, 90, 165, 175, C32, C40, C2128, C2636, C3545",
+    "Description": "A vulnerability was reported in Xerox WorkCentre and WorkCentre Pro.  A remote user can execute arbitrary code on the target system.\nThe web user interface does not properly validate the user-supplied hostname parameter.  A remote user can send specially crafted data to bypass authentication and execute arbitrary code on the target system.  The code will run with the privileges of the target service.\n\nThe vulnerability resides in the ESS/ Network Controller and MicroServer Web Server.\n\nWorkCentre models 232, 238, 245, 255, 265, and 275 are affected.  WorkCentre Pro models 232, 238, 245, 255, 265, and 275 are affected.\n\nThe WorkCentre 7655 and 7665 series products are not affected.\n\nThe vendor credits Brendan O'Connor with reporting similar vulnerabilities.",
+    "Impact'": "A remote user can execute arbitrary code on the target system.",
+    "Solution": "On November 30, 2006, the vendor issued a new advisory indicating that the following additional models of the WorkCentre are affected by this vulnerability:\n\nWorkCentre M35, M45, M55, M165, M175\nWorkCentre Pro 35, 45, 55, 65, 75, 90, 165, 175, C32, C40, C2128, C2636, C3545\n\nThe Xerox advisory is available at:\n\nhttp://www.xerox.com/downloads/usa/en/c/cert_XRX06_007_v1.pdf\n\nThe original Xerox advisory is available at:\n\nhttp://www.xerox.com/downloads/usa/en/c/cert_XRX06_005.pdf",
+    "Vendor URL": "www.xerox.com/downloads/usa/en/c/cert_XRX06_007_v1.pdf",
+    "Cause": "Input validation error",
+    "Message History": [
+        "https://securitytracker.com/id/1016981"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Xerox Document Centre Input Validation Flaw in 'hostname' Parameter Lets Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1017337",
+    "SecurityTracker URL": "http://securitytracker.com/id/1017337",
+    "CVE Reference": "CVE-2006-6427",
+    "Updated": "May 22 2008",
+    "Original Entry Date": "Dec  5 2006",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "220, 230, 240, 255, 265, 332, 340, 420, 425, 426, 430, 432, 440, 460, 470, 480, 490, 535, 545, 555",
+    "Description": "A vulnerability was reported in Xerox Document Centre.  A remote user can execute arbitrary code on the target system.\nThe web user interface does not properly validate the user-supplied hostname parameter.  A remote user can send specially crafted data to bypass authentication and execute arbitrary code on the target system.  The code will run with the privileges of the target service.\n\nThe vulnerability resides in the ESS/Network Controller and MicroServer Web Server.\n\nDocument Centre models 220, 230, 240, 255, 265, 332, 340, 420, 425, 426, 430, 432, 440, 460, 470, 480, 490, 535, 545, and 555 are affected.\n\nThe vendor credits Brendan O'Connor with reporting similar vulnerabilities.",
+    "Impact'": "A remote user can execute arbitrary code on the target system.",
+    "Solution": "The vendor has issued a fix.\n\nThe Xerox advisory is available at:\n\nhttp://www.xerox.com/downloads/usa/en/c/cert_XRX06_007_v1.pdf",
+    "Vendor URL": "www.xerox.com/downloads/usa/en/c/cert_XRX06_007_v1.pdf",
+    "Cause": "Input validation error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Xerox WorkCentre Input Validation Flaw in 'hostname' Parameter Lets Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1016981",
+    "SecurityTracker URL": "http://securitytracker.com/id/1016981",
+    "CVE Reference": "CVE-2006-5290",
+    "Updated": "Dec  5 2006",
+    "Original Entry Date": "Oct  5 2006",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "SMP1",
+    "Description": "A vulnerability was reported in Xerox WorkCentre and WorkCentre Pro.  A remote user can execute arbitrary code on the target system.\nThe web user interface does not properly validate the user-supplied hostname parameter.  A remote user can send specially crafted data to bypass authentication and execute arbitrary code on the target system.  The code will run with the privileges of the target service.\n\nThe vulnerability resides in the ESS/ Network Controller and MicroServer Web Server.\n\nWorkCentre models 232, 238, 245, 255, 265, and 275 are affected.  WorkCentre Pro models 232, 238, 245, 255, 265, and 275 are affected.\n\nThe WorkCentre 7655 and 7665 series products are not affected.\n\nThe vendor credits Brendan O'Connor with reporting similar vulnerabilities.",
+    "Impact'": "A remote user can execute arbitrary code on the target system.",
+    "Solution": "The vendor has issued a fix (patch P29), available at:\n\nhttp://xerox.com/downloads/usa/en/c/cert_P29_WC2xx-Only_HTTP.zip",
+    "Vendor URL": "www.xerox.com/downloads/usa/en/c/cert_XRX06_005.pdf",
+    "Cause": "Input validation error",
+    "Message History": [
+        "https://securitytracker.com/id/1017338"
+    ]
+}{
+    "source": "1-2",
+    "Title": "HP Color LaserJet Toolbox Software Lets Remote Users View Files on the Target System",
+    "SecurityTracker Alert ID": "1015862",
+    "SecurityTracker URL": "http://securitytracker.com/id/1015862",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Updated": "Apr  6 2006",
+    "Original Entry Date": "Apr  4 2006",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "Color LaserJet 2500 and 4600 Toolbox software for Windows-based systems",
+    "Description": "A vulnerability was reported in HP Color LaserJet Toolbox software for Windows-based systems.  A remote user can view arbitrary files.\nThe HP Color LaserJet 2500 and 4600 Toolbox software contains an unspecified vulnerability.  A remote user can read arbitrary files on the target system.\n\nA demonstration exploit URL is provided:\n\nhttp://[target]:5225/../../../boot.ini\n\nThis vulnerability affects Windows-based software that accompanies the HP Color LaserJet 2500 and Color LaserJet 4600.  The actual printers are not affected.\n\nSec-1 discovered this vulnerability.",
+    "Impact'": "A remote user can view files on the target system.",
+    "Solution": "The vendor has issued \"HP Color LaserJet 2500/4600 Software Update\" version 3.1 to fix the vulnerability.\n\nThe vendor's advisory is available at:\n\nhttp://www2.itrc.hp.com/service/cki/docDisplay.do?docId=c00634759",
+    "Vendor URL": "www2.itrc.hp.com/service/cki/docDisplay.do?docId=c00634759",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Xerox WorkCentre Pro Multiple PostScript Processing Errors Let Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1015738",
+    "SecurityTracker URL": "http://securitytracker.com/id/1015738",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Mar  8 2006",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to 1.001.02.074",
+    "Description": "Several vulnerabilities were reported in Xerox WorkCentre Pro and Xerox CopyCentre.  A remote user can cause denial of service conditions.\nA remote user can send a specially crafted PostScript file to the target printer to trigger a buffer overflow in the PostScript file interpreter code and cause denial of service conditions on the target system.\n\nA remote user can send a specially crafted PostScript file to traverse the directory and cause denial of service conditions on the target system.\n\nA remote user can send a specially crafted PostScript file designed to expose TCP/IP ports to cause denial of service conditions on the target system.\n\nA remote user can trigger a memory error in the web server code to cause denial of service conditions.\n\nAn unspecified vulnerability exists in the ESS/Network Controller.  A user may be able to disconnect power to cause Immediate Image Overwrite to fail without indication.\n\nThe WorkCentre Pro 65, 75, and 90 models are affected.  The CopyCentre C65, C75, and C90 models are affected.",
+    "Impact'": "A remote user can cause denial of service conditions on the target system.",
+    "Solution": "The vendor has issued a fixed version (1.001.02.074).\n\nThis security bulletin supersedes Security Bulletin XRX04-008.\n\nThe vendor's advisory is available at:\n\nhttp://www.xerox.com/downloads/usa/en/c/cert_XRX06_002.pdf",
+    "Vendor URL": "www.xerox.com/downloads/usa/en/c/cert_XRX06_002.pdf",
+    "Cause": [
+        "Boundary error",
+        "Exception handling error",
+        "Input validation error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Xerox WorkCentre Multiple Bugs in ESS/Network Controller and MicroServer Web Server Permit Remote Access, Denial of Service, and Cross-Site Scripting Attacks",
+    "SecurityTracker Alert ID": "1015648",
+    "SecurityTracker URL": "http://securitytracker.com/id/1015648",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Feb 20 2006",
+    "Impact": [
+        "Denial of service via network",
+        "Disclosure of authentication information",
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "Host/resource access via network",
+        "Modification of system information",
+        "Modification of user information",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "WorkCentre and WorkCentre Pro 232, 238, 245, 255, 265, and 275.",
+    "Description": "A vulnerability was reported in Xerox WorkCentre in the ESS/Network Controller and MicroServer Web Server.  A remote user can bypass authentication.  A remote user can cause denial of service conditions.  A remote user can conduct cross-site scripting attacks.\nThe ESS/Network Controller and MicroServer Web Server components contain several vulnerabilities.\n\nA remote user can bypass authentication or obtain unauthorized network access.\n\nA remote user can submit a specially crafted Postscript request to cause denial of service conditions on the target system.\n\nA remote user can create a specially crafted HTTP request that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser.  The code will originate from the WorkCentre system and will run in the security context of that site.  As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nOther unspecified vulnerabilities may reduce the effectiveness of some security features.\n\nThe reported vulnerabilities may allow a remote user to modify the system configuration.\n\nWorkCentre models 232, 238, 245, 255, 265, and 275 are affected.  WorkCentre Pro models 232, 238, 245, 255, 265, and 275 are affected.",
+    "Impact'": "A remote user can bypass authentication or obtain unauthorized network access.\n\nA remote user can cause denial of service conditions on the target system.\n\nA remote user can access the target user's cookies (including authentication cookies), if any, associated with the WorkCentre system, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.\n\nA remote user can modify the system configuration.",
+    "Solution": "The vendor has issued fixed versions (WorkCentre System Software Version 14.027.24.015; WorkCentre Pro System Software Version 13.027.24.015), required to be installed by a Xerox Customer Service representative.\n\nThe vendor's advisory is available at:\n\nhttp://www.xerox.com/downloads/usa/en/c/cert_XRX06_001.pdf",
+    "Vendor URL": "www.xerox.com/downloads/usa/en/c/cert_XRX06_001.pdf",
+    "Cause": [
+        "Access control error",
+        "Input validation error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Lexmark Printer Sharing Service Lets Remote Users Execute Arbitrary Code on the Target User's System",
+    "SecurityTracker Alert ID": "1015593",
+    "SecurityTracker URL": "http://securitytracker.com/id/1015593",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Feb  7 2006",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "Root access via network"
+    ],
+    "Description": "A vulnerability was reported in the Lexmark Printer sharing service for Windows-based systems.  A remote user can execute arbitrary code on the target user's system.\nA remote user can exploit a flaw in the printer sharing service to execute arbitrary code on a Lexmark printer user's target system. The code will run with Local System privileges.\n\nThe vendor was notified on September 28, 2005.\n\nPeter Winter-Smith of NGSSoftware discovered this vulnerability.",
+    "Impact'": "A remote user can execute arbitrary code with Local System privileges on a Lexmark printer user's target system.",
+    "Solution": "No solution was available at the time of this entry.\n\nNGSSoftware has provided the following unofficial workaround [quoted]:\n\n1. Launch the Services console by taking the following actions:\n - Click the 'Start' menu.\n - Select 'Run'.\n  - In the 'Run' command text area type 'services.msc' and click 'Ok'.\n2. Find and right click the 'LexBce Server' entry. From the right click menu\n   select the 'Stop' item. Confirm that you wish to stop the service and all\n   dependencies.\n3. Open the '%systemroot%\\system32' folder by taking the following actions:\n  - Click the 'Start' menu.\n  - Select 'Run'.\n  - In the 'Run' command text area type '%systemroot%\\system32' and click\n    'Ok'.\n4. Locate the file named 'LexPPS.EXE'. Right click this file and select\n   'Rename'. Enter a new name for the file, I recommend 'LexPPS.EXE.vuln'.\n5. In the Services console, locate and right click the 'LexBce Server' and\n   select 'Start'.\n6. In the Services console, locate and right click the 'Print Spooler' and\n   select 'Start'.",
+    "Vendor URL": "www.lexmark.com/",
+    "Cause": "Not specified",
+    "Underlying OS": "Windows (Any)",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP JetDirect 635n Print Server IKE Processing Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1015227",
+    "SecurityTracker URL": "http://securitytracker.com/id/1015227",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Nov 16 2005",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Jetdirect 635n IPv6/IPsec Print Server (J7961A), firmware prior to J7961A V.31.08",
+    "Description": "A vulnerability was reported in HP's JetDirect 635n IPv6/IPsec Print Server.  A remote user can cause denial of service conditions.\nThe device does not properly process certain Internet Key Exchange (IKE) packets.  A remote user can send specially crafted packets to cause denial of service conditions.\n\nThe original advisory from CERT-FI and NISCC is available at:\n\nhttp://www.niscc.gov.uk/niscc/docs/re-20051114-01014.pdf?lang=en",
+    "Impact'": "A remote user can cause denial of service conditions.",
+    "Solution": "The vendor has provided a firmware update (J7961A V.31.08), available via the HP Download Manager application at:\n\nhttp://www.hp.com/go/dlm_sw \n\nThe vendor's advisory is available at:\n\nhttp://www2.itrc.hp.com/service/cki/docDisplay.do?docId=c00557788",
+    "Vendor URL": "www2.itrc.hp.com/service/cki/docDisplay.do?docId=c00557788",
+    "Cause": "Exception handling error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP LaserJet Discloses Some Document Information to Remote Authenticated Users",
+    "SecurityTracker Alert ID": "1014921",
+    "SecurityTracker URL": "http://securitytracker.com/id/1014921",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Sep 16 2005",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "HP LaserJet 2430; possibly others",
+    "Description": "A vulnerability was reported in the HP LaserJet 2430.  A remote authenticated user may be able to obtain information regarding recently printed documents.\nA remote user with knowledge of the public SNMP community string can obtain information about documents printed on the target device within the past hour.  Information includes document name, title, number of pages, document size, the user who printed the document, and the name of the computer where the print job was initiated.\n\nThe vendor was notified on September 7, 2005.\n\nGeorge Hedfors of Pinion Security Consulting discovered this vulnerability.",
+    "Impact'": "A remote authenticated user can obtain information about recently printed documents.",
+    "Solution": "No solution was available at the time of this entry.\n\nThe vendor and the report both indicate that there are methods to restrict access to the information, described in the following HP documents:\n\nhttp://h20000.www2.hp.com/bizsupport/TechSupport/DocumentIndex.jsp?\nlocale=en_US&contentType=SupportManual&docIndexId=3124&\nprodTypeId=18972&prodSeriesId=416419&lang=en&cc=us\n\nhttp://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=bpj05999\n\nhttp://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c00004828",
+    "Vendor URL": "www.hp.com/",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Xerox Document Centre MicroServer Web Server Bugs Let Remote Users Bypass Authentication, View Files, and Deny Service",
+    "SecurityTracker Alert ID": "1014720",
+    "SecurityTracker URL": "http://securitytracker.com/id/1014720",
+    "CVE Reference": [
+        "CVE-2005-2645",
+        "CVE-2005-2646",
+        "CVE-2005-2647"
+    ],
+    "Updated": "Jun  8 2008",
+    "Original Entry Date": "Aug 17 2005",
+    "Impact": [
+        "Denial of service via network",
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of user information",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "220, 230, 240, 255, 265, 332, 340, 420, 425, 426, 430, 432, 440, 460, 470, 480, 490, 535, 545, 555.",
+    "Description": "Several vulnerabilities were reported in the Xerox Document Centre in the MicroServer Web Server component.  A remote user can bypass authentication, access files on the target system, deny service, and conduct cross-site scripting attacks.\nA remote user can bypass web server authentication.\n\nA remote user can send specially crafted HTTP request to cause denial of service conditions or to view files on the target system.\n\nA remote user can create a specially crafted URL that, when loaded by a target user, will cause arbitrary scripting code to be executed by the target user's browser.  The code will originate from the Document Centre system and will run in the security context of that site.  As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the system, access data recently submitted by the target user via web form to the system, or take actions on the system acting as the target user.",
+    "Impact'": "A remote user can bypass authentication.\n\nA remote user can access files on the target system.\n\nA remote user can deny service.\n\nA remote user can access the target user's cookies (including authentication cookies), if any, associated with the Document Centre system, access data recently submitted by the target user via web form to the system, or take actions on the system acting as the target user.",
+    "Solution": "The vendor has issued a fix, available at:\n\nhttp://www.xerox.com/downloads/usa/en/c/cert_P24_MicroServer_Web_Server_Patch.zip\n\nhttp://www.xerox.com/downloads/usa/en/c/cert_P25_MicroServer_Web_Server_Patch.zip\n\nTo determine which fix applies, see the vendor's advisories at:\n\nhttp://www.xerox.com/downloads/usa/en/c/cert_XRX05_008.pdf\nhttp://www.xerox.com/downloads/usa/en/c/cert_XRX05_009.pdf",
+    "Vendor URL": "www.xerox.com/downloads/usa/en/c/cert_XRX05_008.pdf",
+    "Cause": [
+        "Access control error",
+        "Authentication error",
+        "Exception handling error",
+        "Input validation error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Xerox WorkCentre Bug in Web Server Lets Remote Users Modify the Configuration",
+    "SecurityTracker Alert ID": "1013388",
+    "SecurityTracker URL": "http://securitytracker.com/id/1013388",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Mar  7 2005",
+    "Impact": "Modification of system information",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Certain versions of WorkCentre M35, M45, M55, M165, M175 and WorkCentre Pro 32 Color, 35, 40 Color, 45, 55, 65, 75, 90, 165, 175, C2128, C2636, C3545",
+    "Description": "A vulnerability was reported in Xerox WorkCentre and WorkCentre Pro printers.  A remote user can gain access to the embedded web server.\nThere is an unspecified flaw in the Xerox MicroServer Web Server component of Xerox WorkCentre printers.\n\nA remote user may be able to make changes to the system configuration.\n\nHowever, the vendor reports that customer and user passwords are not exposed by this vulnerability.\n\nNo further details were provided.",
+    "Impact'": "A remote user can make changes to the system configuration.",
+    "Solution": "The vendor has issued a fix, available at:\n\nhttp://www.xerox.com/downloads/usa/en/c/cert_P20_WCP_Patch.zip",
+    "Vendor URL": "www.xerox.com/downloads/usa/en/c/cert_XRX05_005.pdf",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP PSC 2510 Printer FTP Server Lets Remote Users Submit Print Jobs",
+    "SecurityTracker Alert ID": "1012174",
+    "SecurityTracker URL": "http://securitytracker.com/id/1012174",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Updated": "Nov 11 2004",
+    "Original Entry Date": "Nov 11 2004",
+    "Impact": "User access via network",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "PSC 2510; firmware B.25.31 - RL6206xNS",
+    "Description": "A vulnerability was reported in the HP PSC 2510 Photosmart printer.  A remote user can submit print jobs.\nJustin Rush reported that the PSC 2510 includes an FTP server by default.  Any remote user can upload a file to the FTP server to cause the device to print the document.\n\nThe FTP server cannot be disabled.",
+    "Impact'": "A remote user can submit files to be printed by the printer.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.hp.com/",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(HP Describes Fix) HP LaserJet 4200/4300 Lets Remote Users Update the Firmware With Arbitrary Code",
+    "SecurityTracker Alert ID": "1011671",
+    "SecurityTracker URL": "http://securitytracker.com/id/1011671",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Oct 14 2004",
+    "Impact": "Modification of system information",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Various Models",
+    "Description": "A vulnerability was reported in the HP LaserJet 4200 and 4300 printers. A remote user can update the printer's firmware with arbitrary code.  Other models are also affected.\nIt is reported that a remote user can send a specially crafted print job to the target printer to cause the printer to update its firmware with arbitrary code. The report indicates that other printers may also be affected.\n\nSerguei Patchkovskii is credited with reporting this flaw.\n\nHP reports that the following models are affected:\n\nHP Color LaserJet 2500, Business InkJet 3000, LaserJet 3700, LaserJet 4100mfp, LaserJet 4200, LaserJet 4300, Color LaserJet 4600, Color LaserJet 4650, Color LaserJet 5500, Color LaserJet 5550, LaserJet 9000, LaserJet 9000mfp, LaserJet 9040mfp, LaserJet 9050, LaserJet 9050mfp, LaserJet 9055, LaserJet 9065, Color LaserJet 9500, Color LaserJet 9500mfp.",
+    "Impact'": "A remote user can update the printer's firmware with arbitrary code.",
+    "Solution": "HP indicates that you can restrict the ability to receive upgrade files by using SNMP to securely configure the printer.\n\nGeneral security advice for printer configuration is described at:\n\nhttp://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=bpj05999\n\nHP indicates that to disable the upgrade capability of the printer via SNMP, set the remote-upgrade-enable object to an integer value of 1:\n\n1.3.6.1.4.1.11.2.3.9.4.2.1.1.20.8.0\n\nremote-upgrade-enable OBJECT-TYPE\n    SYNTAX  INTEGER {\n     eOff(1),\n     eOn(2)\n     }\n    ACCESS  read-write\n    STATUS  mandatory\n    DESCRIPTION\n                \"Enables or disables the ability to upgrade the firmware \n                associated with any device that is available to be upgraded.  \"\n::= { upgradable-devices 8 }\n\nThen, to subsequently upgrade the printer, you will need to temporarily set the object to an integer value of 2.",
+    "Vendor URL": "www.hp.com/",
+    "Cause": "Authentication error",
+    "Message History": [
+        "https://securitytracker.com/id/1011515"
+    ]
+}{
+    "source": "1-2",
+    "Title": "HP LaserJet 4200/4300 Lets Remote Users Update the Firmware With Arbitrary Code",
+    "SecurityTracker Alert ID": "1011515",
+    "SecurityTracker URL": "http://securitytracker.com/id/1011515",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Oct  4 2004",
+    "Impact": "Modification of system information",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Model 4200, 4300",
+    "Description": "A vulnerability was reported in the HP LaserJet 4200 and 4300 printers.  A remote user can update the printer's firmware with arbitrary code.\nIt is reported that a remote user can send a specially crafted print job to the target printer to cause the printer to update its firmware with arbitrary code.\n\nThe report indicates that other printers may also be affected.\n\nSerguei Patchkovskii is credited with reporting this flaw.",
+    "Impact'": "A remote user can update the printer's firmware with arbitrary code.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.hp.com/",
+    "Cause": "Authentication error",
+    "Message History": [
+        "https://securitytracker.com/id/1011671"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Lexmark Printer Web Interface Can Be Crashed By Remote Users Sending Long HOST Header Values",
+    "SecurityTracker Alert ID": "1010743",
+    "SecurityTracker URL": "http://securitytracker.com/id/1010743",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jul 20 2004",
+    "Impact": "Denial of service via network",
+    "Exploit Included": "Yes",
+    "Version(s)": "Model T522; Others may also be affected",
+    "Description": "A denial of service vulnerability was reported in some Lexmark printers in the built-in administrative web interface.  A remote user can cause the interface to restart or become unavailable.\nPeter Kruse reported that a remote user can supply an HTTP request with a long HOST value in the HTTP header.  A demonstration exploit request is provided:\n\nGET / HTTP/1.0\\r\\n /Host:AAAAAA[1024]\n\nThe report indicates that several Dell network printers may use the same web administrative interface software and may therefore be vulnerable.\n\nThe vendor has reportedly been notified without response.",
+    "Impact'": "A remote user can cause the web-based administrative interface to crash or restart.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.lexmark.com/",
+    "Cause": [
+        "Boundary error",
+        "Exception handling error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Canon imageRUNNER 210s Can Be Crashed By Scanning Port 80",
+    "SecurityTracker Alert ID": "1010297",
+    "SecurityTracker URL": "http://securitytracker.com/id/1010297",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "May 26 2004",
+    "Impact": "Denial of service via network",
+    "Exploit Included": "Yes",
+    "Version(s)": "Model 210s",
+    "Description": "Scott Reed of Penn State University reported a denial service vulnerability in the Canon imageRUNNER 210s.  A remote user can cause the printer to stop responding to network communications.\nIt is reported that a remote user can conduct multiple port scans against the web interface (port 80) to cause the network services to hang.  A power cycle is required to return the system to normal operations.\n\nThe vendor has reportedly been notified.",
+    "Impact'": "A remote user can cause the network services to become unavailable.",
+    "Solution": "No solution was available at the time of this entry.\n\nThe author of the report indicates that as a workaround, you can disable the web interface via the printer configuration/setup console.",
+    "Vendor URL": "www.canon.com/",
+    "Cause": "Exception handling error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "SEH InterCon Smart Print Server Grants Administrative Access to Remote Users",
+    "SecurityTracker Alert ID": "1008808",
+    "SecurityTracker URL": "http://securitytracker.com/id/1008808",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jan 21 2004",
+    "Impact": "User access via network",
+    "Exploit Included": "Yes",
+    "Description": "Rafel Ivgi (The-Insider) reported a vulnerability in the SEH InterCon Smart Print Server.  A remote user can perform administrative functions without authenticating.\nIt is reported that a remote user can access the following URL to modify the server's configuration:\n\nhttp://<external IP>/config/windows_en.html\n\n[Editor's note:  This information was originally reported in December 2003.]",
+    "Impact'": "A remote user can gain administrative access on the print server.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.seh.de/",
+    "Cause": "Authentication error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP Color LaserJet Web Interface Permits Remote Cross-Site Scripting Attacks",
+    "SecurityTracker Alert ID": "1007293",
+    "SecurityTracker URL": "http://securitytracker.com/id/1007293",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jul 24 2003",
+    "Impact": [
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of user information",
+        "User access via network"
+    ],
+    "Exploit Included": "Yes",
+    "Version(s)": "Color LaserJet 4550",
+    "Description": "A vulnerability was reported in the HP Color LaserJet 4550.  A remote user can conduct cross-site scripting attacks.  The device also is set without a password by default.\nexploitlabs.com reported that the system is configured by default to have no password.  Because of this, a remote user can access the web-based management interface.\n\nIt is also reported that the web interface does not filter HTML from user-supplied input.  A remote user can create HTML that, when loaded by the target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the printer and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the printer, access data recently submitted by the target user via web form to the printer, or take actions on the printer acting as the target user.",
+    "Impact'": "A remote user can gain access to the web-based administration interface (in the default configuration where no password has been set).\n\nA remote user can access the target user's cookies (including authentication cookies), if any, associated with the printer, access data recently submitted by the target user via web form to the printer, or take actions on the printer acting as the target user.  A remote user can also temporarily render the target user's web interface unusable.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.hp.com/",
+    "Cause": [
+        "Configuration error",
+        "Input validation error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Canon GP300 Copier Can Be Crashed By Remote Users",
+    "SecurityTracker Alert ID": "1007127",
+    "SecurityTracker URL": "http://securitytracker.com/id/1007127",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jul  7 2003",
+    "Impact": "Denial of service via network",
+    "Exploit Included": "Yes",
+    "Version(s)": "GP300; with WebSpooler v4.5.062 (fr)",
+    "Description": "A denial of service vulnerability was reported in the Canon GP300 copier.  A remote user can cause the print server to crash.\nIt is reported that a remote user can send the following HTTP GET request to the device to cause the print server to crash:\n\nGET /\n\nA reboot is reportedly required to return the system to normal operations.\n\nThe vendor has reportedly been notified.",
+    "Impact'": "A remote user can cause the target print server to crash.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.canon.com/",
+    "Cause": "Exception handling error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP Jetdirect Printer FTP Service Lets Any Remote User Print",
+    "SecurityTracker Alert ID": "1006641",
+    "SecurityTracker URL": "http://securitytracker.com/id/1006641",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Apr 24 2003",
+    "Impact": "Host/resource access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A security issue was reported in HP Jetdirect printers.  Any remote user can print by sending files to the printer's FTP server.\nHP reports that a remote user can send files to the printer via FTP.  Any file sent to the Jetdirect FTP service will be printed.\n\nHP also notes that because the FTP service provides writable directories to allow this function, some security vulnerability scanners will identify the Jetdirect printers as containing a vulnerable FTP server configuration.",
+    "Impact'": "Any remote user can print on the printer.",
+    "Solution": "The vendor reports that users that want to restrict printing can disable the FTP service by telnetting to the Jetdirect device and typing the following:\n\nftp-config: 0\n\nThis change will not permit you to upgrade firmware via FTP, according to HP.  You can update firmware using the HP Download Manager or Web Jetadmin applications.\n\nFor more information on Jetdirect security, see:\n\nhttp://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=c00004828\nhttp://h20000.www2.hp.com/bizsupport/TechSupport/Document.jsp?objectID=bpj05999\n\nSee the HP advisory in the Source Message for additional information.",
+    "Vendor URL": "www.hp.com/",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(Fix is Available) Re: IBM Infoprint Printer Can Be Crashed By Remote Users",
+    "SecurityTracker Alert ID": "1005520",
+    "SecurityTracker URL": "http://securitytracker.com/id/1005520",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Nov  3 2002",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Version(s)": "Model 21; Controller Code Level: 1.047012",
+    "Description": "A denial of service vulnerability was reported in IBM's Infoprint printers.  A remote user can cause the printer to crash.\nIt is reported that a remote user can send \"an excessive number of characters\" to the printer's remote management telnet service to cause it to refuse to allow any further login sessions.  Cycling the power to the device will reportedly restore login functionality.\n\nAccording to the report, it may also be possible to crash the entire printer by sending a large amount of data (several kbytes) to the telnet port.\n\nThe vendor has reportedly been notified.",
+    "Impact'": "A remote user can cause the printer or the printer's telnet management port to crash.",
+    "Solution": "It is reported that certain versions contain a fix for this flaw.  The following version is reported to be not vulnerable:\n\nIBM Infoprint 21 - Controller Code Level: 1.056007\n\nAlso, any newer Infoprint models are reported to be not vulnerable.",
+    "Vendor URL": "www.printers.ibm.com/R5PSC.NSF/Web/wglaserselect",
+    "Cause": [
+        "Boundary error",
+        "Exception handling error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1005485"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Apple LaserWriter 12/640 PS Printer Default Configuration Allows Remote Users to Access the Telnet Management Port",
+    "SecurityTracker Alert ID": "1005488",
+    "SecurityTracker URL": "http://securitytracker.com/id/1005488",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Oct 26 2002",
+    "Impact": "User access via network",
+    "Exploit Included": "Yes",
+    "Description": "A default configuration vulnerability was reported in the Apple LaserWriter 12/640 PS printer.  A remote user can access the printer's management port.\nUkR Security Team reported that the default configuration of the printer does not protect the telnet management port with a password.  A remote user can access the device to monitor printer activity or cause denial of service conditions.",
+    "Impact'": "In the default configuration, a remote user can access the telnet management port.",
+    "Solution": "Users can manually set a password after the setup process has been completed.",
+    "Vendor URL": "www.apple.com/",
+    "Cause": "Configuration error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "IBM Infoprint Printer Can Be Crashed By Remote Users",
+    "SecurityTracker Alert ID": "1005485",
+    "SecurityTracker URL": "http://securitytracker.com/id/1005485",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Oct 25 2002",
+    "Impact": "Denial of service via network",
+    "Exploit Included": "Yes",
+    "Description": "A denial of service vulnerability was reported in IBM's Infoprint printers.  A remote user can cause the printer to crash.\nIt is reported that a remote user can send \"an excessive number of characters\" to the printer's remote management telnet service to cause it to refuse to allow any further login sessions.  Cycling the power to the device will reportedly restore login functionality.\n\nAccording to the report, it may also be possible to crash the entire printer by sending a large amount of data (several kbytes) to the telnet port.\n\nThe vendor has reportedly been notified.",
+    "Impact'": "A remote user can cause the printer or the printer's telnet management port to crash.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.printers.ibm.com/R5PSC.NSF/Web/wglaserselect",
+    "Cause": [
+        "Boundary error",
+        "Exception handling error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1005520"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(HP Issues Warning for JetDirect Print Servers) OpenSSL Has Multiple Buffer Overflows That Allow Remote Users to Execute Arbitrary Code with Root Privileges",
+    "SecurityTracker Alert ID": "1005144",
+    "SecurityTracker URL": "http://securitytracker.com/id/1005144",
+    "CVE Reference": [
+        "CVE-2002-0655",
+        "CVE-2002-0656",
+        "CVE-2002-0657",
+        "CVE-2002-0659"
+    ],
+    "Date": "Aug 27 2002",
+    "Impact": [
+        "Denial of service via network",
+        "Execution of arbitrary code via network",
+        "Root access via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "X.22.00 through X.23.99 ( where X = L through U )",
+    "Description": "Four buffer overflow conditions were reported in OpenSSL. All four may allow a remote user to execute arbitrary code.  HP reports that JetDirect Print Servers are affected.\nThe vendor has reported that A.L. Digital Ltd and The Bunker have uncovered multiple buffer overflows in OpenSSL, discovered during a security review.\n\nA remote user could create a specially crafted, oversized client master key and use SSL2 to trigger an overflow on an SSL server.  According to the report, this vulnerability was independently discovered by Neohapsis, which has confirmed that the overflow can be exploited to execute arbitrary code.\n\nA remote user with an SSL server could create a specially crafted, oversized session ID and supply this ID to a target client using SSL3 to trigger an overflow.\n\nA remote user could supply a specially crafted, oversized master key to an SSL3 server to trigger an overflow.  It is reported that this flaw affects OpenSSL 0.9.7 prior to version 0.9.7-beta3 when Kerberos is enabled.\n\nSeveral buffers used for ASCII representations of integers are reportedly too small on 64 bit platforms.\n\nThe report also states that other potential buffer overflows that are currently considered to be non-exploitable have been discovered.\n\nThe vendor notes that Adi Stav and James Yonan independently reported that the ASN1 parser can be confused by certain invalid encodings, potentially allowing a remote user to cause denial of service conditions.  An OpenSSL-based application that use the ASN1 library to parse untrusted data (including all SSL or TLS applications using S/MIME [PKCS#7] or certificate generation routines) are affected.",
+    "Impact'": "A remote user acting as an SSL client could execute arbitrary code on an SSL server.  A remote user acting as an SSL server could cause arbitrary code to be executed on an SSL client that is connecting to the server.  In each case, the code would run with privileges of the affected implementation.\n\nA remote user may be able cause denial of service conditions.",
+    "Solution": "No solution was available at the time of this entry.\n\nHP recommends that users disable the Embedded Web Server on affected JetDirect Print Servers until the fixed version of firmware is available. \n\nTo learn how to disable the Embedded Web Server, as well as learn more about securing Jetdirect Print Servers on the network, please refer to this document:\n\nhttp://www.hp.com/cposupport/networking/support_doc/bpj05999.html#P26_2431\n\nIt is reported that the following products are affected:\n\nJetdirect Firmware Versions X.22.00 through X.23.99, where X = L through U, while running on the following products:\n\n        615n J6057A EIO 10/100 Print Server\n        610n J4169A EIO 10/100 Print Server\n        610n J4167A EIO 802.5 Print Server\n        680n J6058A EIO 802.11b Print Server\n        380x J6061A External 802.11b Print Server\n        310x J6038A External 10/100 Print Server\n        250m J6042A LIO 10/100 Print Server",
+    "Vendor URL": "www.hp.com/",
+    "Cause": [
+        "Boundary error",
+        "Exception handling error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1004879"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(HP Issues Fix) HP Printers Running JetDirect Disclose Administrative Passwords to Remote Users",
+    "SecurityTracker Alert ID": "1004902",
+    "SecurityTracker URL": "http://securitytracker.com/id/1004902",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jul 31 2002",
+    "Impact": [
+        "Disclosure of authentication information",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to firmware version X.22.09",
+    "Description": "An authentication information disclosure vulnerabiltiy was reported in HP's network-enabled printers.  A remote user can determine the administrative access password.\nIt is reported that a remote user can use an SNMP READ request to obtain the HTTP and TELNET administrative access password on printers running JetDirect.  The password is returned in HEX format when a remote user requests the following variable:\n\n.iso.3.6.1.4.1.11.2.3.9.4.2.1.3.9.1.1.0\n\nThe printer will reportedly return a HEX string where the numbers after the second byte represent the password in ASCII.\n\nA demonstration exploit is provided:\n\nlinux# snmpget <printer_ip> public .iso.3.6.1.4.1.11.2.3.9.4.2.1.3.9.1.1.0\n\nThe vendor has reportedly been notified.",
+    "Impact'": "A remote user can obtain the printer's administrative access password.",
+    "Solution": "HP has confirmed the vulnerability in the HP JetDirect Embedded Web Server.  Affected products include:\n\n         HP LaserJet 4100 series \n         HP LaserJet 8150 series (with the EWS image installed on a Flash DIMM or on printer hard disk) \n         HP LaserJet 9000 series \n         HP Color LaserJet 4550 series \n         HP Designjet 5000 series \n         HP Business Inkjet 2600\n\nHP has issued a fixed firmware version (X.22.09) or later.  For more information, see the document \"HP Jetdirect Print Servers - Making HP Jetdirect Print Servers Secure on the Network\", available at:\n\nhttp://www.hp.com/cposupport/networking/support_doc/bpj05999.html#P26_2431",
+    "Vendor URL": "www.hp.com/",
+    "Cause": "Access control error",
+    "Message History": [
+        "https://securitytracker.com/id/1004860"
+    ]
+}{
+    "source": "1-2",
+    "Title": "D-Link DP-300+ Print Server Can Be Crashed By Remote Users",
+    "SecurityTracker Alert ID": "1004868",
+    "SecurityTracker URL": "http://securitytracker.com/id/1004868",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jul 28 2002",
+    "Impact": "Denial of service via network",
+    "Exploit Included": "Yes",
+    "Description": "A vulnerability was reported in the D-Link DP-300+ Print Server.  A remote user can cause the print server to crash.\nPhenoelit reported that a remote user can send a large POST request to a web page on the server's web-based management interface to cause the server to crash.\n\nThe vendor has reportedly been notified.",
+    "Impact'": "A remote user can cause the print server to crash.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.dlink.com/",
+    "Cause": "Exception handling error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Brother NC-3100h Print Server Can Be Crashed By Remote Users Sending a Large Password to the Web Interface",
+    "SecurityTracker Alert ID": "1004866",
+    "SecurityTracker URL": "http://securitytracker.com/id/1004866",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jul 28 2002",
+    "Impact": "Denial of service via network",
+    "Exploit Included": "Yes",
+    "Version(s)": "NC-3100h",
+    "Description": "A vulnerability was reported in the Brother NC-3100h print server for Brother printers.  A remote user can cause the print server to crash.\nIt is reported that a remote user can send a large administrative password (136 characters or more) using the web-interface to cause the print server (printer) to crash.\n\nThe vendor has reportedly been notified.",
+    "Impact'": "A remote user can crash the printer.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.brother.de/brother/index.cfm?pos=2&kath_id=9&artnr=26879",
+    "Cause": "Boundary error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP Printers Running JetDirect Disclose Administrative Passwords to Remote Users",
+    "SecurityTracker Alert ID": "1004860",
+    "SecurityTracker URL": "http://securitytracker.com/id/1004860",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jul 27 2002",
+    "Impact": [
+        "Disclosure of authentication information",
+        "User access via network"
+    ],
+    "Exploit Included": "Yes",
+    "Description": "An authentication information disclosure vulnerabiltiy was reported in HP's network-enabled printers.  A remote user can determine the administrative access password.\nIt is reported that a remote user can use an SNMP READ request to obtain the HTTP and TELNET administrative access password on printers running JetDirect.  The password is returned in HEX format when a remote user requests the following variable:\n\n.iso.3.6.1.4.1.11.2.3.9.4.2.1.3.9.1.1.0\n\nThe printer will reportedly return a HEX string where the numbers after the second byte represent the password in ASCII.\n\nA demonstration exploit is provided:\n\nlinux# snmpget <printer_ip> public .iso.3.6.1.4.1.11.2.3.9.4.2.1.3.9.1.1.0\n\nThe vendor has reportedly been notified.",
+    "Impact'": "A remote user can obtain the printer's administrative access password.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.hp.com/",
+    "Cause": "Access control error",
+    "Message History": [
+        "https://securitytracker.com/id/1004902"
+    ]
+}{
+    "source": "1-2",
+    "Title": "SEH IC-9 Pocket Print Server Can Be Crashed By Remote Users Sending a Large Password to the Web Interface",
+    "SecurityTracker Alert ID": "1004857",
+    "SecurityTracker URL": "http://securitytracker.com/id/1004857",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jul 27 2002",
+    "Impact": "Denial of service via network",
+    "Exploit Included": "Yes",
+    "Version(s)": "SEH IC9 (Firmware 7.1.30 and 7.1.36f)",
+    "Description": "A denial of service vulnerability was reported in SEH's IC9 Pocket Print Server.  A remote user can cause the device to reboot.\nIt is reported that a remote user can send a large administrative password (300 characters or more) to the device on the web interface to cause the device to reboot.  This will apparently cause the attached printer to reset, as well.\n\nThe vendor reportedly has been notified and has denied the problem exists.",
+    "Impact'": "A remote user can cause the device to reboot.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.seh.de/english/products/ps1/ic9/ic9txt.htm",
+    "Cause": [
+        "Boundary error",
+        "Exception handling error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Xerox DocuTech Publishing System Has Insecure Default Configuration for the System Controllers, Letting Remote Users Take Full Control of the System",
+    "SecurityTracker Alert ID": "1004326",
+    "SecurityTracker URL": "http://securitytracker.com/id/1004326",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "May 18 2002",
+    "Impact": "Root access via network",
+    "Exploit Included": "Yes",
+    "Version(s)": "6110, 6115",
+    "Description": "A default configuration vulnerability was reported for the Xerox DocuTech publishing system.  The system controllers for this high speed scanner/printer device have insecure default configurations.\nAccording to the report, the system is composed of a laser printer controlled by a dual-processor Sun Uitra 60 running Solaris 8 and a scanner controlled by a Windows NT-based Intel host.\n\nThe Solaris system reportedly uses a default password of \"service!\".  It also is configured with a host of unnecessary and insecure services.  For example, many directories on the system are exported with world writable permissions.\n\nThe NT system reportedly uses a default password of \"administ\" and allows any user to connect to the C: drive.  Apparently, copies of all jobs are saved on this host, so remote users can obtain copies of previously run print jobs.\n\nThe server provides a web interface that allows remote users to submit jobs and print them without operator approval.  [Editor's note:  It is not clear if authentication is required or not].  \n\nA remote user without authentication can view job history information over the web interface.",
+    "Impact'": "A remote user can gain access to the system if the default passwords have not been changed.  A remote user can exploit any of a number of insecure or misconfigured services to gain access to the system.",
+    "Solution": "No vendor solution was available at the time of this entry.  The vendor apparently has a security configuration guide for at least one of the servers, but that document reportedly does not provide sufficient security advice to secure the systems.",
+    "Vendor URL": "www.xerox.com/",
+    "Cause": "Authentication error",
+    "Underlying OS": [
+        "UNIX (Solaris - SunOS)",
+        "Windows (NT)"
+    ],
+    "Underlying OS Comments": "One controller runs on Solaris 8 and another controller runs on NT4",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "HP Photosmart Printer Drivers Use Unsafe File Permissions and Let Local Users Gain Elevated Privileges on the System",
+    "SecurityTracker Alert ID": "1004061",
+    "SecurityTracker URL": "http://securitytracker.com/id/1004061",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Apr 16 2002",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "Root access via local system",
+        "User access via local system"
+    ],
+    "Exploit Included": "Yes",
+    "Version(s)": "Driver Version 1.2.1",
+    "Description": "A vulnerability has been reported in HP's Photosmart printer drivers for Mac OS X.  A local user can obtain elevated privileges on the system, including root privileges.\nIt is reported that the driver installer will create an application called hp_imaging_connectivity.app in the /Library/Printers/hp directory.  The application is apparently created with world writable permissions and several of the associated directories are created with admin group write privileges.\n\nA local user could replace this application with a malicious application.  According to the report, the application is started whenever any user logs into the system.  So, when a root level user login occurs, the malicious application would be executed with root level privileges.\n\nOr, a local user that is part of the 'admin' group could use /etc/sudoers to execute the application with root privileges.",
+    "Impact'": "A local user could obtain elevated privileges on the system, including root level privileges",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.homeandoffice.hp.com/hho/us/eng/digital_photography.html",
+    "Cause": "Access control error",
+    "Underlying OS": "UNIX (macOS/OS X)",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(HP Issues Workaround for JetDirect Firmware) Many Simple Network Management Protocol (SNMP) Implementations Allow Remote Users to Deny Service or Obtain Access to the System",
+    "SecurityTracker Alert ID": "1003673",
+    "SecurityTracker URL": "http://securitytracker.com/id/1003673",
+    "CVE Reference": [
+        "CVE-2002-0012",
+        "CVE-2002-0013"
+    ],
+    "Date": "Feb 26 2002",
+    "Impact": [
+        "Denial of service via network",
+        "Execution of arbitrary code via network",
+        "Root access via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "X.08.32 and lower, where X = A through K",
+    "Description": "CERT reported that the University of Oulu (Finland) has discovered vulnerabilities in many vendor implementations of the Simple Network Management Protocol (SNMP) version 1.\nThe Oulu University Secure Programming Group (OUSPG, http://www.ee.oulu.fi/research/ouspg/) reports that there are numerous vulnerabilities in SNMPv1 implementations from many different vendors. A remote user can reportedly cause denial of service attacks or gain elevated privileges on the system. The extent of the vulnerabilities depends on the specific vendor implementation.",
+    "Impact'": "A remote user may be able to cause denial of service conditions or may be able to obtain elevated privileges on the system.",
+    "Solution": "HP reports that the following version are *not* vulnerable:\n\nX.21.00 and higher, where X = L through P.\n\nFor customers with vulnerable versions (X.08.32 and lower, where X = A through K), HP has released the following workaround for the HP JetDirect firmware and is working on a firmware fix:\n\nChange the set-community-name and use theAccess Control List as described in \"HP Jetdirect Print Servers - Making HP Jetdirect Print Servers Secure on the Network\":\n\nhttp://www.hp.com/cposupport/networking/support_doc/bpj05999.html#P88_10129\n\nTo limit the vulnerability, HP has the following recommendations:\n\nSNMPv1 security relies on the set community name. It is important that a set-community-name be configured on the Jetdirect device and that it be kept secret.\n\nJetdirect Print Servers offer an Access Control List that can be used to specify which hosts can make SNMP configuration changes to Jetdirect Print Servers.\n\nThe steps above can help prevent exploitation of the vulnerability.  To eliminate the vulnerability before a fix is available SNMP can be disabled on the Jetdirect device.\n\nTo disable SNMP on a JetDirect print server, HP has provided the following directions:\n\n1. Update the firmware to the highest level as described in the Jetdirect Upgrade Instructions document:\n\nhttp://www.hp.com/cposupport/networking/support_doc/bpj06917.html\n\nNOTE:    Disabling SNMP may affect device discovery and port monitors that use SNMP to get status on the device.  Use this feature with care.\n\n2.  Telnet to the Jetdirect device (on the latest firmware) and type:\n\n      snmp-config: 0\n      quit\n\nThis will completely disable SNMP on the Jetdirect device.\n\nHP always recommends upgrading Jetdirect firmware for the latest bug fixes and security benefits.  The upgrade firmware and download utility are available free of charge:\n\nhttp://www.hp.com/cposupport/networking/support_doc/bpj06917.html\n\nThe following is a list of JetDirect Product Numbers that can be freely upgraded to X.08.32 or X.21.00 or higher firmware.  The latest firmware revision available for download is given.  For example, the latest firmware revision for the J3110A is G.08.32.\n\nEIO (Peripherals Laserjet 4000, 5000, 8000, etc...)\n        J3110A 10T,                              [G.08.32]\n        J3111A 10T/10B2/LocalTalk,               [G.08.32]\n        J3112A Token Ring (discontinued),        [G.08.32]\n        J3113A 10/100 (discontinued),            [G.08.32]\n        J4169A 10/100,                           [L.21.22]\n        J4167A Token Ring,                       [L.21.25]\n        J6057A 10/100,                           [R.22.09]\n\nMIO (Peripherals LaserJet 4, 4si, 5si, etc...)\n        J2550A/B 10T (discontinued), [A.08.32]\n        J2552A/B 10T/10Base2/LocalTalk (discontinued), [A.08.32]\n        J2555A/B Token Ring (discontinued) [A.08.32]\n        J4100A 10/100,                      [K.08.32]\n        J4105A Token Ring,                  [K.08.32]\n        J4106A 10T,                         [K.08.32]\n\nLIO (Peripherals Color Inkjet cp1160, cp1700)\n        J6042A 250m 10/100,                    [N.21.22]\n\nExternal Print Servers\n        J2591A EX+ (discontinued),               [E.08.32]\n        J2593A EX+3 10T/10B2 (discontinued),     [D.08.32]\n        J2594A EX+3 Token Ring (discontinued),   [D.08.32]\n        J3263A 300X 10/100,                      [H.08.32]\n        J3264A 500X Token Ring,                  [J.08.32]\n        J3265A 500X 10/100,                      [J.08.32]\n        J6038A 310x USB 10/100,                  [Q.22.04]",
+    "Cause": [
+        "Access control error",
+        "Boundary error",
+        "Input validation error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1003524"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Zero One Technology's ZOT P100s Print Server Discloses Information to Remote Users via SNMP Even When Configured Not To",
+    "SecurityTracker Alert ID": "1003649",
+    "SecurityTracker URL": "http://securitytracker.com/id/1003649",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Feb 25 2002",
+    "Impact": "Disclosure of system information",
+    "Exploit Included": "Yes",
+    "Description": "An information disclosure vulnerability was reported in the ZOT P100s print server.  A remote user can obtain information from the device using SNMP even if SNMP has been disabled.\nIt is reported that a remote user can use SNMP to obtain information about the device configuration and performance even if SNMP has been disabled and the public community string has been changed.",
+    "Impact'": "A remote user can obtain information from the device using SNMP even if SNMP has been disabled.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.01tech.com/product_p100s.htm",
+    "Cause": [
+        "Access control error",
+        "State error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Canon imageRUNNER Printers Can Be Crashed By Remote Users",
+    "SecurityTracker Alert ID": "1002360",
+    "SecurityTracker URL": "http://securitytracker.com/id/1002360",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Sep  8 2001",
+    "Impact": "Denial of service via network",
+    "Exploit Included": "Yes",
+    "Version(s)": "imageRUNNER 330, possibly others",
+    "Description": "A denial of service vulnerability was reported in Canon's imageRUNNER 330 that allows remote users to crash the printer by port scanning it.\nA remote user can conduct a port scan of higher numbered ports (e.g., 30000-59000) to cause the printer to crash.  The printer must be unplugged and/or rebooted to return to normal operation.",
+    "Impact'": "A remote user can crash the printer, requiring it to be unplugged or rebooted to return to normal operation.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.usa.canon.com/corpoffice/netofficesys/imagerunner/ir/product.html",
+    "Cause": "Resource error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(Vendor Disputes Some Claims and Indicates Recent Models Have Been Fixed) Re: Xerox/Tektronix Network Printers Disclose Administrator",
+    "SecurityTracker Alert ID": "1001599",
+    "SecurityTracker URL": "http://securitytracker.com/id/1001599",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "May 23 2001",
+    "Impact": [
+        "Denial of service via network",
+        "Disclosure of authentication information",
+        "Disclosure of system information",
+        "Modification of system information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in Xerox/Tektronix network printers that allows remote users to obtain the administrator user id and password and change certain configuration parameters on the printer via a backdoor access method, possibly causing a denial of service condition.\nThe vendor notes that this vulnerability has been fixed in future products.\n\nThe vendor disputes that an affected printer can be damaged, indicating that an emergency shut-down will not cause a catastrophic failure and that an emergency shut-down is no different than a power failure, which the printer is designed to handle.\n\nThe vendor also clarifies that the URLs for the expert pages were changed for internal reasons -- not to obscure the URLs.",
+    "Impact'": "A remote user can obtain the administrator user id and password and can then reconfigure the printer and cause a denial of service condition, possibly inflicting physical damage on the printer.",
+    "Solution": "The vendor reports that this vulnerability has been fixed for future releases.",
+    "Vendor URL": "www.officeprinting.xerox.com/",
+    "Cause": [
+        "Access control error",
+        "Authentication error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1001436"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(Info on Specific Models) Re: Xerox/Tektronix Network Printers Disclose Administrator Password to Remote Users and Allow Remote Users to Shut Down the Printer, Possibly Resulting in Physical Damage to the Printer",
+    "SecurityTracker Alert ID": "1001441",
+    "SecurityTracker URL": "http://securitytracker.com/id/1001441",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Apr 28 2001",
+    "Impact": [
+        "Denial of service via network",
+        "Disclosure of authentication information",
+        "Disclosure of system information",
+        "Modification of system information"
+    ],
+    "Description": "A vulnerability was reported in Xerox/Tektronix network printers that allows remote users to obtain the administrator user id and password and change certain configuration parameters on the printer via a backdoor access method, possibly causing a denial of service condition.\nThe printers reportedly use a backdoor web URL that does not require authentication for configuration (http://printername/_ncl_subjects.shtml). Configuration pages are accessible via this URL, with the format http number that corresponds to a particular configuration page. The printer allows remote unauthenticated users to set the \"Shutdown\" option on the URL http without properly clearing the ink reservoir. It is reported that if the reservoir is cooled without being cleared, the ink may coagulate and the printer may sustain physical damage. The web configuration page reportedly displays the administrator user id and password to any remote user with the URL It appears that the web server cannot be turned off.\n\nA user reports the following:\n\n\"Phaser 560\nTektronix Version:  1.01/21\t\n\tDidn't find any variants that worked.\n\nPhaser 740\nFirmware Version:  1.24 / 4.08 / 21 / 8.62\n\thttp://printername/ncl_subjects.html works\n\nPhaser 750DP\n\tFirmware Version\n\t\tPostScript: 5.62\n\t\tVxWorks: 2.28\n\t\tNetwork: 11.100.11.15.1999\n\t\tEngine: 10\n\thttp://printername/_ncl_subjects.shtml works\n\nIn both 740 and 750 the password is exposed in plain text for anyone to see.\"\n\nThe user suggests not setting a default gateway for the printer's IP configuration to limit the vulnerability to the local subnet.",
+    "Impact'": "A remote user can obtain the administrator user id and password and can then reconfigure the printer and cause a denial of service condition, possibly inflicting physical damage on the printer.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.officeprinting.xerox.com/",
+    "Cause": [
+        "Access control error",
+        "Authentication error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1001436"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Xerox/Tektronix Network Printers Disclose Administrator Password to Remote Users and Allow Remote Users to Shut Down the Printer, Possibly Resulting in Physical Damage to the Printer",
+    "SecurityTracker Alert ID": "1001436",
+    "SecurityTracker URL": "http://securitytracker.com/id/1001436",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Apr 27 2001",
+    "Impact": [
+        "Denial of service via network",
+        "Disclosure of authentication information",
+        "Disclosure of system information",
+        "Modification of system information"
+    ],
+    "Exploit Included": "Yes",
+    "Description": "A vulnerability was reported in Xerox/Tektronix network printers that allows remote users to obtain the administrator user id and password and change certain configuration parameters on the printer via a backdoor access method, possibly causing a denial of service condition.\nThe printers reportedly use a backdoor web URL that does not require authentication for configuration (http://printername/_ncl_subjects.shtml). Configuration pages are accessible via this URL, with the format http://printername/_ncl_items.shtml&SUBJECT=*, where \"*\" is a number that corresponds to a particular configuration page.  \n\nThe printer allows remote unauthenticated users to set the \"Shutdown\" option on the URL http://printername/_ncl_items.shtml&SUBJECT=1 to \"Emergency Power Off,\" which may cause the printer to shut down without properly clearing the ink reservoir.  It is reported that if the reservoir is cooled without being cleared, the ink may coagulate and the printer may sustain physical damage.\n\nThe web configuration page reportedly displays the administrator user id and password to any remote user with the URL: http://printername/ncl_items.html&SUBJECT=2097.\n\nIt appears that the web server cannot be turned off.",
+    "Impact'": "A remote user can obtain the administrator user id and password and can then reconfigure the printer and cause a denial of service condition, possibly inflicting physical damage on the printer.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.officeprinting.xerox.com/",
+    "Cause": [
+        "Access control error",
+        "Authentication error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1001441",
+        "https://securitytracker.com/id/1001599"
+    ]
+}

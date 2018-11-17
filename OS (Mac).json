@@ -1,0 +1,800 @@
+{
+    "source": "1-2",
+    "Title": "Mac OS X Folder Permission Flaw May Let Local Users Gain Elevated Privileges",
+    "SecurityTracker Alert ID": "1014146",
+    "SecurityTracker URL": "http://securitytracker.com/id/1014146",
+    "CVE Reference": "CVE-2005-1727",
+    "Date": "Jun  9 2005",
+    "Impact": [
+        "Root access via local system",
+        "User access via local system"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "10.4, 10.4.1",
+    "Description": "A vulnerability was reported in Mac OS X in the enforcement of folder permissions.  A local user may be able to gain elevated privileges.\nA local user can exploit a race condition in assignment of permissions on files in the system's cache folder and the Dashboard system widgets.  A local user may be able to write to files in those directories.\n\nMac OS X versions prior to 10.4 are not affected.\n\nThe vendor credits Michael Haller with reporting this vulnerability.",
+    "Impact'": "A local user may be able to gain elevated privileges.",
+    "Solution": "Apple has issued a fix as part of Security Update 2005-006, available from the Software Update pane in System Preferences, or Apple's Software Downloads web site at:\n\nhttp://www.apple.com/support/downloads/\n\nFor Mac OS X v10.4.1 and Mac OS X Server v10.4.1\nThe download file is named:  \"SecUpd2005-006Ti.dmg\"\nIts SHA-1 digest is:  89e432a13fc3de743b9444e2a33f3e989ceccdb4",
+    "Vendor URL": "docs.info.apple.com/article.html?artnum=301742",
+    "Cause": [
+        "Access control error",
+        "State error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Apple LaunchServices Lets Remote Users Bypass the File Dowload Dialog",
+    "SecurityTracker Alert ID": "1014141",
+    "SecurityTracker URL": "http://securitytracker.com/id/1014141",
+    "CVE Reference": "CVE-2005-1723",
+    "Date": "Jun  9 2005",
+    "Impact": "Modification of system information",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "10.4, 10.4.1",
+    "Description": "A vulnerability was reported in Apple LaunchServices.  A remote user can create a file that will bypass download safety checks.\nIf a file extension and mime type is marked as unsafe but is not mapped to an Apple Uniform Type Identifier (UTI), then a query on certain forms of the file extension or mime type may not be properly marked as unsafe.  As a result, a remote user may be able to cause a malicious file to be downloaded without an appropriate safety check.\n\nMac OS X versions prior to 10.4 are not affected.",
+    "Impact'": "A remote user can create a file that will bypass download safety checks.",
+    "Solution": "Apple has issued a fix as part of Security Update 2005-006, available from the Software Update pane in System Preferences, or Apple's Software Downloads web site at:\n\nhttp://www.apple.com/support/downloads/\n\nFor Mac OS X v10.4.1 and Mac OS X Server v10.4.1\nThe download file is named:  \"SecUpd2005-006Ti.dmg\"\nIts SHA-1 digest is:  89e432a13fc3de743b9444e2a33f3e989ceccdb4",
+    "Vendor URL": "docs.info.apple.com/article.html?artnum=301742",
+    "Cause": [
+        "Access control error",
+        "State error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "NetInfo Manager Incorrectly Displays the Status of the Root Account",
+    "SecurityTracker Alert ID": "1011530",
+    "SecurityTracker URL": "http://securitytracker.com/id/1011530",
+    "CVE Reference": "CVE-2004-0924",
+    "Date": "Oct  4 2004",
+    "Impact": "Modification of system information",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "10.2.8, 10.3.5",
+    "Description": "A vulnerability was reported in Apple's NetInfo Manager.  The account status for the 'root' user account may be displayed incorrectly.\nApple reported that after the 'root' user logs in one time, then NetInfo Manager cannot be used to disable the account.  NetInfo Manager will also indicate (incorrectly) that  the account is disabled.  \n\nVersions prior to Mac OS X 10.3 are not affected.",
+    "Impact'": "The account status for the 'root' user account may be display as 'disabled' when it is not actually disabled.",
+    "Solution": "Apple has released a fix as part of Security Update 2004-09-30, available from the Software Update pane in System Preferences, or Apple's Software Downloads web site at:\n\nhttp://www.apple.com/support/downloads/\n\nFor Mac OS X v10.3.5 and Mac OS X Server v10.3.5:\n\nThe download file is named: \"SecUpd2004-09-30Pan.dmg\"\nIts SHA-1 digest is:  1660042cecdfca15866cc3a7be06c69ee52d68a3",
+    "Vendor URL": "docs.info.apple.com/article.html?artnum=61798",
+    "Cause": "State error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Apple AFP Server Bugs Let Local Users Terminate Mount Sessions and Remote Users Read Drop Box Items",
+    "SecurityTracker Alert ID": "1011528",
+    "SecurityTracker URL": "http://securitytracker.com/id/1011528",
+    "CVE Reference": [
+        "CVE-2004-0921",
+        "CVE-2004-0922"
+    ],
+    "Date": "Oct  4 2004",
+    "Impact": [
+        "Denial of service via local system",
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "10.3.5",
+    "Description": "Two vulnerabilities were reported in Apple's AFP Server.  A local user can cause denial of service conditions.  A remote user may be able to read files in a write-only Drop Box.\nApple reported that a local user with guest privileges can mount an Apple File Protocol (AFP) volume and modify SessionDestroy packets to cause user mounts on the target system to terminate [CVE: CVE-2004-0921].\n\nIt is also reported that a remote user can mount an AFP volume an obtain read-write privileges on a write-only AFP Drop Box.  This is due to an incorrect setting of the guest group id (gid) [CVE: CVE-2004-0922].\n\nVersions prior to 10.3 are not affected by either of these vulnerabilities.",
+    "Impact'": "A local user can cause AFP mount sessions to terminate.\n\nA remote user may be able to read files in a write-only Drop Box.",
+    "Solution": "Apple has released a fix as part of Security Update 2004-09-30, available from the Software Update pane in System Preferences, or Apple's Software Downloads web site at:\n\nhttp://www.apple.com/support/downloads/\n\nFor Mac OS X v10.3.5 and Mac OS X Server v10.3.5:\n\nThe download file is named: \"SecUpd2004-09-30Pan.dmg\"\nIts SHA-1 digest is:  1660042cecdfca15866cc3a7be06c69ee52d68a3",
+    "Vendor URL": "docs.info.apple.com/article.html?artnum=61798",
+    "Cause": [
+        "Access control error",
+        "Exception handling error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Mac OS X CoreFoundation Buffer Overflow and Library Loading Bugs Let Local Users Gain Elevated Privileges",
+    "SecurityTracker Alert ID": "1011174",
+    "SecurityTracker URL": "http://securitytracker.com/id/1011174",
+    "CVE Reference": [
+        "CVE-2004-0821",
+        "CVE-2004-0822"
+    ],
+    "Date": "Sep  7 2004",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "Root access via local system",
+        "User access via local system"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "10.2.8, 10.3.4, 10.3.5",
+    "Description": "Two vulnerabilities were reported in Apple Mac OS X in CoreFoundation.  A local user can execute arbitrary code.\nApple reported that a local user can cause an application using CoreFoundation CFPlugIn facilities to load an arbitrary user-supplied library [CVE: CVE-2004-0821] with the privileges of the application.  A local user can gain elevated privileges.\n\nThe vendor credits Kikuchi Masashi with reporting this flaw.\n\nIt is also reported that a local user can modify a certain environment variable to trigger a buffer overflow in CoreFoundation [CVE: CVE-2004-0822] and execute arbitrary code with elevated privileges.\n\nThe vendor credits aaron@vtty.com with reporting this flaw.",
+    "Impact'": "A local user can cause arbitrary code to be executed with elevated privileges.",
+    "Solution": "The vendor has released a fix as part of Security Update 2004-09-07, available from the Software Update pane in System Preferences, or Apple's Software Downloads web site at:\n\nhttp://www.apple.com/support/downloads/\n\nFor Mac OS X v10.3.5 \"Panther\":\n\nThe download file is named: \"SecUpd2004-09-07PanMClient.dmg\"\nIts SHA-1 digest is:  aa8bc2d78c37778cca3619f42dafdee5775bc7a6\n\nFor Mac OS X v10.3.4 \"Panther\":\n\nThe download file is named: \"SecUpd2004-09-07PanClient.dmg\"\nIts SHA-1 digest is:  a37cd43439f4e82d05d07924101e370d96dc41a9\n\nFor Mac OS X v10.2.8 \"Jaguar\":\n\nThe download file is named: \"SecUpd2004-09-07JagClient.dmg\"\nIts SHA-1 digest is:  6f0ee457b5a729ef68fb50fc55417db400b52365\n\nFor Mac OS X Server v10.3.5 \"Panther\":\n\nThe download file is named: \"SecUpdSrvr2004-09-07PanM.dmg\"\nIts SHA-1 digest is:  8766c93d5675f8d1d9ebec67e80b7a94d16a1858\n\nFor Mac OS X Server v10.3.4 \"Panther\":\n\nThe download file is named: \"SecUpdSrvr2004-09-07PanL.dmg\"\nIts SHA-1 digest is:  7f4674515ff0172a2df9a451240410ac24459753\n\nFor Mac OS X Server v10.2.8 \"Jaguar\"\n\nThe download file is named: \"SecUpdSrvr2004-09-07Jag.dmg\"\nIts SHA-1 digest is:  099290119b6f47d935e8d064c36a90b0ad7acaf8",
+    "Vendor URL": "www.apple.com/support/security/security_updates.html",
+    "Cause": [
+        "Boundary error",
+        "State error"
+    ],
+    "Underlying OS": "UNIX (macOS/OS X)",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Apple Mac OS X LaunchServices Component May Let Remote Users Register and Execute Applications",
+    "SecurityTracker Alert ID": "1010414",
+    "SecurityTracker URL": "http://securitytracker.com/id/1010414",
+    "CVE Reference": "CVE-2004-0538",
+    "Date": "Jun  7 2004",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Mac OS X 10.2.8, 10.3.4",
+    "Description": "A vulnerability was reported in Apple's Mac OS X in LaunchServices.  A remote user may be able to cause the target user to run certain applications.\nApple reported that a remote user may be able to cause LaunchServices to register an application and subsequently cause the application to run.",
+    "Impact'": "A remote user may be able to cause an application to run on the target user's system.",
+    "Solution": "Apple has issued a fix as part of Security Update 2004-06-07 for Mac OS X 10.3.4 (Panther) and 10.2.8 (Jaguar). Software updates for Mac OS X are available via:\n\n- Software Update preferences\n\n- Apple Downloads:\n\nhttp://www.apple.com/swupdates/",
+    "Vendor URL": "www.apple.com/",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Mac OS X fs_usage Lets Local Users Gain Elevated Privileges",
+    "SecurityTracker Alert ID": "1009386",
+    "SecurityTracker URL": "http://securitytracker.com/id/1009386",
+    "CVE Reference": "CVE-2003-1010",
+    "Date": "Mar 11 2004",
+    "Impact": [
+        "Root access via local system",
+        "User access via local system"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "10.2.8, 10.3.2",
+    "Description": "An unspecified vulnerability was reported in fs_usage on Mac OS X.  A local user may be able to gain elevated privileges on the target system.\nNo further details were provided.\n\nThe vendor credits @stake with reporting this flaw.",
+    "Impact'": "A local user may be able to gain elevated privileges on the target system.  The report did not indicate the level of privilege escalation that can be achieved.",
+    "Solution": "Apple has released a fix as part of Security Update 2003-12-19 for Panther and Security Update 2003-12-19 for Jaguar.\n\nSecurity Update 2003-12-19 for Panther is available at:\n\n  * Software Update pane in System Preferences\n\n  * Apple's Software Downloads web site:\n    http://www.info.apple.com/kbnum/n120292\n    The download file is named: \"SecurityUpd2003-12-19.dmg\"\n    Its SHA-1 digest is: 112674677572232f640d03122b25527d84fbbbf8\n\nSecurity Update 2003-12-19 for Jaguar is available at:\n\n  * Software Update pane in System Preferences\n\n  * Apple's Software Downloads web site:\n    http://www.info.apple.com/kbnum/n120291\n    The download file is named: \"SecurityUpd2003-12-19Jag.dmg\"\n    Its SHA-1 digest is: b0c5d1ef54020db7580798fddd7a1e132e653896",
+    "Vendor URL": "www.apple.com/support/security/security_updates.html",
+    "Cause": "Not specified",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Mac OS X Bug in Apple File Protocol (AFP) Over SSH May Fail to Encrypt Some Connectoins",
+    "SecurityTracker Alert ID": "1009282",
+    "SecurityTracker URL": "http://securitytracker.com/id/1009282",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Mar  2 2004",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Exploit Included": "Yes",
+    "Version(s)": "Mac OS X 10.3 prior to 10.3.2",
+    "Description": "A vulnerability was reported in the Apple File Protocol (AFP) implementation on Mac OS X.  When running AFP connections over SSH, some connections may not be encrypted.\nIt is reported that in some cases, AFP sessions will be established in the clear even though both the client and server have secure connections enabled.",
+    "Impact'": "A remote user monitoring the connection between the client and the server can view unencrypted connections.",
+    "Solution": "According to a report by Chris Adams (improbable.org), version 10.3.2 is not affected.",
+    "Vendor URL": "www.apple.com/",
+    "Cause": [
+        "Access control error",
+        "State error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Mac OS X TruBlueEnvironment Buffer Overflow Lets Local Users Gain Root Privileges",
+    "SecurityTracker Alert ID": "1009252",
+    "SecurityTracker URL": "http://securitytracker.com/id/1009252",
+    "CVE Reference": "CVE-2004-0089",
+    "Date": "Feb 28 2004",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "Root access via local system"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Mac OS X 10.2.8, 10.3.2",
+    "Description": "A buffer overflow was reported in the Mac OS X TruBlueEnvironment (Classic Emulator).  A local user can gain root privileges on the target system.\nIn January 2004, @stake reported that a local user can set a specially crafted environment variable to trigger a stack overflow in TruBlueEnvironment and execute arbitrary code.  The TruBlueEnvironment is reportedly configured with set user id (setuid) root user privileges, so the code will run with root privileges.\n\nThe original advisory is available at:\n\nhttp://www.atstake.com/research/advisories/2004/a012704-1.txt",
+    "Impact'": "A local user can execute arbitrary code with root privileges.",
+    "Solution": "The vendor has released a fix as part of Security Update 2004-01-26, available at:\n\n  * Software Update pane in System Preferences\n\n  * Apple's Software Downloads web site:\n\n    Mac OS X 10.3.2 Client\n    ======================\n    http://www.info.apple.com/kbnum/n120301\n    The download file is named: \"SecurityUpd2004-01-26Pan.dmg\"\n    Its SHA-1 digest is: 8977b3420a6343d53b79f23c409a601d269d87a4\n\n    Mac OS X 10.3.2 Server\n    ======================\n    http://www.info.apple.com/kbnum/n120300\n    The download file is named: \"SecUpdSrvr2004-01-26Pan.dmg\"\n    Its SHA-1 digest is: 15bfa92c439c6fee1e690703359778cefabf58d7\n\n    Mac OS X 10.2.8 Client\n    ======================\n    http://www.info.apple.com/kbnum/n120302\n    The download file is named: \"SecurityUpd2004-01-26Jag.dmg\"\n    Its SHA-1 digest is: 365401ca71387a45a34ecab5ec7278b62e3089b3\n\n    Mac OS X 10.2.8 Server\n    ======================\n    http://www.info.apple.com/kbnum/n120304\n    The download file is named: \"SecUpdSrvr2004-01-26Jag.dmg\"\n    Its SHA-1 digest is: 605578cbf0d6005ee5f6b474026b908e47175268",
+    "Vendor URL": "docs.info.apple.com/article.html?artnum=61798",
+    "Cause": "Boundary error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Mac OS X SystemConfiguration Flaws Let Remote Authenticated Users Change Configuration Settings",
+    "SecurityTracker Alert ID": "1009251",
+    "SecurityTracker URL": "http://securitytracker.com/id/1009251",
+    "CVE Reference": [
+        "CVE-2004-0087",
+        "CVE-2004-0088"
+    ],
+    "Date": "Feb 28 2004",
+    "Impact": "Modification of system information",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Mac OS X 10.1.5, 10.2.8, 10.3.2",
+    "Description": "Some vulnerabilities were reported in Mac OS X in the SystemConfiguration subsystem.  A remote authenticated user can change system configuration settings.\nIn January 2004, it was reported that a remote authenticated user without administrator privileges can change certain network settings and configd configuration settings [CVE: CVE-2004-0087 and CVE-2004-0088].\n\nApple credits @stake with reporting these issues.  [Editor's note:  It appears that @stake has not yet released an advisory regarding these vulnerabilities at the time of this entry.]",
+    "Impact'": "A remote authenticated user can change network settings and configd configuration file settings, even if the user does not have administrative privileges.",
+    "Solution": "The vendor has released a fix as part of Security Update 2004-01-26, available at:\n\n  * Software Update pane in System Preferences\n\n  * Apple's Software Downloads web site:\n\n    Mac OS X 10.3.2 Client\n    ======================\n    http://www.info.apple.com/kbnum/n120301\n    The download file is named: \"SecurityUpd2004-01-26Pan.dmg\"\n    Its SHA-1 digest is: 8977b3420a6343d53b79f23c409a601d269d87a4\n\n    Mac OS X 10.3.2 Server\n    ======================\n    http://www.info.apple.com/kbnum/n120300\n    The download file is named: \"SecUpdSrvr2004-01-26Pan.dmg\"\n    Its SHA-1 digest is: 15bfa92c439c6fee1e690703359778cefabf58d7\n\n    Mac OS X 10.2.8 Client\n    ======================\n    http://www.info.apple.com/kbnum/n120302\n    The download file is named: \"SecurityUpd2004-01-26Jag.dmg\"\n    Its SHA-1 digest is: 365401ca71387a45a34ecab5ec7278b62e3089b3\n\n    Mac OS X 10.2.8 Server\n    ======================\n    http://www.info.apple.com/kbnum/n120304\n    The download file is named: \"SecUpdSrvr2004-01-26Jag.dmg\"\n    Its SHA-1 digest is: 605578cbf0d6005ee5f6b474026b908e47175268\n\n    Mac OS X 10.1.5 Client and Server\n    =================================\n    http://www.info.apple.com/kbnum/n120303\n    The download file is named: \"SecurityUpd2004-01-26P.dmg\"\n    Its SHA-1 digest is: 7c7f55d675a19957bce3c5aeaa985652a8c59d7b",
+    "Vendor URL": "docs.info.apple.com/article.html?artnum=61798",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(Apple Issues Fix) Mac OS X 'cd9660.util' Buffer Overflow Yields Root Privileges to Local Users",
+    "SecurityTracker Alert ID": "1008533",
+    "SecurityTracker URL": "http://securitytracker.com/id/1008533",
+    "CVE Reference": "CVE-2003-1006",
+    "Date": "Dec 20 2003",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "Root access via local system"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "OS X 10.2.8, 10.3.2",
+    "Description": "A buffer overflow vulnerability was reported in Mac OS X in the 'cd9660.util' ISO 9660 file system utility.  A local user can gain root privileges on the target system.\nIt is reported that a local user can supply a specially crafted command line argument to the '/System/Library/Filesystems/cd9660.fs/cd9660.util' utility to trigger a buffer overflow.  Because the utility is reportedly configured with set user id (setuid) root user privileges, any arbitrary code that may be executed will run with root privileges.\n\nA demonstration exploit command is provided:\n\n./cd9660.util -p `perl -e \"print 'A'x512\"`",
+    "Impact'": "A local user can gain root privileges.",
+    "Solution": "Apple has released a fix for Panther and Jaguar.\n\nSecurity Update 2003-12-19 for Panther is available at:\n\n  * Software Update pane in System Preferences\n\n  * Apple's Software Downloads web site:\n    http://www.info.apple.com/kbnum/n120292\n    The download file is named: \"SecurityUpd2003-12-19.dmg\"\n    Its SHA-1 digest is: 112674677572232f640d03122b25527d84fbbbf8\n\nSecurity Update 2003-12-19 for Jaguar is available at:\n\n  * Software Update pane in System Preferences\n\n  * Apple's Software Downloads web site:\n    http://www.info.apple.com/kbnum/n120291\n    The download file is named: \"SecurityUpd2003-12-19Jag.dmg\"\n    Its SHA-1 digest is: b0c5d1ef54020db7580798fddd7a1e132e653896",
+    "Vendor URL": "www.apple.com/",
+    "Cause": "Boundary error",
+    "Message History": [
+        "https://securitytracker.com/id/1008484"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(Apple Issues Fix) Mac OS X Screensaver Lets Physically Local Users Pass Keystrokes to the Operating System",
+    "SecurityTracker Alert ID": "1008531",
+    "SecurityTracker URL": "http://securitytracker.com/id/1008531",
+    "CVE Reference": "CVE-2003-1008",
+    "Date": "Dec 20 2003",
+    "Impact": "User access via local system",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Mac OS X 10.2.8, 10.3.2",
+    "Description": "Another vulnerability was reported in Mac OS X in the screen saver.  A physically local user can partially bypass a locked system.\nCodeSamurai reported that a physically local user with access to the keyboard can cause keystrokes to be passed to the operating system.  A physically local user can send keystrokes during a short period of time between when the screen effect is active and the authentication window is displayed, the report said.",
+    "Impact'": "A physically local user can generate keystrokes that will bypass the screen saver keyboard lock and take actions on the desktop.",
+    "Solution": "Apple has released a fix for Panther and Jaguar.\n\nSecurity Update 2003-12-19 for Panther is available at:\n\n  * Software Update pane in System Preferences\n\n  * Apple's Software Downloads web site:\n    http://www.info.apple.com/kbnum/n120292\n    The download file is named: \"SecurityUpd2003-12-19.dmg\"\n    Its SHA-1 digest is: 112674677572232f640d03122b25527d84fbbbf8\n\nSecurity Update 2003-12-19 for Jaguar is available at:\n\n  * Software Update pane in System Preferences\n\n  * Apple's Software Downloads web site:\n    http://www.info.apple.com/kbnum/n120291\n    The download file is named: \"SecurityUpd2003-12-19Jag.dmg\"\n    Its SHA-1 digest is: b0c5d1ef54020db7580798fddd7a1e132e653896",
+    "Vendor URL": "www.apple.com/",
+    "Cause": [
+        "Access control error",
+        "State error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1008021"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Mac OS X 'cd9660.util' Buffer Overflow Yields Root Privileges to Local Users",
+    "SecurityTracker Alert ID": "1008484",
+    "SecurityTracker URL": "http://securitytracker.com/id/1008484",
+    "CVE Reference": "CVE-2003-1006",
+    "Updated": "Dec 20 2003",
+    "Original Entry Date": "Dec 16 2003",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "Root access via local system"
+    ],
+    "Description": "A buffer overflow vulnerability was reported in Mac OS X in the 'cd9660.util' ISO 9660 file system utility.  A local user can gain root privileges on the target system.\nIt is reported that a local user can supply a specially crafted command line argument to the '/System/Library/Filesystems/cd9660.fs/cd9660.util' utility to trigger a buffer overflow.  Because the utility is reportedly configured with set user id (setuid) root user privileges, any arbitrary code that may be executed will run with root privileges.\n\nA demonstration exploit command is provided:\n\n./cd9660.util -p `perl -e \"print 'A'x512\"`",
+    "Impact'": "A local user can gain root privileges.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.apple.com/",
+    "Cause": "Boundary error",
+    "Message History": [
+        "https://securitytracker.com/id/1008533"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(Apple Issues Fix for OS X 10.2) Service Location Protocol Daemon (slpd) Temporary File Flaw May Let Local Users Gain Root Privileges",
+    "SecurityTracker Alert ID": "1008254",
+    "SecurityTracker URL": "http://securitytracker.com/id/1008254",
+    "CVE Reference": "CVE-2003-0878",
+    "Date": "Nov 20 2003",
+    "Impact": [
+        "Modification of system information",
+        "Modification of user information",
+        "Root access via local system",
+        "User access via local system"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Mac OS X 10.2 and prior versions",
+    "Description": "A vulnerability was reported in the Mac OS X Service Location Protocol responder (slpd).  A local user may be able to gain elevated privileges on the system.\nIt is reported that when Personal File Sharing is enabled on Mac OS X, a local user can exploit a temporary file vulnerability. A local user can create a symbolic link (symlink) from a critical file on the system to a file that slpd will create in the '/tmp' directory.  Then, when slpd creates the temporary file, the symlinked file will be written to with root level privileges.  A local user may be able to cause slpd to modify a file to grant the user root level access on the system.\n\nThe report notes that Personal File Sharing is turned off by default.\n\nThe vendor credits @stake with reporting the flaw.",
+    "Impact'": "A local user may be able to modify files with root privileges to gain root access on the system.",
+    "Solution": "Apple has released a fix as part of Security Update 2003-11-19 for Mac OS X 10.2.8, available at:\n\n  * Software Update pane in System Preferences\n\n  * Apple's Software Downloads web site:\n\n    Security update 2003-11-19 for Jaguar 10.2.8\n    http://www.info.apple.com/kbnum/n120277\n    The download file is named: \"SecurityUpd2003-11-19Jag.dmg\"\n    Its SHA-1 digest is: bf6dfd69f084d1ffc0a0db9eff5252fb3213178b",
+    "Vendor URL": "www.apple.com/macosx/",
+    "Cause": [
+        "Access control error",
+        "State error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1008045"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Service Location Protocol Daemon (slpd) Temporary File Flaw May Let Local Users Gain Root Privileges",
+    "SecurityTracker Alert ID": "1008045",
+    "SecurityTracker URL": "http://securitytracker.com/id/1008045",
+    "CVE Reference": "CVE-2003-0878",
+    "Date": "Oct 30 2003",
+    "Impact": [
+        "Modification of system information",
+        "Modification of user information",
+        "Root access via local system",
+        "User access via local system"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Mac OS X 10.2 and prior versions",
+    "Description": "A vulnerability was reported in the Mac OS X Service Location Protocol responder (slpd).  A local user may be able to gain elevated privileges on the system.\nIt is reported that when Personal File Sharing is enabled on Mac OS X, a local user can exploit a temporary file vulnerability. A local user can create a symbolic link (symlink) from a critical file on the system to a file that slpd will create in the '/tmp' directory.  Then, when slpd creates the temporary file, the symlinked file will be written to with root level privileges.  A local user may be able to cause slpd to modify a file to grant the user root level access on the system.\n\nThe report notes that Personal File Sharing is turned off by default.\n\nThe vendor credits @stake with reporting the flaw.",
+    "Impact'": "A local user may be able to modify files with root privileges to gain root access on the system.",
+    "Solution": "The vendor has released a fixed version of Mac OS X (10.3).  More information on Mac\n\nOS X 10.3 is available at:\n\nhttp://www.apple.com/macosx/",
+    "Vendor URL": "www.apple.com/macosx/",
+    "Cause": [
+        "Access control error",
+        "State error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1008254"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Mac OS X Kernel Can Be Crashed By Local Users Sending a Long Command Line Argument",
+    "SecurityTracker Alert ID": "1008026",
+    "SecurityTracker URL": "http://securitytracker.com/id/1008026",
+    "CVE Reference": "CVE-2003-0895",
+    "Date": "Oct 28 2003",
+    "Impact": "Denial of service via local system",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "10.2.8 and prior versions",
+    "Description": "A buffer overflow vulnerability was reported in the Mac OS X operating system.  A local user can cause the kernel to crash.\n@stake reported that a local user can supply a long command line argument to trigger the flaw.  In addition to causing a kernel crash, it is reported that a local user may be able to view small portions of kernel memory.\n\nAccording to the report, the overflow will not be logged.\n\nThe report indicates that it may be possible in some cases for this vulnerability to be exploited by a remote user if a network-based application spawns a process using user-supplied input.",
+    "Impact'": "A local user can cause the kernel to crash.",
+    "Solution": "The vendor has released a fixed version of Mac OS X (10.3).  For more information, see:\n\nhttp://www.apple.com/macosx/",
+    "Vendor URL": "www.apple.com/",
+    "Cause": [
+        "Boundary error",
+        "Exception handling error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Mac OS X Screensaver Lets Physically Local Users Pass Keystrokes to the Operating System",
+    "SecurityTracker Alert ID": "1008021",
+    "SecurityTracker URL": "http://securitytracker.com/id/1008021",
+    "CVE Reference": "CVE-2003-1008",
+    "Updated": "Dec 20 2003",
+    "Original Entry Date": "Oct 28 2003",
+    "Impact": "User access via local system",
+    "Exploit Included": "Yes",
+    "Version(s)": "10.3 Build 7B85",
+    "Description": "Another vulnerability was reported in Mac OS X in the screen saver.  A physically local user can partially bypass a locked system.\nCodeSamurai reported that a physically local user with access to the keyboard can cause keystrokes to be passed to the operating system.  A physically local user can send keystrokes during a short period of time between when the screen effect is active and the authentication window is displayed, the report said.",
+    "Impact'": "A physically local user can generate keystrokes that will bypass the screen saver keyboard lock and take actions on the desktop.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.apple.com/",
+    "Cause": [
+        "Access control error",
+        "State error"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1008531"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Mac OS X Discloses Core Files to Local Users",
+    "SecurityTracker Alert ID": "1008019",
+    "SecurityTracker URL": "http://securitytracker.com/id/1008019",
+    "CVE Reference": "CVE-2003-0877",
+    "Date": "Oct 28 2003",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Prior to 10.3",
+    "Description": "A vulnerability was reported in the Mac OS X kernel.  A local user may be able to overwrite arbitrary files and read root-owned core files in certain configurations.\n@stake reported that if the target system is running with core files enabled (which is not the default configuration), a local user can invoke a symlink attack.  A local user can create a symbolic link from a critical file on the system to a predictable core file name (of the form 'core.[processid]') in the '/cores' directory.  Then, when the target process dumps core, the symlinked file will be overwritten.  The local user can thus read the contents of the core file.",
+    "Impact'": "A local user can overwrite arbitrary files with root privileges.  A local user can view core files.",
+    "Solution": "The vendor has reportedly issued a fixed version of Mac OS X (10.3).  Users that cannot upgrade can make sure that core file creation is disabled (which is reportedly the default configuration).",
+    "Vendor URL": "www.apple.com/",
+    "Cause": [
+        "Access control error",
+        "State error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Mac OS X Default Directory Copy Permissions May Let Local Users Gain Elevated Privileges",
+    "SecurityTracker Alert ID": "1008017",
+    "SecurityTracker URL": "http://securitytracker.com/id/1008017",
+    "CVE Reference": "CVE-2003-0876",
+    "Date": "Oct 28 2003",
+    "Impact": [
+        "Modification of system information",
+        "Modification of user information",
+        "Root access via local system",
+        "User access via local system"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Mac OS X 10.2.8 and below",
+    "Description": "Several file permission vulnerabilities were reported in Mac OS X.  A local user may be able to gain elevated privileges on the target system.\n@stake reported that many applications install files and directories with globally writable permissions.  A variety of applications is reported to be affected, but @stake did not disclose the applications.\n\nIt is also reported that there is a flaw in the operating system.  When a user drags a directory from a DMG disk image, the destination directory is reportedly configured with read, write, and execute permissions, regardless of the original permissions on the source directory.",
+    "Impact'": "A local user may be able to replace an application binary with a modified binary to gain elevated privileges when a target user attempts to execute the application.",
+    "Solution": "The vendor has released a fixed version of Mac OS X (10.3).  In the fixed version, Finder will reportedly preserve the permissions on copied folders.\n\nFor more information, visit:\n\nhttp://www.apple.com/macosx/",
+    "Vendor URL": "www.apple.com/",
+    "Cause": "Configuration error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Apple Mac OS X Workgroup Manager May Let Remote Users Access New Accounts",
+    "SecurityTracker Alert ID": "1007286",
+    "SecurityTracker URL": "http://securitytracker.com/id/1007286",
+    "CVE Reference": "CVE-2003-0601",
+    "Date": "Jul 24 2003",
+    "Impact": [
+        "User access via local system",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "10.2 and later versions",
+    "Description": "A vulnerability was reported in Mac OS X in the Workgroup Manager.  A user may be able to access a newly created account.\nIt is reported that a remote user may be able to access an account created by Workgroup Manager between the time the account is created and the time the account is saved.",
+    "Impact'": "A remote user can gain unauthorized access.",
+    "Solution": "The vendor has released a fix in Security Update 2003-07-23, available at:\n\n* Software Update pane in System Preferences\n\nOR\n\n* Apple's Software Downloads web site:\n\nhttp://www.info.apple.com/kbnum/n120235\n\nThe download file is named: \"SecurityUpd2003-07-23.dmg\"\n\nIts SHA-1 digest is: fd065888b45355cc01a66df8eaf9df29c92cd8e2",
+    "Vendor URL": "docs.info.apple.com/article.html?artnum=61798",
+    "Cause": [
+        "Authentication error",
+        "State error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Mac OS X IPSec Policy Flaw May Remote Users Bypass Access Controls",
+    "SecurityTracker Alert ID": "1006796",
+    "SecurityTracker URL": "http://securitytracker.com/id/1006796",
+    "CVE Reference": "CVE-2003-0242",
+    "Updated": "Jun 14 2008",
+    "Original Entry Date": "May 19 2003",
+    "Impact": "Host/resource access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "OS X prior to 10.2.6",
+    "Description": "A vulnerability was reported in the Mac OS X IPSec implementation.  A remote user may be able to send packets that bypass the IPSec access controls.\nApple reported that Mac OS X does not properly handle certain incoming security policies that match by port.  Some incoming traffic that is not explicitly allowed by the IPSec security policies may be accepted by the target system.  No further details were provided.",
+    "Impact'": "A remote user may be able to send unauthorized traffic to or through the target server.",
+    "Solution": "The vendor has released a fixed version (10.2.6), available via:\n\n    * The Software Update pane in System Preferences\n    * Apple Software Downloads (http://www.apple.com/swupdates/)",
+    "Vendor URL": "docs.info.apple.com/article.html?artnum=61798",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Mac OS X File Sharing/Service Gives Authenticated Users Read Access to the Write-Only DropBox",
+    "SecurityTracker Alert ID": "1006557",
+    "SecurityTracker URL": "http://securitytracker.com/id/1006557",
+    "CVE Reference": "CVE-2003-0198",
+    "Date": "Apr 11 2003",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "OS X 10.2.4 and prior versions",
+    "Description": "A vulnerability was reported in the Mac OS X File Sharing and File Service.  An authenticated user can gain access to the \"DropBox\".\nApple reports that an authenticated user can change the permissions of the \"DropBox\" folder, which is ordinarily a write-only folder. This allows a guest user to gain access to the contents of the folder.\n\nThis vulnerability affects Personal File Sharing on Mac OS X and Apple File Service on Mac OS X Server when the service is enabled.",
+    "Impact'": "An authenticated user (including a guest user) can read the contents of the DropBox folder.",
+    "Solution": "The vendor has released a fixed version (10.2.5), available at:\n\n* Software Update pane in System Preferences\n\n* Apple's Software Downloads web site:\n\n    Updating from Mac OS X 10.2.4:\n\n      http://www.info.apple.com/kbnum/n120210\n      The download file is titled:  MacOSXUpdate10.2.5.dmg\n      Its SHA-1 digest is:  1f98f9a21c3f17be823e2d63d90e534df01b3fdf\n\n    Updating from Mac OS X 10.2 through 10.2.3:\n\n      http://www.info.apple.com/kbnum/n120211\n      The download file is titled:  MacOSXUpdateCombo10.2.5.dmg\n      Its SHA-1 digest is:  a8ed6287d5bd0bdf67a2c0fd97b3af810f178d21",
+    "Vendor URL": "docs.info.apple.com/article.html?artnum=61798",
+    "Cause": "Access control error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Mac OS X DirectoryService Unsafe System() Call Lets Local Users Gain Root Privileges",
+    "SecurityTracker Alert ID": "1006545",
+    "SecurityTracker URL": "http://securitytracker.com/id/1006545",
+    "CVE Reference": "CVE-2003-0171",
+    "Date": "Apr 11 2003",
+    "Impact": [
+        "Denial of service via network",
+        "Execution of arbitrary code via local system",
+        "Root access via local system"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "10.2.4 and prior",
+    "Description": "A vulnerability was reported in the Mac OS X DirectoryService.  A local user can gain root access on the system.  A remote user can cause the DirectoryService to crash.\n@stake, Inc. reported that that DirectoryService uses a system() call to execute the touch(1) command upon startup but fails to specify the full path of the touch command.  A local user can reportedly modify the PATH environment variable to point to an alternate touch(1) binary containing the local user's arbitrary code.  The report indicates that /usr/sbin/DirectoryService is configured with set user id (setuid) root privileges and runs by default.  The code will then be executed with root privileges.\n\nIt is also reported that a remote user can cause the service to crash by connecting to port 625 repeatedly.\n\n[Editor's note:  @stake does not permit us to post their advisory.  It is available at http://www.atstake.com/research/advisories/2003/a041003-1.txt]",
+    "Impact'": "A remote user can cause the service to crash.  A local user can obtain root privileges on the system.",
+    "Solution": "The vendor has released a fixed version (10.2.5), available at:\n\n* Software Update pane in System Preferences\n\n* Apple's Software Downloads web site:\n\n    Updating from Mac OS X 10.2.4:\n      http://www.info.apple.com/kbnum/n120210\n      The download file is titled:  MacOSXUpdate10.2.5.dmg\n      Its SHA-1 digest is:  1f98f9a21c3f17be823e2d63d90e534df01b3fdf\n\n    Updating from Mac OS X 10.2 through 10.2.3:\n      http://www.info.apple.com/kbnum/n120211\n      The download file is titled:  MacOSXUpdateCombo10.2.5.dmg\n      Its SHA-1 digest is:  a8ed6287d5bd0bdf67a2c0fd97b3af810f178d21",
+    "Vendor URL": "apple.com/",
+    "Cause": [
+        "Input validation error",
+        "Resource error"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Mac OS X Apple File Protocol (AFP) Access Control Bug Lets Administrators Login Under Other User Identities",
+    "SecurityTracker Alert ID": "1006107",
+    "SecurityTracker URL": "http://securitytracker.com/id/1006107",
+    "CVE Reference": "CVE-2003-0049",
+    "Updated": "Jun 13 2008",
+    "Original Entry Date": "Feb 15 2003",
+    "Impact": "User access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Mac OS X 10.2.3 and prior versions",
+    "Description": "An access control vulnerability was reported in Mac OS X Apple File Protocol (AFP) servers.  A remote authenticated system administrator may access the server under another user's identity.\nIt is reported that a remote authenticated system administrator could login to an AFP server as a different user.  No further details were provided.",
+    "Impact'": "A remote authenticated system administrator could login under a different user's identity.",
+    "Solution": "The vendor has released a fixed version (10.2.4).  The functionality is now optional (configurable).  The update is available from:\n\n* Software Update pane in System Preferences\n\n- OR -\n\n* Apple's Software Downloads web site:\n\nIf updating from Mac OS X 10.2.3:\n\nhttp://www.info.apple.com/kbnum/n70167\n\nThe download file is named: \"MacOSXUpdate10.2.4.dmg\"\nIts SHA-1 digest is: a54695d21f1162bd453d2f9a3b02176cae8c8777\n\nIf updating from Mac OS X 10.2, 10.2.1, or 10.2.2:\n\nhttp://www.info.apple.com/kbnum/n70168\n\nThe download file is named:  \"MacOSX10.2.4Combined.dmg\"\nIts SHA-1 digest is: 0b377141c1cd11d303a72ce3fac5170d2e02cf3b",
+    "Vendor URL": "docs.info.apple.com/article.html?artnum=61798",
+    "Cause": "Access control error",
+    "Underlying OS": "UNIX (macOS/OS X)",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "MacOS Classic Emulator TruBlueEnvironment Access Control Bug Lets Local Users Create Files With Root Privileges to Gain Root Level Access",
+    "SecurityTracker Alert ID": "1006106",
+    "SecurityTracker URL": "http://securitytracker.com/id/1006106",
+    "CVE Reference": "CVE-2003-0088",
+    "Date": "Feb 15 2003",
+    "Impact": [
+        "Modification of system information",
+        "Root access via local system"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "OS X 10.2.3 and prior",
+    "Description": "A vulnerability was reported in Apple's TruBlueEnvironment component of the MacOS Classic Emulator.  A local user can obtain root privileges.\n@stake reported that a local user can set a certain environment variable to create or overwrite arbitrary files on the system with root privileges and the local user's umask file creation permissions.  The environment variable is used to specify the file location to write debugging information.\n\nIf the specified file exists, TruBlueEnvironment will overwrite the file with null contents (zero bytes).  Otherwise, the file will be created.\n\nA local user can, for example, create world writeable files that may be later executed with root privileges via the cron utility.",
+    "Impact'": "A local user can create or overwrite files with root privileges to gain root access on the system.",
+    "Solution": "The vendor has released a fixed version of the Mac OS X operating system (10.2.4).  The Mac OS X 10.2.4 client Software Update may be obtained from:\n\n* Software Update pane in System Preferences\n\n- OR -\n\n* Apple's Software Downloads web site:\n\nIf updating from Mac OS X 10.2.3:\n\nhttp://www.info.apple.com/kbnum/n70167\n\nThe download file is named: \"MacOSXUpdate10.2.4.dmg\"\nIts SHA-1 digest is: a54695d21f1162bd453d2f9a3b02176cae8c8777\n\nIf updating from Mac OS X 10.2, 10.2.1, or 10.2.2:\n\nhttp://www.info.apple.com/kbnum/n70168\n\nThe download file is named:  \"MacOSX10.2.4Combined.dmg\"\nIts SHA-1 digest is: 0b377141c1cd11d303a72ce3fac5170d2e02cf3b",
+    "Vendor URL": "docs.info.apple.com/article.html?artnum=61798",
+    "Cause": "Access control error",
+    "Underlying OS": "UNIX (macOS/OS X)",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(Apple Issues Fix) Re: Mac OS X SoftwareUpdate Feature Uses Unauthenticated Connections for Downloading and Automatically Installing Software Updates, Allowing Remote Users to Install Arbitrary Code on the System",
+    "SecurityTracker Alert ID": "1004771",
+    "SecurityTracker URL": "http://securitytracker.com/id/1004771",
+    "CVE Reference": "CVE-2002-0676",
+    "Date": "Jul 15 2002",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "Root access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "10.1.X, possibly 10.0.X",
+    "Description": "A vulnerability was reported in the Mac OS X operating system 'SoftwareUpdate' feature.  A remote user could, in certain situations, cause arbitrary code to be installed on the system with root privileges.\nIt is reported that the default configuration of the 'SoftwareUpdate' feature will run weekly.  The feature apparently uses HTTP with no authentication, allowing a remote user to cause arbitrary code to be downloaded and automatically installed by a target host when the target host performs 'SoftwareUpdate'.  To do this, the remote user must control the local domain name system (DNS), spoof the DNS, or poison the host's ARP cache.  Several utilities are available to assist in these tasks.\n\nAccording to the report, SoftwareUpdate connects via HTTP to swscan.apple.com and issues a \"GET\" request for /scanningpoints/ scanningpointX.xml.  The server returns a list of software and current versions for the requesting host to check.  Next, the requesting host sends a list of currently installed software to /WebObjects/SoftwareUpdatesServer at swquery.apple.com via an HTTP POST command. If any new software is available from Apple, the SoftwareUpdatesServer reportedly responds with the location of the software, size, and a brief description. If no new software is available, the server sends a blank page with the comment \"No Updates\".\n\nSome demonstration exploit code and instructions are available at:\n\nhttp://www.cunap.com/~hardingr/projects/osx/exploit.html",
+    "Impact'": "A remote user with control of the local domain name system (DNS) or with the ability to spoof DNS or ARP protocol entries can cause a target user to download an install arbitrary code with root privileges when the target user (or the target user's host) runs the 'SoftwareUpdate' feature.  This can give the remote user full control over the operating system.",
+    "Solution": "Apple has issued a fix.  Packages presented via the Software Update mechanism are reportedly cryptographically signed and the new Software Update client (1.4.6) checks for a valid signature before installing new packages.\n\nSoftware updates are available via:\n\n- The Software Update pane in System Preferences \n- Apple's Software Downloads web page:  \n\n  http://www.info.apple.com/support/downloads.html",
+    "Vendor URL": "www.info.apple.com/support/downloads.html",
+    "Cause": "Authentication error",
+    "Underlying OS": "UNIX (macOS/OS X)",
+    "Message History": [
+        "https://securitytracker.com/id/1004722"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Mac OS X SoftwareUpdate Feature Uses Unauthenticated Connections for Downloading and Automatically Installing Software Updates, Allowing Remote Users to Install Arbitrary Code on the System",
+    "SecurityTracker Alert ID": "1004722",
+    "SecurityTracker URL": "http://securitytracker.com/id/1004722",
+    "CVE Reference": "CVE-2002-0676",
+    "Date": "Jul  8 2002",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "Root access via network"
+    ],
+    "Exploit Included": "Yes",
+    "Version(s)": "10.1.X, possibly 10.0.X",
+    "Description": "A vulnerability was reported in the Mac OS X operating system 'SoftwareUpdate' feature.  A remote user could, in certain situations, cause arbitrary code to be installed on the system with root privileges.\nIt is reported that the default configuration of the 'SoftwareUpdate' feature will run weekly.  The feature apparently uses HTTP with no authentication, allowing a remote user to cause arbitrary code to be downloaded and automatically installed by a target host when the target host performs 'SoftwareUpdate'.  To do this, the remote user must control the local domain name system (DNS), spoof the DNS, or poison the host's ARP cache.  Several utilities are available to assist in these tasks.\n\nAccording to the report, SoftwareUpdate connects via HTTP to swscan.apple.com and issues a \"GET\" request for /scanningpoints/ scanningpointX.xml.  The server returns a list of software and current versions for the requesting host to check.  Next, the requesting host sends a list of currently installed software to /WebObjects/SoftwareUpdatesServer at swquery.apple.com via an HTTP POST command. If any new software is available from Apple, the SoftwareUpdatesServer reportedly responds with the location of the software, size, and a brief description. If no new software is available, the server sends a blank page with the comment \"No Updates\".\n\nSome demonstration exploit code and instructions are available at:\n\nhttp://www.cunap.com/~hardingr/projects/osx/exploit.html",
+    "Impact'": "A remote user with control of the local domain name system (DNS) or with the ability to spoof DNS or ARP protocol entries can cause a target user to download an install arbitrary code with root privileges when the target user (or the target user's host) runs the 'SoftwareUpdate' feature.  This can give the remote user full control over the operating system.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.apple.com/",
+    "Cause": "Authentication error",
+    "Underlying OS": "UNIX (macOS/OS X)",
+    "Message History": [
+        "https://securitytracker.com/id/1004771"
+    ]
+}{
+    "source": "1-2",
+    "Title": "MacOS DNS Bug Lets Remote DNS Servers Crash the Operating System",
+    "SecurityTracker Alert ID": "1003618",
+    "SecurityTracker URL": "http://securitytracker.com/id/1003618",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Feb 21 2002",
+    "Impact": "Denial of service via local system",
+    "Exploit Included": "Yes",
+    "Version(s)": "OS 9 (confirmed in 9.0.4 and 9.2.2), OS X in 'Classic' mode",
+    "Description": "A denial of service vulnerability was reported in the MacOS operating system.  A remote DNS server can cause the system to crash in certain situations.\nIt is reported that the MacOS does not properly handle certain potentially invalid DNS messages returned by DNS servers in response to an IP address lookup.\n\nIt is reported that a local user can perform a reverse DNS lookup on certain IP addresses (such as 206.207.151.40) to cause the system to crash.  If the Macintosh is acting as a server and if DNS lookups are enabled on the server, then a remote user can cause the server to crash by using the IP address of a site whose DNS server will return invalid packets.\n\nIt is reported that the vendor has been notified (bug #2844306).",
+    "Impact'": "A local user can cause the system to crash.  A remote user may be able to cause the system to crash in a certain configuration.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.apple.com/",
+    "Cause": "Exception handling error",
+    "Underlying OS": "Apple (Legacy \"classic\" Mac)",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Mac OS X PPP Utility Discloses PPP Configuration Username and Password to Local Users",
+    "SecurityTracker Alert ID": "1003079",
+    "SecurityTracker URL": "http://securitytracker.com/id/1003079",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Dec 31 2001",
+    "Impact": "Disclosure of authentication information",
+    "Exploit Included": "Yes",
+    "Description": "An information disclosure vulnerability was reported in Apple's ppp utility for Mac OS X.  A local user can view the ppp username and password.\nIt is reported that the ppp user name and password entered in `Internet Connect' are visible as command line arguments to pppd.\n\nA demonstration exploit is provided:\n\nps -axwwww -o pid,command|grep pppd|grep -v grep",
+    "Impact'": "A local user can view the ppp username and password.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.apple.com/",
+    "Cause": "Access control error",
+    "Underlying OS": "UNIX (macOS/OS X)",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(Apple Issues Fix) Re: Mac OS X NetInfo Manager Lets Local Users Log in as Root Level Users",
+    "SecurityTracker Alert ID": "1002632",
+    "SecurityTracker URL": "http://securitytracker.com/id/1002632",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Oct 24 2001",
+    "Impact": "Root access via local system",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "A vulnerability was reported in the Mac OS X NetInfo Manager that lets local users obtain root level access to the system.\nIt is reported that the NetInfo Manager can be used by non-root users to obtain root level access using set user id (suid) root applications.\n\nA demonstration exploit example is provided:\n\n- Open up the terminal application (Terminal.app)\n- Quit the terminal application\n- Open up NetInfo Manager and leave it in the foreground\n- Open up the Terminal application from the \"Recent Items\" list in the Apple Menu.\n\nThis should give the local user a terminal session logged in as root.",
+    "Impact'": "A local user can obtain root level access on the system.",
+    "Solution": "Apple has issued a fix (\"Mac OS X v10.1 Security Update 10-19-01\").\n\nSoftware updates are available via the Software Update pane in System Preferences or via Apple's Software Downloads web page:\n\nhttp://www.info.apple.com/support/downloads.html",
+    "Vendor URL": "www.apple.com/",
+    "Cause": "State error",
+    "Underlying OS": "Apple (Legacy \"classic\" Mac)",
+    "Message History": [
+        "https://securitytracker.com/id/1002566"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Mac OS X NetInfo Manager Lets Local Users Log in as Root Level Users",
+    "SecurityTracker Alert ID": "1002566",
+    "SecurityTracker URL": "http://securitytracker.com/id/1002566",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Oct 18 2001",
+    "Impact": "Root access via local system",
+    "Exploit Included": "Yes",
+    "Description": "A vulnerability was reported in the Mac OS X NetInfo Manager that lets local users obtain root level access to the system.\nIt is reported that the NetInfo Manager can be used by non-root users to obtain root level access using set user id (suid) root applications.\n\nA demonstration exploit example is provided:\n\n- Open up the terminal application (Terminal.app)\n- Quit the terminal application\n- Open up NetInfo Manager and leave it in the foreground\n- Open up the Terminal application from the \"Recent Items\" list in the Apple Menu.\n\nThis should give the local user a terminal session logged in as root.",
+    "Impact'": "A local user can obtain root level access on the system.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.apple.com/",
+    "Cause": "State error",
+    "Underlying OS": "Apple (Legacy \"classic\" Mac)",
+    "Message History": [
+        "https://securitytracker.com/id/1002632"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Mac OS X Desktop Folder Security Permission Fix Fails on Certain 10.0.x to 10.1 Upgrades",
+    "SecurityTracker Alert ID": "1002529",
+    "SecurityTracker URL": "http://securitytracker.com/id/1002529",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Oct 11 2001",
+    "Impact": "Disclosure of user information",
+    "Version(s)": "upgrade from 10.0.x to 10.1 for French, German, Italian, and Spanish versions.  English version is not affected.",
+    "Description": "It was reported that the Mac OS X 10.0.x to 10.1 upgrades fail to fix the previously reported Destop Folder security permission flaw. This affects only certain Mac OS X language versions.  Local users can view and modify the desktop of other users.\nThe previously reported vulnerability noted that verion 10.0.x used improper drwxrwxrwx permissions for the Desktop folder (i.e., global read, write, and execute).\n\nIt is reported that the French, German, Italian, and Spanish upgrades are vulnerable.  While 10.1 is reported to fix the flaw, the above mentioned upgrades require a 10.0.x configuration for the upgrade to function.  If a '/Users/<login>/Desktop' directory is vulnerable on a 10.0.x configuration, it will still remain vulnerable after the 10.1 update.  Only new users that are created after 10.1 update will have secure permissions on their '/Users/<login>/Desktop' folder.",
+    "Impact'": "A local user can view and modify the contents of another user's Desktop folder.  In particular, the 'admin' Desktop folder is vulnerable.",
+    "Solution": "No vendor solution was available at the time of this entry.\n\nThe author of the report suggests manually changing the permissions of at least the 'admin' Desktop folder.",
+    "Vendor URL": "www.apple.com/",
+    "Cause": "Access control error",
+    "Underlying OS": "Apple (Legacy \"classic\" Mac)",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(Additional Exploit Information) Re: Mac OS X Discloses Directory Contents to Remote Users When Running a Web Server",
+    "SecurityTracker Alert ID": "1002396",
+    "SecurityTracker URL": "http://securitytracker.com/id/1002396",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Sep 11 2001",
+    "Impact": "Disclosure of user information",
+    "Exploit Included": "Yes",
+    "Description": "A file permission vulnerability was reported in Apple's Mac OS X operating system.  The 'Finder' feature reportedly creates hidden but world-readable directory summary files that can be accessed by remote users if the host is running a web server, such as Apache.\nIt is reported that an additional database file (.FBCIndex) may disclose directory information to remote users.  The file is apparently world readable.\n\nIn the original report (see the Message History), it was reported that the hidden file \".DS_Store\" could disclose directory listings to remote users if a web server is operating on the host.",
+    "Impact'": "A remote user can obtain directory listings from Mac OS X if the target host is running a web server and if the Finder has been used on the target host to view the web directory.",
+    "Solution": "No vendor solution was available at the time of this entry.  However, access controls can be used in the web server.  For example, with Apache web server, the following directive was reported as a solution:\n\nThe solution is, again, to use a <FilesMatch> directive in httpd.conf to\nforbid retrieval of this file:\n\n# The Finder creates an invisible .DS_Store file in each directory.\n# For 'no-index' access controls to be effective, we had better forbid\n# retrieval of that file as well. Note that we have to protect\n# against the same case-insensitivity bug as above.\n#\n<FilesMatch \"^\\.[Dd][Ss]_[Ss]\">\nOrder allow,deny\nDeny from all\n</FilesMatch>",
+    "Vendor URL": "www.apple.com/",
+    "Cause": "Access control error",
+    "Underlying OS": "Apple (Legacy \"classic\" Mac)",
+    "Message History": [
+        "https://securitytracker.com/id/1002386"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Mac OS X Discloses Directory Contents to Remote Users When Running a Web Server",
+    "SecurityTracker Alert ID": "1002386",
+    "SecurityTracker URL": "http://securitytracker.com/id/1002386",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Sep 11 2001",
+    "Impact": "Disclosure of user information",
+    "Exploit Included": "Yes",
+    "Description": "A file permission vulnerability was reported in Apple's Mac OS X operating system.  The 'Finder' feature reportedly creates hidden but world-readable directory summary files that can be accessed by remote users if the host is running a web server, such as Apache.\nIt is reported that the Finder creates an invisible file named \".DS_Store\" in each directory.  The file apparently includes a list of files in the directory.  If the host is running a web server, a remote user can use the following type of URL to retrieve the file and obtain the list of files in the directory, even if web server indexing is blocked:\n\nhttp://[targethost]/some_directory/.dS_store\n\nThe file is given world-readable permissions.",
+    "Impact'": "A remote user can obtain directory listings from Mac OS X if the target host is running a web server and if the Finder has been used on the target host to view the web directory.",
+    "Solution": "No vendor solution was available at the time of this entry.  However, access controls can be used in the web server.  For example, with Apache web server, the following directive was reported as a solution:\n\nThe solution is, again, to use a <FilesMatch> directive in httpd.conf to\nforbid retrieval of this file:\n\n# The Finder creates an invisible .DS_Store file in each directory.\n# For 'no-index' access controls to be effective, we had better forbid\n# retrieval of that file as well. Note that we have to protect\n# against the same case-insensitivity bug as above.\n#\n<FilesMatch \"^\\.[Dd][Ss]_[Ss]\">\nOrder allow,deny\nDeny from all\n</FilesMatch>",
+    "Vendor URL": "www.apple.com/",
+    "Cause": "Access control error",
+    "Underlying OS": "Apple (Legacy \"classic\" Mac)",
+    "Message History": [
+        "https://securitytracker.com/id/1002396"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Macintosh Open Firmware Passwords Can Be Disclosed to Local Users",
+    "SecurityTracker Alert ID": "1002204",
+    "SecurityTracker URL": "http://securitytracker.com/id/1002204",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Aug 16 2001",
+    "Impact": "Disclosure of authentication information",
+    "Exploit Included": "Yes",
+    "Description": "A vulnerability was reported in Apple's Open Firmware implementation that allows a local user to obtain the system boot password (if one is used).\nApple reportedly introduced the system boot password in FirmWare Update 4.17.  This protection method is reportedly similar to the BIOS password protection found on Intel computers.\n\nmSec has discovered that the password can be retrieved by a local user that has access to the operating system after the system has been booted.  mSec has released a tool 'FWSucker' that demonstrates the vulnerability, available at:\n\nhttp://www.msec.net/software/index.html#fwsucker",
+    "Impact'": "A local user with access to the operating system after the system has been booted can obtain the firmware password.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "bananajr6000.apple.com/",
+    "Cause": "Access control error",
+    "Underlying OS": "Apple (Legacy \"classic\" Mac)",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(A User Provides More Information) Re: Mac OS X Default Installation Lets Local Users Read and Make Changes to Another User's Desktop Folder",
+    "SecurityTracker Alert ID": "1001876",
+    "SecurityTracker URL": "http://securitytracker.com/id/1001876",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jun 29 2001",
+    "Impact": [
+        "Disclosure of user information",
+        "Modification of user information"
+    ],
+    "Version(s)": "10.0.4, possibly earlier versions",
+    "Description": "A vulnerability has been reported in Apple's Mac OS X operating system that, in the default configuration, lets local users access the Desktop folders of other users with read and write privileges.  [Editor's Note:  Several users have reported that they were unable to reproduce the vulnerability.]\nIt is reported that the permissions of the directory /Users/yourname/Desktop (which reportedly shows the desktop) are set to: xrwxrwxrwx, allowing every local user to view and make changes to other users' Desktop folders. \n\nThe vendor has reportedly been informed.\n\nA user provides some additional information (see Source Message), indicating that the improper permissions may have been set by a beta version, but that the non-beta full release version does not seem to have the problem.",
+    "Impact'": "A local user can view and modify items on another user's desktop.",
+    "Solution": "No vendor solution was available at the time of this entry.  The author of the report provides a fix:\n\nchmod 755 or chmod 750 /Users/yourname/Desktop",
+    "Vendor URL": "www.apple.com/",
+    "Cause": [
+        "Access control error",
+        "Configuration error"
+    ],
+    "Underlying OS": "Apple (Legacy \"classic\" Mac)",
+    "Message History": [
+        "https://securitytracker.com/id/1001849"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Mac OS X Default Installation Lets Local Users Read and Make Changes to Another User's Desktop Folder",
+    "SecurityTracker Alert ID": "1001849",
+    "SecurityTracker URL": "http://securitytracker.com/id/1001849",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Updated": "Jun 28 2001",
+    "Original Entry Date": "Jun 27 2001",
+    "Impact": [
+        "Disclosure of user information",
+        "Modification of user information"
+    ],
+    "Version(s)": "10.0.4, possibly earlier versions",
+    "Description": "A vulnerability has been reported in Apple's Mac OS X operating system that, in the default configuration, lets local users access the Desktop folders of other users with read and write privileges.  [Editor's Note:  Several users have reported that they were unable to reproduce the vulnerability.]\nIt is reported that the permissions of the directory /Users/yourname/Desktop (which reportedly shows the desktop) are set to: xrwxrwxrwx, allowing every local user to view and make changes to other users' Desktop folders.\n\nThe vendor has reportedly been informed.",
+    "Impact'": "A local user can view and modify items on another user's desktop.",
+    "Solution": "No vendor solution was available at the time of this entry.  The author of the report provides a fix:\n\nchmod 755 or chmod 750 /Users/yourname/Desktop",
+    "Vendor URL": "www.apple.com/",
+    "Cause": [
+        "Access control error",
+        "Configuration error"
+    ],
+    "Underlying OS": "Apple (Legacy \"classic\" Mac)",
+    "Message History": [
+        "https://securitytracker.com/id/1001876"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Mac OS Runtime for Java Permits Unauthorized Applets to Access the System Clipboard",
+    "SecurityTracker Alert ID": "1001716",
+    "SecurityTracker URL": "http://securitytracker.com/id/1001716",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jun  9 2001",
+    "Impact": "Disclosure of user information",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to 2.2.5",
+    "Description": "Apple reports that versions of Mac OS Runtime for Java (MRJ) contain a vulnerability that may disclose user information to remote users.\nThe vulnerability permits unauthorized Java applets to access to the system clipboard.\n\nThe nature of the vulnerability was not reported by the vendor.",
+    "Impact'": "A remote user could, via a Java applet, obtain information from the system clipboard.",
+    "Solution": "The vendor has released a fixed version (2.2.5).  See the Vendor URL for the fixed version.",
+    "Vendor URL": "asu.info.apple.com/swupdates.nsf/artnum/n11927",
+    "Cause": "Access control error",
+    "Underlying OS": "Apple (Legacy \"classic\" Mac)",
+    "Message History": "None."
+}

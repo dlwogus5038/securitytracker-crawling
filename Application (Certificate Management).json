@@ -1,0 +1,91 @@
+{
+    "source": "1-2",
+    "Title": "Red Hat Certificate Server Buffer Overflow in Help System May Let Remote Users Execute Arbitrary Code",
+    "SecurityTracker Alert ID": "1015538",
+    "SecurityTracker URL": "http://securitytracker.com/id/1015538",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Jan 25 2006",
+    "Impact": [
+        "Execution of arbitrary code via local system",
+        "Execution of arbitrary code via network",
+        "Root access via local system",
+        "Root access via network",
+        "User access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "7.1 and prior versions",
+    "Description": "A vulnerability was reported in Red Hat Certificate Server.  A remote user may be able to execute arbitrary code.  A local user may be able to obtain elevated privileges.\nA remote user can send a specially crafted request to the Management Console to trigger a stack overflow in the Help buttons on the Admin pages.\n\nOn UNIX-based systems, remote code execution is not possible.\n\nIn some situations, a local user can execute arbitrary code with root level privileges.\n\nPeter Winter-Smith of NGSSoftware discovered this vulnerability.",
+    "Impact'": "A remote user may be able to execute arbitrary code on the target system.\n\nA local user can execute arbitrary code with root level privileges.",
+    "Solution": "Red Hat will be issuing a fix as part of Red Hat Certificate Server 7.1 SP1, to be available shortly.\n\nThe report indicates that, as a workaround, the 'help.cgi' binary can be removed.",
+    "Vendor URL": "www.redhat.com/",
+    "Cause": "Boundary error",
+    "Underlying OS": "Linux (Red Hat Enterprise)",
+    "Message History": "None."
+}{
+    "source": "1-2",
+    "Title": "(ValiCert Issues Fix) Re: ValiCert Enterprise Validation Authority Has Multiple Vulnerabilities That Allow Remote Users to Obtain SYSTEM Level Access to the Administration Server",
+    "SecurityTracker Alert ID": "1002907",
+    "SecurityTracker URL": "http://securitytracker.com/id/1002907",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Dec  5 2001",
+    "Impact": [
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Root access via network"
+    ],
+    "Fix Available": "Yes",
+    "Vendor Confirmed": "Yes",
+    "Version(s)": "3.3 - 4.2.1",
+    "Description": "Nomad Mobile Research Centre (NMRC) reported a vulnerability in the ValiCert Validation Authority.  A remote user could trigger buffer overflows to gain SYSTEM level access to the Administration Server.  Other flaws are also reported.\nNMRC reports that there are several vulnerabilties in a CGI script used by the Enterprise Validation Authority (VA) Administration Server.  \n\nIt is reported that there are multiple (14) buffer overflows exist in forms.exe remote management CGI script.  A remote user with access to this interface on TCP port 13333 can trigger a buffer overflow to execute arbitrary code on the server.  The code will run with SYSTEM privileges.  The remote user may be required to provide a username and password to exploit this flaw if the administrator requires authentication.  The overflows are described in the Source Message.\n\nA remote user can determine the path of the forms.exe CGI script by providing an invalid extension to a URL GET request.  For example, the following URL adds the invalid 'foobar' extension:\n\nhttp://computer:13333/cgi-bin/forms.exe?extension=foobar&command=Add+Extension\n\nThe server will reportedly return an error page with the following text that discloses the drive letter and the path of the ValiCert application.\n\nThe server reportedly does not provide proper input validation and filtering, allowing cross-site scripting attacks during certificate creation.  If a remote user views the certificate through the ValiCert Administrative server, the HTML is interpreted and any scripting is executed.  For example, HTML code can be inserted by the remote user into the organizational name.  When the certificate is displayed, the arbitrary HTML code will be executed and will appear to originate from the Administrative server.  The remote user may be required to supply a username and password to create such a certificate and trigger the vulnerability.\n\nIt is reported that may issue weak 'random' tokens for communication with Hardware Security Modules.  These are reportedly created using the rand() function, seeded using local system time which is predictable and may not be finite enough to act as a good source of entropy.  Seeding using local system time will apparently guarantee that the generated values will increase linearly.\n\nIn addition, the '/dev/urandom' device is used by default for certificate generation (if the device exists).  This function apparently does not perform blocking when its entropy pool is low. \n\nThe vendor has reportedly been notified.",
+    "Impact'": "A remote user could execute arbitrary code on the server with SYSTEM level privileges, giving the user SYSTEM level access on the server.  A remote user could also determine the path location of the server application.  This may require the user to authenticate if authentication is required.",
+    "Solution": "The vulnerabilities have been fixed in EVA 4.2.2 which is currently available and can be obtained by contacting the vendor by e-mail at support@valicert.com.  Also, some mitigation steps are described in the vendor's advisory (available at the Vendor URL or in the Source Message).",
+    "Vendor URL": "www.valicert.com/support/security_advisory_eva.html",
+    "Cause": [
+        "Boundary error",
+        "Randomization error"
+    ],
+    "Underlying OS": [
+        "UNIX (AIX)",
+        "UNIX (HP/UX)",
+        "UNIX (Solaris - SunOS)",
+        "Windows (NT)",
+        "Windows (2000)"
+    ],
+    "Underlying OS Comments": "Windows NT 4.0 with SP6a, Windows 2000 Server, Solaris 2.6-2.8, AIX 4.3.3, HP-UX 11.0",
+    "Message History": [
+        "https://securitytracker.com/id/1002897"
+    ]
+}{
+    "source": "1-2",
+    "Title": "ValiCert Enterprise Validation Authority Has Multiple Vulnerabilities That Allow Remote Users to Obtain SYSTEM Level Access to the Administration Server",
+    "SecurityTracker Alert ID": "1002897",
+    "SecurityTracker URL": "http://securitytracker.com/id/1002897",
+    "CVE Reference": "GENERIC-MAP-NOMATCH",
+    "Date": "Dec  4 2001",
+    "Impact": [
+        "Disclosure of user information",
+        "Execution of arbitrary code via network",
+        "Root access via network"
+    ],
+    "Version(s)": "3.3 - 4.2.1",
+    "Description": "Nomad Mobile Research Centre (NMRC) reported a vulnerability in the ValiCert Validation Authority.  A remote user could trigger buffer overflows to gain SYSTEM level access to the Administration Server.  Other flaws are also reported.\nNMRC reports that there are several vulnerabilties in a CGI script used by the Enterprise Validation Authority (VA) Administration Server.  \n\nIt is reported that there are multiple (14) buffer overflows exist in forms.exe remote management CGI script.  A remote user with access to this interface on TCP port 13333 can trigger a buffer overflow to execute arbitrary code on the server.  The code will run with SYSTEM privileges.  The remote user may be required to provide a username and password to exploit this flaw if the administrator requires authentication.  The overflows are described in the Source Message.\n\nA remote user can determine the path of the forms.exe CGI script by providing an invalid extension to a URL GET request.  For example, the following URL adds the invalid 'foobar' extension:\n\nhttp://computer:13333/cgi-bin/forms.exe?extension=foobar&command=Add+Extension\n\nThe server will reportedly return an error page with the following text that discloses the drive letter and the path of the ValiCert application.\n\nThe server reportedly does not provide proper input validation and filtering, allowing cross-site scripting attacks during certificate creation.  If a remote user views the certificate through the ValiCert Administrative server, the HTML is interpreted and any scripting is executed.  For example, HTML code can be inserted by the remote user into the organizational name.  When the certificate is displayed, the arbitrary HTML code will be executed and will appear to originate from the Administrative server.  The remote user may be required to supply a username and password to create such a certificate and trigger the vulnerability.\n\nIt is reported that may issue weak 'random' tokens for communication with Hardware Security Modules.  These are reportedly created using the rand() function, seeded using local system time which is predictable and may not be finite enough to act as a good source of entropy.  Seeding using local system time will apparently guarantee that the generated values will increase linearly.\n\nIn addition, the '/dev/urandom' device is used by default for certificate generation (if the device exists).  This function apparently does not perform blocking when its entropy pool is low. \n\nThe vendor has reportedly been notified.",
+    "Impact'": "A remote user could execute arbitrary code on the server with SYSTEM level privileges, giving the user SYSTEM level access on the server.  A remote user could also determine the path location of the server application.  This may require the user to authenticate if authentication is required.",
+    "Solution": "No solution was available at the time of this entry.\n\nThe author of the report has provided following suggestions:\n\n\"If remote web administration is required, do so over an SSL connection to prevent the admin user id and password from being captured. Otherwise, blocking TCP port 13333, which is used for remote admin would prevent the overflows from being sucessful.\"",
+    "Vendor URL": "www.valicert.com/products/validation_authority.html",
+    "Cause": [
+        "Boundary error",
+        "Randomization error"
+    ],
+    "Underlying OS": [
+        "UNIX (AIX)",
+        "UNIX (HP/UX)",
+        "UNIX (Solaris - SunOS)",
+        "Windows (NT)",
+        "Windows (2000)"
+    ],
+    "Underlying OS Comments": "Windows NT 4.0 with SP6a, Windows 2000 Server, Solaris 2.6-2.8, AIX 4.3.3, HP-UX 11.0",
+    "Message History": [
+        "https://securitytracker.com/id/1002907"
+    ]
+}
